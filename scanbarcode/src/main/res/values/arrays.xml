@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="preferences_front_light_values">
+        <item>ON</item>
+        <item>AUTO</item>
+        <item>OFF</item>
+    </string-array>
+    <string-array name="preferences_front_light_options">
+        <item>@string/zxing_preferences_front_light_on</item>
+        <item>@string/zxing_preferences_front_light_auto</item>
+        <item>@string/zxing_preferences_front_light_off</item>
+    </string-array>
+    <string-array name="preferences_scan_types_int">
+        <item>"0"</item>
+        <item>"1"</item>
+    </string-array>
+    <string-array name="preferences_scan_types">
+        <item>@string/preferences_packet_scan_type_increment</item>
+        <item>@string/preferences_packet_scan_type_set_quantity</item>
+    </string-array>
+</resources>
