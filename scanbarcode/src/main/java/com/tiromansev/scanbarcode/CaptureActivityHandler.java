@@ -68,7 +68,7 @@ public final class CaptureActivityHandler extends Handler {
                   barcode = barcode.copy(Bitmap.Config.ARGB_8888, true);
               }
           }
-          activity.handleDecodeInternally((Result) message.obj, barcode);
+          activity.handleDecodeInternally(((Result) message.obj).getText(), barcode);
 
       } else if (message.what == R.id.decode_failed) {// We're decoding as fast as possible, so when one decode fails, start another.
           state = State.PREVIEW;

@@ -321,7 +321,7 @@ public class CaptureActivity extends MvpAppCompatActivity implements SurfaceHold
     }
 
     // Put up our own UI for how to handle the decoded contents.
-    public void handleDecodeInternally(Result rawResult, Bitmap barcode) {
+    public void handleDecodeInternally(String rawResult, Bitmap barcode) {
 
     }
 
