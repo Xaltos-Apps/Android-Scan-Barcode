@@ -33,7 +33,7 @@ dependencies {
     implementation ("com.android.support:appcompat-v7:$support") {
         exclude group: 'com.android.support', module: 'cardview-v7'
     }
-    compile ("com.android.support:preference-v7:$support") {
+    implementation ("com.android.support:preference-v7:$support") {
         exclude group: 'com.android.support', module: 'cardview-v7'
     }
     testImplementation 'junit:junit:4.12'
