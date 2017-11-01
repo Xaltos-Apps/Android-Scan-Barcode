@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -23,7 +24,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;
@@ -33,8 +33,6 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
 
-import butterknife.ButterKnife;
-
 /**
  * This activity opens the camera and does the actual scanning on a background thread. It draws a
  * viewfinder to fragment_help the user place the barcode correctly, shows fragment_feedback as the image processing
@@ -43,7 +41,7 @@ import butterknife.ButterKnife;
  * @author dswitkin@google.com (Daniel Switkin)
  * @author Sean Owen
  */
-public class CaptureActivity extends MvpAppCompatActivity implements SurfaceHolder.Callback {
+public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
 
@@ -85,7 +83,6 @@ public class CaptureActivity extends MvpAppCompatActivity implements SurfaceHold
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_capture);
-        ButterKnife.bind(this);
 
         hasSurface = false;
         inactivityTimer = new InactivityTimer(this);
@@ -109,11 +106,11 @@ public class CaptureActivity extends MvpAppCompatActivity implements SurfaceHold
         // off screen.
         cameraManager = new CameraManager(getApplication());
 
-        viewfinderView = ButterKnife.findById(this, R.id.viewfinder_view);
+        viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
         viewfinderView.setCameraManager(cameraManager);
 
-        resultView = ButterKnife.findById(this, R.id.result_view);
-        statusView = ButterKnife.findById(this, R.id.status_view);
+        resultView = findViewById(R.id.result_view);
+        statusView = (TextView) findViewById(R.id.status_view);
 
         handler = null;
         lastResult = null;
@@ -135,7 +132,7 @@ public class CaptureActivity extends MvpAppCompatActivity implements SurfaceHold
 
         resetStatusView();
 
-        SurfaceView surfaceView = ButterKnife.findById(this, R.id.preview_view);
+        SurfaceView surfaceView = (SurfaceView) findViewById(R.id.preview_view);
         SurfaceHolder surfaceHolder = surfaceView.getHolder();
         if (hasSurface) {
             // The activity was paused but not stopped, so the surface still exists. Therefore
@@ -236,7 +233,7 @@ public class CaptureActivity extends MvpAppCompatActivity implements SurfaceHold
         beepManager.close();
         cameraManager.closeDriver();
         if (!hasSurface) {
-            SurfaceView surfaceView = ButterKnife.findById(this, R.id.preview_view);
+            SurfaceView surfaceView = (SurfaceView) findViewById(R.id.preview_view);
             SurfaceHolder surfaceHolder = surfaceView.getHolder();
             surfaceHolder.removeCallback(this);
         }

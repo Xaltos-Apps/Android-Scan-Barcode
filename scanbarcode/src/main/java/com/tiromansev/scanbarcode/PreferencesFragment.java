@@ -16,8 +16,6 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import butterknife.ButterKnife;
-
 public final class PreferencesFragment
         extends PreferenceFragmentCompat
         implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -49,7 +47,6 @@ public final class PreferencesFragment
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.barcode_preferences);
-        ButterKnife.bind(this, getActivity());
 
         PreferenceScreen preferences = getPreferenceScreen();
         checkBoxPrefs = findDecodePrefs(preferences,
