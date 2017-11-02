@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -270,16 +271,19 @@ final class CameraConfigurationUtils {
 
     // Sort by size, descending
     List<Camera.Size> supportedPreviewSizes = new ArrayList<>(rawSupportedSizes);
-    Collections.sort(supportedPreviewSizes, (a, b) -> {
-      int aPixels = a.height * a.width;
-      int bPixels = b.height * b.width;
-      if (bPixels < aPixels) {
-        return -1;
+    Collections.sort(supportedPreviewSizes, new Comparator<Camera.Size>() {
+      @Override
+      public int compare(Camera.Size a, Camera.Size b) {
+        int aPixels = a.height * a.width;
+        int bPixels = b.height * b.width;
+        if (bPixels < aPixels) {
+          return -1;
+        }
+        if (bPixels > aPixels) {
+          return 1;
+        }
+        return 0;
       }
-      if (bPixels > aPixels) {
-        return 1;
-      }
-      return 0;
     });
 
     if (Log.isLoggable(TAG, Log.INFO)) {
