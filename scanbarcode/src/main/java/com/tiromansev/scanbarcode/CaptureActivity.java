@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,14 +44,11 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
 
-    private static final String[] ZXING_URLS = {"http://zxing.appspot.com/scan", "zxing://scan/"};
-
     public CameraManager cameraManager;
     public CaptureActivityHandler handler;
     public Result savedResultToShow;
     public ViewfinderView viewfinderView;
     public TextView statusView;
-    public View resultView;
     public Result lastResult;
     public boolean hasSurface;
     public IntentSource source;
@@ -109,7 +105,6 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
         viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
         viewfinderView.setCameraManager(cameraManager);
 
-        resultView = findViewById(R.id.result_view);
         statusView = (TextView) findViewById(R.id.status_view);
 
         handler = null;
@@ -194,32 +189,10 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
                 source = IntentSource.PRODUCT_SEARCH_LINK;
                 decodeFormats = DecodeFormatManager.PRODUCT_FORMATS;
 
-            } else if (isZXingURL(dataString)) {
-
-                // Scan formats requested in query string (all formats if none specified).
-                // If a return URL is specified, send the results there. Otherwise, handle it ourselves.
-                source = IntentSource.ZXING_LINK;
-                Uri inputUri = Uri.parse(dataString);
-                decodeFormats = DecodeFormatManager.parseDecodeFormats(inputUri);
-                // Allow a sub-set of the hints to be specified by the caller.
-                decodeHints = DecodeHintManager.parseDecodeHints(inputUri);
-
             }
 
             characterSet = intent.getStringExtra(Intents.Scan.CHARACTER_SET);
         }
-    }
-
-    private static boolean isZXingURL(String dataString) {
-        if (dataString == null) {
-            return false;
-        }
-        for (String url : ZXING_URLS) {
-            if (dataString.startsWith(url)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     @Override
@@ -364,7 +337,6 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
     }
 
     private void resetStatusView() {
-        resultView.setVisibility(View.GONE);
         statusView.setText(R.string.zxing_msg_default_status);
         statusView.setVisibility(View.VISIBLE);
         viewfinderView.setVisibility(View.VISIBLE);
