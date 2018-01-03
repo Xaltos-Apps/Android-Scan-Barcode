@@ -11,13 +11,13 @@
 
         <SurfaceView
             android:id="@+id/preview_view"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <com.tiromansev.scanbarcode.ViewfinderView
             android:id="@+id/viewfinder_view"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <ImageButton
             android:layout_width="wrap_content"
