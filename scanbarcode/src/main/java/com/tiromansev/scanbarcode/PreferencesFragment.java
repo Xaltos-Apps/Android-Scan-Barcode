@@ -110,6 +110,13 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
             else {
                 addPreferencesFromResource(R.xml.barcode_external_preferences);
             }
+            initSummaries();
+        }
+    }
+
+    private void initSummaries() {
+        for (int i = 0; i < getPreferenceScreen().getPreferenceCount(); i++) {
+            initSummary(getPreferenceScreen().getPreference(i));
         }
     }
 
