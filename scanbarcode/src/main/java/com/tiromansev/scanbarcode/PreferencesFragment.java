@@ -57,9 +57,7 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
             getActivity().setTitle(R.string.caption_setting_scan);
         }
 
-        for (int i = 0; i < getPreferenceScreen().getPreferenceCount(); i++) {
-            initSummary(getPreferenceScreen().getPreference(i));
-        }
+        initSummaries();
     }
 
     @Override
