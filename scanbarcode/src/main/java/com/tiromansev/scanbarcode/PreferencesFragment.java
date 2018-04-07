@@ -28,7 +28,7 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     public static final String KEY_FRONT_LIGHT_MODE = "preferences_front_light_mode";
     public static final String KEY_AUTO_FOCUS = "preferences_auto_focus";
     public static final String KEY_INVERT_SCAN = "preferences_invert_scan";
-    public static final String KEY_PACKET_SCAN_TYPE_INT = "preferences_packet_scan_type_int";
+    public static final String KEY_SCAN_TYPE_INT = "preferences_scan_type_int";
     public static final String KEY_DISABLE_AUTO_ORIENTATION = "preferences_orientation";
 
     public static final String KEY_DISABLE_CONTINUOUS_FOCUS = "preferences_disable_continuous_focus";
@@ -39,8 +39,7 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.barcode_preferences);
-
+        setBarcodePreferences();
         PreferenceScreen preferences = getPreferenceScreen();
         checkBoxPrefs = findDecodePrefs(preferences,
                 KEY_DECODE_1D_PRODUCT,
@@ -52,7 +51,9 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
         disableLastCheckedPref();
 
         //заголовок
-        getActivity().setTitle(R.string.caption_setting_scan);
+        if (getActivity() != null) {
+            getActivity().setTitle(R.string.caption_setting_scan);
+        }
 
         for (int i = 0; i < getPreferenceScreen().getPreferenceCount(); i++) {
             initSummary(getPreferenceScreen().getPreference(i));
@@ -92,6 +93,22 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         disableLastCheckedPref();
         updatePrefSummary(findPreference(key));
+        if (key.equals(KEY_SCAN_TYPE_INT)) {
+            setBarcodePreferences();
+        }
+    }
+
+    private void setBarcodePreferences() {
+        ListPreference scanPreference = (ListPreference) findPreference(KEY_SCAN_TYPE_INT);
+        if (scanPreference != null) {
+            getPreferenceScreen().removeAll();
+            if (scanPreference.getValue().equals("0")) {
+                addPreferencesFromResource(R.xml.barcode_preferences);
+            }
+            else {
+                addPreferencesFromResource(R.xml.barcode_external_preferences);
+            }
+        }
     }
 
     private void initSummary(Preference p) {

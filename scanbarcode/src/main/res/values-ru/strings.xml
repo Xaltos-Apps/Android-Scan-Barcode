@@ -43,8 +43,8 @@
     <string name="preferences_packet_scan_type_increment">увеличивать количество товара на 1</string>
     <string name="preferences_packet_scan_type_set_quantity">выбор количества товара</string>
     <string name="preferences_packet_scan_type">При нахождении штрих-кода</string>
-    <string name="preferences_scan_type">Тип сканирования</string>
-    <string name="preferences_scan_type_title">Используемый тип сканирования</string>
+    <string name="preferences_scan_type">Источник сканирования</string>
+    <string name="preferences_scan_type_title">Используемый источник сканирования</string>
     <string name="preferences_scan_camera">Камера устройства</string>
     <string name="preferences_scan_external">Внешний сканер</string>
 </resources>
