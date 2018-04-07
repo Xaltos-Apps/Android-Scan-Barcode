@@ -39,7 +39,9 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        addPreferencesFromResource(R.xml.barcode_preferences);
         setBarcodePreferences();
+
         PreferenceScreen preferences = getPreferenceScreen();
         checkBoxPrefs = findDecodePrefs(preferences,
                 KEY_DECODE_1D_PRODUCT,
@@ -108,9 +110,6 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
             else {
                 addPreferencesFromResource(R.xml.barcode_external_preferences);
             }
-        }
-        else {
-            addPreferencesFromResource(R.xml.barcode_preferences);
         }
     }
 
