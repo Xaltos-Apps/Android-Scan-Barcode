@@ -1,24 +1,18 @@
 package com.tiromansev.scanbarcode;
 
-import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.preference.CheckBoxPreference;
-import android.support.v7.preference.EditTextPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceScreen;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public final class PreferencesFragment
-        extends PreferenceFragmentCompat
-        implements SharedPreferences.OnSharedPreferenceChangeListener {
+public final class PreferencesFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private CheckBoxPreference[] checkBoxPrefs;
 
@@ -28,7 +22,6 @@ public final class PreferencesFragment
     public static final String KEY_DECODE_DATA_MATRIX = "preferences_decode_Data_Matrix";
     public static final String KEY_DECODE_AZTEC = "preferences_decode_Aztec";
     public static final String KEY_DECODE_PDF417 = "preferences_decode_PDF417";
-    private static final String KEY_CUSTOM_PRODUCT_SEARCH = "preferences_custom_product_search";
 
     public static final String KEY_PLAY_BEEP = "preferences_play_beep";
     public static final String KEY_VIBRATE = "preferences_vibrate";
@@ -63,12 +56,6 @@ public final class PreferencesFragment
 
         for (int i = 0; i < getPreferenceScreen().getPreferenceCount(); i++) {
             initSummary(getPreferenceScreen().getPreference(i));
-        }
-
-        EditTextPreference customProductSearch = (EditTextPreference)
-                preferences.findPreference(KEY_CUSTOM_PRODUCT_SEARCH);
-        if (customProductSearch != null) {
-            customProductSearch.setOnPreferenceChangeListener(new CustomSearchURLValidator());
         }
     }
 
@@ -141,46 +128,6 @@ public final class PreferencesFragment
         for (CheckBoxPreference pref : checkBoxPrefs) {
             if (pref != null) {
                 pref.setEnabled(!(disable && checked.contains(pref)));
-            }
-        }
-    }
-
-    private class CustomSearchURLValidator implements Preference.OnPreferenceChangeListener {
-        @Override
-        public boolean onPreferenceChange(Preference preference, Object newValue) {
-            if (!isValid(newValue)) {
-                AlertDialog.Builder builder =
-                        new AlertDialog.Builder(PreferencesFragment.this.getActivity(), R.style.AppCompatAlertDialogStyle);
-                builder.setTitle(R.string.zxing_msg_error);
-                builder.setMessage(R.string.zxing_msg_invalid_value);
-                builder.setCancelable(true);
-                builder.show();
-                return false;
-            }
-            return true;
-        }
-
-        private boolean isValid(Object newValue) {
-            // Allow empty/null value
-            if (newValue == null) {
-                return true;
-            }
-            String valueString = newValue.toString();
-            if (valueString.isEmpty()) {
-                return true;
-            }
-            // Before validating, remove custom placeholders, which will not
-            // be considered valid parts of the URL in some locations:
-            // Blank %t and %s:
-            valueString = valueString.replaceAll("%[st]", "");
-            // Blank %f but not if followed by digit or a-f as it may be a hex sequence
-            valueString = valueString.replaceAll("%f(?![0-9a-f])", "");
-            // Require a scheme otherwise:
-            try {
-                URI uri = new URI(valueString);
-                return uri.getScheme() != null;
-            } catch (URISyntaxException use) {
-                return false;
             }
         }
     }
