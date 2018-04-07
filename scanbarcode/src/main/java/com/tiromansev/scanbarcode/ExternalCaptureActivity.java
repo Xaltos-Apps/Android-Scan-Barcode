@@ -15,6 +15,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     public static final String TAB_SYMBOL = "1";
     public static final String SPACE_SYMBOL = "2";
     private String lastSymbol = ENTER_SYMBOL;
+    public BeepManager beepManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +38,26 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         lastSymbol = prefs.getString(PreferencesFragment.KEY_SCAN_LAST_SYMBOL, ENTER_SYMBOL);
+        beepManager = new BeepManager(this);
     }
 
     public void handleBarcode(String rawResult) {
 
+    }
+
+    public void playBeepSoundAndVibrate() {
+        beepManager.playBeepSoundAndVibrate();
+    }
+
+    @Override
+    protected void onPause() {
+        beepManager.close();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        beepManager.updatePrefs();
     }
 }
