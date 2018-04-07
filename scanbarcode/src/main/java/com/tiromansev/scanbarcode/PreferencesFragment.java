@@ -99,7 +99,7 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     }
 
     private void setBarcodePreferences() {
-        ListPreference scanPreference = (ListPreference) findPreference(KEY_SCAN_TYPE_INT);
+        ListPreference scanPreference = (ListPreference) getPreferenceScreen().findPreference(KEY_SCAN_TYPE_INT);
         if (scanPreference != null) {
             getPreferenceScreen().removeAll();
             if (scanPreference.getValue().equals("0")) {
@@ -108,6 +108,9 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
             else {
                 addPreferencesFromResource(R.xml.barcode_external_preferences);
             }
+        }
+        else {
+            addPreferencesFromResource(R.xml.barcode_preferences);
         }
     }
 
