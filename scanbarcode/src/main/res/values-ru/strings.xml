@@ -47,4 +47,8 @@
     <string name="preferences_scan_type_title">Используемый источник сканирования</string>
     <string name="preferences_scan_camera">Камера устройства</string>
     <string name="preferences_scan_external">Внешний сканер</string>
+    <string name="preferences_scan_last_symbol_title">Завершающий символ штрих-кода</string>
+    <string name="preferences_scan_last_symbol_enter">Перевод строки</string>
+    <string name="preferences_scan_last_symbol_tab">Табуляция</string>
+    <string name="preferences_scan_last_symbol_space">Пробел</string>
 </resources>

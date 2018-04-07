@@ -7,6 +7,12 @@
             android:entryValues="@array/preferences_scan_source_types_int"
             android:key="preferences_scan_type_int"
             android:title="@string/preferences_scan_type_title" />
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/preferences_scan_last_symbols"
+            android:entryValues="@array/preferences_scan_last_symbols_int"
+            android:key="preferences_scan_last_symbol"
+            android:title="@string/preferences_scan_last_symbol_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/preferences_packet_mode_title">
         <ListPreference

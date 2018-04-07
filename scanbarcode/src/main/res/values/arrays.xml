@@ -26,4 +26,14 @@
         <item>"0"</item>
         <item>"1"</item>
     </string-array>
+    <string-array name="preferences_scan_last_symbols">
+        <item>@string/preferences_scan_last_symbol_enter</item>
+        <item>@string/preferences_scan_last_symbol_tab</item>
+        <item>@string/preferences_scan_last_symbol_space</item>
+    </string-array>
+    <string-array name="preferences_scan_last_symbols_int">
+        <item>"0"</item>
+        <item>"1"</item>
+        <item>"2"</item>
+    </string-array>
 </resources>

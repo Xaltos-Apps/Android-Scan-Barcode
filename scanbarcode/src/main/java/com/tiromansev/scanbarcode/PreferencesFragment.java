@@ -29,6 +29,7 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     public static final String KEY_AUTO_FOCUS = "preferences_auto_focus";
     public static final String KEY_INVERT_SCAN = "preferences_invert_scan";
     public static final String KEY_SCAN_TYPE_INT = "preferences_scan_type_int";
+    public static final String KEY_SCAN_LAST_SYMBOL = "preferences_scan_last_symbol";
     public static final String KEY_DISABLE_AUTO_ORIENTATION = "preferences_orientation";
 
     public static final String KEY_DISABLE_CONTINUOUS_FOCUS = "preferences_disable_continuous_focus";
