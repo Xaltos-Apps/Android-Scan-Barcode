@@ -60,4 +60,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         super.onResume();
         beepManager.updatePrefs();
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

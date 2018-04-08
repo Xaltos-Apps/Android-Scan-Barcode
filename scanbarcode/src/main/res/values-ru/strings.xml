@@ -51,4 +51,5 @@
     <string name="preferences_scan_last_symbol_enter">Перевод строки</string>
     <string name="preferences_scan_last_symbol_tab">Табуляция</string>
     <string name="preferences_scan_last_symbol_space">Пробел</string>
+    <string name="caption_external_scan_description">Выполняется сканирование...</string>
 </resources>
