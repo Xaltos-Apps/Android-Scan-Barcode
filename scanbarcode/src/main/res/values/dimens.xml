@@ -4,4 +4,5 @@
     <dimen name="half_padding">4dip</dimen>
     <dimen name="spinner_item_height">48dp</dimen>
     <dimen name="round_button_padding">5dp</dimen>
+    <dimen name="scan_image_size">200dp</dimen>
 </resources>
