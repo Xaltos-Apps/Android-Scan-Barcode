@@ -34,8 +34,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
                 boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
                 if (enterHandled || tabHandled || spaceHandled) {
                     handleBarcode(edtBarcode.getText().toString());
+                    edtBarcode.setText(null);
+                    return true;
                 }
-                return true;
+                return false;
             }
         });
 
