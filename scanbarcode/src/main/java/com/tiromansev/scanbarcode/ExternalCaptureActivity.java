@@ -26,6 +26,9 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         edtBarcode.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    finish();
+                }
                 boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
                 boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
                 boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
@@ -59,6 +62,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         beepManager.updatePrefs();
+        setFocus();
+    }
+
+    public void setFocus() {
         edtBarcode.requestFocus();
         edtBarcode.selectAll();
     }

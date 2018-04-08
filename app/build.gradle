@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.tiromansev.scanbarcode.example"
         minSdkVersion 15
@@ -18,7 +18,7 @@ android {
     }
 }
 
-def support = '26.1.0'
+def support = '27.1.1'
 
 dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -27,4 +27,5 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$support"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+    implementation project(':scanbarcode')
 }
