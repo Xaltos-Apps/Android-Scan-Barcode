@@ -59,6 +59,8 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         beepManager.updatePrefs();
+        edtBarcode.requestFocus();
+        edtBarcode.selectAll();
     }
 
     @Override
