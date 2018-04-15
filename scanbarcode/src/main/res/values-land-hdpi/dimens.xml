@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <dimen name="scan_image_size">150dp</dimen>
+    <dimen name="scan_image_size">60dp</dimen>
 </resources>

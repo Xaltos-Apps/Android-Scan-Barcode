@@ -4,5 +4,7 @@
     <dimen name="half_padding">4dip</dimen>
     <dimen name="spinner_item_height">48dp</dimen>
     <dimen name="round_button_padding">5dp</dimen>
-    <dimen name="scan_image_size">200dp</dimen>
+    <dimen name="scan_image_size">150dp</dimen>
+    <dimen name="caption_top_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
 </resources>

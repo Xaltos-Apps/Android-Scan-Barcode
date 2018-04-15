@@ -52,4 +52,5 @@
     <string name="preferences_scan_last_symbol_tab">Табуляция</string>
     <string name="preferences_scan_last_symbol_space">Пробел</string>
     <string name="caption_external_scan_description">Выполняйте сканирование штрих-кодов…</string>
+    <string name="caption_external_scan">Используйте внешний сканер</string>
 </resources>

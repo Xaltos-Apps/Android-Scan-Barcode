@@ -1,6 +1,7 @@
 package com.tiromansev.scanbarcode;
 
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceManager;
@@ -22,6 +23,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_external_capture);
         edtBarcode = findViewById(R.id.edtBarcode);
+        edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
 
         edtBarcode.setOnKeyListener(new View.OnKeyListener() {
             @Override
