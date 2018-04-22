@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode;
+package com.tiromansev.scanbarcode.zxing;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,8 +8,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 
-import com.tiromansev.scanbarcode.camera.CameraManager;
-import com.tiromansev.scanbarcode.camera.FrontLightMode;
+import com.tiromansev.scanbarcode.zxing.camera.CameraManager;
+import com.tiromansev.scanbarcode.zxing.camera.FrontLightMode;
 
 /**
  * Detects ambient light and switches on the front light when very dark, and off again when sufficiently light.
@@ -17,7 +17,7 @@ import com.tiromansev.scanbarcode.camera.FrontLightMode;
  * @author Sean Owen
  * @author Nikolaus Huber
  */
-final class AmbientLightManager implements SensorEventListener {
+public final class AmbientLightManager implements SensorEventListener {
 
   private static final float TOO_DARK_LUX = 45.0f;
   private static final float BRIGHT_ENOUGH_LUX = 450.0f;
@@ -26,11 +26,11 @@ final class AmbientLightManager implements SensorEventListener {
   private CameraManager cameraManager;
   private Sensor lightSensor;
 
-  AmbientLightManager(Context context) {
+  public AmbientLightManager(Context context) {
     this.context = context;
   }
 
-  void start(CameraManager cameraManager) {
+  public void start(CameraManager cameraManager) {
     this.cameraManager = cameraManager;
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
     if (FrontLightMode.readPref(sharedPrefs) == FrontLightMode.AUTO) {
@@ -42,7 +42,7 @@ final class AmbientLightManager implements SensorEventListener {
     }
   }
 
-  void stop() {
+  public void stop() {
     if (lightSensor != null) {
       SensorManager sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
       sensorManager.unregisterListener(this);

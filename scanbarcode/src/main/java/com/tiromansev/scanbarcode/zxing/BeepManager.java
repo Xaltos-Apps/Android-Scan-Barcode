@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode;
+package com.tiromansev.scanbarcode.zxing;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,13 +10,16 @@ import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.tiromansev.scanbarcode.PreferencesFragment;
+import com.tiromansev.scanbarcode.R;
+
 import java.io.Closeable;
 import java.io.IOException;
 
 /**
- * Manages beeps and vibrations for {@link CaptureActivity}.
+ * Manages beeps and vibrations for {@link ZxingCaptureActivity}.
  */
-final class BeepManager implements
+public final class BeepManager implements
     MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener, Closeable {
 
   private static final String TAG = BeepManager.class.getSimpleName();
@@ -29,13 +32,13 @@ final class BeepManager implements
   private boolean playBeep;
   private boolean vibrate;
 
-  BeepManager(Activity activity) {
+  public BeepManager(Activity activity) {
     this.activity = activity;
     this.mediaPlayer = null;
     updatePrefs();
   }
 
-  synchronized void updatePrefs() {
+  public synchronized void updatePrefs() {
     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
     playBeep = shouldBeep(prefs, activity);
     vibrate = prefs.getBoolean(PreferencesFragment.KEY_VIBRATE, false);
@@ -47,7 +50,7 @@ final class BeepManager implements
     }
   }
 
-  synchronized void playBeepSoundAndVibrate() {
+  public synchronized void playBeepSoundAndVibrate() {
     if (playBeep && mediaPlayer != null) {
       mediaPlayer.start();
     }

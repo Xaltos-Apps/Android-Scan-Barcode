@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/preferences_scan_type">
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/preferences_scan_source_types"
+            android:entryValues="@array/preferences_scan_source_types_int"
+            android:key="preferences_scan_type_int"
+            android:title="@string/preferences_scan_type_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_packet_mode_title">
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/preferences_scan_types"
+            android:entryValues="@array/preferences_scan_types_int"
+            android:key="preferences_packet_scan_type_int"
+            android:title="@string/preferences_packet_scan_type" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/zxing_preferences_actions_title">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_play_beep"
+            android:title="@string/zxing_preferences_play_beep_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preferences_vibrate"
+            android:title="@string/zxing_preferences_vibrate_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

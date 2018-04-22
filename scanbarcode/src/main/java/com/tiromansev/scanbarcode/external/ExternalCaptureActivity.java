@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode;
+package com.tiromansev.scanbarcode.external;
 
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
@@ -8,6 +8,10 @@ import android.support.v7.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+
+import com.tiromansev.scanbarcode.zxing.BeepManager;
+import com.tiromansev.scanbarcode.PreferencesFragment;
+import com.tiromansev.scanbarcode.R;
 
 public class ExternalCaptureActivity extends AppCompatActivity {
 

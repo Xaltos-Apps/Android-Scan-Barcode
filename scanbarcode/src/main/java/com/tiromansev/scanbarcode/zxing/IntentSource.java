@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode;
+package com.tiromansev.scanbarcode.zxing;
 
 enum IntentSource {
 

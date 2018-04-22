@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode.camera.open;
+package com.tiromansev.scanbarcode.zxing.camera.open;
 
 import android.hardware.Camera;
 import android.util.Log;

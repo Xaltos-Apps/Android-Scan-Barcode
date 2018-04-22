@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode;
+package com.tiromansev.scanbarcode.zxing;
 
 /**
  * This class provides the constants to use when sending an Intent to Barcode Scanner.

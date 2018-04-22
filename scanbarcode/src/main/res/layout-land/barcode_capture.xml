@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+  <com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview
+      android:id="@+id/preview"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <com.tiromansev.scanbarcode.vision.camera.GraphicOverlay
+        android:id="@+id/graphicOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+  </com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview>
+
+  <ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:srcCompat="@mipmap/ic_light_off"
+      android:id="@+id/btnLight"
+      android:background="@color/transparent"
+      android:layout_margin="@dimen/round_button_padding"
+      android:padding="@dimen/round_button_padding" />
+
+  <TextView
+      android:id="@+id/tv_caption"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:gravity="center_vertical|center_horizontal"
+      android:text="@string/vision_msg_default_status"
+      android:textColor="@android:color/white" />
+
+</RelativeLayout>

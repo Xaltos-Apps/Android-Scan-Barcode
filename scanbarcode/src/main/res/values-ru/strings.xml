@@ -53,4 +53,7 @@
     <string name="preferences_scan_last_symbol_space">Пробел</string>
     <string name="caption_external_scan_description">Выполняйте сканирование штрих-кодов…</string>
     <string name="caption_external_scan">Используйте внешний сканер</string>
+
+    <string name="vision_low_storage_error">Недостаточно места на карте устройства для скачивания зависимостей</string>
+    <string name="vision_msg_default_status">Нажмите на экран для сканирования. Используйте движение двумя пальцами для приближения/удаления камеры</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode;
+package com.tiromansev.scanbarcode.zxing;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,7 +11,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.google.zxing.ResultPoint;
-import com.tiromansev.scanbarcode.camera.CameraManager;
+import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.zxing.camera.CameraManager;
 
 import java.util.ArrayList;
 import java.util.List;

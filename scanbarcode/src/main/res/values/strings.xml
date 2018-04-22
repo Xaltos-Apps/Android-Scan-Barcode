@@ -43,4 +43,7 @@
     <string name="preferences_packet_scan_type_increment">Autoincrement quantity by 1 (+1)</string>
     <string name="preferences_packet_scan_type_set_quantity">Set quantity manually</string>
     <string name="preferences_packet_scan_type">After each scan</string>
+
+    <string name="vision_low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="vision_msg_default_status">Tap to capture. Pinch/Stretch to zoom</string>
 </resources>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name_scan">Android-Scan-Barcode</string>
+    <string name="button_scan_caption">Scan</string>
 </resources>

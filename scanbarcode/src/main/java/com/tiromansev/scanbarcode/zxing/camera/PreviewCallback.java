@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode.camera;
+package com.tiromansev.scanbarcode.zxing.camera;
 
 import android.graphics.Point;
 import android.hardware.Camera;

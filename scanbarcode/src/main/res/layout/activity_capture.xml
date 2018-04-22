@@ -7,14 +7,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".camera.CaptureActivity">
+        tools:context=".zxing.camera.CaptureActivity">
 
         <SurfaceView
             android:id="@+id/preview_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-        <com.tiromansev.scanbarcode.ViewfinderView
+        <com.tiromansev.scanbarcode.zxing.ViewfinderView
             android:id="@+id/viewfinder_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
@@ -24,8 +24,7 @@
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/ic_light_off"
             android:id="@+id/btnLight"
-            android:layout_weight="1"
-            android:background="@drawable/round_button"
+            android:background="@color/transparent"
             android:layout_margin="@dimen/round_button_padding"
             android:padding="@dimen/round_button_padding" />
 

@@ -2,25 +2,23 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+  <SurfaceView android:id="@+id/preview_view"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"/>
+
+  <com.tiromansev.scanbarcode.zxing.ViewfinderView
+      android:id="@+id/viewfinder_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+
   <ImageButton
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       app:srcCompat="@mipmap/ic_light_off"
       android:id="@+id/btnLight"
-      android:layout_weight="1"
-      android:background="@drawable/round_button"
+      android:background="@color/transparent"
       android:layout_margin="@dimen/round_button_padding"
-      android:padding="@dimen/round_button_padding"
-      android:elevation="3dp" />
-
-  <SurfaceView android:id="@+id/preview_view"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"/>
-
-  <com.tiromansev.scanbarcode.ViewfinderView
-      android:id="@+id/viewfinder_view"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"/>
+      android:padding="@dimen/round_button_padding" />
 
   <TextView
       android:id="@+id/status_view"

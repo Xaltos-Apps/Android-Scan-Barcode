@@ -16,6 +16,10 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
 
     private CheckBoxPreference[] checkBoxPrefs;
 
+    public static final String CAMERA_ZXING_SCANNER = "0";
+    public static final String EXTERNAL_USB_SCANNER = "1";
+    public static final String CAMERA_VISION_SCANNER = "2";
+
     public static final String KEY_DECODE_1D_PRODUCT = "preferences_decode_1D_product";
     public static final String KEY_DECODE_1D_INDUSTRIAL = "preferences_decode_1D_industrial";
     public static final String KEY_DECODE_QR = "preferences_decode_QR";
@@ -40,8 +44,8 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.barcode_preferences);
-        setBarcodePreferences();
+        addPreferencesFromResource(R.xml.barcode_zxing_preferences);
+        setBarcodePreferences(CAMERA_VISION_SCANNER);//default vision scan type
 
         PreferenceScreen preferences = getPreferenceScreen();
         checkBoxPrefs = findDecodePrefs(preferences,
@@ -95,22 +99,25 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
         disableLastCheckedPref();
         updatePrefSummary(findPreference(key));
         if (key.equals(KEY_SCAN_TYPE_INT)) {
-            setBarcodePreferences();
+            ListPreference scanPreference = (ListPreference) getPreferenceScreen().findPreference(KEY_SCAN_TYPE_INT);
+            if (scanPreference != null) {
+                setBarcodePreferences(scanPreference.getValue());
+            }
         }
     }
 
-    private void setBarcodePreferences() {
-        ListPreference scanPreference = (ListPreference) getPreferenceScreen().findPreference(KEY_SCAN_TYPE_INT);
-        if (scanPreference != null) {
-            getPreferenceScreen().removeAll();
-            if (scanPreference.getValue().equals("0")) {
-                addPreferencesFromResource(R.xml.barcode_preferences);
-            }
-            else {
-                addPreferencesFromResource(R.xml.barcode_external_preferences);
-            }
-            initSummaries();
+    private void setBarcodePreferences(String scanType) {
+        getPreferenceScreen().removeAll();
+        if (scanType.equals(CAMERA_ZXING_SCANNER)) {
+            addPreferencesFromResource(R.xml.barcode_zxing_preferences);
         }
+        else if (scanType.equals(EXTERNAL_USB_SCANNER)) {
+            addPreferencesFromResource(R.xml.barcode_external_preferences);
+        }
+        else if (scanType.equals(CAMERA_VISION_SCANNER)) {
+            addPreferencesFromResource(R.xml.barcode_vision_preferences);
+        }
+        initSummaries();
     }
 
     private void initSummaries() {

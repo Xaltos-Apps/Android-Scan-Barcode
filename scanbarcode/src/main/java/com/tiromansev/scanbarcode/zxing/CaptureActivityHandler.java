@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode;
+package com.tiromansev.scanbarcode.zxing;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,8 @@ import android.os.Message;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;
-import com.tiromansev.scanbarcode.camera.CameraManager;
+import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.zxing.camera.CameraManager;
 
 import java.util.Collection;
 import java.util.Map;
@@ -23,7 +24,7 @@ import java.util.Map;
  */
 public final class CaptureActivityHandler extends Handler {
 
-  private final CaptureActivity activity;
+  private final ZxingCaptureActivity activity;
   private final DecodeThread decodeThread;
   private State state;
   private final CameraManager cameraManager;
@@ -34,7 +35,7 @@ public final class CaptureActivityHandler extends Handler {
     DONE
   }
 
-  public CaptureActivityHandler(CaptureActivity activity,
+  public CaptureActivityHandler(ZxingCaptureActivity activity,
                                 Collection<BarcodeFormat> decodeFormats,
                                 Map<DecodeHintType, ?> baseHints,
                                 String characterSet,

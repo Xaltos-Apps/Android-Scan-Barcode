@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode;
+package com.tiromansev.scanbarcode.zxing;
 
 import com.google.zxing.ResultPoint;
 import com.google.zxing.ResultPointCallback;

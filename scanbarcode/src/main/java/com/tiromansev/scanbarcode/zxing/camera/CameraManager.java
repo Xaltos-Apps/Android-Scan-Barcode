@@ -1,4 +1,4 @@
-package com.tiromansev.scanbarcode.camera;
+package com.tiromansev.scanbarcode.zxing.camera;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -10,8 +10,8 @@ import android.view.SurfaceHolder;
 
 
 import com.google.zxing.PlanarYUVLuminanceSource;
-import com.tiromansev.scanbarcode.CaptureActivity;
-import com.tiromansev.scanbarcode.camera.open.OpenCameraInterface;
+import com.tiromansev.scanbarcode.zxing.ZxingCaptureActivity;
+import com.tiromansev.scanbarcode.zxing.camera.open.OpenCameraInterface;
 
 import java.io.IOException;
 
@@ -157,7 +157,7 @@ public final class CameraManager {
   }
 
   /**
-   * Convenience method for {@link CaptureActivity}
+   * Convenience method for {@link ZxingCaptureActivity}
    *
    * @param newSetting if {@code true}, light should be turned on if currently off. And vice versa.
    */
