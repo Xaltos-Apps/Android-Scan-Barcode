@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/preferences_scan_type">
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="2"
             android:entries="@array/preferences_scan_source_types"
             android:entryValues="@array/preferences_scan_source_types_int"
             android:key="preferences_scan_type_int"
