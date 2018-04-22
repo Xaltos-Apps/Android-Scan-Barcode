@@ -34,5 +34,9 @@
         android:key="preferences_front_light_mode"
         android:summary="@string/zxing_preferences_front_light_summary"
         android:title="@string/zxing_preferences_front_light_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_auto_focus"
+            android:title="@string/zxing_preferences_auto_focus_title" />
     </PreferenceCategory>
 </PreferenceScreen>

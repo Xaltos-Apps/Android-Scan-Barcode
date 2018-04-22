@@ -35,13 +35,11 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.vision.MultiProcessor;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
-import com.tiromansev.scanbarcode.zxing.AmbientLightManager;
-import com.tiromansev.scanbarcode.zxing.BeepManager;
 import com.tiromansev.scanbarcode.R;
-import com.tiromansev.scanbarcode.zxing.camera.CameraManager;
 import com.tiromansev.scanbarcode.vision.camera.CameraSource;
 import com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview;
 import com.tiromansev.scanbarcode.vision.camera.GraphicOverlay;
+import com.tiromansev.scanbarcode.zxing.BeepManager;
 
 import java.io.IOException;
 
@@ -61,7 +59,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeG
     public static final String UseFlash = "UseFlash";
     public static final String BarcodeObject = "Barcode";
 
-    private CameraSource mCameraSource;
+    public CameraSource mCameraSource;
     private CameraSourcePreview mPreview;
     private GraphicOverlay<BarcodeGraphic> mGraphicOverlay;
 
@@ -69,8 +67,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeG
     private ScaleGestureDetector scaleGestureDetector;
     private GestureDetector gestureDetector;
     public BeepManager beepManager;
-    public AmbientLightManager ambientLightManager;
-    public CameraManager cameraManager;
 
     /**
      * Initializes the UI and creates the detector pipeline.
@@ -93,8 +89,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeG
         scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
 
         beepManager = new BeepManager(this);
-        ambientLightManager = new AmbientLightManager(this);
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -198,9 +192,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeG
         if (mPreview != null) {
             mPreview.stop();
         }
-        ambientLightManager.stop();
         beepManager.close();
-        cameraManager.closeDriver();
     }
 
     /**
@@ -241,9 +233,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeG
             }
         }
 
-        cameraManager = new CameraManager(getApplication());
         beepManager.updatePrefs();
-        ambientLightManager.start(cameraManager);
     }
 
     /**

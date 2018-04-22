@@ -44,6 +44,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -357,6 +359,62 @@ public class CameraSource {
             mProcessingThread.start();
         }
         return this;
+    }
+
+    boolean getTorchState() {
+        if (mCamera != null) {
+            Camera.Parameters parameters = mCamera.getParameters();
+            if (parameters != null) {
+                String flashMode = parameters.getFlashMode();
+                return flashMode != null &&
+                        (Camera.Parameters.FLASH_MODE_ON.equals(flashMode) ||
+                                Camera.Parameters.FLASH_MODE_TORCH.equals(flashMode));
+            }
+        }
+        return false;
+    }
+
+    private static String findSettableValue(String name,
+                                            Collection<String> supportedValues,
+                                            String... desiredValues) {
+        Log.i(TAG, "Requesting " + name + " value from among: " + Arrays.toString(desiredValues));
+        Log.i(TAG, "Supported " + name + " values: " + supportedValues);
+        if (supportedValues != null) {
+            for (String desiredValue : desiredValues) {
+                if (supportedValues.contains(desiredValue)) {
+                    Log.i(TAG, "Can set " + name + " to: " + desiredValue);
+                    return desiredValue;
+                }
+            }
+        }
+        Log.i(TAG, "No supported values match");
+        return null;
+    }
+
+    public synchronized void setTorch(boolean on) {
+        if (on != getTorchState()) {
+            Camera.Parameters parameters = mCamera.getParameters();
+            List<String> supportedFlashModes = parameters.getSupportedFlashModes();
+            String flashMode;
+            if (on) {
+                flashMode = findSettableValue("flash mode",
+                        supportedFlashModes,
+                        Camera.Parameters.FLASH_MODE_TORCH,
+                        Camera.Parameters.FLASH_MODE_ON);
+            } else {
+                flashMode = findSettableValue("flash mode",
+                        supportedFlashModes,
+                        Camera.Parameters.FLASH_MODE_OFF);
+            }
+            if (flashMode != null) {
+                if (flashMode.equals(parameters.getFlashMode())) {
+                    Log.i(TAG, "Flash mode already set to " + flashMode);
+                } else {
+                    Log.i(TAG, "Setting flash mode to " + flashMode);
+                    parameters.setFlashMode(flashMode);
+                }
+            }
+        }
     }
 
     /**
