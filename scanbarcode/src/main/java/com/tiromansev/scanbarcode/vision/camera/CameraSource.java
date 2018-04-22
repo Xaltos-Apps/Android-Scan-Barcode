@@ -44,8 +44,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -364,18 +362,13 @@ public class CameraSource {
     public synchronized void setTorch(boolean on) {
         Camera.Parameters parameters = mCamera.getParameters();
         mFlashMode = on ? Camera.Parameters.FLASH_MODE_TORCH : null;
-        if (mFlashMode != null) {
-            if (parameters.getSupportedFlashModes() != null) {
-                if (parameters.getSupportedFlashModes().contains(mFlashMode)) {
-                    parameters.setFlashMode(mFlashMode);
-                } else {
-                    Log.i(TAG, "Camera flash mode: " + mFlashMode + " is not supported on this device.");
-                }
+        if (parameters.getSupportedFlashModes() != null) {
+            if (parameters.getSupportedFlashModes().contains(mFlashMode)) {
+                parameters.setFlashMode(mFlashMode);
+            } else {
+                Log.i(TAG, "Camera flash mode: " + mFlashMode + " is not supported on this device.");
             }
         }
-
-        // setting mFlashMode to the one set in the params
-        mFlashMode = parameters.getFlashMode();
         mCamera.setParameters(parameters);
     }
 
