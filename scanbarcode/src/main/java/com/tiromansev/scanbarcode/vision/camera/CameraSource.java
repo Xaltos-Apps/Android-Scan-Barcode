@@ -361,60 +361,22 @@ public class CameraSource {
         return this;
     }
 
-    boolean getTorchState() {
-        if (mCamera != null) {
-            Camera.Parameters parameters = mCamera.getParameters();
-            if (parameters != null) {
-                String flashMode = parameters.getFlashMode();
-                return flashMode != null &&
-                        (Camera.Parameters.FLASH_MODE_ON.equals(flashMode) ||
-                                Camera.Parameters.FLASH_MODE_TORCH.equals(flashMode));
-            }
-        }
-        return false;
-    }
-
-    private static String findSettableValue(String name,
-                                            Collection<String> supportedValues,
-                                            String... desiredValues) {
-        Log.i(TAG, "Requesting " + name + " value from among: " + Arrays.toString(desiredValues));
-        Log.i(TAG, "Supported " + name + " values: " + supportedValues);
-        if (supportedValues != null) {
-            for (String desiredValue : desiredValues) {
-                if (supportedValues.contains(desiredValue)) {
-                    Log.i(TAG, "Can set " + name + " to: " + desiredValue);
-                    return desiredValue;
-                }
-            }
-        }
-        Log.i(TAG, "No supported values match");
-        return null;
-    }
-
     public synchronized void setTorch(boolean on) {
-        if (on != getTorchState()) {
-            Camera.Parameters parameters = mCamera.getParameters();
-            List<String> supportedFlashModes = parameters.getSupportedFlashModes();
-            String flashMode;
-            if (on) {
-                flashMode = findSettableValue("flash mode",
-                        supportedFlashModes,
-                        Camera.Parameters.FLASH_MODE_TORCH,
-                        Camera.Parameters.FLASH_MODE_ON);
-            } else {
-                flashMode = findSettableValue("flash mode",
-                        supportedFlashModes,
-                        Camera.Parameters.FLASH_MODE_OFF);
-            }
-            if (flashMode != null) {
-                if (flashMode.equals(parameters.getFlashMode())) {
-                    Log.i(TAG, "Flash mode already set to " + flashMode);
+        Camera.Parameters parameters = mCamera.getParameters();
+        mFlashMode = on ? Camera.Parameters.FLASH_MODE_TORCH : null;
+        if (mFlashMode != null) {
+            if (parameters.getSupportedFlashModes() != null) {
+                if (parameters.getSupportedFlashModes().contains(mFlashMode)) {
+                    parameters.setFlashMode(mFlashMode);
                 } else {
-                    Log.i(TAG, "Setting flash mode to " + flashMode);
-                    parameters.setFlashMode(flashMode);
+                    Log.i(TAG, "Camera flash mode: " + mFlashMode + " is not supported on this device.");
                 }
             }
         }
+
+        // setting mFlashMode to the one set in the params
+        mFlashMode = parameters.getFlashMode();
+        mCamera.setParameters(parameters);
     }
 
     /**
