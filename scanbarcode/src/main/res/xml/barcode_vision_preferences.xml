@@ -27,8 +27,10 @@
             android:title="@string/zxing_preferences_vibrate_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/zxing_preferences_general_title">
-        <CheckBoxPreference
-            android:defaultValue="false"
+        <ListPreference
+            android:defaultValue="OFF"
+            android:entries="@array/preferences_front_light_vision_options"
+            android:entryValues="@array/preferences_front_light_vision_values"
             android:key="preferences_front_light_vision_mode"
             android:summary="@string/zxing_preferences_front_light_summary"
             android:title="@string/zxing_preferences_front_light_title" />
