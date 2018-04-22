@@ -362,12 +362,17 @@ public class CameraSource {
     public synchronized void setTorch(boolean on) {
         Camera.Parameters parameters = mCamera.getParameters();
         mFlashMode = on ? Camera.Parameters.FLASH_MODE_TORCH : null;
-        if (parameters.getSupportedFlashModes() != null) {
-            if (parameters.getSupportedFlashModes().contains(mFlashMode)) {
-                parameters.setFlashMode(mFlashMode);
-            } else {
-                Log.i(TAG, "Camera flash mode: " + mFlashMode + " is not supported on this device.");
+        if (on) {
+            if (parameters.getSupportedFlashModes() != null) {
+                if (parameters.getSupportedFlashModes().contains(mFlashMode)) {
+                    parameters.setFlashMode(mFlashMode);
+                } else {
+                    Log.i(TAG, "Camera flash mode: " + mFlashMode + " is not supported on this device.");
+                }
             }
+        }
+        else {
+            parameters.setFlashMode(mFlashMode);
         }
         mCamera.setParameters(parameters);
     }
