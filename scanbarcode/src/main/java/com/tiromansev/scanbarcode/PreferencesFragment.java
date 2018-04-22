@@ -45,9 +45,9 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.barcode_zxing_preferences);
-        setBarcodePreferences(CAMERA_VISION_SCANNER);//default vision scan type
-
         PreferenceScreen preferences = getPreferenceScreen();
+        setBarcodePreferences();
+
         checkBoxPrefs = findDecodePrefs(preferences,
                 KEY_DECODE_1D_PRODUCT,
                 KEY_DECODE_1D_INDUSTRIAL,
@@ -99,23 +99,28 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
         disableLastCheckedPref();
         updatePrefSummary(findPreference(key));
         if (key.equals(KEY_SCAN_TYPE_INT)) {
-            ListPreference scanPreference = (ListPreference) getPreferenceScreen().findPreference(KEY_SCAN_TYPE_INT);
-            if (scanPreference != null) {
-                setBarcodePreferences(scanPreference.getValue());
-            }
+            setBarcodePreferences();
         }
     }
 
-    private void setBarcodePreferences(String scanType) {
+    private void setBarcodePreferences() {
+        String scanType = CAMERA_VISION_SCANNER;
+        ListPreference scanPreference = (ListPreference) getPreferenceScreen().findPreference(KEY_SCAN_TYPE_INT);
+        if (scanPreference != null) {
+           scanType = scanPreference.getValue();
+        }
+
         getPreferenceScreen().removeAll();
-        if (scanType.equals(CAMERA_ZXING_SCANNER)) {
-            addPreferencesFromResource(R.xml.barcode_zxing_preferences);
-        }
-        else if (scanType.equals(EXTERNAL_USB_SCANNER)) {
-            addPreferencesFromResource(R.xml.barcode_external_preferences);
-        }
-        else if (scanType.equals(CAMERA_VISION_SCANNER)) {
-            addPreferencesFromResource(R.xml.barcode_vision_preferences);
+        switch (scanType) {
+            case CAMERA_ZXING_SCANNER:
+                addPreferencesFromResource(R.xml.barcode_zxing_preferences);
+                break;
+            case EXTERNAL_USB_SCANNER:
+                addPreferencesFromResource(R.xml.barcode_external_preferences);
+                break;
+            case CAMERA_VISION_SCANNER:
+                addPreferencesFromResource(R.xml.barcode_vision_preferences);
+                break;
         }
         initSummaries();
     }
