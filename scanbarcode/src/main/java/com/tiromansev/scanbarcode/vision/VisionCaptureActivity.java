@@ -16,6 +16,7 @@
 package com.tiromansev.scanbarcode.vision;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -28,6 +29,8 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -75,6 +78,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeG
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.barcode_capture);
+        hideStatusBar();
 
         mPreview = findViewById(R.id.preview);
         mGraphicOverlay = findViewById(R.id.graphicOverlay);
@@ -91,6 +95,24 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeG
         beepManager = new BeepManager(this);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
+        }
+    }
+
+    private void hideStatusBar() {
+        if (Build.VERSION.SDK_INT < 16) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
+        else {
+            View decorView = getWindow().getDecorView();
+            // Hide the status bar.
+            int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+            decorView.setSystemUiVisibility(uiOptions);
+            // Remember that you should never show the action bar if the
+            // status bar is hidden, so hide that too if necessary.
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().hide();
+            }
         }
     }
 
