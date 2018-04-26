@@ -56,6 +56,6 @@
     <string name="caption_external_scan">Используйте внешний сканер</string>
 
     <string name="vision_low_storage_error">Недостаточно места на карте устройства для скачивания зависимостей</string>
-    <string name="vision_msg_default_status">Нажмите на экран для сканирования. Используйте движение двумя пальцами для приближения/удаления камеры</string>
+    <string name="vision_msg_default_status">Чтобы сканировать штрих-код, наведите на него камеру. Используйте движение двумя пальцами для приближения/удаления камеры</string>
     <string name="vision_show_rect_title">Показывать прямоугольник вокруг штрих-кода при сканировании</string>
 </resources>
