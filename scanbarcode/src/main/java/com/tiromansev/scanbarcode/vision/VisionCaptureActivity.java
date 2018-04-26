@@ -101,7 +101,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     public void onRetrieved(final Barcode barcode) {
         Log.d(TAG, "Barcode read: " + barcode.displayValue);
         handleDecodeInternally(barcode.displayValue);
-        barcodeCapture.stopScanning();
+        barcodeCapture.pause();
     }
 
     @Override
@@ -130,7 +130,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     }
 
     public void restartPreviewAfterDelay(long delayMS) {
-        barcodeCapture.pause();
         Log.d("scan_delay", "stop scanning with delay = " + delayMS);
         handler.sendEmptyMessageDelayed(1, delayMS);
     }
@@ -138,7 +137,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     public void startCapture() {
         Log.d("scan_delay", "refresh after pause");
         barcodeCapture.resume();
-        barcodeCapture.refresh(true);
     }
 
 }
