@@ -29,6 +29,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     private static final String TAG = "BarcodeMain";
     public BarcodeCapture barcodeCapture;
     public BeepManager beepManager;
+    private VisionActivityHandler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
                 .shouldAutoFocus(autoFocus);
         barcodeCapture.refresh(true);
         beepManager = new BeepManager(this);
+        handler = new VisionActivityHandler(this);
     }
 
     private void hideStatusBar() {
@@ -129,13 +131,11 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
 
     public void restartPreviewAfterDelay(long delayMS) {
         barcodeCapture.pause();
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                barcodeCapture.resume();
-            }
-        }, delayMS);
+        handler.sendEmptyMessageDelayed(1, delayMS);
+    }
+
+    public void startCapture() {
+        barcodeCapture.resume();
     }
 
 }
