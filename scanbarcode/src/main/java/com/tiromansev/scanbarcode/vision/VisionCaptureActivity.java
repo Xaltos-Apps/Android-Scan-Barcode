@@ -26,7 +26,7 @@ import xyz.belvi.mobilevisionbarcodescanner.BarcodeRetriever;
 public class VisionCaptureActivity extends AppCompatActivity implements BarcodeRetriever {
 
     private static final String TAG = "BarcodeMain";
-    private BarcodeCapture barcodeCapture;
+    public BarcodeCapture barcodeCapture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
