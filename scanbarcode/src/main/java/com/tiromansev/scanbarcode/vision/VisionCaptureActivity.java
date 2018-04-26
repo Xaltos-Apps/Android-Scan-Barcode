@@ -100,8 +100,8 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     @Override
     public void onRetrieved(final Barcode barcode) {
         Log.d(TAG, "Barcode read: " + barcode.displayValue);
-        handleDecodeInternally(barcode.displayValue);
         barcodeCapture.pause();
+        handleDecodeInternally(barcode.displayValue);
     }
 
     @Override
