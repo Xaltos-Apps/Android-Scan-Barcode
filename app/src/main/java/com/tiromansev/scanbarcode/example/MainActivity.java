@@ -23,9 +23,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // launch barcode activity.
                 Intent intent = new Intent(MainActivity.this, VisionCaptureActivity.class);
-                intent.putExtra(VisionCaptureActivity.AutoFocus, true);
-                intent.putExtra(VisionCaptureActivity.UseFlash, false);
-
                 startActivityForResult(intent, RC_BARCODE_CAPTURE);
             }
         });

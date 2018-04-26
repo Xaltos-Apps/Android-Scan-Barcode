@@ -4,20 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/topLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:keepScreenOn="true">
+    android:layout_height="match_parent">
 
-  <com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview
-      android:id="@+id/preview"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-
-    <com.tiromansev.scanbarcode.vision.camera.GraphicOverlay
-        android:id="@+id/graphicOverlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-  </com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview>
+  <fragment
+      android:id="@+id/barcode"
+      android:name="com.google.android.gms.samples.vision.barcodereader.BarcodeCapture"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      app:gvb_rect_colors="@array/rect_color"/>
 
   <ImageButton
       android:layout_width="wrap_content"

@@ -31,7 +31,5 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$support"
     testImplementation 'junit:junit:4.12'
     implementation "com.android.support:preference-v7:$support"
-    implementation ('com.google.android.gms:play-services-vision:15.0.0', {
-        exclude group: 'com.android.support', module: 'support-v4'
-    })
+    implementation 'xyz.belvi.mobilevision:barcodescanner:2.0.3'
 }
