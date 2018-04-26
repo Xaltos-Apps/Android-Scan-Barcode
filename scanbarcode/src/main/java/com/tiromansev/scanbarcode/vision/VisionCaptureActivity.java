@@ -136,7 +136,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     }
 
     public void startCapture() {
-        barcodeCapture.refresh(true);
+        barcodeCapture.resume();
     }
 
 }
