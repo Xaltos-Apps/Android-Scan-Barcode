@@ -130,12 +130,12 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     }
 
     public void restartPreviewAfterDelay(long delayMS) {
-        barcodeCapture.pause();
+        barcodeCapture.stopScanning();
         handler.sendEmptyMessageDelayed(1, delayMS);
     }
 
     public void startCapture() {
-        barcodeCapture.resume();
+        barcodeCapture.refresh(true);
     }
 
 }
