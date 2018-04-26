@@ -39,7 +39,7 @@
             android:key="preferences_auto_focus"
             android:title="@string/zxing_preferences_auto_focus_title" />
         <CheckBoxPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="preferences_show_vision_rect"
             android:title="@string/vision_show_rect_title" />
     </PreferenceCategory>
