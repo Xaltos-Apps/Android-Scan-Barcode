@@ -16,6 +16,7 @@ import com.google.android.gms.samples.vision.barcodereader.BarcodeGraphic;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.zxing.BeepManager;
 
 import java.util.List;
 import java.util.Timer;
@@ -27,6 +28,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
 
     private static final String TAG = "BarcodeMain";
     public BarcodeCapture barcodeCapture;
+    public BeepManager beepManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
                 .setShowDrawRect(showRect)
                 .shouldAutoFocus(autoFocus);
         barcodeCapture.refresh(true);
+        beepManager = new BeepManager(this);
     }
 
     private void hideStatusBar() {
@@ -67,8 +70,24 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         }
     }
 
+    public void playBeepSoundAndVibrate() {
+        beepManager.playBeepSoundAndVibrate();
+    }
+
     public void handleDecodeInternally(String rawResult) {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        beepManager.updatePrefs();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        beepManager.close();
     }
 
     public void setTorch(boolean on) {
