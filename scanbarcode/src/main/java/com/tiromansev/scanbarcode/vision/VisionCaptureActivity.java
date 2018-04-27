@@ -47,6 +47,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         barcodeCapture
                 .setShowFlash(useFlash)
                 .setTouchAsCallback(false)
+                .setSupportMultipleScan(false)
                 .setShowDrawRect(showRect)
                 .shouldAutoFocus(autoFocus);
         barcodeCapture.refresh(true);
@@ -106,6 +107,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
 
     @Override
     public void onRetrievedMultiple(final Barcode closetToClick, final List<BarcodeGraphic> barcodeGraphics) {
+        barcodeCapture.pause();
         String barcodes = "";
         for (int index = 0; index < barcodeGraphics.size(); index++) {
             Barcode barcode = barcodeGraphics.get(index).getBarcode();
