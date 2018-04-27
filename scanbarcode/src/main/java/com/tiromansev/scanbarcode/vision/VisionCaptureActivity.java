@@ -47,8 +47,9 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         barcodeCapture
                 .setShowFlash(useFlash)
                 .setTouchAsCallback(false)
-                .setSupportMultipleScan(false)
+                .setSupportMultipleScan(true)
                 .setShowDrawRect(showRect)
+                .setShouldShowText(showRect)
                 .shouldAutoFocus(autoFocus);
         barcodeCapture.refresh(true);
         beepManager = new BeepManager(this);
