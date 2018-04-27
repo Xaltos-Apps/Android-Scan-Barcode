@@ -47,7 +47,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         barcodeCapture
                 .setShowFlash(useFlash)
                 .setTouchAsCallback(false)
-                .setSupportMultipleScan(true)
+                .setSupportMultipleScan(false)
                 .setShowDrawRect(showRect)
                 .setShouldShowText(showRect)
                 .shouldAutoFocus(autoFocus);
@@ -140,6 +140,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     public void startCapture() {
         Log.d("scan_delay", "refresh after pause");
         barcodeCapture.resume();
+        barcodeCapture.refresh(true);
     }
 
 }
