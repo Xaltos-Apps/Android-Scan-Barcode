@@ -42,12 +42,25 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     public static final String KEY_DISABLE_METERING = "preferences_disable_metering";
     public static final String KEY_DISABLE_BARCODE_SCENE_MODE = "preferences_disable_barcode_scene_mode";
     public static final String KEY_SHOW_VISION_RECT = "preferences_show_vision_rect";
+    public static final String KEY_SCAN_TYPE_CATEGORY = "preferences_scan_type_category";
+    public static final String EXTRAS_HIDE_TYPE = "EXTRAS_HIDE_TYPE";
+
+    private PreferenceScreen preferences;
+
+    public static PreferencesFragment newInstance(boolean hideType) {
+        Bundle args = new Bundle();
+        args.putBoolean(EXTRAS_HIDE_TYPE, hideType);
+
+        PreferencesFragment fragment = new PreferencesFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.barcode_zxing_preferences);
-        PreferenceScreen preferences = getPreferenceScreen();
+        preferences = getPreferenceScreen();
         setBarcodePreferences();
 
         checkBoxPrefs = findDecodePrefs(preferences,
@@ -125,6 +138,16 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
                 break;
         }
         initSummaries();
+
+        if (getArguments() != null && getArguments().containsKey(EXTRAS_HIDE_TYPE)) {
+            boolean hideType = getArguments().getBoolean(EXTRAS_HIDE_TYPE, false);
+            if (hideType) {
+                PreferenceCategory category = (PreferenceCategory) preferences.findPreference(KEY_SCAN_TYPE_CATEGORY);
+                if (category != null) {
+                    preferences.removePreference(category);
+                }
+            }
+        }
     }
 
     private void initSummaries() {

@@ -1,26 +1,26 @@
 package com.tiromansev.scanbarcode.vision;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 
 import com.google.android.gms.samples.vision.barcodereader.BarcodeCapture;
 import com.google.android.gms.samples.vision.barcodereader.BarcodeGraphic;
 import com.google.android.gms.vision.barcode.Barcode;
+import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
 import com.tiromansev.scanbarcode.zxing.BeepManager;
 
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import xyz.belvi.mobilevisionbarcodescanner.BarcodeRetriever;
 
@@ -30,6 +30,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     public BarcodeCapture barcodeCapture;
     public BeepManager beepManager;
     private VisionActivityHandler handler;
+    private static final int PREFS_REQUEST = 99;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,21 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         barcodeCapture = (BarcodeCapture) getSupportFragmentManager().findFragmentById(R.id.barcode);
         barcodeCapture.setRetrieval(this);
 
+        setProperties();
+        beepManager = new BeepManager(this);
+        handler = new VisionActivityHandler(this);
+
+        ImageButton btnSettings = findViewById(R.id.btnScanSettings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(VisionCaptureActivity.this, PreferenceActivity.class);
+                startActivityForResult(intent, PREFS_REQUEST);
+            }
+        });
+    }
+
+    public void setProperties() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         boolean autoFocus = prefs.getBoolean(PreferencesFragment.KEY_AUTO_FOCUS, true);
         boolean showRect = prefs.getBoolean(PreferencesFragment.KEY_SHOW_VISION_RECT, false);
@@ -52,8 +68,15 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
                 .setShouldShowText(showRect)
                 .shouldAutoFocus(autoFocus);
         barcodeCapture.refresh(true);
-        beepManager = new BeepManager(this);
-        handler = new VisionActivityHandler(this);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == PREFS_REQUEST) {
+                setProperties();
+            }
+        }
     }
 
     private void hideStatusBar() {

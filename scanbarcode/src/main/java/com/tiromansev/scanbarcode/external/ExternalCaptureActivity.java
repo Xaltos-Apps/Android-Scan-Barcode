@@ -1,5 +1,6 @@
 package com.tiromansev.scanbarcode.external;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -8,10 +9,12 @@ import android.support.v7.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
-import com.tiromansev.scanbarcode.zxing.BeepManager;
+import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.zxing.BeepManager;
 
 public class ExternalCaptureActivity extends AppCompatActivity {
 
@@ -21,6 +24,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     public static final String SPACE_SYMBOL = "2";
     private String lastSymbol = ENTER_SYMBOL;
     public BeepManager beepManager;
+    private static final int PREFS_REQUEST = 99;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +51,30 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             }
         });
 
+        setProperties();
+        beepManager = new BeepManager(this);
+        ImageButton btnSettings = findViewById(R.id.btnScanSettings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ExternalCaptureActivity.this, PreferenceActivity.class);
+                startActivityForResult(intent, PREFS_REQUEST);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == PREFS_REQUEST) {
+                setProperties();
+            }
+        }
+    }
+
+    public void setProperties() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         lastSymbol = prefs.getString(PreferencesFragment.KEY_SCAN_LAST_SYMBOL, ENTER_SYMBOL);
-        beepManager = new BeepManager(this);
     }
 
     public void handleBarcode(String rawResult) {

@@ -15,14 +15,14 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="@dimen/caption_top_margin"
+        android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
         android:text="@string/caption_external_scan"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textColor="@color/color_external_caption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnScanSettings" />
 
     <ImageView
         android:id="@+id/ivScan"
@@ -67,5 +67,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtBarcode" />
+
+    <ImageButton
+        android:id="@+id/btnScanSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/round_button_padding"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/transparent"
+        android:padding="@dimen/round_button_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_scan_settings" />
 
 </android.support.constraint.ConstraintLayout>

@@ -16,11 +16,25 @@
   <ImageButton
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentTop="true"
       app:srcCompat="@mipmap/ic_light_off"
       android:id="@+id/btnLight"
       android:background="@color/transparent"
       android:layout_margin="@dimen/round_button_padding"
       android:padding="@dimen/round_button_padding" />
+
+  <ImageButton
+      android:id="@+id/btnScanSettings"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentTop="true"
+      android:layout_margin="@dimen/round_button_padding"
+      android:background="@color/transparent"
+      android:padding="@dimen/round_button_padding"
+      app:srcCompat="@mipmap/ic_scan_settings"
+      android:layout_alignParentEnd="true" />
 
   <TextView
       android:id="@+id/tv_caption"

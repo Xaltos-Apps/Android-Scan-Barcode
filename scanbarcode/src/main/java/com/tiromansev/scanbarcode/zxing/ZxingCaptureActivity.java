@@ -21,11 +21,13 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;
+import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
 import com.tiromansev.scanbarcode.zxing.camera.CameraManager;
@@ -60,6 +62,7 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
     public InactivityTimer inactivityTimer;
     public BeepManager beepManager;
     public AmbientLightManager ambientLightManager;
+    private static final int PREFS_REQUEST = 99;
 
     ViewfinderView getViewfinderView() {
         return viewfinderView;
@@ -88,6 +91,29 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         ambientLightManager = new AmbientLightManager(this);
 
         PreferenceManager.setDefaultValues(this, R.xml.barcode_zxing_preferences, false);
+        setProperties();
+
+        ImageButton btnSettings = findViewById(R.id.btnScanSettings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ZxingCaptureActivity.this, PreferenceActivity.class);
+                startActivityForResult(intent, PREFS_REQUEST);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == PREFS_REQUEST) {
+                setProperties();
+            }
+        }
+    }
+
+    public void setProperties() {
+
     }
 
     public void playBeepSoundAndVibrate() {
