@@ -7,6 +7,21 @@
     android:fitsSystemWindows="true"
     tools:context=".PreferenceActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/barLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:titleTextAppearance="@style/ToolbarTitle"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupMenu"/>
+
+    </android.support.design.widget.AppBarLayout>
+
     <FrameLayout
         android:id="@+id/preference_container"
         android:layout_width="match_parent"

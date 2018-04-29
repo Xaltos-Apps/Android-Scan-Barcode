@@ -10,6 +10,7 @@
     <color name="transparent">#00000000</color>
     <color name="viewfinder_laser">#ffcc0000</color>
     <color name="viewfinder_mask">#60000000</color>
+    <color name="color_white">#ffffff</color>
 
     <color name="color_primary">#009688</color>
     <color name="color_external_caption">#009688</color>

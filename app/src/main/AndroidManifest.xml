@@ -25,6 +25,7 @@
         <activity android:name="com.tiromansev.scanbarcode.vision.VisionCaptureActivity" />
         <activity
             android:name="com.tiromansev.scanbarcode.PreferenceActivity"
+            android:theme="@style/AppTheme"
             android:label="@string/caption_setting_scan" />
     </application>
 

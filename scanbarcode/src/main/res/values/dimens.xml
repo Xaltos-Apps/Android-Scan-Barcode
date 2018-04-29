@@ -7,4 +7,5 @@
     <dimen name="scan_image_size">150dp</dimen>
     <dimen name="caption_top_margin">16dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="toolbar_font_size">20sp</dimen>
 </resources>
