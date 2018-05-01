@@ -94,10 +94,11 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     }
 
     public void setZoom(int zoom) {
-        if (seekBar != null) {
-            seekBar.setProgress(zoom);
-            barcodeCapture.doZoom(zoom);
+        if (seekBar == null) {
+            seekBar = findViewById(R.id.seekBar);
         }
+        seekBar.setProgress(zoom);
+        barcodeCapture.doZoom(zoom);
     }
 
     public void setProperties() {
