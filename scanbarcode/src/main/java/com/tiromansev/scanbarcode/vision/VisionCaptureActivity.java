@@ -136,6 +136,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     @Override
     protected void onResume() {
         super.onResume();
+        seekBar.setProgress(0);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         beepManager.updatePrefs();
     }
