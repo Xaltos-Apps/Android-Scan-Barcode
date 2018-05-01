@@ -45,7 +45,7 @@
     <string name="preferences_packet_scan_type">After each scan</string>
 
     <string name="vision_low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
-    <string name="vision_msg_default_status">To scan a barcode, place it in front of the camera. Pinch/Stretch to zoom</string>
+    <string name="vision_msg_default_status">To scan a barcode, place it in front of the camera</string>
     <string name="vision_show_rect_title">Enable rect drawn around codes when scanning</string>
     <string name="preferences_external_scan_params">Scan parameters</string>
 </resources>

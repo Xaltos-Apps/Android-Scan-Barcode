@@ -17,6 +17,7 @@ import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
 import com.tiromansev.scanbarcode.zxing.BeepManager;
+import com.warkiz.widget.IndicatorSeekBar;
 
 import java.util.List;
 
@@ -37,6 +38,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
 
         barcodeCapture = (BarcodeCapture) getSupportFragmentManager().findFragmentById(R.id.barcode);
         barcodeCapture.setRetrieval(this);
+        barcodeCapture.setUseZoomListener(false);
 
         setProperties();
         beepManager = new BeepManager(this);
@@ -50,6 +52,34 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
                 startActivityForResult(intent, PREFS_REQUEST);
             }
         });
+
+        IndicatorSeekBar seekBar = findViewById(R.id.seekBar);
+        seekBar.setOnSeekChangeListener(new IndicatorSeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(IndicatorSeekBar seekBar, int progress, float progressFloat, boolean fromUserTouch) {
+                barcodeCapture.doZoom(progress);
+                zoomChanged(progress);
+            }
+
+            @Override
+            public void onSectionChanged(IndicatorSeekBar seekBar, int thumbPosOnTick, String textBelowTick, boolean fromUserTouch) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(IndicatorSeekBar seekBar, int thumbPosOnTick) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(IndicatorSeekBar seekBar) {
+
+            }
+        });
+    }
+
+    public void zoomChanged(int zoom) {
+
     }
 
     public void setProperties() {

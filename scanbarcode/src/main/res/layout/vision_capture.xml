@@ -13,30 +13,6 @@
         android:layout_height="match_parent"
         app:gvb_rect_colors="@array/rect_color"/>
 
-    <ImageButton
-        android:id="@+id/btnLight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="@dimen/round_button_padding"
-        android:background="@color/transparent"
-        android:padding="@dimen/round_button_padding"
-        app:srcCompat="@mipmap/ic_light_off"
-        android:layout_alignParentStart="true" />
-
-    <ImageButton
-        android:id="@+id/btnScanSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="@dimen/round_button_padding"
-        android:background="@color/transparent"
-        android:padding="@dimen/round_button_padding"
-        app:srcCompat="@mipmap/ic_scan_settings"
-        android:layout_alignParentEnd="true" />
-
     <TextView
         android:id="@+id/tv_caption"
         android:layout_width="match_parent"
@@ -45,5 +21,59 @@
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/vision_msg_default_status"
         android:textColor="@android:color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <ImageButton
+            android:id="@+id/btnLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/round_button_padding"
+            android:background="@color/transparent"
+            android:padding="@dimen/round_button_padding"
+            app:srcCompat="@mipmap/ic_light_off"
+            android:layout_alignParentStart="true" />
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zoom_bar_height"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/btnLight"
+            android:layout_toLeftOf="@+id/btnScanSettings"
+            android:layout_toRightOf="@+id/btnLight"
+            android:layout_toStartOf="@+id/btnScanSettings"
+            android:max="10"
+            android:progress="0"
+            app:isb_indicator_color="@color/color_primary"
+            app:isb_indicator_text_color="@color/color_primary"
+            app:isb_seek_bar_type="discrete_ticks_texts"
+            app:isb_text_color="@color/color_white"
+            app:isb_thumb_color="@color/color_primary"
+            app:isb_tick_color="@color/color_primary"
+            app:isb_tick_num="6"
+            app:isb_track_progress_bar_color="@color/color_primary" />
+
+        <ImageButton
+            android:id="@+id/btnScanSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/round_button_padding"
+            android:background="@color/transparent"
+            android:padding="@dimen/round_button_padding"
+            app:srcCompat="@mipmap/ic_scan_settings" />
+    </RelativeLayout>
 
 </RelativeLayout>
