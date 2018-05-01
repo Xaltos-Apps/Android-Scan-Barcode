@@ -43,6 +43,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         barcodeCapture.setUseZoomListener(false);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        seekBar = findViewById(R.id.seekBar);
         setProperties();
         beepManager = new BeepManager(this);
         handler = new VisionActivityHandler(this);
@@ -56,7 +57,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
             }
         });
 
-        seekBar = findViewById(R.id.seekBar);
         final float[] oldZoom = {0};
         seekBar.setOnSeekChangeListener(new IndicatorSeekBar.OnSeekBarChangeListener() {
             @Override
