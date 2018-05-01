@@ -30,6 +30,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     public BeepManager beepManager;
     private VisionActivityHandler handler;
     private static final int PREFS_REQUEST = 99;
+    private IndicatorSeekBar seekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
             }
         });
 
-        IndicatorSeekBar seekBar = findViewById(R.id.seekBar);
+        seekBar = findViewById(R.id.seekBar);
         seekBar.setOnSeekChangeListener(new IndicatorSeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(IndicatorSeekBar seekBar, int progress, float progressFloat, boolean fromUserTouch) {
@@ -80,6 +81,12 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
 
     public void zoomChanged(int zoom) {
 
+    }
+
+    public void setZoom(int zoom) {
+        if (seekBar != null) {
+            seekBar.setProgress(zoom);
+        }
     }
 
     public void setProperties() {
