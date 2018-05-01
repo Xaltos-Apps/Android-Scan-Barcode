@@ -31,6 +31,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     private VisionActivityHandler handler;
     private static final int PREFS_REQUEST = 99;
     private IndicatorSeekBar seekBar;
+    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         barcodeCapture.setRetrieval(this);
         barcodeCapture.setUseZoomListener(false);
 
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
         setProperties();
         beepManager = new BeepManager(this);
         handler = new VisionActivityHandler(this);
@@ -55,11 +57,19 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         });
 
         seekBar = findViewById(R.id.seekBar);
+        final float[] oldZoom = {0};
         seekBar.setOnSeekChangeListener(new IndicatorSeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(IndicatorSeekBar seekBar, int progress, float progressFloat, boolean fromUserTouch) {
-                barcodeCapture.doZoom(progress);
-                zoomChanged(progress);
+                float zoom = progress / 10;
+                if (oldZoom[0] > zoom) {
+                    zoom = zoom / oldZoom[0];
+                }
+                else {
+                    zoom = zoom - oldZoom[0];
+                }
+                barcodeCapture.doZoom(zoom);
+                zoomChanged(zoom);
             }
 
             @Override
@@ -69,7 +79,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
 
             @Override
             public void onStartTrackingTouch(IndicatorSeekBar seekBar, int thumbPosOnTick) {
-
+                oldZoom[0] = seekBar.getProgress() / 10;
             }
 
             @Override
@@ -79,18 +89,18 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         });
     }
 
-    public void zoomChanged(int zoom) {
+    public void zoomChanged(float zoom) {
 
     }
 
     public void setZoom(int zoom) {
         if (seekBar != null) {
             seekBar.setProgress(zoom);
+            barcodeCapture.doZoom(zoom);
         }
     }
 
     public void setProperties() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         boolean autoFocus = prefs.getBoolean(PreferencesFragment.KEY_AUTO_FOCUS, true);
         boolean showRect = prefs.getBoolean(PreferencesFragment.KEY_SHOW_VISION_RECT, false);
         boolean useFlash = prefs.getString(PreferencesFragment.KEY_FRONT_LIGHT_VISION_MODE, "OFF").equals("ON");
@@ -124,6 +134,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     @Override
     protected void onResume() {
         super.onResume();
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
         beepManager.updatePrefs();
     }
 
