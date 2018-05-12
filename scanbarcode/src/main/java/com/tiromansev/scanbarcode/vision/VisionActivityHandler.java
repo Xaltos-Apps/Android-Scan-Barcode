@@ -4,18 +4,23 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import java.lang.ref.WeakReference;
+
 public class VisionActivityHandler extends Handler {
 
-    private final VisionCaptureActivity activity;
+    private WeakReference<VisionCaptureActivity> activity;
 
     public VisionActivityHandler(VisionCaptureActivity activity) {
-        this.activity = activity;
+        this.activity = new WeakReference<>(activity);
     }
 
     @Override
     public void handleMessage(Message msg) {
         super.handleMessage(msg);
         Log.d("scan_delay", "start scanning");
-        activity.startCapture();
+        VisionCaptureActivity visionCaptureActivity = activity.get();
+        if (visionCaptureActivity != null) {
+            visionCaptureActivity.startCapture();
+        }
     }
 }
