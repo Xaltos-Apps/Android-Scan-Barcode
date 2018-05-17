@@ -18,37 +18,37 @@
             android:title="@string/preferences_packet_scan_type" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/zxing_preferences_scanning_title">
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_decode_1D_product"
             android:title="@string/zxing_preferences_decode_1D_product_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_decode_1D_industrial"
             android:title="@string/zxing_preferences_decode_1D_industrial_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_decode_QR"
             android:title="@string/zxing_preferences_decode_QR_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_decode_Data_Matrix"
             android:title="@string/zxing_preferences_decode_Data_Matrix_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="preferences_decode_Aztec"
             android:title="@string/zxing_preferences_decode_Aztec_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="preferences_decode_PDF417"
             android:title="@string/zxing_preferences_decode_PDF417_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/zxing_preferences_actions_title">
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_play_beep"
             android:title="@string/zxing_preferences_play_beep_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="preferences_vibrate"
             android:title="@string/zxing_preferences_vibrate_title" />
@@ -61,35 +61,35 @@
             android:key="preferences_front_light_mode"
             android:summary="@string/zxing_preferences_front_light_summary"
             android:title="@string/zxing_preferences_front_light_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_auto_focus"
             android:title="@string/zxing_preferences_auto_focus_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="preferences_invert_scan"
             android:summary="@string/zxing_preferences_invert_scan_summary"
             android:title="@string/zxing_preferences_invert_scan_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="preferences_orientation"
             android:title="@string/zxing_preferences_orientation_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/zxing_preferences_device_bug_workarounds_title">
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_disable_continuous_focus"
             android:summary="@string/zxing_preferences_disable_continuous_focus_summary"
             android:title="@string/zxing_preferences_disable_continuous_focus_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_disable_exposure"
             android:title="@string/zxing_preferences_disable_exposure_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_disable_metering"
             android:title="@string/zxing_preferences_disable_metering_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_disable_barcode_scene_mode"
             android:title="@string/zxing_preferences_disable_barcode_scene_mode_title" />

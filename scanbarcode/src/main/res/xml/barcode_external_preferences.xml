@@ -26,11 +26,11 @@
             android:title="@string/preferences_packet_scan_type" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/zxing_preferences_actions_title">
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="preferences_play_beep"
             android:title="@string/zxing_preferences_play_beep_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="preferences_vibrate"
             android:title="@string/zxing_preferences_vibrate_title" />
