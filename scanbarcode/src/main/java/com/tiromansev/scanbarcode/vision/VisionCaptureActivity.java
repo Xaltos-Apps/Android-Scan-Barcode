@@ -192,7 +192,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     public void startCapture() {
         Log.d("scan_delay", "refresh after pause");
         barcodeCapture.resume();
-        barcodeCapture.refresh(true);
     }
 
 }
