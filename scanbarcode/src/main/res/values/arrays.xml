@@ -30,11 +30,13 @@
         <item>@string/preferences_scan_camera</item>
         <item>@string/preferences_scan_external</item>
         <item>@string/preferences_scan_camera_vision</item>
+        <item>@string/preferences_scan_vertical_camera</item>
     </string-array>
     <string-array name="preferences_scan_source_types_int">
         <item>"0"</item>
         <item>"1"</item>
         <item>"2"</item>
+        <item>"3"</item>
     </string-array>
     <string-array name="preferences_scan_last_symbols">
         <item>@string/preferences_scan_last_symbol_enter</item>

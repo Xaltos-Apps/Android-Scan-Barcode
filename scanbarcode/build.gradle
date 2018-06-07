@@ -17,12 +17,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 def support = '27.1.1'
 
 dependencies {
-    implementation 'com.google.zxing:core:3.3.2'
+    implementation 'com.github.wrdlbrnft:better-barcodes:0.3.0.46'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

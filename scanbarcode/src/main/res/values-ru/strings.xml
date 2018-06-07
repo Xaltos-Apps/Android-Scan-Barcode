@@ -59,4 +59,5 @@
     <string name="vision_low_storage_error">Недостаточно места на карте устройства для скачивания зависимостей</string>
     <string name="vision_msg_default_status">Чтобы сканировать штрих-код, наведите на него камеру</string>
     <string name="vision_show_rect_title">Показывать прямоугольник вокруг штрих-кода при сканировании</string>
+    <string name="preferences_scan_vertical_camera">Камера устройства 3</string>
 </resources>

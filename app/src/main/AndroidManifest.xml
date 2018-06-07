@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.tiromansev.scanbarcode.vision.VisionCaptureActivity" />
+        <activity android:name="com.tiromansev.scanbarcode.zxing.ZxingVerticalCaptureActivity" />
         <activity
             android:name="com.tiromansev.scanbarcode.PreferenceActivity"
             android:theme="@style/AppTheme"

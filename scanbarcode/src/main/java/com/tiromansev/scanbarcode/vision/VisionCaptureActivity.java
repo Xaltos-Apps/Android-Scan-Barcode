@@ -36,7 +36,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.vision_capture);
+        setContentView(R.layout.activity_vision_capture);
 
         barcodeCapture = (BarcodeCapture) getSupportFragmentManager().findFragmentById(R.id.barcode);
         barcodeCapture.setRetrieval(this);

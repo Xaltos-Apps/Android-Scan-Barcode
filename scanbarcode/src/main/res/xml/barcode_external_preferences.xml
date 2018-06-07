@@ -3,7 +3,7 @@
     <PreferenceCategory android:title="@string/preferences_scan_type"
         android:key="preferences_scan_type_category">
         <ListPreference
-            android:defaultValue="2"
+            android:defaultValue="3"
             android:entries="@array/preferences_scan_source_types"
             android:entryValues="@array/preferences_scan_source_types_int"
             android:key="preferences_scan_type_int"

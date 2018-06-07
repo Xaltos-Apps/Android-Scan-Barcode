@@ -83,7 +83,7 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        setContentView(R.layout.activity_capture);
+        setContentView(R.layout.activity_zxing_capture);
 
         hasSurface = false;
         inactivityTimer = new InactivityTimer(this);

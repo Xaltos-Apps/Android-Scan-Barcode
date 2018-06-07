@@ -19,6 +19,7 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     public static final String CAMERA_ZXING_SCANNER = "0";
     public static final String EXTERNAL_USB_SCANNER = "1";
     public static final String CAMERA_VISION_SCANNER = "2";
+    public static final String CAMERA_ZXING_VERTICAL_SCANNER = "3";
 
     public static final String KEY_DECODE_1D_PRODUCT = "preferences_decode_1D_product";
     public static final String KEY_DECODE_1D_INDUSTRIAL = "preferences_decode_1D_industrial";
@@ -135,6 +136,9 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
                 break;
             case CAMERA_VISION_SCANNER:
                 addPreferencesFromResource(R.xml.barcode_vision_preferences);
+                break;
+            case CAMERA_ZXING_VERTICAL_SCANNER:
+                addPreferencesFromResource(R.xml.barcode_zxing_vertical_preferences);
                 break;
         }
         initSummaries();
