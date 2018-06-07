@@ -96,6 +96,10 @@ public class ZxingVerticalCaptureActivity extends AppCompatActivity {
         mBarcodeReaderView.setFormat(decodeFormats);
     }
 
+    public void playBeepSoundAndVibrate() {
+        mBeepManager.playBeepSoundAndVibrate();
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
