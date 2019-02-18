@@ -48,4 +48,16 @@
     <string name="vision_msg_default_status">To scan a barcode, place it in front of the camera</string>
     <string name="vision_show_rect_title">Enable rect drawn around codes when scanning</string>
     <string name="preferences_external_scan_params">Scan parameters</string>
+    <string name="preferences_scan_type">Источник сканирования</string>
+    <string name="preferences_scan_type_title">Используемый источник сканирования</string>
+    <string name="preferences_scan_camera">Камера устройства</string>
+    <string name="preferences_scan_camera_vision">Камера устройства 2</string>
+    <string name="preferences_scan_external">Внешний сканер</string>
+    <string name="preferences_scan_last_symbol_title">Завершающий символ штрих-кода</string>
+    <string name="preferences_scan_last_symbol_enter">Перевод строки</string>
+    <string name="preferences_scan_last_symbol_tab">Табуляция</string>
+    <string name="preferences_scan_last_symbol_space">Пробел</string>
+    <string name="caption_external_scan_description">Выполняйте сканирование штрих-кодов…</string>
+    <string name="caption_external_scan">Используйте внешний сканер</string>
+    <string name="preferences_scan_vertical_camera">Камера устройства 3</string>
 </resources>
