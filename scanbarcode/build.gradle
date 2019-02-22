@@ -38,7 +38,7 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$support"
     testImplementation 'junit:junit:4.12'
     implementation "com.android.support:preference-v7:$support"
-    implementation 'com.github.tiromansev:MobileVisionBarcodeScanner:2.0.9'
+    implementation 'com.github.tiromansev:MobileVisionBarcodeScanner:2.1.0'
     implementation 'com.google.android.gms:play-services-vision:17.0.2'
     implementation 'com.github.warkiz.widget:indicatorseekbar:1.2.9'
 }
