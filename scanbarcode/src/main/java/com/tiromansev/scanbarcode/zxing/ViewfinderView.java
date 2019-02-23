@@ -1,10 +1,6 @@
 package com.tiromansev.scanbarcode.zxing;
 
 
-import com.google.zxing.ResultPoint;
-import com.tiromansev.scanbarcode.R;
-import com.tiromansev.scanbarcode.zxing.camera.CameraManager;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
@@ -13,8 +9,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
+
+import com.google.zxing.ResultPoint;
+import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.zxing.camera.CameraManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,9 +76,6 @@ public final class ViewfinderView extends View {
     }
     int width = canvas.getWidth();
     int height = canvas.getHeight();
-
-    Log.d("zxing_scan", "canvas width = " + width + " height = " + height);
-    Log.d("zxing_scan", "frame top = " + frame.top + " left = " + frame.left + " bottom = " + frame.bottom);
 
     // Draw the exterior (i.e. outside the framing rect) darkened
     paint.setColor(resultBitmap != null ? resultColor : maskColor);

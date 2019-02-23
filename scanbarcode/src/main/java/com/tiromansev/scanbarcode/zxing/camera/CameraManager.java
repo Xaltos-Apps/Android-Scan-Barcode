@@ -207,11 +207,13 @@ public final class CameraManager {
 
       int width = findDesiredDimensionInRange(screenResolution.x, MIN_FRAME_WIDTH, MAX_FRAME_WIDTH);
       int height = findDesiredDimensionInRange(screenResolution.y, MIN_FRAME_HEIGHT, MAX_FRAME_HEIGHT);
+      Log.d("zxing_scan", "Calculated framing rect width: " + width + " height: " + height);
 
       int leftOffset = (screenResolution.x - width) / 2;
       int topOffset = (screenResolution.y - height) / 2;
       framingRect = new Rect(leftOffset, topOffset, leftOffset + width, topOffset + height);
       Log.d(TAG, "Calculated framing rect: " + framingRect);
+      Log.d("zxing_scan", "Calculated framing rect: " + framingRect);
     }
     return framingRect;
   }
