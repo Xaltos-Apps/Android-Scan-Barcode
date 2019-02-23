@@ -1,11 +1,10 @@
 package com.tiromansev.scanbarcode.zxing.camera;
 
 import android.content.SharedPreferences;
-
 import com.tiromansev.scanbarcode.PreferencesFragment;
 
 /**
- * Enumerates fragment_settings of the preference controlling the front light.
+ * Enumerates settings of the preference controlling the front light.
  */
 public enum FrontLightMode {
 

@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="label">
+        tools:replace="label"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +23,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.tiromansev.scanbarcode.zxing.ZxingCaptureActivity" />
+        <activity android:name="com.tiromansev.scanbarcode.zxing.ZxingVerticalCaptureActivity"
+            android:screenOrientation="portrait"
+            android:clearTaskOnLaunch="true"
+            android:stateNotNeeded="true"
+            android:theme="@style/CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity
             android:name="com.tiromansev.scanbarcode.PreferenceActivity"
             android:theme="@style/AppTheme"

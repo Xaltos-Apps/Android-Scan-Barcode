@@ -1,11 +1,12 @@
 package com.tiromansev.scanbarcode.zxing;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.os.Build;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -27,6 +28,7 @@ import android.widget.TextView;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;
+import com.google.zxing.ResultPoint;
 import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
@@ -76,7 +78,6 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         return cameraManager;
     }
 
-    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -94,12 +95,9 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         setProperties();
 
         ImageButton btnSettings = findViewById(R.id.btnScanSettings);
-        btnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ZxingCaptureActivity.this, PreferenceActivity.class);
-                startActivityForResult(intent, PREFS_REQUEST);
-            }
+        btnSettings.setOnClickListener(v -> {
+            Intent intent = new Intent(ZxingCaptureActivity.this, PreferenceActivity.class);
+            startActivityForResult(intent, PREFS_REQUEST);
         });
     }
 
@@ -141,14 +139,7 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         if (prefs.getBoolean(PreferencesFragment.KEY_DISABLE_AUTO_ORIENTATION, true)) {
-            int rotation = getWindowManager().getDefaultDisplay().getRotation();
-            switch (rotation) {
-                case Surface.ROTATION_0:
-                case Surface.ROTATION_90:
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                default:
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
-            }
+            setRequestedOrientation(getCurrentOrientation());
         } else {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
         }
@@ -210,8 +201,8 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
                 }
 
             } else if (dataString != null &&
-                dataString.contains("http://www.google") &&
-                dataString.contains("/m/products/scan")) {
+                    dataString.contains("http://www.google") &&
+                    dataString.contains("/m/products/scan")) {
 
                 // Scan only products and send the result to mobile Product Search.
                 source = IntentSource.PRODUCT_SEARCH_LINK;
@@ -220,6 +211,28 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
             }
 
             characterSet = intent.getStringExtra(Intents.Scan.CHARACTER_SET);
+
+        }
+    }
+
+    private int getCurrentOrientation() {
+        int rotation = getWindowManager().getDefaultDisplay().getRotation();
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            switch (rotation) {
+                case Surface.ROTATION_0:
+                case Surface.ROTATION_90:
+                    return ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+                default:
+                    return ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
+            }
+        } else {
+            switch (rotation) {
+                case Surface.ROTATION_0:
+                case Surface.ROTATION_270:
+                    return ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+                default:
+                    return ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT;
+            }
         }
     }
 
@@ -316,6 +329,50 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 
+    }
+
+    /**
+     * Superimpose a line for 1D or dots for 2D to highlight the key features of the barcode.
+     *
+     * @param barcode     A bitmap of the captured image.
+     * @param scaleFactor amount by which thumbnail was scaled
+     * @param rawResult   The decoded results which contains the points to draw.
+     */
+    private void drawResultPoints(Bitmap barcode, float scaleFactor, Result rawResult) {
+        ResultPoint[] points = rawResult.getResultPoints();
+        if (points != null && points.length > 0) {
+            Canvas canvas = new Canvas(barcode);
+            Paint paint = new Paint();
+            paint.setColor(getResources().getColor(R.color.result_points));
+            if (points.length == 2) {
+                paint.setStrokeWidth(4.0f);
+                drawLine(canvas, paint, points[0], points[1], scaleFactor);
+            } else if (points.length == 4 &&
+                    (rawResult.getBarcodeFormat() == BarcodeFormat.UPC_A ||
+                            rawResult.getBarcodeFormat() == BarcodeFormat.EAN_13)) {
+                // Hacky special case -- draw two lines, for the barcode and metadata
+                drawLine(canvas, paint, points[0], points[1], scaleFactor);
+                drawLine(canvas, paint, points[2], points[3], scaleFactor);
+            } else {
+                paint.setStrokeWidth(10.0f);
+                for (ResultPoint point : points) {
+                    if (point != null) {
+                        canvas.drawPoint(scaleFactor * point.getX(), scaleFactor * point.getY(), paint);
+                    }
+                }
+            }
+        }
+    }
+
+    private static void drawLine(Canvas canvas, Paint paint, ResultPoint a, ResultPoint b,
+                                 float scaleFactor) {
+        if (a != null && b != null) {
+            canvas.drawLine(scaleFactor * a.getX(),
+                    scaleFactor * a.getY(),
+                    scaleFactor * b.getX(),
+                    scaleFactor * b.getY(),
+                    paint);
+        }
     }
 
     // Put up our own UI for how to handle the decoded contents.

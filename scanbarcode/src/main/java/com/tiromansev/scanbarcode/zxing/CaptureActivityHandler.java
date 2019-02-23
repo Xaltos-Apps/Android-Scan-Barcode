@@ -18,11 +18,13 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * This class handles all the messaging which comprises the state machine for activity_capture.
+ * This class handles all the messaging which comprises the state machine for capture.
  *
  * @author dswitkin@google.com (Daniel Switkin)
  */
 public final class CaptureActivityHandler extends Handler {
+
+  private static final String TAG = CaptureActivityHandler.class.getSimpleName();
 
   private final ZxingCaptureActivity activity;
   private final DecodeThread decodeThread;
@@ -35,11 +37,11 @@ public final class CaptureActivityHandler extends Handler {
     DONE
   }
 
-  public CaptureActivityHandler(ZxingCaptureActivity activity,
-                                Collection<BarcodeFormat> decodeFormats,
-                                Map<DecodeHintType, ?> baseHints,
-                                String characterSet,
-                                CameraManager cameraManager) {
+  CaptureActivityHandler(ZxingCaptureActivity activity,
+                         Collection<BarcodeFormat> decodeFormats,
+                         Map<DecodeHintType,?> baseHints,
+                         String characterSet,
+                         CameraManager cameraManager) {
     this.activity = activity;
     decodeThread = new DecodeThread(activity, decodeFormats, baseHints, characterSet,
         new ViewfinderResultPointCallback(activity.getViewfinderView()));
@@ -54,32 +56,33 @@ public final class CaptureActivityHandler extends Handler {
 
   @Override
   public void handleMessage(Message message) {
-      if (message.what == R.id.restart_preview) {
-          restartPreviewAndDecode();
+    if (message.what == R.id.restart_preview) {
+      restartPreviewAndDecode();
 
-      } else if (message.what == R.id.decode_succeeded) {
-          state = State.SUCCESS;
-          Bundle bundle = message.getData();
-          Bitmap barcode = null;
-          if (bundle != null) {
-              byte[] compressedBitmap = bundle.getByteArray(DecodeThread.BARCODE_BITMAP);
-              if (compressedBitmap != null) {
-                  barcode = BitmapFactory.decodeByteArray(compressedBitmap, 0, compressedBitmap.length, null);
-                  // Mutable copy:
-                  barcode = barcode.copy(Bitmap.Config.ARGB_8888, true);
-              }
-          }
-          activity.handleDecodeInternally(((Result) message.obj).getText(), barcode);
-
-      } else if (message.what == R.id.decode_failed) {// We're decoding as fast as possible, so when one decode fails, start another.
-          state = State.PREVIEW;
-          cameraManager.requestPreviewFrame(decodeThread.getHandler(), R.id.decode);
-
-      } else if (message.what == R.id.return_scan_result) {
-          activity.setResult(Activity.RESULT_OK, (Intent) message.obj);
-          activity.finish();
-
+    } else if (message.what == R.id.decode_succeeded) {
+      state = State.SUCCESS;
+      Bundle bundle = message.getData();
+      Bitmap barcode = null;
+      if (bundle != null) {
+        byte[] compressedBitmap = bundle.getByteArray(DecodeThread.BARCODE_BITMAP);
+        if (compressedBitmap != null) {
+          barcode = BitmapFactory.decodeByteArray(compressedBitmap, 0, compressedBitmap.length, null);
+          // Mutable copy:
+          barcode = barcode.copy(Bitmap.Config.ARGB_8888, true);
+        }
       }
+      activity.handleDecodeInternally(((Result) message.obj).getText(), barcode);
+
+    } else if (message.what == R.id.decode_failed) {// We're decoding as fast as possible, so when one decode fails, start another.
+      state = State.PREVIEW;
+      cameraManager.requestPreviewFrame(decodeThread.getHandler(), R.id.decode);
+
+    } else if (message.what == R.id.return_scan_result) {
+      activity.setResult(Activity.RESULT_OK, (Intent) message.obj);
+      activity.finish();
+
+
+    }
   }
 
   public void quitSynchronously() {

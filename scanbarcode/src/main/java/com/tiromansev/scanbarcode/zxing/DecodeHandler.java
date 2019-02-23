@@ -18,6 +18,7 @@ import com.tiromansev.scanbarcode.R;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 final class DecodeHandler extends Handler {
 
@@ -35,17 +36,15 @@ final class DecodeHandler extends Handler {
 
   @Override
   public void handleMessage(Message message) {
-    if (!running) {
+    if (message == null || !running) {
       return;
     }
-      if (message.what == R.id.decode) {
-          decode((byte[]) message.obj, message.arg1, message.arg2);
-
-      } else if (message.what == R.id.quit) {
-          running = false;
-          Looper.myLooper().quit();
-
-      }
+    if (message.what == R.id.decode) {
+      decode((byte[]) message.obj, message.arg1, message.arg2);
+    } else if (message.what == R.id.quit) {
+      running = false;
+      Looper.myLooper().quit();
+    }
   }
 
   /**
@@ -57,7 +56,7 @@ final class DecodeHandler extends Handler {
    * @param height The height of the preview frame.
    */
   private void decode(byte[] data, int width, int height) {
-    long start = System.currentTimeMillis();
+    long start = System.nanoTime();
     Result rawResult = null;
     PlanarYUVLuminanceSource source = activity.getCameraManager().buildLuminanceSource(data, width, height);
     if (source != null) {
@@ -74,8 +73,8 @@ final class DecodeHandler extends Handler {
     Handler handler = activity.getHandler();
     if (rawResult != null) {
       // Don't log the barcode contents for security.
-      long end = System.currentTimeMillis();
-      Log.d(TAG, "Found barcode in " + (end - start) + " ms");
+      long end = System.nanoTime();
+      Log.d(TAG, "Found barcode in " + TimeUnit.NANOSECONDS.toMillis(end - start) + " ms");
       if (handler != null) {
         Message message = Message.obtain(handler, R.id.decode_succeeded, rawResult);
         Bundle bundle = new Bundle();

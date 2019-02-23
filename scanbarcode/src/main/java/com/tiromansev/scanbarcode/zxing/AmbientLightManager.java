@@ -17,7 +17,7 @@ import com.tiromansev.scanbarcode.zxing.camera.FrontLightMode;
  * @author Sean Owen
  * @author Nikolaus Huber
  */
-public final class AmbientLightManager implements SensorEventListener {
+final class AmbientLightManager implements SensorEventListener {
 
   private static final float TOO_DARK_LUX = 45.0f;
   private static final float BRIGHT_ENOUGH_LUX = 450.0f;
@@ -26,11 +26,11 @@ public final class AmbientLightManager implements SensorEventListener {
   private CameraManager cameraManager;
   private Sensor lightSensor;
 
-  public AmbientLightManager(Context context) {
+  AmbientLightManager(Context context) {
     this.context = context;
   }
 
-  public void start(CameraManager cameraManager) {
+  void start(CameraManager cameraManager) {
     this.cameraManager = cameraManager;
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
     if (FrontLightMode.readPref(sharedPrefs) == FrontLightMode.AUTO) {
@@ -42,7 +42,7 @@ public final class AmbientLightManager implements SensorEventListener {
     }
   }
 
-  public void stop() {
+  void stop() {
     if (lightSensor != null) {
       SensorManager sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
       sensorManager.unregisterListener(this);

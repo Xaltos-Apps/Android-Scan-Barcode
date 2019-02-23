@@ -1,5 +1,6 @@
 package com.tiromansev.scanbarcode.zxing;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,8 +20,7 @@ import java.io.IOException;
 /**
  * Manages beeps and vibrations for {@link ZxingCaptureActivity}.
  */
-public final class BeepManager implements
-    MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener, Closeable {
+public final class BeepManager implements MediaPlayer.OnErrorListener, Closeable {
 
   private static final String TAG = BeepManager.class.getSimpleName();
 
@@ -50,6 +50,7 @@ public final class BeepManager implements
     }
   }
 
+  @SuppressLint("MissingPermission")
   public synchronized void playBeepSoundAndVibrate() {
     if (playBeep && mediaPlayer != null) {
       mediaPlayer.start();
@@ -63,7 +64,7 @@ public final class BeepManager implements
   private static boolean shouldBeep(SharedPreferences prefs, Context activity) {
     boolean shouldPlayBeep = prefs.getBoolean(PreferencesFragment.KEY_PLAY_BEEP, true);
     if (shouldPlayBeep) {
-      // See if sound fragment_settings overrides this
+      // See if sound settings overrides this
       AudioManager audioService = (AudioManager) activity.getSystemService(Context.AUDIO_SERVICE);
       if (audioService.getRingerMode() != AudioManager.RINGER_MODE_NORMAL) {
         shouldPlayBeep = false;
@@ -74,13 +75,11 @@ public final class BeepManager implements
 
   private MediaPlayer buildMediaPlayer(Context activity) {
     MediaPlayer mediaPlayer = new MediaPlayer();
-    mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-    mediaPlayer.setOnCompletionListener(this);
-    mediaPlayer.setOnErrorListener(this);
-    try {
-        try (AssetFileDescriptor file = activity.getResources().openRawResourceFd(R.raw.beep)) {
-            mediaPlayer.setDataSource(file.getFileDescriptor(), file.getStartOffset(), file.getLength());
-        }
+    try (AssetFileDescriptor file = activity.getResources().openRawResourceFd(R.raw.beep)) {
+      mediaPlayer.setDataSource(file.getFileDescriptor(), file.getStartOffset(), file.getLength());
+      mediaPlayer.setOnErrorListener(this);
+      mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+      mediaPlayer.setLooping(false);
       mediaPlayer.setVolume(BEEP_VOLUME, BEEP_VOLUME);
       mediaPlayer.prepare();
       return mediaPlayer;
@@ -92,20 +91,13 @@ public final class BeepManager implements
   }
 
   @Override
-  public void onCompletion(MediaPlayer mp) {
-    // When the beep has finished playing, rewind to queue up another one.      
-    mp.seekTo(0);
-  }
-
-  @Override
   public synchronized boolean onError(MediaPlayer mp, int what, int extra) {
     if (what == MediaPlayer.MEDIA_ERROR_SERVER_DIED) {
       // we are finished, so put up an appropriate error toast if required and finish
       activity.finish();
     } else {
       // possibly media player error, so release and recreate
-      mp.release();
-      mediaPlayer = null;
+      close();
       updatePrefs();
     }
     return true;

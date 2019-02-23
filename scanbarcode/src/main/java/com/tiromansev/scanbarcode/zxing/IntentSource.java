@@ -1,5 +1,6 @@
 package com.tiromansev.scanbarcode.zxing;
 
+
 enum IntentSource {
 
   NATIVE_APP_INTENT,
