@@ -41,8 +41,10 @@ final class CameraConfigurationManager {
     display.getSize(theScreenResolution);
     screenResolution = theScreenResolution;
     Log.i(TAG, "Screen resolution: " + screenResolution);
+    Log.d("zxing_scan", "Screen resolution: " + screenResolution);
     cameraResolution = CameraConfigurationUtils.findBestPreviewSizeValue(parameters, screenResolution);
     Log.i(TAG, "Camera resolution: " + cameraResolution);
+    Log.d("zxing_scan", "Camera resolution: " + cameraResolution);
   }
 
   void setDesiredCameraParameters(Camera camera, boolean safeMode) {
