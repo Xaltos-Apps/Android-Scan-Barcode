@@ -38,7 +38,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     testImplementation 'junit:junit:4.13-beta-3'
     implementation 'androidx.preference:preference:1.0.0'
-    implementation 'com.github.tiromansev:MobileVisionBarcodeScanner:2.1.0'
+    implementation 'com.github.tiromansev:MobileVisionBarcodeScanner:2.1.2'
     implementation 'com.google.android.gms:play-services-vision:18.0.0'
     implementation 'com.github.warkiz.widget:indicatorseekbar:1.2.9'
     implementation group: 'com.google.zxing', name: 'core', version: '3.4.0'
