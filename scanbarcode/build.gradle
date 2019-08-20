@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
     buildTypes {
@@ -26,21 +26,21 @@ android {
     }
 }
 
-def support = '27.1.1'
+def support = '28.0.0'
 
 dependencies {
     implementation 'com.github.wrdlbrnft:better-barcodes:0.3.0.46'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation "com.android.support:design:$support"
-    implementation "com.android.support:appcompat-v7:$support"
-    testImplementation 'junit:junit:4.12'
-    implementation "com.android.support:preference-v7:$support"
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    testImplementation 'junit:junit:4.13-beta-3'
+    implementation 'androidx.preference:preference:1.0.0'
     implementation 'com.github.tiromansev:MobileVisionBarcodeScanner:2.1.0'
-    implementation 'com.google.android.gms:play-services-vision:17.0.2'
+    implementation 'com.google.android.gms:play-services-vision:18.0.0'
     implementation 'com.github.warkiz.widget:indicatorseekbar:1.2.9'
-    implementation group: 'com.google.zxing', name: 'core', version: '3.3.3'
+    implementation group: 'com.google.zxing', name: 'core', version: '3.4.0'
 
 }
