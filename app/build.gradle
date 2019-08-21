@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.tiromansev.scanbarcode.example"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -34,3 +34,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation project(':scanbarcode')
 }
+
+apply plugin: 'com.google.gms.google-services'

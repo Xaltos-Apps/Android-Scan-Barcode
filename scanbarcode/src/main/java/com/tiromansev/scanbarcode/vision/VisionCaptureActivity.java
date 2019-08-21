@@ -1,127 +1,132 @@
 package com.tiromansev.scanbarcode.vision;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.hardware.Camera;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
-import android.util.SparseArray;
 import android.view.View;
-import android.widget.ImageButton;
+import android.view.View.OnClickListener;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
-import com.google.android.gms.samples.vision.barcodereader.BarcodeCapture;
-import com.google.android.gms.samples.vision.barcodereader.BarcodeGraphic;
-import com.google.android.gms.vision.barcode.Barcode;
+import com.google.android.gms.common.internal.Objects;
+import com.google.android.material.chip.Chip;
 import com.tiromansev.scanbarcode.PreferenceActivity;
-import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.vision.camera.CameraSource;
+import com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview;
+import com.tiromansev.scanbarcode.vision.camera.GraphicOverlay;
+import com.tiromansev.scanbarcode.vision.camera.WorkflowModel;
 import com.tiromansev.scanbarcode.zxing.BeepManager;
-import com.warkiz.widget.IndicatorSeekBar;
 
-import java.util.List;
+import java.io.IOException;
 
-import xyz.belvi.mobilevisionbarcodescanner.BarcodeRetriever;
+public class VisionCaptureActivity extends AppCompatActivity implements OnClickListener {
 
-public class VisionCaptureActivity extends AppCompatActivity implements BarcodeRetriever {
+    private static final String TAG = "LiveBarcodeActivity";
 
-    private static final String TAG = "BarcodeMain";
-    public BarcodeCapture barcodeCapture;
+    private CameraSource cameraSource;
+    private CameraSourcePreview preview;
+    private GraphicOverlay graphicOverlay;
+    private View settingsButton;
+    private View flashButton;
+    private Chip promptChip;
     public BeepManager beepManager;
-    private VisionActivityHandler handler;
+    private AnimatorSet promptChipAnimator;
+    private WorkflowModel workflowModel;
+    private WorkflowModel.WorkflowState currentWorkflowState;
     private static final int PREFS_REQUEST = 99;
-    private IndicatorSeekBar seekBar;
-    SharedPreferences prefs;
+    private VisionActivityHandler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_vision_capture);
-
-        barcodeCapture = (BarcodeCapture) getSupportFragmentManager().findFragmentById(R.id.barcode);
-        barcodeCapture.setRetrieval(this);
-        barcodeCapture.setUseZoomListener(false);
-
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        seekBar = findViewById(R.id.seekBar);
-        setProperties();
         beepManager = new BeepManager(this);
+        preview = findViewById(R.id.camera_preview);
+        graphicOverlay = findViewById(R.id.camera_preview_graphic_overlay);
+        graphicOverlay.setOnClickListener(this);
+        cameraSource = new CameraSource(graphicOverlay);
         handler = new VisionActivityHandler(this);
 
-        ImageButton btnSettings = findViewById(R.id.btnScanSettings);
-        btnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(VisionCaptureActivity.this, PreferenceActivity.class);
-                startActivityForResult(intent, PREFS_REQUEST);
-            }
-        });
+        promptChip = findViewById(R.id.bottom_prompt_chip);
+        promptChipAnimator =
+                (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.bottom_prompt_chip_enter);
+        promptChipAnimator.setTarget(promptChip);
 
-        final float[] oldZoom = {0};
-        seekBar.setOnSeekChangeListener(new IndicatorSeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(IndicatorSeekBar seekBar, int progress, float progressFloat, boolean fromUserTouch) {
-                float zoom = progress / 10;
-                if (oldZoom[0] > zoom) {
-                    zoom = zoom / oldZoom[0];
-                }
-                else {
-                    zoom = zoom - oldZoom[0];
-                }
-                barcodeCapture.doZoom(zoom);
-                zoomChanged(zoom);
-            }
+        findViewById(R.id.close_button).setOnClickListener(this);
+        flashButton = findViewById(R.id.flash_button);
+        flashButton.setOnClickListener(this);
+        settingsButton = findViewById(R.id.settings_button);
+        settingsButton.setOnClickListener(this);
 
-            @Override
-            public void onSectionChanged(IndicatorSeekBar seekBar, int thumbPosOnTick, String textBelowTick, boolean fromUserTouch) {
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(IndicatorSeekBar seekBar, int thumbPosOnTick) {
-                oldZoom[0] = seekBar.getProgress() / 10;
-            }
-
-            @Override
-            public void onStopTrackingTouch(IndicatorSeekBar seekBar) {
-
-            }
-        });
-    }
-
-    public void zoomChanged(float zoom) {
-
-    }
-
-    public void setZoom(int zoom) {
-        if (seekBar == null) {
-            seekBar = findViewById(R.id.seekBar);
-        }
-        seekBar.setProgress(zoom);
-        barcodeCapture.doZoom(zoom);
-        Log.d("set_zoom", "set zoom = " + zoom);
-    }
-
-    public void setProperties() {
-        boolean autoFocus = prefs.getBoolean(PreferencesFragment.KEY_AUTO_FOCUS, true);
-        boolean showRect = prefs.getBoolean(PreferencesFragment.KEY_SHOW_VISION_RECT, false);
-        boolean useFlash = prefs.getString(PreferencesFragment.KEY_FRONT_LIGHT_VISION_MODE, "OFF").equals("ON");
-        barcodeCapture
-                .setShowFlash(useFlash)
-                .setTouchAsCallback(false)
-                .setSupportMultipleScan(false)
-                .setShowDrawRect(showRect)
-                .setShouldShowText(showRect)
-                .shouldAutoFocus(autoFocus);
-        barcodeCapture.refresh(true);
+        setUpWorkflowModel();
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            if (requestCode == PREFS_REQUEST) {
-                setProperties();
+    protected void onResume() {
+        super.onResume();
+
+        workflowModel.markCameraFrozen();
+        settingsButton.setEnabled(true);
+        currentWorkflowState = WorkflowModel.WorkflowState.NOT_STARTED;
+        cameraSource.setFrameProcessor(new BarcodeProcessor(graphicOverlay, workflowModel));
+        workflowModel.setWorkflowState(WorkflowModel.WorkflowState.DETECTING);
+
+        beepManager.updatePrefs();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        currentWorkflowState = WorkflowModel.WorkflowState.NOT_STARTED;
+        stopCameraPreview();
+        beepManager.close();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (cameraSource != null) {
+            cameraSource.release();
+            cameraSource = null;
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        if (id == R.id.close_button) {
+            onBackPressed();
+
+        } else if (id == R.id.flash_button) {
+            if (flashButton.isSelected()) {
+                flashButton.setSelected(false);
+                cameraSource.updateFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+            } else {
+                flashButton.setSelected(true);
+                cameraSource.updateFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+            }
+
+        } else if (id == R.id.settings_button) {
+            Intent intent = new Intent(VisionCaptureActivity.this, PreferenceActivity.class);
+            startActivityForResult(intent, PREFS_REQUEST);
+        }
+    }
+
+    private void startCameraPreview() {
+        if (!workflowModel.isCameraLive() && cameraSource != null) {
+            try {
+                workflowModel.markCameraLive();
+                preview.start(cameraSource);
+            } catch (IOException e) {
+                Log.e(TAG, "Failed to start camera preview!", e);
+                cameraSource.release();
+                cameraSource = null;
             }
         }
     }
@@ -130,59 +135,61 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
         beepManager.playBeepSoundAndVibrate();
     }
 
+    private void stopCameraPreview() {
+        if (workflowModel.isCameraLive()) {
+            workflowModel.markCameraFrozen();
+            flashButton.setSelected(false);
+            preview.stop();
+        }
+    }
+
     public void handleDecodeInternally(String rawResult) {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        seekBar.setProgress(0);
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        beepManager.updatePrefs();
-    }
+    private void setUpWorkflowModel() {
+        workflowModel = ViewModelProviders.of(this).get(WorkflowModel.class);
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        beepManager.close();
-    }
+        // Observes the workflow state changes, if happens, update the overlay view indicators and
+        // camera preview state.
+        workflowModel.workflowState.observe(
+                this,
+                workflowState -> {
+                    if (workflowState == null || Objects.equal(currentWorkflowState, workflowState)) {
+                        return;
+                    }
 
-    public void setTorch(boolean on) {
-        barcodeCapture.setShowFlash(on);
-        barcodeCapture.refresh(true);
-    }
+                    currentWorkflowState = workflowState;
+                    Log.d(TAG, "Current workflow state: " + currentWorkflowState.name());
 
-    @Override
-    public void onRetrieved(final Barcode barcode) {
-        barcodeCapture.pause();
-        handleDecodeInternally(barcode.displayValue);
-    }
+                    boolean wasPromptChipGone = (promptChip.getVisibility() == View.GONE);
 
-    @Override
-    public void onRetrievedMultiple(final Barcode closetToClick, final List<BarcodeGraphic> barcodeGraphics) {
-        barcodeCapture.pause();
-        String barcodes = "";
-        for (int index = 0; index < barcodeGraphics.size(); index++) {
-            Barcode barcode = barcodeGraphics.get(index).getBarcode();
-            barcodes += (index + 1) + "," + barcode.displayValue + "\n";
-        }
-        handleDecodeInternally(barcodes);
-    }
+                    switch (workflowState) {
+                        case DETECTING:
+                            promptChip.setVisibility(View.VISIBLE);
+                            promptChip.setText(R.string.vision_msg_default_status);
+                            startCameraPreview();
+                            break;
+                        default:
+                            promptChip.setVisibility(View.GONE);
+                            break;
+                    }
 
-    @Override
-    public void onBitmapScanned(SparseArray<Barcode> sparseArray) {
+                    boolean shouldPlayPromptChipEnteringAnimation =
+                            wasPromptChipGone && (promptChip.getVisibility() == View.VISIBLE);
+                    if (shouldPlayPromptChipEnteringAnimation && !promptChipAnimator.isRunning()) {
+                        promptChipAnimator.start();
+                    }
+                });
 
-    }
-
-    @Override
-    public void onRetrievedFailed(String reason) {
-
-    }
-
-    @Override
-    public void onPermissionRequestDenied() {
-
+        workflowModel.detectedBarcode.observe(
+                this,
+                barcode -> {
+                    if (barcode != null) {
+                        workflowModel.setWorkflowState(WorkflowModel.WorkflowState.NOT_STARTED);
+                        handleDecodeInternally(barcode.getRawValue());
+                    }
+                });
     }
 
     public void restartPreviewAfterDelay(long delayMS) {
@@ -192,7 +199,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements BarcodeR
 
     public void startCapture() {
         Log.d("scan_delay", "refresh after pause");
-        barcodeCapture.resume();
+        workflowModel.setWorkflowState(WorkflowModel.WorkflowState.DETECTING);
     }
-
 }

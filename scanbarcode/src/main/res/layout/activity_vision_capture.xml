@@ -1,79 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/topLayout"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_primary">
+    android:keepScreenOn="true">
 
-    <fragment
-        android:id="@+id/barcode"
-        android:name="com.google.android.gms.samples.vision.barcodereader.BarcodeCapture"
+    <com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview
+        android:id="@+id/camera_preview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:gvb_rect_colors="@array/rect_color"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_caption"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/vision_msg_default_status"
-        android:textColor="@android:color/white" />
+        <include layout="@layout/camera_preview_overlay" />
 
-    <RelativeLayout
+    </com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview>
+
+    <include
+        layout="@layout/top_action_bar_in_live_camera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_gravity="top" />
 
-        <ImageButton
-            android:id="@+id/btnLight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/round_button_padding"
-            android:background="@color/transparent"
-            android:padding="@dimen/round_button_padding"
-            app:srcCompat="@mipmap/ic_light_off"
-            android:layout_alignParentStart="true" />
-
-        <com.warkiz.widget.IndicatorSeekBar
-            android:id="@+id/seekBar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/zoom_bar_height"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/btnLight"
-            android:layout_toLeftOf="@+id/btnScanSettings"
-            android:layout_toRightOf="@+id/btnLight"
-            android:layout_toStartOf="@+id/btnScanSettings"
-            android:max="10"
-            android:progress="0"
-            app:isb_indicator_color="@color/color_primary"
-            app:isb_indicator_text_color="@color/color_primary"
-            app:isb_seek_bar_type="discrete_ticks"
-            app:isb_text_color="@color/color_white"
-            app:isb_thumb_color="@color/color_primary"
-            app:isb_tick_color="@color/color_primary"
-            app:isb_tick_num="6"
-            app:isb_track_progress_bar_color="@color/color_primary" />
-
-        <ImageButton
-            android:id="@+id/btnScanSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/round_button_padding"
-            android:background="@color/transparent"
-            android:padding="@dimen/round_button_padding"
-            app:srcCompat="@mipmap/ic_scan_settings" />
-    </RelativeLayout>
-
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

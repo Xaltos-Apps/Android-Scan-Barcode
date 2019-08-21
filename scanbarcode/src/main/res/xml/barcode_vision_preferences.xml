@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/preferences_scan_type"
-        android:key="preferences_scan_type_category">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:key="preferences_scan_type_category"
+        android:title="@string/preferences_scan_type">
         <ListPreference
             android:defaultValue="3"
             android:entries="@array/preferences_scan_source_types"
@@ -37,15 +39,52 @@
             android:key="preferences_front_light_vision_mode"
             android:summary="@string/zxing_preferences_front_light_summary"
             android:title="@string/zxing_preferences_front_light_title" />
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="preferences_auto_focus"
-            android:layout="@layout/switch_preference"
-            android:title="@string/zxing_preferences_auto_focus_title" />
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="preferences_show_vision_rect"
-            android:layout="@layout/switch_preference"
-            android:title="@string/vision_show_rect_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_camera">
+        <ListPreference
+            android:key="@string/pref_key_rear_camera_preview_size"
+            android:persistent="true"
+            android:title="@string/pref_title_rear_camera_preview_size" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_barcode_detection">
+        <SeekBarPreference
+            android:defaultValue="80"
+            android:key="@string/pref_key_barcode_reticle_width"
+            android:max="95"
+            android:icon="@null"
+            app:iconSpaceReserved="false"
+            android:persistent="true"
+            android:summary="@string/pref_summary_barcode_reticle_width"
+            android:title="@string/pref_title_barcode_reticle_width"
+            app:min="50"
+            app:showSeekBarValue="true" />
+        <SeekBarPreference
+            android:defaultValue="35"
+            android:key="@string/pref_key_barcode_reticle_height"
+            android:max="80"
+            android:icon="@null"
+            app:iconSpaceReserved="false"
+            android:persistent="true"
+            android:summary="@string/pref_summary_barcode_reticle_height"
+            android:title="@string/pref_title_barcode_reticle_height"
+            app:min="20"
+            app:showSeekBarValue="true" />
+        <SeekBarPreference
+            android:defaultValue="50"
+            android:key="@string/pref_key_minimum_barcode_width"
+            android:max="80"
+            android:icon="@null"
+            app:iconSpaceReserved="false"
+            android:persistent="true"
+            android:summary="@string/pref_summary_minimum_barcode_width"
+            android:title="@string/pref_title_minimum_barcode_width"
+            app:min="20"
+            app:showSeekBarValue="true" />
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="@string/pref_key_enable_barcode_size_check"
+            android:persistent="true"
+            android:summary="@string/pref_summary_enable_barcode_size_check"
+            android:title="@string/pref_title_enable_barcode_size_check" />
     </PreferenceCategory>
 </PreferenceScreen>

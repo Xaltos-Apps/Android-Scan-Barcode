@@ -1,6 +1,7 @@
 package com.tiromansev.scanbarcode;
 
 import android.content.SharedPreferences;
+import android.hardware.Camera;
 import android.os.Bundle;
 
 import androidx.preference.CheckBoxPreference;
@@ -10,8 +11,16 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 
+import com.tiromansev.scanbarcode.vision.PreferenceUtils;
+import com.tiromansev.scanbarcode.vision.Utils;
+import com.tiromansev.scanbarcode.vision.camera.CameraSizePair;
+import com.tiromansev.scanbarcode.vision.camera.CameraSource;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public final class PreferencesFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -32,7 +41,6 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     public static final String KEY_PLAY_BEEP = "preferences_play_beep";
     public static final String KEY_VIBRATE = "preferences_vibrate";
     public static final String KEY_FRONT_LIGHT_MODE = "preferences_front_light_mode";
-    public static final String KEY_FRONT_LIGHT_VISION_MODE = "preferences_front_light_vision_mode";
     public static final String KEY_AUTO_FOCUS = "preferences_auto_focus";
     public static final String KEY_INVERT_SCAN = "preferences_invert_scan";
     public static final String KEY_SCAN_TYPE_INT = "preferences_scan_type_int";
@@ -43,7 +51,6 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     public static final String KEY_DISABLE_EXPOSURE = "preferences_disable_exposure";
     public static final String KEY_DISABLE_METERING = "preferences_disable_metering";
     public static final String KEY_DISABLE_BARCODE_SCENE_MODE = "preferences_disable_barcode_scene_mode";
-    public static final String KEY_SHOW_VISION_RECT = "preferences_show_vision_rect";
     public static final String KEY_SCAN_TYPE_CATEGORY = "preferences_scan_type_category";
     public static final String EXTRAS_HIDE_TYPE = "EXTRAS_HIDE_TYPE";
 
@@ -137,6 +144,7 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
                 break;
             case CAMERA_VISION_SCANNER:
                 addPreferencesFromResource(R.xml.barcode_vision_preferences);
+                setUpRearCameraPreviewSizePreference();
                 break;
             case CAMERA_ZXING_VERTICAL_SCANNER:
                 addPreferencesFromResource(R.xml.barcode_zxing_vertical_preferences);
@@ -195,6 +203,53 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
         for (CheckBoxPreference pref : checkBoxPrefs) {
             if (pref != null) {
                 pref.setEnabled(!(disable && checked.contains(pref)));
+            }
+        }
+    }
+
+    private void setUpRearCameraPreviewSizePreference() {
+        ListPreference previewSizePreference =
+                (ListPreference) findPreference(getString(R.string.pref_key_rear_camera_preview_size));
+        if (previewSizePreference == null) {
+            return;
+        }
+
+        Camera camera = null;
+        try {
+            camera = Camera.open(CameraSource.CAMERA_FACING_BACK);
+            List<CameraSizePair> previewSizeList = Utils.generateValidPreviewSizeList(camera);
+            String[] previewSizeStringValues = new String[previewSizeList.size()];
+            Map<String, String> previewToPictureSizeStringMap = new HashMap<>();
+            for (int i = 0; i < previewSizeList.size(); i++) {
+                CameraSizePair sizePair = previewSizeList.get(i);
+                previewSizeStringValues[i] = sizePair.preview.toString();
+                if (sizePair.picture != null) {
+                    previewToPictureSizeStringMap.put(
+                            sizePair.preview.toString(), sizePair.picture.toString());
+                }
+            }
+            previewSizePreference.setEntries(previewSizeStringValues);
+            previewSizePreference.setEntryValues(previewSizeStringValues);
+            previewSizePreference.setSummary(previewSizePreference.getEntry());
+            previewSizePreference.setOnPreferenceChangeListener(
+                    (preference, newValue) -> {
+                        String newPreviewSizeStringValue = (String) newValue;
+                        previewSizePreference.setSummary(newPreviewSizeStringValue);
+                        PreferenceUtils.saveStringPreference(
+                                getActivity(),
+                                R.string.pref_key_rear_camera_picture_size,
+                                previewToPictureSizeStringMap.get(newPreviewSizeStringValue));
+                        return true;
+                    });
+
+        } catch (Exception e) {
+            // If there's no camera for the given camera id, hide the corresponding preference.
+            if (previewSizePreference.getParent() != null) {
+                previewSizePreference.getParent().removePreference(previewSizePreference);
+            }
+        } finally {
+            if (camera != null) {
+                camera.release();
             }
         }
     }
