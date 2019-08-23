@@ -77,7 +77,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         cameraSource.setFrameProcessor(new BarcodeProcessor(graphicOverlay, workflowModel));
         workflowModel.setWorkflowState(WorkflowModel.WorkflowState.DETECTING);
         beepManager.updatePrefs();
-        setTorch(true);
     }
 
     @Override
