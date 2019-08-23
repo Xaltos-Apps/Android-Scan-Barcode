@@ -102,19 +102,21 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         int id = view.getId();
         if (id == R.id.close_button) {
             onBackPressed();
-
         } else if (id == R.id.flash_button) {
-            if (flashButton.isSelected()) {
-                flashButton.setSelected(false);
-                cameraSource.updateFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-            } else {
-                flashButton.setSelected(true);
-                cameraSource.updateFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-            }
-
+            setTorch();
         } else if (id == R.id.settings_button) {
             Intent intent = new Intent(VisionCaptureActivity.this, PreferenceActivity.class);
             startActivityForResult(intent, PREFS_REQUEST);
+        }
+    }
+
+    public void setTorch() {
+        if (flashButton.isSelected()) {
+            flashButton.setSelected(false);
+            cameraSource.updateFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+        } else {
+            flashButton.setSelected(true);
+            cameraSource.updateFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
         }
     }
 

@@ -37,6 +37,7 @@ public final class PreferencesFragment extends PreferenceFragmentCompat implemen
     public static final String KEY_DECODE_DATA_MATRIX = "preferences_decode_Data_Matrix";
     public static final String KEY_DECODE_AZTEC = "preferences_decode_Aztec";
     public static final String KEY_DECODE_PDF417 = "preferences_decode_PDF417";
+    public static final String KEY_FRONT_LIGHT_VISION_MODE = "preferences_front_light_vision_mode";
 
     public static final String KEY_PLAY_BEEP = "preferences_play_beep";
     public static final String KEY_VIBRATE = "preferences_vibrate";
