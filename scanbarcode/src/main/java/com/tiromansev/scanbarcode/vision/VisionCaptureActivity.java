@@ -76,8 +76,8 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         currentWorkflowState = WorkflowModel.WorkflowState.NOT_STARTED;
         cameraSource.setFrameProcessor(new BarcodeProcessor(graphicOverlay, workflowModel));
         workflowModel.setWorkflowState(WorkflowModel.WorkflowState.DETECTING);
-
         beepManager.updatePrefs();
+        setTorch(true);
     }
 
     @Override
@@ -103,7 +103,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         if (id == R.id.close_button) {
             onBackPressed();
         } else if (id == R.id.flash_button) {
-            setTorch(!flashButton.isSelected());
+            setFlash(!flashButton.isSelected());
         } else if (id == R.id.settings_button) {
             Intent intent = new Intent(VisionCaptureActivity.this, PreferenceActivity.class);
             startActivityForResult(intent, PREFS_REQUEST);
@@ -111,6 +111,21 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     }
 
     public void setTorch(boolean on) {
+        new Thread(() -> {
+            while (!cameraSource.hasParameters()) {
+                try {
+                    Thread.sleep(100);
+                    // Do some stuff
+                } catch (Exception e) {
+                    e.getLocalizedMessage();
+                }
+                Log.d("set_torch", "wait camera...");
+            }
+            setFlash(on);
+        }).start();
+    }
+
+    private void setFlash(boolean on) {
         if (!on) {
             flashButton.setSelected(false);
             cameraSource.updateFlashMode(Camera.Parameters.FLASH_MODE_OFF);

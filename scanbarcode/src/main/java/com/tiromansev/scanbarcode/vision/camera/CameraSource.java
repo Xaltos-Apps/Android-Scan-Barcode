@@ -78,6 +78,10 @@ public class CameraSource {
     this.graphicOverlay = graphicOverlay;
   }
 
+  public boolean hasParameters() {
+    return camera != null && camera.getParameters() != null;
+  }
+
   /**
    * Opens the camera and starts sending preview frames to the underlying detector. The supplied
    * surface holder is used for the preview so frames can be displayed to the user.
