@@ -40,6 +40,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     private WorkflowModel.WorkflowState currentWorkflowState;
     private static final int PREFS_REQUEST = 99;
     private VisionActivityHandler handler;
+    private boolean started = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,7 +161,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     }
 
     public void handleDecodeInternally(String rawResult) {
-
+        Log.d("vision_scan", "scan result = " + rawResult);
     }
 
     private void setUpWorkflowModel() {
@@ -201,8 +202,8 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         workflowModel.detectedBarcode.observe(
                 this,
                 barcode -> {
-                    if (barcode != null) {
-                        workflowModel.setWorkflowState(WorkflowModel.WorkflowState.NOT_STARTED);
+                    if (started && barcode != null) {
+                        started = false;
                         handleDecodeInternally(barcode.getRawValue());
                     }
                 });
@@ -215,6 +216,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
 
     public void startCapture() {
         Log.d("scan_delay", "refresh after pause");
-        workflowModel.setWorkflowState(WorkflowModel.WorkflowState.DETECTING);
+        started = true;
     }
 }
