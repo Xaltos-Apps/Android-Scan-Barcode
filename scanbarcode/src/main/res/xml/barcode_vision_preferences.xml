@@ -3,50 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
         android:key="preferences_scan_type_category"
-        android:title="@string/preferences_scan_type">
+        android:title="@string/preferences_scan_type"
+        app:iconSpaceReserved="false">
         <ListPreference
-            android:defaultValue="3"
+            android:defaultValue="2"
+            app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_source_types"
             android:entryValues="@array/preferences_scan_source_types_int"
             android:key="preferences_scan_type_int"
             android:title="@string/preferences_scan_type_title" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/preferences_packet_mode_title">
+    <PreferenceCategory android:title="@string/preferences_packet_mode_title"
+        app:iconSpaceReserved="false">
         <ListPreference
             android:defaultValue="0"
+            app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_types"
             android:entryValues="@array/preferences_scan_types_int"
             android:key="preferences_packet_scan_type_int"
             android:title="@string/preferences_packet_scan_type" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/zxing_preferences_actions_title">
+    <PreferenceCategory android:title="@string/zxing_preferences_actions_title"
+        app:iconSpaceReserved="false">
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="preferences_play_beep"
+            app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_play_beep_title" />
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="preferences_vibrate"
+            app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_vibrate_title" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/zxing_preferences_general_title">
+    <PreferenceCategory android:title="@string/zxing_preferences_general_title"
+        app:iconSpaceReserved="false">
         <ListPreference
             android:defaultValue="OFF"
+            app:iconSpaceReserved="false"
             android:entries="@array/preferences_front_light_vision_options"
             android:entryValues="@array/preferences_front_light_vision_values"
             android:key="preferences_front_light_vision_mode"
             android:summary="@string/zxing_preferences_front_light_summary"
             android:title="@string/zxing_preferences_front_light_title" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_category_camera">
+    <PreferenceCategory android:title="@string/pref_category_camera"
+        app:iconSpaceReserved="false">
         <ListPreference
             android:key="@string/pref_key_rear_camera_preview_size"
             android:persistent="true"
+            app:iconSpaceReserved="false"
             android:title="@string/pref_title_rear_camera_preview_size" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_category_barcode_detection">
+    <PreferenceCategory android:title="@string/pref_category_barcode_detection"
+        app:iconSpaceReserved="false">
         <SeekBarPreference
             android:defaultValue="80"
             android:key="@string/pref_key_barcode_reticle_width"

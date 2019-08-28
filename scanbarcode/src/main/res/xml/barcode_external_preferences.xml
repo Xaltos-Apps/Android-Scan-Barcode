@@ -1,39 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory android:title="@string/preferences_scan_type"
-        android:key="preferences_scan_type_category">
+        android:key="preferences_scan_type_category"
+        app:iconSpaceReserved="false">
         <ListPreference
-            android:defaultValue="3"
+            android:defaultValue="2"
+            app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_source_types"
             android:entryValues="@array/preferences_scan_source_types_int"
             android:key="preferences_scan_type_int"
             android:title="@string/preferences_scan_type_title" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/preferences_external_scan_params">
+    <PreferenceCategory android:title="@string/preferences_external_scan_params"
+        app:iconSpaceReserved="false">
         <ListPreference
             android:defaultValue="0"
+            app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_last_symbols"
             android:entryValues="@array/preferences_scan_last_symbols_int"
             android:key="preferences_scan_last_symbol"
             android:title="@string/preferences_scan_last_symbol_title" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/preferences_packet_mode_title">
+    <PreferenceCategory android:title="@string/preferences_packet_mode_title"
+        app:iconSpaceReserved="false">
         <ListPreference
             android:defaultValue="0"
+            app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_types"
             android:entryValues="@array/preferences_scan_types_int"
             android:key="preferences_packet_scan_type_int"
             android:title="@string/preferences_packet_scan_type" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/zxing_preferences_actions_title">
+    <PreferenceCategory android:title="@string/zxing_preferences_actions_title"
+        app:iconSpaceReserved="false">
         <CheckBoxPreference
             android:defaultValue="true"
+            app:iconSpaceReserved="false"
             android:key="preferences_play_beep"
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_play_beep_title" />
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="preferences_vibrate"
+            app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_vibrate_title" />
     </PreferenceCategory>
