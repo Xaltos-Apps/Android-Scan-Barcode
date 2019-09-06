@@ -39,41 +39,45 @@
     <string name="zxing_preferences_vibrate_title">Vibrate</string>
 
     <string name="caption_setting_scan">Barcode scanner</string>
-    <string name="preferences_packet_mode_title">Package mode scan</string>
+    <string name="preferences_packet_mode_title">Batch mode scan</string>
     <string name="preferences_packet_scan_type_increment">Autoincrement quantity by 1 (+1)</string>
     <string name="preferences_packet_scan_type_set_quantity">Set quantity manually</string>
     <string name="preferences_packet_scan_type">After each scan</string>
 
-    <string name="vision_msg_default_status">To scan a barcode, place it in front of the camera</string>
-    <string name="preferences_external_scan_params">Scan parameters</string>
-    <string name="preferences_scan_type">Источник сканирования</string>
-    <string name="preferences_scan_type_title">Используемый источник сканирования</string>
-    <string name="preferences_scan_camera">Камера устройства</string>
+    <string name="preferences_scan_type">Scan with</string>
+    <string name="preferences_scan_type_title">Barcode scanner type </string>
+    <string name="preferences_scan_camera">Camera (ZXing)</string>
     <string name="preferences_scan_camera_vision">Камера устройства 2</string>
-    <string name="preferences_scan_external">Внешний сканер</string>
-    <string name="preferences_scan_last_symbol_title">Завершающий символ штрих-кода</string>
-    <string name="preferences_scan_last_symbol_enter">Перевод строки</string>
-    <string name="preferences_scan_last_symbol_tab">Табуляция</string>
-    <string name="preferences_scan_last_symbol_space">Пробел</string>
-    <string name="caption_external_scan_description">Выполняйте сканирование штрих-кодов…</string>
-    <string name="caption_external_scan">Используйте внешний сканер</string>
-    <string name="preferences_scan_vertical_camera">Камера устройства 3</string>
+    <string name="preferences_scan_external">External scanner</string>
+    <string name="preferences_scan_last_symbol_title">Suffix (end symbol)</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"This is an experimental feature. \n\n
+        Help us to debug and improve it.\n\n
+        Please, let us know if it works for you or not. Using \'Question or suggestion\' menu item to send feedback."</string>
+
+    <string name="caption_external_scan">Use External Scanner</string>
+    <string name="preferences_scan_last_symbol_space">Space</string>
+    <string name="preferences_external_scan_params">Scan parameters</string>
+
+    <string name="vision_msg_default_status">Place a barcode inside the viewfinder rectangle</string>
+    <string name="preferences_scan_vertical_camera">Camera (ZXing v.2 - New!)</string>
 
     <!-- Strings for barcode detection settings. -->
     <string name="pref_category_barcode_detection">Barcode detection</string>
-    <string name="pref_title_barcode_reticle_width">Barcode reticle width</string>
+    <string name="pref_title_barcode_reticle_width">Barcode viewfinder width</string>
     <string name="pref_summary_barcode_reticle_width" formatted="false">Relative to the camera view width, ranges from 50% to 95%</string>
-    <string name="pref_title_barcode_reticle_height">Barcode reticle height</string>
+    <string name="pref_title_barcode_reticle_height">Barcode viewfinder height</string>
     <string name="pref_summary_barcode_reticle_height" formatted="false">Relative to the camera view height, ranges from 20% to 80%</string>
     <string name="pref_title_enable_barcode_size_check">Enable barcode size check</string>
     <string name="pref_summary_enable_barcode_size_check">Will prompt user to move camera closer if the detected barcode is too small</string>
     <string name="pref_title_minimum_barcode_width">Minimum barcode width</string>
-    <string name="pref_summary_minimum_barcode_width" formatted="false">Relative to the reticle width, ranges from 20% to 80% (only applicable when barcode size check enabled)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Relative to the viewfinder width, ranges from 20% to 80% (only applicable when barcode size check enabled)</string>
     <string name="pref_title_rear_camera_preview_size">Rear camera preview size</string>
-    <string name="pref_category_camera">Camera</string>
     <string name="cd_settings_button">Settings</string>
     <string name="cd_close_button">Back</string>
     <string name="cd_flash_button">Toggle camera flash</string>
+    <string name="pref_category_camera">Camera</string>
 
     <string name="pref_key_minimum_barcode_width" translatable="false">barcode_mbw</string>
     <string name="pref_key_enable_barcode_size_check" translatable="false">barcode_ebsc</string>
