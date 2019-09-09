@@ -112,7 +112,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
 
     public void setTorch(boolean on) {
         new Thread(() -> {
-            while (!cameraSource.hasParameters()) {
+            while (cameraSource == null || !cameraSource.hasParameters()) {
                 try {
                     Thread.sleep(100);
                     // Do some stuff
