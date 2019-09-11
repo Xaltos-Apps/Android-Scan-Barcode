@@ -8,12 +8,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.gms.common.internal.Objects;
-import com.google.android.material.chip.Chip;
 import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.R;
 import com.tiromansev.scanbarcode.vision.camera.CameraSource;
@@ -33,7 +33,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     private GraphicOverlay graphicOverlay;
     private View settingsButton;
     private View flashButton;
-    private Chip promptChip;
+    private TextView promptChip;
     public BeepManager beepManager;
     private AnimatorSet promptChipAnimator;
     private WorkflowModel workflowModel;
