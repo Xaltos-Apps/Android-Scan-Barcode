@@ -47,7 +47,7 @@
     <string name="preferences_scan_type">Scan with</string>
     <string name="preferences_scan_type_title">Barcode scanner type </string>
     <string name="preferences_scan_camera">Camera (ZXing)</string>
-    <string name="preferences_scan_camera_vision">Камера устройства 2</string>
+    <string name="preferences_scan_camera_vision">Camera (Mobile Vision)</string>
     <string name="preferences_scan_external">External scanner</string>
     <string name="preferences_scan_last_symbol_title">Suffix (end symbol)</string>
     <string name="preferences_scan_last_symbol_enter">Enter</string>

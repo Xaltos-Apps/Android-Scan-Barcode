@@ -47,7 +47,7 @@
     <string name="preferences_scan_type">Тип сканера</string>
     <string name="preferences_scan_type_title">Используемый тип сканера</string>
     <string name="preferences_scan_camera">Камера (ZXing)</string>
-    <string name="preferences_scan_camera_vision">Камера устройства 2</string>
+    <string name="preferences_scan_camera_vision">Камера (Mobile Vision)</string>
     <string name="preferences_scan_external">Внешний сканер</string>
     <string name="preferences_scan_last_symbol_title">Завершающий символ штрих-кода</string>
     <string name="preferences_scan_last_symbol_enter">Перевод строки</string>
@@ -61,7 +61,7 @@
     <string name="preferences_external_scan_params">Параметры сканирования</string>
 
     <string name="vision_msg_default_status">Поместите штрих-код в прямоугольник</string>
-    <string name="preferences_scan_vertical_camera">Камера устройства 3</string>
+    <string name="preferences_scan_vertical_camera">Камера (ZXing v.2 - New!)</string>
 
     <!-- Strings for barcode detection settings. -->
     <string name="pref_category_barcode_detection">Распознавание штрих-кодов</string>
