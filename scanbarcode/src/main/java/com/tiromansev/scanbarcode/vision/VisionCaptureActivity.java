@@ -121,7 +121,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
                 }
                 Log.d("set_torch", "wait camera...");
             }
-            setFlash(on);
+            runOnUiThread(() -> setFlash(on));
         }).start();
     }
 
