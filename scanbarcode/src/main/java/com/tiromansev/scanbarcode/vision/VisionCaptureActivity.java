@@ -126,6 +126,9 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     }
 
     private void setFlash(boolean on) {
+        if (cameraSource == null) {
+            return;
+        }
         if (!on) {
             flashButton.setSelected(false);
             cameraSource.updateFlashMode(Camera.Parameters.FLASH_MODE_OFF);
