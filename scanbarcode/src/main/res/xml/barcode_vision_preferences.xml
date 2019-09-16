@@ -5,7 +5,7 @@
         android:key="preferences_scan_type_category"
         android:title="@string/preferences_scan_type"
         app:iconSpaceReserved="false">
-        <ListPreference
+        <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="2"
             app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_source_types"
@@ -15,7 +15,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/preferences_packet_mode_title"
         app:iconSpaceReserved="false">
-        <ListPreference
+        <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="0"
             app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_types"
@@ -25,13 +25,13 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/zxing_preferences_actions_title"
         app:iconSpaceReserved="false">
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
             android:key="preferences_play_beep"
             app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_play_beep_title" />
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="false"
             android:key="preferences_vibrate"
             app:iconSpaceReserved="false"
@@ -40,7 +40,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/zxing_preferences_general_title"
         app:iconSpaceReserved="false">
-        <ListPreference
+        <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="OFF"
             app:iconSpaceReserved="false"
             android:entries="@array/preferences_front_light_vision_options"
@@ -51,7 +51,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_category_camera"
         app:iconSpaceReserved="false">
-        <ListPreference
+        <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:key="@string/pref_key_rear_camera_preview_size"
             android:persistent="true"
             app:iconSpaceReserved="false"

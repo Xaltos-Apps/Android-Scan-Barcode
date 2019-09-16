@@ -4,7 +4,7 @@
     <PreferenceCategory android:title="@string/preferences_scan_type"
         android:key="preferences_scan_type_category"
         app:iconSpaceReserved="false">
-        <ListPreference
+        <com.tiromansev.scanbarcode.views.com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="2"
             app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_source_types"
@@ -14,7 +14,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/preferences_packet_mode_title"
         app:iconSpaceReserved="false">
-        <ListPreference
+        <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="0"
             app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_types"
@@ -24,37 +24,37 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/zxing_preferences_scanning_title"
         app:iconSpaceReserved="false">
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
             app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:key="preferences_decode_1D_product"
             android:title="@string/zxing_preferences_decode_1D_product_title" />
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
             app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:key="preferences_decode_1D_industrial"
             android:title="@string/zxing_preferences_decode_1D_industrial_title" />
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
             app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:key="preferences_decode_QR"
             android:title="@string/zxing_preferences_decode_QR_title" />
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
             app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:key="preferences_decode_Data_Matrix"
             android:title="@string/zxing_preferences_decode_Data_Matrix_title" />
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="false"
             app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:key="preferences_decode_Aztec"
             android:title="@string/zxing_preferences_decode_Aztec_title" />
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="false"
             app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
@@ -63,13 +63,13 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/zxing_preferences_actions_title"
         app:iconSpaceReserved="false">
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
             app:iconSpaceReserved="false"
             android:key="preferences_play_beep"
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_play_beep_title" />
-        <CheckBoxPreference
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="false"
             app:iconSpaceReserved="false"
             android:key="preferences_vibrate"
