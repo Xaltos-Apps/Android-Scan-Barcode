@@ -92,8 +92,8 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         beepManager = new BeepManager(this);
         ambientLightManager = new AmbientLightManager(this);
 
-        PreferenceManager.setDefaultValues(this, R.xml.barcode_zxing_preferences, false);
-        setProperties();
+//        PreferenceManager.setDefaultValues(this, R.xml.barcode_zxing_preferences, false);
+//        setProperties();
 
         ImageButton btnSettings = findViewById(R.id.btnScanSettings);
         btnSettings.setOnClickListener(v -> {
