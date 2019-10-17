@@ -4,7 +4,7 @@
     <PreferenceCategory android:title="@string/preferences_scan_type"
         android:key="preferences_scan_type_category"
         app:iconSpaceReserved="false">
-        <com.tiromansev.scanbarcode.views.com.tiromansev.scanbarcode.views.MultilineListPreference
+        <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="2"
             app:iconSpaceReserved="false"
             android:entries="@array/preferences_scan_source_types"

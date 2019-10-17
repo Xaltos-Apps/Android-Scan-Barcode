@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.tiromansev.scanbarcode.zxing.ZxingCaptureActivity;
+import com.tiromansev.scanbarcode.zxing.ZxingVerticalCaptureActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // launch barcode activity.
-                Intent intent = new Intent(MainActivity.this, ZxingCaptureActivity.class);
+                Intent intent = new Intent(MainActivity.this, ZxingVerticalCaptureActivity.class);
                 startActivityForResult(intent, RC_BARCODE_CAPTURE);
             }
         });
