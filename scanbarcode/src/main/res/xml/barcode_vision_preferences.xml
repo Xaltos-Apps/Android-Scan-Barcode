@@ -92,10 +92,12 @@
             android:title="@string/pref_title_minimum_barcode_width"
             app:min="20"
             app:showSeekBarValue="true" />
-        <SwitchPreferenceCompat
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="false"
             android:key="@string/pref_key_enable_barcode_size_check"
+            android:layout="@layout/switch_preference"
             android:persistent="true"
+            app:iconSpaceReserved="false"
             android:summary="@string/pref_summary_enable_barcode_size_check"
             android:title="@string/pref_title_enable_barcode_size_check" />
     </PreferenceCategory>
