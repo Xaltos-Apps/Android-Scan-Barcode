@@ -126,7 +126,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     }
 
     private void setFlash(boolean on) {
-        if (cameraSource == null) {
+        if (cameraSource == null || !cameraSource.hasParameters()) {
             return;
         }
         if (!on) {

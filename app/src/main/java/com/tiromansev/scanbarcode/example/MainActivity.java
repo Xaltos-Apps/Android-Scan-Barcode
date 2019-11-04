@@ -2,13 +2,11 @@ package com.tiromansev.scanbarcode.example;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.tiromansev.scanbarcode.zxing.ZxingCaptureActivity;
-import com.tiromansev.scanbarcode.zxing.ZxingVerticalCaptureActivity;
+import com.tiromansev.scanbarcode.vision.VisionCaptureActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,13 +18,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button scanButton = findViewById(R.id.btn_scan);
-        scanButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // launch barcode activity.
-                Intent intent = new Intent(MainActivity.this, ZxingVerticalCaptureActivity.class);
-                startActivityForResult(intent, RC_BARCODE_CAPTURE);
-            }
+        scanButton.setOnClickListener(v -> {
+            // launch barcode activity.
+            Intent intent = new Intent(MainActivity.this, VisionCaptureActivity.class);
+            startActivityForResult(intent, RC_BARCODE_CAPTURE);
         });
     }
 }

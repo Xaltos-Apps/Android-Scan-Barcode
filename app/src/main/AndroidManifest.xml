@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.tiromansev.scanbarcode.zxing.ZxingVerticalCaptureActivity"
+        <activity android:name="com.tiromansev.scanbarcode.vision.VisionCaptureActivity"
             android:screenOrientation="portrait"
             android:clearTaskOnLaunch="true"
             android:stateNotNeeded="true"
