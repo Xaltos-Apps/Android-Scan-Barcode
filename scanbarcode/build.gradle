@@ -28,15 +28,15 @@ android {
 
 dependencies {
     implementation 'com.github.wrdlbrnft:better-barcodes:0.3.0.46'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     androidTestImplementation('androidx.test.espresso:espresso-core:3.2.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     testImplementation 'junit:junit:4.13'
     implementation 'androidx.preference:preference:1.1.1'
-    implementation 'com.google.android.gms:play-services-vision:20.1.1'
+    implementation 'com.google.android.gms:play-services-vision:20.1.2'
     implementation 'com.github.warkiz.widget:indicatorseekbar:1.2.9'
     implementation group: 'com.google.zxing', name: 'core', version: '3.4.0'
     implementation ('com.google.firebase:firebase-ml-vision:24.1.0') {
