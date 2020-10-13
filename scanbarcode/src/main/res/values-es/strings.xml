@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Lo sentimos, la cámara de Android encontró un problema. Es posible que deba reiniciar el dispositivo.</string>
+    <string name="zxing_msg_default_format">Formato</string>
+    <string name="zxing_msg_default_meta">Metadatos</string>
+    <string name="zxing_msg_default_status">Coloque un código de barras dentro del rectángulo del visor para escanearlo.</string>
+    <string name="zxing_msg_default_time">Hora</string>
+    <string name="zxing_msg_default_type">Tipo</string>
+    <string name="zxing_msg_error">Error</string>
+    <string name="zxing_msg_invalid_value">Valor inválido</string>
+    <string name="zxing_preferences_actions_title">Cuando se encuentra un código de barras\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Utilice enfoque automático</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D industrial</string>
+    <string name="zxing_preferences_decode_1D_product_title">Producto 1D</string>
+    <string name="zxing_preferences_decode_Aztec_title">Azteca</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Matriz de datos</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">Códigos QR</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Soluciones alternativas para errores de dispositivo</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Sin modo de escena de código de barras</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Utilice solo el modo de enfoque estándar</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Sin enfoque continuo</string>
+    <string name="zxing_preferences_disable_exposure_title">Sin exposición</string>
+    <string name="zxing_preferences_disable_metering_title">Sin medición</string>
+    <string name="zxing_preferences_front_light_summary">Mejora el escaneo con poca luz en algunos teléfonos, pero puede causar deslumbramiento. No funciona en todos los teléfonos.</string>
+    <string name="zxing_preferences_front_light_title">Usar luz delantera</string>
+    <string name="zxing_preferences_front_light_auto">Automático</string>
+    <string name="zxing_preferences_front_light_off">Apagado</string>
+    <string name="zxing_preferences_front_light_on">Encendido</string>
+    <string name="zxing_preferences_general_title">Configuración general</string>
+    <string name="zxing_preferences_invert_scan_title">Escaneo invertido</string>
+    <string name="zxing_preferences_invert_scan_summary">Escanee códigos de barras blancos sobre fondo negro. No disponible en algunos dispositivos.</string>
+    <string name="zxing_preferences_orientation_title">Sin rotación automática</string>
+    <string name="zxing_preferences_play_beep_title">Bip</string>
+    <string name="zxing_preferences_scanning_title">Al escanear códigos de barras, decodifique\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Vibrar</string>
+    <string name="caption_setting_scan">Escáner de código de barras</string>
+    <string name="preferences_packet_mode_title">Escaneo en modo por lotes</string>
+    <string name="preferences_packet_scan_type_increment">Cantidad de autoincremento en 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Establecer cantidad manualmente</string>
+    <string name="preferences_packet_scan_type">Después de cada escaneo</string>
+    <string name="preferences_scan_type">Escanear con</string>
+    <string name="preferences_scan_type_title">Tipo de escáner de código de barras </string>
+    <string name="preferences_scan_camera">Cámara (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Cámara (visión móvil)</string>
+    <string name="preferences_scan_external">Escáner externo</string>
+    <string name="preferences_scan_last_symbol_title">Sufijo (símbolo final)</string>
+    <string name="preferences_scan_last_symbol_enter">Entrar</string>
+    <string name="preferences_scan_last_symbol_tab">Pestaña</string>
+    <string name="caption_external_scan_description">"Esta es una característica experimental. \n\n
+        Ayúdanos a depurarla y mejorarla.\n\n
+        Por favor, haznos saber si funciona o no. Utiliza el elemento del menú \"Pregunta o sugerencia\" para enviar comentarios."</string>
+    <string name="caption_external_scan">Utiliza escáner externo</string>
+    <string name="preferences_scan_last_symbol_space">Espacio</string>
+    <string name="preferences_external_scan_params">Parámetros de escaneo</string>
+    <string name="vision_msg_default_status">Coloque un código de barras dentro del rectángulo del visor</string>
+    <string name="preferences_scan_vertical_camera">Cámara (ZXing v.2 - ¡Nuevo!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Detección de código de barras</string>
+    <string name="pref_title_barcode_reticle_width">Ancho del visor de códigos de barras</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">En relación con el ancho de la vista de la cámara, varía del 50% al 95%</string>
+    <string name="pref_title_barcode_reticle_height">Altura del visor de códigos de barras</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">En relación con la altura de la vista de la cámara, oscila entre el 20% y el 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Habilitar la verificación del tamaño del código de barras</string>
+    <string name="pref_summary_enable_barcode_size_check">Solicitará al usuario que acerque la cámara si el código de barras detectado es demasiado pequeño</string>
+    <string name="pref_title_minimum_barcode_width">Ancho mínimo del código de barras</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">En relación con el ancho del visor, oscila entre el 20% y el 80% (solo se aplica cuando la verificación del tamaño del código de barras está habilitada)</string>
+    <string name="pref_title_rear_camera_preview_size">Tamaño de vista previa de la cámara trasera</string>
+    <string name="cd_settings_button">Configuración</string>
+    <string name="cd_close_button">Atrás</string>
+    <string name="cd_flash_button">Alternar flash de la cámara</string>
+    <string name="pref_category_camera">Cámara</string>
+</resources>

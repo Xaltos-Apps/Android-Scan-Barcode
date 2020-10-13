@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Przepraszamy, kamera napotkała problem. Może być konieczne ponowne uruchomienie urządzenia.</string>
+    <string name="zxing_msg_default_format">Format</string>
+    <string name="zxing_msg_default_meta">Metadane</string>
+    <string name="zxing_msg_default_status">Umieść kod kreskowy wewnątrz prostokąta wizjera aby go zeskanować.</string>
+    <string name="zxing_msg_default_time">Czas</string>
+    <string name="zxing_msg_default_type">Typ</string>
+    <string name="zxing_msg_error">Błąd</string>
+    <string name="zxing_msg_invalid_value">Nieprawidłowa wartość</string>
+    <string name="zxing_preferences_actions_title">Gdy zostanie znaleziony kod kreskowy\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Użyj autofokusa aparatu</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Przemysłowy</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D Produktowy</string>
+    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Macierz danych</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">Kody QR</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Obsługa Błędów Urządzenia</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Bez sceny kodu kreskowego</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Użyj tylko standardowego trybu ostrości</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Bez ciągłego fokusa</string>
+    <string name="zxing_preferences_disable_exposure_title">Bez ekspozycji</string>
+    <string name="zxing_preferences_disable_metering_title">Bez pomiaru</string>
+    <string name="zxing_preferences_front_light_summary">Na niektórych telefonach ulepsza skanowanie przy słabym świetle, ale może powodować odbłyski. Nie działa na wszystkich telefonach.</string>
+    <string name="zxing_preferences_front_light_title">Użyj światła przedniego</string>
+    <string name="zxing_preferences_front_light_auto">Automatyczne</string>
+    <string name="zxing_preferences_front_light_off">Wył.</string>
+    <string name="zxing_preferences_front_light_on">Wł.</string>
+    <string name="zxing_preferences_general_title">Ustawienia ogólne</string>
+    <string name="zxing_preferences_invert_scan_title">Odwróć skanowanie</string>
+    <string name="zxing_preferences_invert_scan_summary">Skanuj biały kod kreskowy na czarnym tle. Niedostępne na niektórych urządzeniach.</string>
+    <string name="zxing_preferences_orientation_title">Nie obracaj automatycznie</string>
+    <string name="zxing_preferences_play_beep_title">Wydaj dźwięk</string>
+    <string name="zxing_preferences_scanning_title">Podczas skanowania kodów kreskowych dekoduj\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Wibruj</string>
+    <string name="caption_setting_scan">Skaner kodów kreskowych</string>
+    <string name="preferences_packet_mode_title">Skanowanie w trybie wsadowym</string>
+    <string name="preferences_packet_scan_type_increment">Automatyczny przyrost ilości o 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Ustaw ilość ręcznie</string>
+    <string name="preferences_packet_scan_type">Po każdym skanowaniu</string>
+    <string name="preferences_scan_type">Skanuj z</string>
+    <string name="preferences_scan_type_title">Typ skanera kodów kreskowych </string>
+    <string name="preferences_scan_camera">Aparat (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Aparat (Mobile Vision)</string>
+    <string name="preferences_scan_external">Zewnętrzny skaner</string>
+    <string name="preferences_scan_last_symbol_title">Sufiks (symbol końcowy)</string>
+    <string name="preferences_scan_last_symbol_enter">Wprowadź</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"To jest funkcja eksperymentalna. \n\n
+        Pomóż nam usuwać błędy i ulepszyć ją.\n\n
+        Proszę, daj nam znać czy u Ciebie działa czy nie. Użyj pozycji menu 'Pytanie lub sugestia' do wysłania opinii."</string>
+    <string name="caption_external_scan">Użyj skanera zewnętrznego</string>
+    <string name="preferences_scan_last_symbol_space">Spacja</string>
+    <string name="preferences_external_scan_params">Ustawienia skanowania</string>
+    <string name="vision_msg_default_status">Umieść kod kreskowy wewnątrz prostokąta wizjera aby go zeskanować</string>
+    <string name="preferences_scan_vertical_camera">Aparat (ZXing v.2 - Nowy!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Wykrywanie kodu kreskowego</string>
+    <string name="pref_title_barcode_reticle_width">Szerokość wizjera kodów kreskowych</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">W stosunku do szerokości widoku aparatu, zakres od 50% do 95%</string>
+    <string name="pref_title_barcode_reticle_height">Wysokość wizjera kodów kreskowych</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">W stosunku do wysokości widoku aparatu, zakres od 20% do 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Włącz sprawdzanie rozmiaru kodu kreskowego</string>
+    <string name="pref_summary_enable_barcode_size_check">Poproś użytkownika o przesunięcie aparatu bliżej jeśli wykryty kod kreskowy jest zbyt mały</string>
+    <string name="pref_title_minimum_barcode_width">Minimalna szerokość kodu kreskowego</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">W stosunku do szerokości wizjera zakres od 20% do 80% (tylko kiedy włączono sprawdzanie rozmiaru kodu kreskowego)</string>
+    <string name="pref_title_rear_camera_preview_size">Rozmiar podglądu tylnej kamery</string>
+    <string name="cd_settings_button">Ustawienia</string>
+    <string name="cd_close_button">Wstecz</string>
+    <string name="cd_flash_button">Włącz światło aparatu</string>
+    <string name="pref_category_camera">Aparat</string>
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">Ok</string>
+    <string name="zxing_msg_camera_framework_bug">Leider ist mit der Android-Kamera ein Problem aufgetreten. Eventuell sollte das Gerät neu gestartet werden.</string>
+    <string name="zxing_msg_default_format">Format</string>
+    <string name="zxing_msg_default_meta">Metadaten</string>
+    <string name="zxing_msg_default_status">Platzieren Sie einen Barcode in das Sucherrechteck um ihn zu scannen.</string>
+    <string name="zxing_msg_default_time">Zeit</string>
+    <string name="zxing_msg_default_type">Typ</string>
+    <string name="zxing_msg_error">Fehler</string>
+    <string name="zxing_msg_invalid_value">Ungültiger Wert</string>
+    <string name="zxing_preferences_actions_title">Wenn ein Barcode gefunden wird\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Autofokus verwenden</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Industriell</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D Produkt</string>
+    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Datenmatrix</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">QR Code</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Geräte Fehlerbehebungen</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Kein Barcode Szenenmodus</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Nur Standardfokusmodus verwenden</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Kein kontinuierlicher Fokus</string>
+    <string name="zxing_preferences_disable_exposure_title">Keine Belichtung</string>
+    <string name="zxing_preferences_disable_metering_title">Keine Messung</string>
+    <string name="zxing_preferences_front_light_summary">Verbessert das Scannen bei schlechten Lichtverhältnissen auf einigen Telefonen, kann jedoch Blendung verursachen. Funktioniert nicht auf allen Telefonen.</string>
+    <string name="zxing_preferences_front_light_title">Frontlicht verwenden</string>
+    <string name="zxing_preferences_front_light_auto">Automatisch</string>
+    <string name="zxing_preferences_front_light_off">Aus</string>
+    <string name="zxing_preferences_front_light_on">An</string>
+    <string name="zxing_preferences_general_title">Allgemeine Einstellungen</string>
+    <string name="zxing_preferences_invert_scan_title">Scan invertieren</string>
+    <string name="zxing_preferences_invert_scan_summary">Nach weißen Barcodes auf schwarzem Hintergrund suchen. Auf einigen Geräten nicht verfügbar.</string>
+    <string name="zxing_preferences_orientation_title">Keine automatische Drehung</string>
+    <string name="zxing_preferences_play_beep_title">Ton</string>
+    <string name="zxing_preferences_scanning_title">Beim Barcodescannen dekodieren\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Vibration</string>
+    <string name="caption_setting_scan">Barcodescanner</string>
+    <string name="preferences_packet_mode_title">Stapelmodus Scan</string>
+    <string name="preferences_packet_scan_type_increment">Automatische Erhöhung der Anzahl um 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Anzahl manuell festlegen</string>
+    <string name="preferences_packet_scan_type">Nach jedem Scannen</string>
+    <string name="preferences_scan_type">Scannen mit</string>
+    <string name="preferences_scan_type_title">Barcodescannertyp </string>
+    <string name="preferences_scan_camera">Kamera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Kamera (Mobile Vision)</string>
+    <string name="preferences_scan_external">Externer Scanner</string>
+    <string name="preferences_scan_last_symbol_title">Suffix (Endsymbol)</string>
+    <string name="preferences_scan_last_symbol_enter">Eingabe</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"Dies ist eine experimentelle Funktion. \n\n
+        Hilf uns Fehler zu beheben und die App zu verbessern.\n\n
+        Bitte lasse uns wissen, ob es funktioniert oder nicht. Benutze den Menüpunkt 'Fragen und Antworten', um uns ein Feedback zu senden."</string>
+    <string name="caption_external_scan">Externen Scanner verwenden</string>
+    <string name="preferences_scan_last_symbol_space">Leerzeichen</string>
+    <string name="preferences_external_scan_params">Scaneinstellungen</string>
+    <string name="vision_msg_default_status">Platziere einen Barcode in das Sucherrechteck</string>
+    <string name="preferences_scan_vertical_camera">Kamera (ZXing v.2 - Neu!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Barcodeerkennung</string>
+    <string name="pref_title_barcode_reticle_width">Barcodesucher Breite</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Bezogen auf die Breite der Kameraansicht liegt der Bereich zwischen 50% und 95%</string>
+    <string name="pref_title_barcode_reticle_height">Barcodesucher Höhe</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Bezogen auf die Höhe der Kameraansicht liegt der Bereich zwischen 50% und 95%</string>
+    <string name="pref_title_enable_barcode_size_check">Barcodegröße Überprüfung aktivieren</string>
+    <string name="pref_summary_enable_barcode_size_check">Fordert Benutzer auf die Kamera näher zu setzen, wenn der erkannte Barcode zu klein ist</string>
+    <string name="pref_title_minimum_barcode_width">Minimale Barcodebreite</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Bezogen auf die Breite der Sucherbreite liegt der Bereich zwischen 20% und 80% (anwendbar, wenn die Barcodegrößen Überprüfung aktiviert ist)</string>
+    <string name="pref_title_rear_camera_preview_size">Hauptkamera Vorschaugröße</string>
+    <string name="cd_settings_button">Optionen</string>
+    <string name="cd_close_button">Zurück</string>
+    <string name="cd_flash_button">Kamera Blitz umschalten</string>
+    <string name="pref_category_camera">Kamera</string>
+</resources>
