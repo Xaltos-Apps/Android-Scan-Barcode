@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:title="@string/preferences_scan_type"
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/preferences_scan_type"
         android:key="preferences_scan_type_category"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineListPreference
@@ -11,8 +12,9 @@
             android:entryValues="@array/preferences_scan_source_types_int"
             android:key="preferences_scan_type_int"
             android:title="@string/preferences_scan_type_title" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/preferences_packet_mode_title"
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/preferences_packet_mode_title"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="0"
@@ -21,8 +23,9 @@
             android:entryValues="@array/preferences_scan_types_int"
             android:key="preferences_packet_scan_type_int"
             android:title="@string/preferences_packet_scan_type" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/zxing_preferences_scanning_title"
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/zxing_preferences_scanning_title"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
@@ -60,8 +63,9 @@
             android:layout="@layout/switch_preference"
             android:key="preferences_decode_PDF417"
             android:title="@string/zxing_preferences_decode_PDF417_title" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/zxing_preferences_actions_title"
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/zxing_preferences_actions_title"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
@@ -75,8 +79,9 @@
             android:key="preferences_vibrate"
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_vibrate_title" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/zxing_preferences_general_title"
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/zxing_preferences_general_title"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="OFF"
@@ -105,8 +110,9 @@
             app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_orientation_title" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/zxing_preferences_device_bug_workarounds_title"
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/zxing_preferences_device_bug_workarounds_title"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
@@ -133,5 +139,5 @@
             android:layout="@layout/switch_preference"
             android:key="preferences_disable_barcode_scene_mode"
             android:title="@string/zxing_preferences_disable_barcode_scene_mode_title" />
-    </PreferenceCategory>
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
 </PreferenceScreen>
