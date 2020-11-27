@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:title="@string/preferences_scan_type"
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/preferences_scan_type"
         android:key="preferences_scan_type_category"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineListPreference
@@ -11,8 +12,9 @@
             android:entryValues="@array/preferences_scan_source_types_int"
             android:key="preferences_scan_type_int"
             android:title="@string/preferences_scan_type_title" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/preferences_external_scan_params"
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/preferences_external_scan_params"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="0"
@@ -21,8 +23,9 @@
             android:entryValues="@array/preferences_scan_last_symbols_int"
             android:key="preferences_scan_last_symbol"
             android:title="@string/preferences_scan_last_symbol_title" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/preferences_packet_mode_title"
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/preferences_packet_mode_title"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineListPreference
             android:defaultValue="0"
@@ -31,8 +34,9 @@
             android:entryValues="@array/preferences_scan_types_int"
             android:key="preferences_packet_scan_type_int"
             android:title="@string/preferences_packet_scan_type" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/zxing_preferences_actions_title"
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/zxing_preferences_actions_title"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
             android:defaultValue="true"
@@ -46,5 +50,5 @@
             app:iconSpaceReserved="false"
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_vibrate_title" />
-    </PreferenceCategory>
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
 </PreferenceScreen>
