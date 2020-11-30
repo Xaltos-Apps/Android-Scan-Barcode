@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Je nám líto, ve fotoaparátu Android došlo k problému. Možná budete muset zařízení restartovat.</string>
+    <string name="zxing_msg_default_format">Formát</string>
+    <string name="zxing_msg_default_meta">Metadata</string>
+    <string name="zxing_msg_default_status">Nasměrujte obdélník hledáčku na čárový kód a naskenujte jej.</string>
+    <string name="zxing_msg_default_time">Čas</string>
+    <string name="zxing_msg_default_type">Typ</string>
+    <string name="zxing_msg_error">Chyba</string>
+    <string name="zxing_msg_invalid_value">Chyb. hodnota</string>
+    <string name="zxing_preferences_actions_title">Když je nalezen čárový kód\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Použijte automatické ostření</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D průmyslové</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D produkt</string>
+    <string name="zxing_preferences_decode_Aztec_title">Aztécký</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Dat matice</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">QR Kódy</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Řešení chyb zařízení</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Žádný režim scény s čárovým kódem</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Používejte pouze standardní režim ostření</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Nepoužívejte nepřetržité zaostřování</string>
+    <string name="zxing_preferences_disable_exposure_title">Žádná expozice</string>
+    <string name="zxing_preferences_disable_metering_title">Žádné měření</string>
+    <string name="zxing_preferences_front_light_summary">Vylepšuje skenování při slabém osvětlení na některých telefonech, ale může způsobit přesvícení. Nepracuje na všech telefonech.</string>
+    <string name="zxing_preferences_front_light_title">Použijte přední světlo</string>
+    <string name="zxing_preferences_front_light_auto">Automatický</string>
+    <string name="zxing_preferences_front_light_off">Vypnuto</string>
+    <string name="zxing_preferences_front_light_on">Zapnuto</string>
+    <string name="zxing_preferences_general_title">Obecné nastavení</string>
+    <string name="zxing_preferences_invert_scan_title">Invertovat skenování</string>
+    <string name="zxing_preferences_invert_scan_summary">Vyhledejte bílé čárové kódy na černém pozadí. Na některých zařízeních není k dispozici.</string>
+    <string name="zxing_preferences_orientation_title">Žádné automatické otáčení</string>
+    <string name="zxing_preferences_play_beep_title">Pípnutí</string>
+    <string name="zxing_preferences_scanning_title">Při skenování čárových kódů dekódujte\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Vibrovat</string>
+    <string name="caption_setting_scan">Čtečka kódů</string>
+    <string name="preferences_packet_mode_title">Dávkové skenování</string>
+    <string name="preferences_packet_scan_type_increment">Automatické zvyšování množství o 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Nastavte množství ručně</string>
+    <string name="preferences_packet_scan_type">Po každém skenování</string>
+    <string name="preferences_scan_type">Skenovat pomocí</string>
+    <string name="preferences_scan_type_title">Typ čtečky čárových kódů </string>
+    <string name="preferences_scan_camera">Fotoaparát (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Fotoaparát (v mobilu)</string>
+    <string name="preferences_scan_external">Externí skener</string>
+    <string name="preferences_scan_last_symbol_title">Přípona (koncový symbol)</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"Toto je experimentální funkce. \n\n
+        Pomozte nám jej ladit a vylepšovat.\n\n
+        Prosím, dejte nám vědět, jestli Vám to funguje nebo ne. Pomocí položky nabídky „Dotaz nebo návrh“ odešlete zpětnou vazbu."</string>
+    <string name="caption_external_scan">Použijte externí skener</string>
+    <string name="preferences_scan_last_symbol_space">Mezerník</string>
+    <string name="preferences_external_scan_params">Parametry skenování</string>
+    <string name="vision_msg_default_status">Nasměrujte obdélník hledáčku na čárový kód</string>
+    <string name="preferences_scan_vertical_camera">Fotoaparát (ZXing v.2 - novinka!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Detekce čárových kódů</string>
+    <string name="pref_title_barcode_reticle_width">Šířka hledáčku čárových kódů</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">V poměru k šířce záběru kamery se pohybuje od 50% do 95%</string>
+    <string name="pref_title_barcode_reticle_height">Výška hledáčku čárových kódů</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">V poměru k výšce záběru kamery se pohybuje od 20% do 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Povolit kontrolu velikosti čárového kódu</string>
+    <string name="pref_summary_enable_barcode_size_check">Pokud je detekovaný čárový kód příliš malý, vyzve uživatele k přiblížení kamery</string>
+    <string name="pref_title_minimum_barcode_width">Minimální šířka čárového kódu</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">V poměru k šířce hledáčku se pohybuje v rozmezí od 20% do 80% (použitelné pouze při aktivované kontrole velikosti čárového kódu)</string>
+    <string name="pref_title_rear_camera_preview_size">Velikost náhledu zadní kamery</string>
+    <string name="cd_settings_button">Nastavení</string>
+    <string name="cd_close_button">Zpět</string>
+    <string name="cd_flash_button">Přepnout blesk fotoaparátu</string>
+    <string name="pref_category_camera">Fotoaparát</string>
+</resources>
