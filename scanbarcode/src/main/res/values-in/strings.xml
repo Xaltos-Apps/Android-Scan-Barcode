@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Maaf, kamera Android mengalami masalah. Anda perlu mematikan dan menghidupkan kembali perangkat.</string>
+    <string name="zxing_msg_default_format">Format</string>
+    <string name="zxing_msg_default_meta">Metadata</string>
+    <string name="zxing_msg_default_status">Tempatkan kode barcode di dalam kotak putih untuk melakukan pemindaian.</string>
+    <string name="zxing_msg_default_time">Waktu</string>
+    <string name="zxing_msg_default_type">Tipe</string>
+    <string name="zxing_msg_error">Kesalahan</string>
+    <string name="zxing_msg_invalid_value">Nilai tidak valid</string>
+    <string name="zxing_preferences_actions_title">Ketika kode barcode ditemukan\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Gunakan fokus otomatis</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">Industri 1D</string>
+    <string name="zxing_preferences_decode_1D_product_title">Produk 1D</string>
+    <string name="zxing_preferences_decode_Aztec_title">Aztek</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Matriks Data</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">Kode QR</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Solusi Bug Perangkat</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Tidak ada layar mode kode barcode</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Hanya gunakan mode fokus standar</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Tidak ada fokus berkelanjutan</string>
+    <string name="zxing_preferences_disable_exposure_title">Tanpa eksposur</string>
+    <string name="zxing_preferences_disable_metering_title">Tidak ada pengukuran</string>
+    <string name="zxing_preferences_front_light_summary">Dapat meningkatkan kualitas pemindaian pada kondisi kekurangan cahaya, tetapi dapat menimbulkan silau. Tidak berfungsi di semua ponsel.</string>
+    <string name="zxing_preferences_front_light_title">Gunakan lampu depan</string>
+    <string name="zxing_preferences_front_light_auto">Otomatis</string>
+    <string name="zxing_preferences_front_light_off">Mati</string>
+    <string name="zxing_preferences_front_light_on">Nyala</string>
+    <string name="zxing_preferences_general_title">Pengaturan Umum</string>
+    <string name="zxing_preferences_invert_scan_title">Pemindaian terbalik</string>
+    <string name="zxing_preferences_invert_scan_summary">Pindai kode barcode dengan latar belakang berwarna hitam. Tidak tersedia di beberapa perangkat.</string>
+    <string name="zxing_preferences_orientation_title">Tidak ada rotasi otomatis</string>
+    <string name="zxing_preferences_play_beep_title">Berbunyi</string>
+    <string name="zxing_preferences_scanning_title">Ketika memindai kode barcode, decode\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Bergetar</string>
+    <string name="caption_setting_scan">Pemindai kode barcode</string>
+    <string name="preferences_packet_mode_title">Mode Pemindaian Berkelompok</string>
+    <string name="preferences_packet_scan_type_increment">Penambahan kuantitas otomatis sebesar 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Atur kuantitas secara manual</string>
+    <string name="preferences_packet_scan_type">Setelah setiap pemindaian</string>
+    <string name="preferences_scan_type">Pindai dengan</string>
+    <string name="preferences_scan_type_title">Tipe pemindai kode barcode </string>
+    <string name="preferences_scan_camera">Kamera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Kamera Seluler</string>
+    <string name="preferences_scan_external">Pemindai eksternal</string>
+    <string name="preferences_scan_last_symbol_title">Simbol berakhirnya proses pemindaian</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"Ini adalah fitur eksperimental. \n\n
+        Bantu kami untuk men-debug dan meningkatkannya.\n\n
+        Beri tahu kami apakah ini cocok untuk Anda atau tidak. Silahkan gunakan menu 'Pertanyaan atau saran' untuk mengirim umpan balik."</string>
+    <string name="caption_external_scan">Gunakan Pemindai Eksternal</string>
+    <string name="preferences_scan_last_symbol_space">Spasi</string>
+    <string name="preferences_external_scan_params">Parameter pemindaian</string>
+    <string name="vision_msg_default_status">Tempatkan kode barcode di dalam kotak putih</string>
+    <string name="preferences_scan_vertical_camera">Kamera (ZXing v.2 - Baru!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Deteksi kode barcode</string>
+    <string name="pref_title_barcode_reticle_width">Lebar kotak untuk memfoto kode barcode</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Relatif dengan lebar tampilan kamera, berkisar dari 50% hingga 95%</string>
+    <string name="pref_title_barcode_reticle_height">Tinggi kotak untuk memfoto kode barcode</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Relatif dengan tinggi tampilan kamera, berkisar dari 20% hingga 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Aktifkan pemeriksaan ukuran kode barcode</string>
+    <string name="pref_summary_enable_barcode_size_check">Akan meminta pengguna untuk mendekatkan kamera jika kode barcode yang terdeteksi terlalu kecil</string>
+    <string name="pref_title_minimum_barcode_width">Lebar minimum kode barcode</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Relatif dengan lebar kotak untuk memfoto kode barcode, berkisar dari 20% - 80% (hanya berfungsi jika pemeriksaan ukuran kode barcode diaktifkan)</string>
+    <string name="pref_title_rear_camera_preview_size">Ukuran pratinjau kamera belakang</string>
+    <string name="cd_settings_button">Pengaturan</string>
+    <string name="cd_close_button">Kembali</string>
+    <string name="cd_flash_button">Alihkan flash kamera</string>
+    <string name="pref_category_camera">Kamera</string>
+</resources>
