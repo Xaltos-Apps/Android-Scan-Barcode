@@ -37,7 +37,7 @@
     <string name="zxing_preferences_scanning_title">Beim Barcodescannen dekodieren\u2026</string>
     <string name="zxing_preferences_vibrate_title">Vibration</string>
     <string name="caption_setting_scan">Barcodescanner</string>
-    <string name="preferences_packet_mode_title">Stapelmodus Scan</string>
+    <string name="preferences_packet_mode_title">Scannen im Stapelmodus</string>
     <string name="preferences_packet_scan_type_increment">Automatische Erhöhung der Anzahl um 1 (+1)</string>
     <string name="preferences_packet_scan_type_set_quantity">Anzahl manuell festlegen</string>
     <string name="preferences_packet_scan_type">Nach jedem Scannen</string>
@@ -50,7 +50,7 @@
     <string name="preferences_scan_last_symbol_enter">Eingabe</string>
     <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Dies ist eine experimentelle Funktion. \n\n
-        Hilf uns Fehler zu beheben und die App zu verbessern.\n\n
+        Hilf uns Fehler zu beheben und die Aanwendung zu verbessern.\n\n
         Bitte lasse uns wissen, ob es funktioniert oder nicht. Benutze den Menüpunkt 'Fragen und Antworten', um uns ein Feedback zu senden."</string>
     <string name="caption_external_scan">Externen Scanner verwenden</string>
     <string name="preferences_scan_last_symbol_space">Leerzeichen</string>
