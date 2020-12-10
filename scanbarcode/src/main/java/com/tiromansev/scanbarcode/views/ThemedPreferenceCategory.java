@@ -34,8 +34,7 @@ public class ThemedPreferenceCategory extends PreferenceCategory {
         super.onBindViewHolder(holder);
 
         TypedValue typedValue = new TypedValue();
-        this.getContext().getTheme().resolveAttribute(R.attr.background, typedValue, true);
-        holder.itemView.setBackgroundColor(getContext().getResources().getColor(typedValue.resourceId));
+        holder.itemView.setBackgroundResource(R.drawable.background);
 
         TextView title = (TextView) holder.findViewById(android.R.id.title);
         if (title != null) {
