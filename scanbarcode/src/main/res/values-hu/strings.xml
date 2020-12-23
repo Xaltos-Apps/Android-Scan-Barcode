@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">Rendben</string>
+    <string name="zxing_msg_camera_framework_bug">Sajnáljuk, az Android kamera hibába ütközött. Lehet, hogy újra kell indítania a készüléket.</string>
+    <string name="zxing_msg_default_format">Formátum</string>
+    <string name="zxing_msg_default_meta">Metaadatok</string>
+    <string name="zxing_msg_default_status">Helyezze a vonalkódot a kereső téglalapjába a beolvasáshoz.</string>
+    <string name="zxing_msg_default_time">Idő</string>
+    <string name="zxing_msg_default_type">Típus</string>
+    <string name="zxing_msg_error">Hiba</string>
+    <string name="zxing_msg_invalid_value">Helytelen érték</string>
+    <string name="zxing_preferences_actions_title">Ha vonalkódot talál\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Használja az automatikus fókuszt</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Ipari</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D Termék</string>
+    <string name="zxing_preferences_decode_Aztec_title">Azték</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Adatmátrix</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">QR kódok</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Eszközhiba-megoldások</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Nincs vonalkódos jelenet mód</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Csak normál fókusz módot használjon</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Nincs folyamatos fókuszálás</string>
+    <string name="zxing_preferences_disable_exposure_title">Nincs expozíció</string>
+    <string name="zxing_preferences_disable_metering_title">Nincs mérés</string>
+    <string name="zxing_preferences_front_light_summary">Néhány telefonnál javítja a gyenge fényviszonyok közötti szkennelést, de tükröződést okozhat. Nem működik minden telefonon.</string>
+    <string name="zxing_preferences_front_light_title">Használja az első vakut</string>
+    <string name="zxing_preferences_front_light_auto">Automatikus</string>
+    <string name="zxing_preferences_front_light_off">Ki</string>
+    <string name="zxing_preferences_front_light_on">Be</string>
+    <string name="zxing_preferences_general_title">Általános beállítások</string>
+    <string name="zxing_preferences_invert_scan_title">Fordított szkennelés</string>
+    <string name="zxing_preferences_invert_scan_summary">Vizsgálja meg a fehér vonalkódokat a fekete háttéren. Egyes eszközökön nem érhető el.</string>
+    <string name="zxing_preferences_orientation_title">Nincs automatikus forgatás</string>
+    <string name="zxing_preferences_play_beep_title">Hangjelzés</string>
+    <string name="zxing_preferences_scanning_title">Vonalkódok beolvasásakor dekódolja a\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Rezeg</string>
+    <string name="caption_setting_scan">Vonalkód olvasó</string>
+    <string name="preferences_packet_mode_title">Kötegelt módú szkennelés</string>
+    <string name="preferences_packet_scan_type_increment">Automatikus növekedés 1-gyel (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Állítsa be a mennyiséget kézzel</string>
+    <string name="preferences_packet_scan_type">Minden vizsgálat után</string>
+    <string name="preferences_scan_type">Beolvasás a</string>
+    <string name="preferences_scan_type_title">Vonalkódolvasó típusa </string>
+    <string name="preferences_scan_camera">Kamera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Kamera (Mobile Vision)</string>
+    <string name="preferences_scan_external">Külső szkenner</string>
+    <string name="preferences_scan_last_symbol_title">Utótag (vég szimbólum)</string>
+    <string name="preferences_scan_last_symbol_enter">Megad</string>
+    <string name="preferences_scan_last_symbol_tab">Fül</string>
+    <string name="caption_external_scan_description">"Ez egy kísérleti jellemző. \n\n
+        Segítsen nekünk a hibakeresésben és javításban.\n\n
+        Kérjük, ossza meg velünk, hogy működik-e Önnek vagy sem. A „Kérdés vagy javaslat” menüpont használata visszajelzés küldéséhez."</string>
+    <string name="caption_external_scan">Használja a külső szkennert</string>
+    <string name="preferences_scan_last_symbol_space">Térköz</string>
+    <string name="preferences_external_scan_params">Beolvasási paraméterek</string>
+    <string name="vision_msg_default_status">Helyezzen vonalkódot a kereső téglalapjába</string>
+    <string name="preferences_scan_vertical_camera">Kamera (ZXing v.2 - Új!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Vonalkód-észlelés</string>
+    <string name="pref_title_barcode_reticle_width">Vonalkód-kereső szélessége</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">A kamera látószélességéhez viszonyítva 50% és 95% között mozog</string>
+    <string name="pref_title_barcode_reticle_height">Vonalkód-kereső magassága</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">A kamera nézetmagasságához viszonyítva 20% és 80% között mozog</string>
+    <string name="pref_title_enable_barcode_size_check">Engedélyezze a vonalkód méretének ellenőrzését</string>
+    <string name="pref_summary_enable_barcode_size_check">Arra kéri a felhasználót, hogy közelítse a kamerát, ha az észlelt vonalkód túl kicsi</string>
+    <string name="pref_title_minimum_barcode_width">Minimális vonalkód-szélesség</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">A kereső szélességéhez viszonyítva 20% és 80% között mozog (csak akkor alkalmazható, ha a vonalkód méretének ellenőrzése engedélyezve van)</string>
+    <string name="pref_title_rear_camera_preview_size">A hátsó kamera előnézeti mérete</string>
+    <string name="cd_settings_button">Beállítások</string>
+    <string name="cd_close_button">Vissza</string>
+    <string name="cd_flash_button">A kamera vakujának be- és kikapcsolása</string>
+    <string name="pref_category_camera">Kamera</string>
+</resources>
