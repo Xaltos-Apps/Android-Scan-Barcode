@@ -39,7 +39,7 @@
         <item name="android:textAppearance">?android:attr/textAppearance</item>
     </style>
 
-    <style name="AppTheme.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <style name="AppTheme.ActionBar" parent="Theme.AppCompat">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary</item>
         <!-- action bar background -->
