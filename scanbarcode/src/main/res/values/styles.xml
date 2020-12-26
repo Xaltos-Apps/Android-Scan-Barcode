@@ -12,6 +12,9 @@
         <item name="preferenceTheme">@style/PreferenceTheme</item>
     </style>
 
+    <style name="ScanBarcodeTheme" parent="Theme.AppCompat">
+    </style>
+
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">@color/color_primary</item>
     </style>
@@ -39,7 +42,7 @@
         <item name="android:textAppearance">?android:attr/textAppearance</item>
     </style>
 
-    <style name="AppTheme.ActionBar" parent="Theme.AppCompat">
+    <style name="AppTheme.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary</item>
         <!-- action bar background -->

@@ -16,6 +16,7 @@ public class PreferenceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.ScanBarcodeTheme);
         setContentView(R.layout.activity_preference);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
