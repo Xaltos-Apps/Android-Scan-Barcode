@@ -12,7 +12,7 @@
         <item name="preferenceTheme">@style/PreferenceTheme</item>
     </style>
 
-    <style name="ScanBarcodeTheme" parent="Theme.AppCompat">
+    <style name="ScanBarcodeTheme" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
 
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
