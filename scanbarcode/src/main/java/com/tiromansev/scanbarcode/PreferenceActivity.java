@@ -15,7 +15,7 @@ public class PreferenceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setTheme(R.style.ScanBarcodeTheme);
+//        setTheme(R.style.ScanBarcodeTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference);
 
