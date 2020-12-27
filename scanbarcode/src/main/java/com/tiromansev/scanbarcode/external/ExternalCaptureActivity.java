@@ -58,10 +58,14 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ExternalCaptureActivity.this, PreferenceActivity.class);
+                Intent intent = getPrefsIntent();
                 startActivityForResult(intent, PREFS_REQUEST);
             }
         });
+    }
+
+    public Intent getPrefsIntent() {
+        return new Intent(ExternalCaptureActivity.this, PreferenceActivity.class);
     }
 
     @Override
@@ -71,6 +75,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
                 setProperties();
             }
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     public void setProperties() {
