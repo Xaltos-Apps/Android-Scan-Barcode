@@ -18,7 +18,7 @@
         android:gravity="center_horizontal"
         android:text="@string/caption_external_scan"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textColor="@color/color_external_caption"
+        android:textColor="?attr/external_text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnScanSettings" />

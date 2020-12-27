@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="barCodeActionBarSize" format="dimension"/>
+    <attr name="external_text_color" format="color"/>
 </resources>

@@ -12,5 +12,6 @@
         <item name="actionBarPopupTheme">@style/AppTheme.PopupMenu</item>
         <item name="colorControlNormal">@color/color_primary</item>
         <item name="android:statusBarColor">@color/color_primary</item>
+        <item name="external_text_color">@color/color_external_caption</item>
     </style>
 </resources>
