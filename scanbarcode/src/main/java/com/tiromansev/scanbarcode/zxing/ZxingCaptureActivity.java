@@ -97,9 +97,13 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
 
         ImageButton btnSettings = findViewById(R.id.btnScanSettings);
         btnSettings.setOnClickListener(v -> {
-            Intent intent = new Intent(ZxingCaptureActivity.this, PreferenceActivity.class);
+            Intent intent = getPrefsIntent();
             startActivityForResult(intent, PREFS_REQUEST);
         });
+    }
+
+    public Intent getPrefsIntent() {
+        return new Intent(ZxingCaptureActivity.this, PreferenceActivity.class);
     }
 
     @Override
@@ -109,6 +113,7 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
                 setProperties();
             }
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     public void setProperties() {

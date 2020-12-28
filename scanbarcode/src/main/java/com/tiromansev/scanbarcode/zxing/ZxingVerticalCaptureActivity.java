@@ -48,7 +48,7 @@ public class ZxingVerticalCaptureActivity extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ZxingVerticalCaptureActivity.this, PreferenceActivity.class);
+                Intent intent = getPrefsIntent();
                 startActivityForResult(intent, PREFS_REQUEST);
             }
         });
@@ -61,6 +61,10 @@ public class ZxingVerticalCaptureActivity extends AppCompatActivity {
             handleDecodeInternally(text);
         });
         setProperties();
+    }
+
+    public Intent getPrefsIntent() {
+        return new Intent(ZxingVerticalCaptureActivity.this, PreferenceActivity.class);
     }
 
     public static int[] combineArrays(int[] src, int[] dest){
@@ -108,6 +112,7 @@ public class ZxingVerticalCaptureActivity extends AppCompatActivity {
                 setProperties();
             }
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     public void startCapture() {
