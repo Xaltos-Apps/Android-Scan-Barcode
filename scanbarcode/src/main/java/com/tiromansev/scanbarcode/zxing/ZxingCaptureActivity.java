@@ -124,6 +124,10 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         beepManager.playBeepSoundAndVibrate();
     }
 
+    public void playFailedSoundAndVibrate() {
+        beepManager.playFailedSoundAndVibrate();
+    }
+
     @Override
     protected void onResume() {
         super.onResume();

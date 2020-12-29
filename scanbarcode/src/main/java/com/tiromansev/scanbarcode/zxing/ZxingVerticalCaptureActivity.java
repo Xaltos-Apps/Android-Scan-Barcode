@@ -18,9 +18,9 @@ import com.tiromansev.scanbarcode.R;
 
 public class ZxingVerticalCaptureActivity extends AppCompatActivity {
 
-    private BarcodeReaderView mBarcodeReaderView;
+    private BarcodeReaderView barcodeReaderView;
     private ScanActivityHandler handler;
-    private BeepManager mBeepManager;
+    private BeepManager beepManager;
     private static final int PREFS_REQUEST = 99;
 
     static final int[] QR_CODE_FORMATS = {BarcodeFormat.QR_CODE};
@@ -53,11 +53,11 @@ public class ZxingVerticalCaptureActivity extends AppCompatActivity {
             }
         });
 
-        mBarcodeReaderView = findViewById(R.id.barcode_reader);
+        barcodeReaderView = findViewById(R.id.barcode_reader);
         handler = new ScanActivityHandler(this);
-        mBeepManager = new BeepManager(this);
-        mBarcodeReaderView.setCallback(text -> {
-            mBarcodeReaderView.stopScanning();
+        beepManager = new BeepManager(this);
+        barcodeReaderView.setCallback(text -> {
+            barcodeReaderView.stopScanning();
             handleDecodeInternally(text);
         });
         setProperties();
@@ -98,11 +98,15 @@ public class ZxingVerticalCaptureActivity extends AppCompatActivity {
             decodeFormats = combineArrays(PDF417_FORMATS, decodeFormats);
         }
 
-        mBarcodeReaderView.setFormat(decodeFormats);
+        barcodeReaderView.setFormat(decodeFormats);
     }
 
     public void playBeepSoundAndVibrate() {
-        mBeepManager.playBeepSoundAndVibrate();
+        beepManager.playBeepSoundAndVibrate();
+    }
+
+    public void playFailedSoundAndVibrate() {
+        beepManager.playFailedSoundAndVibrate();
     }
 
     @Override
@@ -116,21 +120,21 @@ public class ZxingVerticalCaptureActivity extends AppCompatActivity {
     }
 
     public void startCapture() {
-        mBarcodeReaderView.startScanning();
+        barcodeReaderView.startScanning();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mBeepManager.updatePrefs();
-        mBarcodeReaderView.start();
+        beepManager.updatePrefs();
+        barcodeReaderView.start();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        mBarcodeReaderView.stop();
-        mBeepManager.close();
+        barcodeReaderView.stop();
+        beepManager.close();
     }
 
     public void handleDecodeInternally(String rawResult) {

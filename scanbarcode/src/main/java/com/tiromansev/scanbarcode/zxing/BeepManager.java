@@ -29,12 +29,14 @@ public final class BeepManager implements MediaPlayer.OnErrorListener, Closeable
 
   private final Activity activity;
   private MediaPlayer mediaPlayer;
+  private MediaPlayer mediaPlayerFailed;
   private boolean playBeep;
   private boolean vibrate;
 
   public BeepManager(Activity activity) {
     this.activity = activity;
     this.mediaPlayer = null;
+    this.mediaPlayerFailed = null;
     updatePrefs();
   }
 
@@ -46,7 +48,13 @@ public final class BeepManager implements MediaPlayer.OnErrorListener, Closeable
       // The volume on STREAM_SYSTEM is not adjustable, and users found it too loud,
       // so we now play on the music stream.
       activity.setVolumeControlStream(AudioManager.STREAM_MUSIC);
-      mediaPlayer = buildMediaPlayer(activity);
+      mediaPlayer = buildMediaPlayer(activity, R.raw.beep);
+    }
+    if (playBeep && mediaPlayerFailed == null) {
+      // The volume on STREAM_SYSTEM is not adjustable, and users found it too loud,
+      // so we now play on the music stream.
+      activity.setVolumeControlStream(AudioManager.STREAM_MUSIC);
+      mediaPlayerFailed = buildMediaPlayer(activity, R.raw.beep_err);
     }
   }
 
@@ -54,6 +62,17 @@ public final class BeepManager implements MediaPlayer.OnErrorListener, Closeable
   public synchronized void playBeepSoundAndVibrate() {
     if (playBeep && mediaPlayer != null) {
       mediaPlayer.start();
+    }
+    if (vibrate) {
+      Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
+      vibrator.vibrate(VIBRATE_DURATION);
+    }
+  }
+
+  @SuppressLint("MissingPermission")
+  public void playFailedSoundAndVibrate() {
+    if (playBeep && mediaPlayerFailed != null) {
+      mediaPlayerFailed.start();
     }
     if (vibrate) {
       Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
@@ -73,9 +92,9 @@ public final class BeepManager implements MediaPlayer.OnErrorListener, Closeable
     return shouldPlayBeep;
   }
 
-  private MediaPlayer buildMediaPlayer(Context activity) {
+  private MediaPlayer buildMediaPlayer(Context activity, int resId) {
     MediaPlayer mediaPlayer = new MediaPlayer();
-    try (AssetFileDescriptor file = activity.getResources().openRawResourceFd(R.raw.beep)) {
+    try (AssetFileDescriptor file = activity.getResources().openRawResourceFd(resId)) {
       mediaPlayer.setDataSource(file.getFileDescriptor(), file.getStartOffset(), file.getLength());
       mediaPlayer.setOnErrorListener(this);
       mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -108,6 +127,10 @@ public final class BeepManager implements MediaPlayer.OnErrorListener, Closeable
     if (mediaPlayer != null) {
       mediaPlayer.release();
       mediaPlayer = null;
+    }
+    if (mediaPlayerFailed != null) {
+      mediaPlayerFailed.release();
+      mediaPlayerFailed = null;
     }
   }
 

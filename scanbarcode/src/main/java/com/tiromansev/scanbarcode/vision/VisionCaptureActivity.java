@@ -159,6 +159,10 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         beepManager.playBeepSoundAndVibrate();
     }
 
+    public void playFailedSoundAndVibrate() {
+        beepManager.playFailedSoundAndVibrate();
+    }
+
     private void stopCameraPreview() {
         if (workflowModel.isCameraLive()) {
             workflowModel.markCameraFrozen();

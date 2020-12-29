@@ -91,6 +91,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         beepManager.playBeepSoundAndVibrate();
     }
 
+    public void playFailedSoundAndVibrate() {
+        beepManager.playFailedSoundAndVibrate();
+    }
+
     @Override
     protected void onPause() {
         beepManager.close();
