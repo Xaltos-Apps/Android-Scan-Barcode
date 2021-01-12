@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Sorry, de Android camera ondervind problemen. U dient misschien uw apparaat te herstarten.</string>
+    <string name="zxing_msg_default_format">Format</string>
+    <string name="zxing_msg_default_meta">Metadata</string>
+    <string name="zxing_msg_default_status">Plaats een barcode in het afbeeldingzoekende vierkant om het te scannen.</string>
+    <string name="zxing_msg_default_time">Tijd</string>
+    <string name="zxing_msg_default_type">Type</string>
+    <string name="zxing_msg_error">Error</string>
+    <string name="zxing_msg_invalid_value">Ongeldige waarde</string>
+    <string name="zxing_preferences_actions_title">Wanneer een barcode is gevonden</string>
+    <string name="zxing_preferences_auto_focus_title">Gebruik de automatische focus</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Industrieel</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D Product</string>
+    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Datamatrix</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">QR-codes</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Tijdelijke oplossingen voor apparaatfouten</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Barcode wordt niet herkend</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Gebruik alleen de standaard focus modus</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Geen constante focus</string>
+    <string name="zxing_preferences_disable_exposure_title">Geen blootstelling</string>
+    <string name="zxing_preferences_disable_metering_title">Geen meting</string>
+    <string name="zxing_preferences_front_light_summary">Verbetert het scannen bij weinig licht op sommige telefoons, maar kan weerspiegeling veroorzaken. Het werkt alleen niet op alle telefoons.</string>
+    <string name="zxing_preferences_front_light_title">Gebruik de verlichting aan de voorzijde</string>
+    <string name="zxing_preferences_front_light_auto">Automatisch</string>
+    <string name="zxing_preferences_front_light_off">Uit</string>
+    <string name="zxing_preferences_front_light_on">Aan</string>
+    <string name="zxing_preferences_general_title">Algemene instellingen</string>
+    <string name="zxing_preferences_invert_scan_title">Scan omkeren</string>
+    <string name="zxing_preferences_invert_scan_summary">Scan voor witte barcodes op een zwarte achtergrond, is niet mogelijk op sommige apparaten.</string>
+    <string name="zxing_preferences_orientation_title">Niet automatisch omdraaien</string>
+    <string name="zxing_preferences_play_beep_title">Piep</string>
+    <string name="zxing_preferences_scanning_title">Decodeer bij het scannen op barcodes</string>
+    <string name="zxing_preferences_vibrate_title">Trillen</string>
+    <string name="caption_setting_scan">Barcodescanner</string>
+    <string name="preferences_packet_mode_title">Partijmodus scan</string>
+    <string name="preferences_packet_scan_type_increment">Hoeveelheid automatisch verhogen met 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Stel de hoeveelheid handmatig in</string>
+    <string name="preferences_packet_scan_type">Na elke scan</string>
+    <string name="preferences_scan_type">Scannen met</string>
+    <string name="preferences_scan_type_title">Barcodescanner type </string>
+    <string name="preferences_scan_camera">Camera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Camera (Mobiele Visie)</string>
+    <string name="preferences_scan_external">Externe scanner</string>
+    <string name="preferences_scan_last_symbol_title">Achtervoegsel (eindsymbool)</string>
+    <string name="preferences_scan_last_symbol_enter">Voer in</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"Dit is een experimentele functie. \n\n
+        Help ons om fouten op te sporen en te verbeteren.\n\n
+        Laat het ons weten als het voor u werkt of niet. Gebruik het menu-item 'Vraag of suggestie' om feedback te verzenden."</string>
+    <string name="caption_external_scan">Gebruik externe scanner</string>
+    <string name="preferences_scan_last_symbol_space">Ruimte</string>
+    <string name="preferences_external_scan_params">Scaninstellingen</string>
+    <string name="vision_msg_default_status">Plaats een barcode in het afbeeldingzoekende vierkant om het te scannen</string>
+    <string name="preferences_scan_vertical_camera">Camera (ZXing v.2 - Nieuw!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Barcodescanner</string>
+    <string name="pref_title_barcode_reticle_width">Breedte barcodescanner</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Betreft de kijkbreedte van de camera, varieert van 50% tot 95%</string>
+    <string name="pref_title_barcode_reticle_height">Hoogte barcodescanner</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Betreft de kijkhoogte van de camera, varieert van 20% tot 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Schakel de maten van de barcodescanner in</string>
+    <string name="pref_summary_enable_barcode_size_check">Vraagt de gebruiker om de camera dichterbij te brengen wanneer de getoonde barcode te klein is</string>
+    <string name="pref_title_minimum_barcode_width">Minimale breedte van de barcode</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Gerelateerd aan de breedte van de afbeeldingzoeker, varieert de hoogte van 20% tot 80% (wanneer de barcodegrootte controle is ingeschakeld)</string>
+    <string name="pref_title_rear_camera_preview_size">Voorbeeldformaat camera achterzijde</string>
+    <string name="cd_settings_button">Instellingen</string>
+    <string name="cd_close_button">Terug</string>
+    <string name="cd_flash_button">Schakel cameraflits in</string>
+    <string name="pref_category_camera">Camera</string>
+</resources>
