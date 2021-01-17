@@ -37,6 +37,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         edtBarcode.setOnKeyListener((v, keyCode, event) -> {
             if (keyCode == KeyEvent.KEYCODE_BACK) {
                 finish();
+                return true;
             }
             String barcode = edtBarcode.getText().toString();
             if (TextUtils.isEmpty(barcode)) {
