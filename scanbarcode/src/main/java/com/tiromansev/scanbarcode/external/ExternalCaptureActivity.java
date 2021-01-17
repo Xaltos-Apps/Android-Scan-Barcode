@@ -35,13 +35,13 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
 
         edtBarcode.setOnKeyListener((v, keyCode, event) -> {
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                finish();
+            }
             String barcode = edtBarcode.getText().toString();
             if (TextUtils.isEmpty(barcode)) {
                 restartScan();
                 return true;
-            }
-            if (keyCode == KeyEvent.KEYCODE_BACK) {
-                finish();
             }
             boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
             boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
