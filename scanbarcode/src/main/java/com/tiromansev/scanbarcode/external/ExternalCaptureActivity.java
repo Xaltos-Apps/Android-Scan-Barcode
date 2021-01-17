@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -34,33 +34,32 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         edtBarcode = findViewById(R.id.edtBarcode);
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
 
-        edtBarcode.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_BACK) {
-                    finish();
-                }
-                boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
-                boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
-                boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
-                if (enterHandled || tabHandled || spaceHandled) {
-                    handleBarcode(edtBarcode.getText().toString());
-                    edtBarcode.setText(null);
-                    return true;
-                }
-                return false;
+        edtBarcode.setOnKeyListener((v, keyCode, event) -> {
+            String barcode = edtBarcode.getText().toString();
+            if (TextUtils.isEmpty(barcode)) {
+                restartScan();
+                return true;
             }
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                finish();
+            }
+            boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
+            boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
+            boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
+            if (enterHandled || tabHandled || spaceHandled) {
+                handleBarcode(barcode);
+                edtBarcode.setText(null);
+                return true;
+            }
+            return false;
         });
 
         setProperties();
         beepManager = new BeepManager(this);
         ImageButton btnSettings = findViewById(R.id.btnScanSettings);
-        btnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = getPrefsIntent();
-                startActivityForResult(intent, PREFS_REQUEST);
-            }
+        btnSettings.setOnClickListener(v -> {
+            Intent intent = getPrefsIntent();
+            startActivityForResult(intent, PREFS_REQUEST);
         });
     }
 
@@ -84,6 +83,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     }
 
     public void handleBarcode(String rawResult) {
+
+    }
+
+    public void restartScan() {
 
     }
 
