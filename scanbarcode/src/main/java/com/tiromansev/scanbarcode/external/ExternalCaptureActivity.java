@@ -40,10 +40,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
                 return true;
             }
             String barcode = edtBarcode.getText().toString();
-            if (TextUtils.isEmpty(barcode)) {
-                restartScan();
-                return true;
-            }
+//            if (TextUtils.isEmpty(barcode)) {
+//                restartScan();
+//                return true;
+//            }
             boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
             boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
             boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
