@@ -10,16 +10,16 @@
     <string name="zxing_msg_default_type">Tipo</string>
     <string name="zxing_msg_error">Error</string>
     <string name="zxing_msg_invalid_value">Valor inválido</string>
-    <string name="zxing_preferences_actions_title">Cuando se encuentra un código de barras\u2026</string>
+    <string name="zxing_preferences_actions_title">Cuando se detecta un código de barras\u2026</string>
     <string name="zxing_preferences_auto_focus_title">Utilice enfoque automático</string>
-    <string name="zxing_preferences_decode_1D_industrial_title">1D industrial</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Industrial</string>
     <string name="zxing_preferences_decode_1D_product_title">Producto 1D</string>
-    <string name="zxing_preferences_decode_Aztec_title">Azteca</string>
-    <string name="zxing_preferences_decode_Data_Matrix_title">Matriz de datos</string>
+    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Data Matrix</string>
     <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">Códigos QR</string>
-    <string name="zxing_preferences_device_bug_workarounds_title">Soluciones alternativas para errores de dispositivo</string>
-    <string name="zxing_preferences_disable_barcode_scene_mode_title">Sin modo de escena de código de barras</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Soluciones alternativas para errores del dispositivo</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Sin modo de lectura de código de barras</string>
     <string name="zxing_preferences_disable_continuous_focus_summary">Utilice solo el modo de enfoque estándar</string>
     <string name="zxing_preferences_disable_continuous_focus_title">Sin enfoque continuo</string>
     <string name="zxing_preferences_disable_exposure_title">Sin exposición</string>
@@ -30,10 +30,10 @@
     <string name="zxing_preferences_front_light_off">Apagado</string>
     <string name="zxing_preferences_front_light_on">Encendido</string>
     <string name="zxing_preferences_general_title">Configuración general</string>
-    <string name="zxing_preferences_invert_scan_title">Escaneo invertido</string>
+    <string name="zxing_preferences_invert_scan_title">Escaneo de colores invertidos</string>
     <string name="zxing_preferences_invert_scan_summary">Escanee códigos de barras blancos sobre fondo negro. No disponible en algunos dispositivos.</string>
     <string name="zxing_preferences_orientation_title">Sin rotación automática</string>
-    <string name="zxing_preferences_play_beep_title">Bip</string>
+    <string name="zxing_preferences_play_beep_title">Sonido</string>
     <string name="zxing_preferences_scanning_title">Al escanear códigos de barras, decodifique\u2026</string>
     <string name="zxing_preferences_vibrate_title">Vibrar</string>
     <string name="caption_setting_scan">Escáner de código de barras</string>
@@ -44,16 +44,16 @@
     <string name="preferences_scan_type">Escanear con</string>
     <string name="preferences_scan_type_title">Tipo de escáner de código de barras </string>
     <string name="preferences_scan_camera">Cámara (ZXing)</string>
-    <string name="preferences_scan_camera_vision">Cámara (visión móvil)</string>
+    <string name="preferences_scan_camera_vision">Cámara (Mobile Vision)</string>
     <string name="preferences_scan_external">Escáner externo</string>
     <string name="preferences_scan_last_symbol_title">Sufijo (símbolo final)</string>
     <string name="preferences_scan_last_symbol_enter">Entrar</string>
-    <string name="preferences_scan_last_symbol_tab">Pestaña</string>
+    <string name="preferences_scan_last_symbol_tab">Tecla Tabuladora</string>
     <string name="caption_external_scan_description">"Esta es una característica experimental. \n\n
         Ayúdanos a depurarla y mejorarla.\n\n
-        Por favor, haznos saber si funciona o no. Utiliza el elemento del menú \"Pregunta o sugerencia\" para enviar comentarios."</string>
+        Por favor, haznos saber si funciona para ti o no. Utiliza el elemento del menú \"Pregunta o sugerencia\" para enviar comentarios."</string>
     <string name="caption_external_scan">Utiliza escáner externo</string>
-    <string name="preferences_scan_last_symbol_space">Espacio</string>
+    <string name="preferences_scan_last_symbol_space">Barra Espaciadora</string>
     <string name="preferences_external_scan_params">Parámetros de escaneo</string>
     <string name="vision_msg_default_status">Coloque un código de barras dentro del rectángulo del visor</string>
     <string name="preferences_scan_vertical_camera">Cámara (ZXing v.2 - ¡Nuevo!)</string>
