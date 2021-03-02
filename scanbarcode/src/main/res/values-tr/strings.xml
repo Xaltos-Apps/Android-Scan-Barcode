@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">Tamam</string>
+    <string name="zxing_msg_camera_framework_bug">Üzgünüz, Android kamerası bir sorunla karşılaştı. Cihazı yeniden başlatmanız gerekebilir.</string>
+    <string name="zxing_msg_default_format">Biçim</string>
+    <string name="zxing_msg_default_meta">Meta veriler</string>
+    <string name="zxing_msg_default_status">Taramak için barkodu vizör dikdörtgeninin içine yerleştirin.</string>
+    <string name="zxing_msg_default_time">Zaman</string>
+    <string name="zxing_msg_default_type">Tip</string>
+    <string name="zxing_msg_error">Hata</string>
+    <string name="zxing_msg_invalid_value">Geçersiz bilgi</string>
+    <string name="zxing_preferences_actions_title">Barkod bulunduğu zaman\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Otomatik odaklanmayı kullanınız</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Endüstriyel</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D Ürün</string>
+    <string name="zxing_preferences_decode_Aztec_title">Aztek</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Karekod</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">QR Kodları</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Cihaz Hata Düzeltmeleri</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Barkod çekim modunu kullanmayınız</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Yalnızca standart odak modunu kullanınız</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Sürekli odaklanma modunu kullanmayınız</string>
+    <string name="zxing_preferences_disable_exposure_title">Poz kullanmayın</string>
+    <string name="zxing_preferences_disable_metering_title">Ölçüm kullanmayın</string>
+    <string name="zxing_preferences_front_light_summary">Bazı telefonlarda düşük ışıkta taramayı iyileştirir ancak parlamaya neden olabilir. Tüm telefonlarda çalışmıyor.</string>
+    <string name="zxing_preferences_front_light_title">Ön ışığı kullan</string>
+    <string name="zxing_preferences_front_light_auto">Otomatik</string>
+    <string name="zxing_preferences_front_light_off">Kapalı</string>
+    <string name="zxing_preferences_front_light_on">Açık</string>
+    <string name="zxing_preferences_general_title">Genel Ayarlar</string>
+    <string name="zxing_preferences_invert_scan_title">Taramayı ters çevir</string>
+    <string name="zxing_preferences_invert_scan_summary">Siyah arka plan üzerinde beyaz barkodları tarayın. Bazı cihazlarda mevcut değildir.</string>
+    <string name="zxing_preferences_orientation_title">Otomatik dönme yok</string>
+    <string name="zxing_preferences_play_beep_title">Bip sesi</string>
+    <string name="zxing_preferences_scanning_title">Barkodları tararken aşağıdaki kodları çöz\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Titreşim</string>
+    <string name="caption_setting_scan">Barkod tarama</string>
+    <string name="preferences_packet_mode_title">Toplu tarama</string>
+    <string name="preferences_packet_scan_type_increment">Mal miktarını 1 artırmak (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Miktarı manuel olarak ayarlayın</string>
+    <string name="preferences_packet_scan_type">Her taramadan sonra</string>
+    <string name="preferences_scan_type">Tarayıcı tipi</string>
+    <string name="preferences_scan_type_title">Kullanılan tarayıcı türü </string>
+    <string name="preferences_scan_camera">Kamera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Kamera (Mobile Vision)</string>
+    <string name="preferences_scan_external">Harici tarayıcı</string>
+    <string name="preferences_scan_last_symbol_title">Barkod bitiş simgesi</string>
+    <string name="preferences_scan_last_symbol_enter">Giriş</string>
+    <string name="preferences_scan_last_symbol_tab">Sekme</string>
+    <string name="caption_external_scan_description">"Bu deneysel bir özelliktir. \n\n
+        Hata ayıklamamıza ve iyileştirmemize yardımcı olun.\n\n
+        Lütfen sizin için işe yarayıp yaramadığını bize bildirin. Geri bildirim göndermek için 'Soru veya öneri' menü öğesini kullanma."</string>
+    <string name="caption_external_scan">Harici Tarayıcı Kullanın</string>
+    <string name="preferences_scan_last_symbol_space">Boşluk</string>
+    <string name="preferences_external_scan_params">Tarama seçenekleri</string>
+    <string name="vision_msg_default_status">Barkodu vizör dikdörtgeninin içine yerleştirin</string>
+    <string name="preferences_scan_vertical_camera">Kamera (ZXing v.2 - Yeni!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Barkod tanıma</string>
+    <string name="pref_title_barcode_reticle_width">Barkod vizör genişliği</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Kamera görüş genişliğine göre% 50 ile% 95 arasında değişir</string>
+    <string name="pref_title_barcode_reticle_height">Barkod vizör yüksekliği</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Kamera görüş yüksekliğine göre% 20 ile% 80 arasında değişir</string>
+    <string name="pref_title_enable_barcode_size_check">Barkod boyutu kontrolünü etkinleştir</string>
+    <string name="pref_summary_enable_barcode_size_check">Algılanan barkod çok küçükse kullanıcıdan kamerayı yaklaştırmasını ister</string>
+    <string name="pref_title_minimum_barcode_width">Minimum barkod genişliği</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Vizör genişliğine göre,% 20 ila% 80 arasında değişir (yalnızca barkod boyutu kontrolü etkinleştirildiğinde geçerlidir)</string>
+    <string name="pref_title_rear_camera_preview_size">Arka kamera önizleme boyutu</string>
+    <string name="cd_settings_button">Ayarlar</string>
+    <string name="cd_close_button">Geri</string>
+    <string name="cd_flash_button">Kamera flaşını aç / kapat</string>
+    <string name="pref_category_camera">Kamera</string>
+</resources>
