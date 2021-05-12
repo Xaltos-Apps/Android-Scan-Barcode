@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Tyvärr har Android-kameran stött på ett problem. Du kan behöva starta om enheten.</string>
+    <string name="zxing_msg_default_format">Format</string>
+    <string name="zxing_msg_default_meta">Metadata</string>
+    <string name="zxing_msg_default_status">Placera en streckkod inuti sökarens rektangel för att skanna den.</string>
+    <string name="zxing_msg_default_time">Tid</string>
+    <string name="zxing_msg_default_type">Typ</string>
+    <string name="zxing_msg_error">Fel</string>
+    <string name="zxing_msg_invalid_value">Ogiltigt värde</string>
+    <string name="zxing_preferences_actions_title">När en streckkod hittas\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Använd autofokus</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Industrial</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D Product</string>
+    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Data Matrix</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">QR-koder</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Lösningar för enhetsfel</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Inget streckkodsläge</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Använd endast standardfokusläge</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Inget kontinuerligt fokus</string>
+    <string name="zxing_preferences_disable_exposure_title">Ingen exponering</string>
+    <string name="zxing_preferences_disable_metering_title">Ingen mätning</string>
+    <string name="zxing_preferences_front_light_summary">Förbättrar skanningen i svagt ljus på vissa telefoner, men kan orsaka bländning. Fungerar inte på alla telefoner.</string>
+    <string name="zxing_preferences_front_light_title">Använd frontljus</string>
+    <string name="zxing_preferences_front_light_auto">Automatisk</string>
+    <string name="zxing_preferences_front_light_off">Av</string>
+    <string name="zxing_preferences_front_light_on">På</string>
+    <string name="zxing_preferences_general_title">Allmänna Inställningar</string>
+    <string name="zxing_preferences_invert_scan_title">Invertera skanning</string>
+    <string name="zxing_preferences_invert_scan_summary">Sök efter vita streckkoder på svart bakgrund. Ej tillgängligt på vissa enheter.</string>
+    <string name="zxing_preferences_orientation_title">Ingen automatisk rotation</string>
+    <string name="zxing_preferences_play_beep_title">Pip</string>
+    <string name="zxing_preferences_scanning_title">Vid sökning efter streckkoder, avkoda\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Vibrera</string>
+    <string name="caption_setting_scan">Streckkodsläsare</string>
+    <string name="preferences_packet_mode_title">Batch-läge skanning</string>
+    <string name="preferences_packet_scan_type_increment">Autoinkrement kvantitet med 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Ställ in kvantitet manuellt</string>
+    <string name="preferences_packet_scan_type">Efter varje skanning</string>
+    <string name="preferences_scan_type">Skanna med</string>
+    <string name="preferences_scan_type_title">Typ av streckkodsläsare </string>
+    <string name="preferences_scan_camera">Kamera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Kamera (Mobile Vision)</string>
+    <string name="preferences_scan_external">Extern sträckkodsläsare</string>
+    <string name="preferences_scan_last_symbol_title">Suffix (slutsymbol)</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"Detta är en experimentell funktion. \n\n
+        Hjälp oss att felsöka och förbättra den.\n\n
+        Låt oss veta om det fungerar för dig eller inte. Använd \"Fråga eller förslag\" i menyn för att skicka feedback."</string>
+    <string name="caption_external_scan">Använd extern sträckkodsläsare</string>
+    <string name="preferences_scan_last_symbol_space">Mellanslag</string>
+    <string name="preferences_external_scan_params">Skanner-parametrar</string>
+    <string name="vision_msg_default_status">Placera en streckkod inuti sökarens rektangel</string>
+    <string name="preferences_scan_vertical_camera">Kamera (ZXing v.2 - Nytt!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Streckkodsdetektering</string>
+    <string name="pref_title_barcode_reticle_width">Streckkodsökarens bredd</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">I förhållande till kamerans vybredd, sträcker sig från 50% till 95%</string>
+    <string name="pref_title_barcode_reticle_height">Streckkodsökarens höjd</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">I förhållande till kamerans höjd, sträcker sig från 20% till 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Aktivera streckkodsstorlekskontroll</string>
+    <string name="pref_summary_enable_barcode_size_check">Kommer att uppmana användaren att flytta kameran närmare om den upptäckta streckkoden är för liten</string>
+    <string name="pref_title_minimum_barcode_width">Minsta streckkodsbredd</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">I förhållande till sökarens bredd, sträcker sig från 20% till 80% (gäller endast när kontroll av streckkodsstorlek är aktiverad)</string>
+    <string name="pref_title_rear_camera_preview_size">Bakre kamerans granskningsstorlek</string>
+    <string name="cd_settings_button">Inställningar</string>
+    <string name="cd_close_button">Tillbaka</string>
+    <string name="cd_flash_button">Växla kamerablixten</string>
+    <string name="pref_category_camera">Kamera</string>
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Spiacenti, la fotocamera Android ha riscontrato un problema. Potrebbe essere necessario riavviare il dispositivo.</string>
+    <string name="zxing_msg_default_format">Formatta</string>
+    <string name="zxing_msg_default_meta">Metadati</string>
+    <string name="zxing_msg_default_status">Posiziona un codice a barre all\'interno del rettangolo in sovraimpressione per scansionarlo.</string>
+    <string name="zxing_msg_default_time">Ora</string>
+    <string name="zxing_msg_default_type">Tipo</string>
+    <string name="zxing_msg_error">Errore</string>
+    <string name="zxing_msg_invalid_value">Valore errato</string>
+    <string name="zxing_preferences_actions_title">Quando viene rilevato un codice a barre\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Usa auto-focus</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Industrial</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D Product</string>
+    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Data Matrix</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">Codici QR</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Fix del dispositivo</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Nessuna scena del codice a barre</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Utilizza solo la modalità di messa a fuoco standard</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Disattiva focus continuo</string>
+    <string name="zxing_preferences_disable_exposure_title">Disattiva esposizione</string>
+    <string name="zxing_preferences_disable_metering_title">Disattiva auto-focus quando allontani la fotocamera dal codice</string>
+    <string name="zxing_preferences_front_light_summary">Migliora la scansione in condizione di scarsa luminosità in alcuni smartphone, ma può causare abbagliamento. Funzione non supportata da tutti gli smartphone.</string>
+    <string name="zxing_preferences_front_light_title">Usa il flash</string>
+    <string name="zxing_preferences_front_light_auto">Automatico</string>
+    <string name="zxing_preferences_front_light_off">Off</string>
+    <string name="zxing_preferences_front_light_on">On</string>
+    <string name="zxing_preferences_general_title">Impostazioni generali</string>
+    <string name="zxing_preferences_invert_scan_title">Inverti scansione</string>
+    <string name="zxing_preferences_invert_scan_summary">Scansione per codici a barre bianchi su sfondo nero. Non disponibile su alcuni dispositivi.</string>
+    <string name="zxing_preferences_orientation_title">Disattiva rotazione automatica</string>
+    <string name="zxing_preferences_play_beep_title">Emetti un suono</string>
+    <string name="zxing_preferences_scanning_title">Quando un codice a barre viene rilevato, \u2026</string>
+    <string name="zxing_preferences_vibrate_title">Vibra</string>
+    <string name="caption_setting_scan">Scanner codici a barre</string>
+    <string name="preferences_packet_mode_title">Scansione in modalità batch</string>
+    <string name="preferences_packet_scan_type_increment">Incrementa automaticamente la quantità di 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Imposta la quantità manualmente</string>
+    <string name="preferences_packet_scan_type">Dopo ogni scansione</string>
+    <string name="preferences_scan_type">Strumento di scansione</string>
+    <string name="preferences_scan_type_title">Tipo di scanner </string>
+    <string name="preferences_scan_camera">Camera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Camera (Mobile Vision)</string>
+    <string name="preferences_scan_external">Software di scansione esterno</string>
+    <string name="preferences_scan_last_symbol_title">Suffisso (simbolo finale)</string>
+    <string name="preferences_scan_last_symbol_enter">Invio</string>
+    <string name="preferences_scan_last_symbol_tab">Tabulazione</string>
+    <string name="caption_external_scan_description">"Questa è una funzione sperimentale. \n\n
+        Aiutaci a effettuare un debug o a migliorarla.\n\n
+        Ti preghiamo di farci sapere se a te funziona oppure no. Utilizza il menù \"Domande o suggerimenti\" per inviarci un feedback."</string>
+    <string name="caption_external_scan">Usa software di scansione esterno</string>
+    <string name="preferences_scan_last_symbol_space">Spazio</string>
+    <string name="preferences_external_scan_params">Parametri di scansione</string>
+    <string name="vision_msg_default_status">Posiziona un codice a barre all\'interno del rettangolo</string>
+    <string name="preferences_scan_vertical_camera">Camera (ZXing v.2 - New!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Rilevamento del codice a barre</string>
+    <string name="pref_title_barcode_reticle_width">Grandezza del rettangolo di scansione</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Funzione relativa alla larghezza del rettangolo di scansione, valore da 50% a 95%</string>
+    <string name="pref_title_barcode_reticle_height">Altezza del rettangolo di scansione</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Funzione relativa all\'altezza del rettangolo di scansione, valore da 20% a 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Abilita la verifica della grandezza del codice a barre</string>
+    <string name="pref_summary_enable_barcode_size_check">Verrà chiesto all\'utente di muovere la fotocamera più vicino se il codice a barre rilevato e troppo piccolo</string>
+    <string name="pref_title_minimum_barcode_width">Larghezza minima del codice a barre</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Funzione relativa alla larghezza del rettangolo di scansione, valore da 20% a 80% (attivabile solo se la funzione di verifica dimensione codice a barre è abilitata)</string>
+    <string name="pref_title_rear_camera_preview_size">Dimensioni anteprima fotocamera posteriore</string>
+    <string name="cd_settings_button">Impostazioni</string>
+    <string name="cd_close_button">Indietro</string>
+    <string name="cd_flash_button">Attiva il flash della fotocamera</string>
+    <string name="pref_category_camera">Fotocamera</string>
+</resources>
