@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_button_ok">Ок</string>
+    <string name="zxing_msg_camera_framework_bug">На жаль, проблема з камерою Android. Можливо, вам доведеться перезавантажити пристрій.</string>
+    <string name="zxing_msg_default_format">Формат</string>
+    <string name="zxing_msg_default_meta">Метадані</string>
+    <string name="zxing_msg_default_status">Помістіть штрих-код всередину прямокутника для сканування.</string>
+    <string name="zxing_msg_default_time">Час</string>
+    <string name="zxing_msg_default_type">Тип</string>
+    <string name="zxing_msg_error">Помилка</string>
+    <string name="zxing_msg_invalid_value">Недійсне значення</string>
+    <string name="zxing_preferences_actions_title">Коли знайдено штрих-код \u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Використовуйте автофокус</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D промислові</string>
+    <string name="zxing_preferences_decode_1D_product_title">Додати продукт</string>
+    <string name="zxing_preferences_decode_Aztec_title">Аztec</string>
+    <string name="zxing_preferences_decode_Data_Matrix_title">Data Matrix</string>
+    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="zxing_preferences_decode_QR_title">QR-коди</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Вирішення помилок пристрою</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Відсутність сценового режиму зі штрих-кодом</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Використовуйте лише стандартний режим фокусування</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Немає постійного фокусування</string>
+    <string name="zxing_preferences_disable_exposure_title">Відсутність експозиції</string>
+    <string name="zxing_preferences_disable_metering_title">Відсутність вимірювань</string>
+    <string name="zxing_preferences_front_light_summary">Покращує сканування при слабкому освітленні на деяких телефонах, але може спричинити відблиски. Не працює на всіх телефонах.</string>
+    <string name="zxing_preferences_front_light_title">Використовуйте переднє світло</string>
+    <string name="zxing_preferences_front_light_auto">Автоматичний</string>
+    <string name="zxing_preferences_front_light_off">Вимкнено</string>
+    <string name="zxing_preferences_front_light_on">Увімкнено</string>
+    <string name="zxing_preferences_general_title">Загальні налаштування</string>
+    <string name="zxing_preferences_invert_scan_title">Інвертувати сканування</string>
+    <string name="zxing_preferences_invert_scan_summary">Сканувати білі штрих-коди на чорному тлі. Недоступно на деяких пристроях.</string>
+    <string name="zxing_preferences_orientation_title">Немає автоматичного обертання</string>
+    <string name="zxing_preferences_play_beep_title">Гудок</string>
+    <string name="zxing_preferences_scanning_title">Під час сканування штрих-кодів декодуйте\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Вібрувати</string>
+    <string name="caption_setting_scan">Сканер штрих-коду</string>
+    <string name="preferences_packet_mode_title">Пакетний режим сканування</string>
+    <string name="preferences_packet_scan_type_increment">Збільшувати кількість товару на 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Введіть кількість товару</string>
+    <string name="preferences_packet_scan_type">Після кожного сканування</string>
+    <string name="preferences_scan_type">Сканувати за допомогою</string>
+    <string name="preferences_scan_type_title">Тип сканера штрих-коду </string>
+    <string name="preferences_scan_camera">Камера (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Камера (Mobile Vision)</string>
+    <string name="preferences_scan_external">Зовнішній сканер</string>
+    <string name="preferences_scan_last_symbol_title">Суфікс (символ закінчення)</string>
+    <string name="preferences_scan_last_symbol_enter">Ввести</string>
+    <string name="preferences_scan_last_symbol_tab">Вкладка</string>
+    <string name="caption_external_scan_description">"Це експериментальна функція. \n\n
+        Допоможіть нам налагодити та вдосконалити її.\n\n
+        Будь ласка, повідомте нас за допомогою пункту меню \"Запитання чи пропозиції\" працює це у вас чи ні."</string>
+    <string name="caption_external_scan">Використовуйте зовнішній сканер</string>
+    <string name="preferences_scan_last_symbol_space">Пробіл</string>
+    <string name="preferences_external_scan_params">Параметри сканування</string>
+    <string name="vision_msg_default_status">Помістіть штрих-код всередину прямокутника</string>
+    <string name="preferences_scan_vertical_camera">Камера (ZXing v.2!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Виявлення штрих-коду</string>
+    <string name="pref_title_barcode_reticle_width">Ширина видошукача штрих-коду</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Відносно ширини огляду камери, від 50% до 95%</string>
+    <string name="pref_title_barcode_reticle_height">Висота видошукача штрих-коду</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Відносно висоти огляду камери, від 20% до 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Увімкнути перевірку розміру штрих-коду</string>
+    <string name="pref_summary_enable_barcode_size_check">Запропонує користувачеві наблизити камеру, якщо виявлений штрих-код замалий</string>
+    <string name="pref_title_minimum_barcode_width">Мінімальна ширина штрих-коду</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Відносно ширини видошукача коливається від 20% до 80% (застосовується лише тоді, коли увімкнено перевірку розміру штрих-коду)</string>
+    <string name="pref_title_rear_camera_preview_size">Розмір попереднього перегляду задньої камери</string>
+    <string name="cd_settings_button">Налаштування</string>
+    <string name="cd_close_button">Назад</string>
+    <string name="cd_flash_button">Перемкнути спалах камери</string>
+    <string name="pref_category_camera">Камера</string>
+</resources>
