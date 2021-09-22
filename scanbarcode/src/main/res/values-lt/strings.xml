@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_button_ok">OK</string>
-    <string name="zxing_msg_camera_framework_bug">Deja fotoaparate kilo problema. Gali tekti iš naujo paleisti įrenginį.</string>
+    <string name="zxing_button_ok">Gerai</string>
+    <string name="zxing_msg_camera_framework_bug">Deja Android kamera susidūrė su problema. Jums gali tekti paleisti įrenginį iš naujo.</string>
     <string name="zxing_msg_default_format">Formatas</string>
     <string name="zxing_msg_default_meta">Metaduomenys</string>
-    <string name="zxing_msg_default_status">Nutaikykite brūkšninį kodą į vaizdo ieškiklio stačiakampį, kad jį nuskaitytumėte.</string>
+    <string name="zxing_msg_default_status">Nutaikykite brūkšninį kodą į stačiakampį, kad jį nuskaityti.</string>
     <string name="zxing_msg_default_time">Laikas</string>
     <string name="zxing_msg_default_type">Tipas</string>
     <string name="zxing_msg_error">Klaida</string>
     <string name="zxing_msg_invalid_value">Neteisinga reikšmė</string>
     <string name="zxing_preferences_actions_title">Kai brūkšninis kodas surastas\u2026</string>
-    <string name="zxing_preferences_auto_focus_title">Naudokite automatinį fokusavimą</string>
+    <string name="zxing_preferences_auto_focus_title">Naudoti autofokusavimą</string>
     <string name="zxing_preferences_decode_1D_industrial_title">1D pramoninis</string>
-    <string name="zxing_preferences_decode_1D_product_title">1D produkcinis</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D produktinis</string>
     <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
     <string name="zxing_preferences_decode_Data_Matrix_title">Data Matrix</string>
     <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">QR kodai</string>
-    <string name="zxing_preferences_device_bug_workarounds_title">Įrenginio klaidų taisymas</string>
-    <string name="zxing_preferences_disable_barcode_scene_mode_title">Nunaudoti brūkšninio kodo skenavimo režimo</string>
-    <string name="zxing_preferences_disable_continuous_focus_summary">Naudoti tik standartinį fokusavimo režimą</string>
-    <string name="zxing_preferences_disable_continuous_focus_title">Nenaudoti nuolatinio fokusavimo</string>
-    <string name="zxing_preferences_disable_exposure_title">Nė naudoti ekspozicijos</string>
-    <string name="zxing_preferences_disable_metering_title">Nė naudoti matavimo</string>
-    <string name="zxing_preferences_front_light_summary">Pagerina kai kurių telefonų nuskaitymą esant silpnam apšvietimui, tačiau gali sukelti atspindėjimus. Veikia ne su visais telefonais.</string>
-    <string name="zxing_preferences_front_light_title">Naudoti priekinę šviesą</string>
-    <string name="zxing_preferences_front_light_auto">Automatiškai</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Įrenginio klaidų apėjimai</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Nėra brūkšninio kodo scenos režimo</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Naudoti tik standartinį fokuso režimą</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Nėra nuolatinio fokuso</string>
+    <string name="zxing_preferences_disable_exposure_title">Nėra kameros išlaikymo</string>
+    <string name="zxing_preferences_disable_metering_title">Nėra kameros matavimo</string>
+    <string name="zxing_preferences_front_light_summary">Pagerina kai kurių telefonų nuskaitymą esant silpnam apšvietimui, tačiau gali sukelti atspindžius. Veikia ne su visais telefonais.</string>
+    <string name="zxing_preferences_front_light_title">Naudoti priekinį apšvietimą</string>
+    <string name="zxing_preferences_front_light_auto">Automatinis</string>
     <string name="zxing_preferences_front_light_off">Išjungta</string>
     <string name="zxing_preferences_front_light_on">Įjungta</string>
     <string name="zxing_preferences_general_title">Bendrieji nustatymai</string>
-    <string name="zxing_preferences_invert_scan_title">Apversti nuskaitymą</string>
-    <string name="zxing_preferences_invert_scan_summary">Baltų brūkšninių kodų nuskaitymas juodame fone. Kai kuriuose įrenginiuose gali neveikti.</string>
-    <string name="zxing_preferences_orientation_title">Nė naudoti automatinį pasukimą</string>
-    <string name="zxing_preferences_play_beep_title">Garso signalas</string>
-    <string name="zxing_preferences_scanning_title">Atpažinti brūkšninius kodus, \u2026</string>
+    <string name="zxing_preferences_invert_scan_title">Invertuoti skenavimą</string>
+    <string name="zxing_preferences_invert_scan_summary">Skenuoti baltus brūkšninius kodus juodame fone. Kai kuriuose įrenginiuose gali neveikti.</string>
+    <string name="zxing_preferences_orientation_title">Nenaudoti automatinio pasukimo</string>
+    <string name="zxing_preferences_play_beep_title">Pyptelėti</string>
+    <string name="zxing_preferences_scanning_title">Skenuojant barkodus, dekoduoti\u2026</string>
     <string name="zxing_preferences_vibrate_title">Vibruoti</string>
     <string name="caption_setting_scan">Brūkšninių kodų skaitytuvas</string>
-    <string name="preferences_packet_mode_title">Paketinio režimo nuskaitymas</string>
-    <string name="preferences_packet_scan_type_increment">Automatiškai padidinamas kiekis 1 (+1)</string>
-    <string name="preferences_packet_scan_type_set_quantity">Nustatykite kiekį</string>
+    <string name="preferences_packet_mode_title">Nepertraukiamo skenavimo režimas</string>
+    <string name="preferences_packet_scan_type_increment">Automatiškai padidinti kiekį (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Nustatyti kiekį rankiniu būdu</string>
     <string name="preferences_packet_scan_type">Po kiekvieno nuskaitymo</string>
-    <string name="preferences_scan_type">Nuskaityti naudojant</string>
-    <string name="preferences_scan_type_title">Brūkšninių kodų skaitytuvo rūšis</string>
-    <string name="preferences_scan_camera">Kamera („ZXing“)</string>
-    <string name="preferences_scan_camera_vision">Kamera („Mobile Vision“)</string>
+    <string name="preferences_scan_type">Skenuoti su</string>
+    <string name="preferences_scan_type_title">Barkodo skaitytuvo tipas </string>
+    <string name="preferences_scan_camera">Kamera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Kamera (Mobile Vision)</string>
     <string name="preferences_scan_external">Išorinis skaitytuvas</string>
-    <string name="preferences_scan_last_symbol_title">Priesaga (pabaigos simbolis)</string>
-    <string name="preferences_scan_last_symbol_enter">Įvesti informaciją</string>
-    <string name="preferences_scan_last_symbol_tab">Tabuliatorius</string>
+    <string name="preferences_scan_last_symbol_title">Pabaigos simbolis</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Tai eksperimentinė funkcija. \n\n
         Padėkite mums ją derinti ir patobulinti.\n\n
-        Praneškite, ar tai tinkamai veikia ar ne. Norint atsiųsti atsiliepimą panaudokite menių punktą „Klausimai ar pasiūlymai“."</string>
-    <string name="caption_external_scan">Naudokite išorinį skaitytuvą</string>
+        Praneškite, ar tai tinkamai veikia ar ne. Norint atsiųsti atsiliepimą panaudokite meniu punktą „Klausimas ar pasiūlymas“."</string>
+    <string name="caption_external_scan">Naudoti išorinį skenerį</string>
     <string name="preferences_scan_last_symbol_space">Tarpas</string>
-    <string name="preferences_external_scan_params">Nuskaitymo parametrai</string>
-    <string name="vision_msg_default_status">Nutaikykite brūkšninį kodą į vaizdo ieškiklio stačiakampį, kad jį nuskaitytumėte</string>
+    <string name="preferences_external_scan_params">Skaitymo parametrai</string>
+    <string name="vision_msg_default_status">Nutaikykite brūkšninį kodą į vaizdo ieškiklio stačiakampį</string>
     <string name="preferences_scan_vertical_camera">Kamera („ZXing v.2“ - nauja!)</string>
     <!-- Strings for barcode detection settings. -->
-    <string name="pref_category_barcode_detection">Brūkšninių kodų aptikimas</string>
-    <string name="pref_title_barcode_reticle_width">Brūkšninio kodo ieškiklio plotis</string>
+    <string name="pref_category_barcode_detection">Barkodo aptikimas</string>
+    <string name="pref_title_barcode_reticle_width">Barkodo ieškiklio plotis</string>
     <string name="pref_summary_barcode_reticle_width" formatted="false">Atsižvelgiant į kameros vaizdo plotį, nuo 50% iki 95%</string>
-    <string name="pref_title_barcode_reticle_height">Brūkšninio kodo ieškiklio aukštis</string>
+    <string name="pref_title_barcode_reticle_height">Barkodo ieškiklio aukštis</string>
     <string name="pref_summary_barcode_reticle_height" formatted="false">Atsižvelgiant į kameros vaizdo aukštį, nuo 20% iki 80%</string>
-    <string name="pref_title_enable_barcode_size_check">Brūkšninio kodo dydžio patikrinimas</string>
-    <string name="pref_summary_enable_barcode_size_check">Jei aptiktas brūkšninis kodas yra per mažas, programa paragins vartotoją priartinti kamerą</string>
-    <string name="pref_title_minimum_barcode_width">Mažiausias brūkšninio kodo plotis</string>
-    <string name="pref_summary_minimum_barcode_width" formatted="false">Atsižvelgiant į vaizdo ieškiklio plotį, nuo 20% iki 80% (taikoma tik tada, kai įjungtas brūkšninio kodo dydžio tikrinimas)</string>
-    <string name="pref_title_rear_camera_preview_size">Galinės kameros peržiūros lango dydis</string>
+    <string name="pref_title_enable_barcode_size_check">Įjungti barkodo dydžio tikrinimą</string>
+    <string name="pref_summary_enable_barcode_size_check">Jei aptiktas barkodas per mažas, programa paragins vartotoją priartinti kamerą</string>
+    <string name="pref_title_minimum_barcode_width">Minimalus barkodo plotis</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Atsižvelgiant į vaizdo ieškiklio plotį, nuo 20% iki 80% (taikoma tik tada, kai įjungtas barkodo dydžio tikrinimas)</string>
+    <string name="pref_title_rear_camera_preview_size">Galinės kameros peržiūros dydis</string>
     <string name="cd_settings_button">Nustatymai</string>
     <string name="cd_close_button">Atgal</string>
-    <string name="cd_flash_button">Perjungti kameros blykstę</string>
-    <string name="pref_category_camera">Fotoaparatas</string>
+    <string name="cd_flash_button">Perjungti blykstę</string>
+    <string name="pref_category_camera">Kamera</string>
 </resources>
