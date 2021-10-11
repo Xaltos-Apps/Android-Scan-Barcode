@@ -72,4 +72,7 @@
     <string name="cd_close_button">Zpět</string>
     <string name="cd_flash_button">Přepnout blesk fotoaparátu</string>
     <string name="pref_category_camera">Fotoaparát</string>
+    <string name="pref_title_scan_delay_time">Packet scan delay time (seconds)</string>
+    <string name="pref_summary_scan_delay_time">Sets delay time between two consequent scans when scanning goods for documents</string>
+
 </resources>

@@ -36,6 +36,21 @@
             android:title="@string/preferences_packet_scan_type" />
     </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
     <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/zxing_preferences_general_title"
+        app:iconSpaceReserved="false">
+        <SeekBarPreference
+            android:defaultValue="2"
+            android:key="@string/pref_key_scan_delay_time"
+            android:max="10"
+            android:icon="@null"
+            app:iconSpaceReserved="false"
+            android:persistent="true"
+            android:summary="@string/pref_summary_scan_delay_time"
+            android:title="@string/pref_title_scan_delay_time"
+            app:min="0"
+            app:showSeekBarValue="true" />
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
         android:title="@string/zxing_preferences_actions_title"
         app:iconSpaceReserved="false">
         <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
