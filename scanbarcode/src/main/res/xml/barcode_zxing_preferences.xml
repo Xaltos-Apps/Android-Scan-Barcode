@@ -111,7 +111,7 @@
             android:layout="@layout/switch_preference"
             android:title="@string/zxing_preferences_orientation_title" />
         <SeekBarPreference
-            android:defaultValue="2"
+            android:defaultValue="0"
             android:key="@string/pref_key_scan_delay_time"
             android:max="10"
             android:icon="@null"
