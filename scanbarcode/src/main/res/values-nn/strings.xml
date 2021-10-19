@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_button_ok">OK</string>
     <string name="zxing_msg_camera_framework_bug">Beklager, Android-kameraet fikk et problem. Du må kanskje starte enheten på nytt.</string>
     <string name="zxing_msg_default_format">Format</string>
     <string name="zxing_msg_default_meta">Metadata</string>
@@ -14,9 +13,6 @@
     <string name="zxing_preferences_auto_focus_title">Bruk autofokus</string>
     <string name="zxing_preferences_decode_1D_industrial_title">1D Industriell</string>
     <string name="zxing_preferences_decode_1D_product_title">1D-produkt</string>
-    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
-    <string name="zxing_preferences_decode_Data_Matrix_title">Datamatrise</string>
-    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">QR-koder</string>
     <string name="zxing_preferences_device_bug_workarounds_title">Mulige løsninger på feil</string>
     <string name="zxing_preferences_disable_barcode_scene_mode_title">Ingen strekkodemodus</string>
@@ -66,13 +62,12 @@
     <string name="pref_title_enable_barcode_size_check">Aktiver kontroll av strekkodestørrelse</string>
     <string name="pref_summary_enable_barcode_size_check">Vil be brukeren om å flytte kameraet nærmere hvis den oppdagede strekkoden er for liten</string>
     <string name="pref_title_minimum_barcode_width">Minimum strekkodebredde</string>
+    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">I forhold til søkerens bredde, varierer det fra 20% til 80% (gjelder kun når kontroll av strekkodestørrelse er aktivert)</string>
+    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
     <string name="pref_title_rear_camera_preview_size">Størrelse på forhåndsvisning av bakkamera</string>
     <string name="cd_settings_button">Innstillinger</string>
     <string name="cd_close_button">Tilbake</string>
     <string name="cd_flash_button">Slå av/på kamerablits</string>
     <string name="pref_category_camera">Kamera</string>
-    <string name="pref_title_scan_delay_time">Packet scan delay time (seconds)</string>
-    <string name="pref_summary_scan_delay_time">Sets delay time between two consequent scans when scanning goods for documents</string>
-
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_button_ok">OK</string>
     <string name="zxing_msg_camera_framework_bug">Undskyld, Android-kameraet stødte på et problem. Du skal muligvis genstarte enheden.</string>
     <string name="zxing_msg_default_format">Format</string>
     <string name="zxing_msg_default_meta">Metadata</string>
@@ -14,9 +13,6 @@
     <string name="zxing_preferences_auto_focus_title">Brug autofokus</string>
     <string name="zxing_preferences_decode_1D_industrial_title">1D Industriel</string>
     <string name="zxing_preferences_decode_1D_product_title">1D-produkt</string>
-    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
-    <string name="zxing_preferences_decode_Data_Matrix_title">Datamatrix</string>
-    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">QR-koder</string>
     <string name="zxing_preferences_device_bug_workarounds_title">Mulige løsninger på fejl</string>
     <string name="zxing_preferences_disable_barcode_scene_mode_title">Ingen stregkode tilstand</string>
@@ -66,13 +62,12 @@
     <string name="pref_title_enable_barcode_size_check">Aktivér kontrol af stregkodestørrelse</string>
     <string name="pref_summary_enable_barcode_size_check">Beder brugeren om at flytte kameraet tættere på, hvis den registrerede stregkode er for lille</string>
     <string name="pref_title_minimum_barcode_width">Minimum stregkodebredde</string>
+    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">I forhold til søgerens bredde, varierer fra 20% til 80% (gælder kun, når kontrol af stregkodestørrelse er aktiveret)</string>
+    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
     <string name="pref_title_rear_camera_preview_size">Størrelse på forhåndsvisning af bagkamera</string>
     <string name="cd_settings_button">Indstillinger</string>
     <string name="cd_close_button">Tilbage</string>
     <string name="cd_flash_button">Skift kamerablitz</string>
     <string name="pref_category_camera">Kamera</string>
-    <string name="pref_title_scan_delay_time">Packet scan delay time (seconds)</string>
-    <string name="pref_summary_scan_delay_time">Sets delay time between two consequent scans when scanning goods for documents</string>
-
 </resources>

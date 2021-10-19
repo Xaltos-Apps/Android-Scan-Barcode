@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_button_ok">Gerai</string>
     <string name="zxing_msg_camera_framework_bug">Deja Android kamera susidūrė su problema. Jums gali tekti paleisti įrenginį iš naujo.</string>
     <string name="zxing_msg_default_format">Formatas</string>
     <string name="zxing_msg_default_meta">Metaduomenys</string>
@@ -14,9 +13,6 @@
     <string name="zxing_preferences_auto_focus_title">Naudoti autofokusavimą</string>
     <string name="zxing_preferences_decode_1D_industrial_title">1D pramoninis</string>
     <string name="zxing_preferences_decode_1D_product_title">1D produktinis</string>
-    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
-    <string name="zxing_preferences_decode_Data_Matrix_title">Data Matrix</string>
-    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">QR kodai</string>
     <string name="zxing_preferences_device_bug_workarounds_title">Įrenginio klaidų apėjimai</string>
     <string name="zxing_preferences_disable_barcode_scene_mode_title">Nėra brūkšninio kodo scenos režimo</string>
@@ -66,13 +62,12 @@
     <string name="pref_title_enable_barcode_size_check">Įjungti barkodo dydžio tikrinimą</string>
     <string name="pref_summary_enable_barcode_size_check">Jei aptiktas barkodas per mažas, programa paragins vartotoją priartinti kamerą</string>
     <string name="pref_title_minimum_barcode_width">Minimalus barkodo plotis</string>
+    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">Atsižvelgiant į vaizdo ieškiklio plotį, nuo 20% iki 80% (taikoma tik tada, kai įjungtas barkodo dydžio tikrinimas)</string>
+    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
     <string name="pref_title_rear_camera_preview_size">Galinės kameros peržiūros dydis</string>
     <string name="cd_settings_button">Nustatymai</string>
     <string name="cd_close_button">Atgal</string>
     <string name="cd_flash_button">Perjungti blykstę</string>
     <string name="pref_category_camera">Kamera</string>
-    <string name="pref_title_scan_delay_time">Packet scan delay time (seconds)</string>
-    <string name="pref_summary_scan_delay_time">Sets delay time between two consequent scans when scanning goods for documents</string>
-
 </resources>

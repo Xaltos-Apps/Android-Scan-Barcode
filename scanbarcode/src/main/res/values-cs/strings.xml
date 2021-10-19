@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_button_ok">OK</string>
     <string name="zxing_msg_camera_framework_bug">Je nám líto, ve fotoaparátu Android došlo k problému. Možná budete muset zařízení restartovat.</string>
     <string name="zxing_msg_default_format">Formát</string>
     <string name="zxing_msg_default_meta">Metadata</string>
@@ -14,9 +13,6 @@
     <string name="zxing_preferences_auto_focus_title">Použijte automatické ostření</string>
     <string name="zxing_preferences_decode_1D_industrial_title">1D průmyslové</string>
     <string name="zxing_preferences_decode_1D_product_title">1D produkt</string>
-    <string name="zxing_preferences_decode_Aztec_title">Aztécký</string>
-    <string name="zxing_preferences_decode_Data_Matrix_title">Dat matice</string>
-    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">QR Kódy</string>
     <string name="zxing_preferences_device_bug_workarounds_title">Řešení chyb zařízení</string>
     <string name="zxing_preferences_disable_barcode_scene_mode_title">Žádný režim scény s čárovým kódem</string>
@@ -66,13 +62,12 @@
     <string name="pref_title_enable_barcode_size_check">Povolit kontrolu velikosti čárového kódu</string>
     <string name="pref_summary_enable_barcode_size_check">Pokud je detekovaný čárový kód příliš malý, vyzve uživatele k přiblížení kamery</string>
     <string name="pref_title_minimum_barcode_width">Minimální šířka čárového kódu</string>
+    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">V poměru k šířce hledáčku se pohybuje v rozmezí od 20% do 80% (použitelné pouze při aktivované kontrole velikosti čárového kódu)</string>
+    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
     <string name="pref_title_rear_camera_preview_size">Velikost náhledu zadní kamery</string>
     <string name="cd_settings_button">Nastavení</string>
     <string name="cd_close_button">Zpět</string>
     <string name="cd_flash_button">Přepnout blesk fotoaparátu</string>
     <string name="pref_category_camera">Fotoaparát</string>
-    <string name="pref_title_scan_delay_time">Packet scan delay time (seconds)</string>
-    <string name="pref_summary_scan_delay_time">Sets delay time between two consequent scans when scanning goods for documents</string>
-
 </resources>

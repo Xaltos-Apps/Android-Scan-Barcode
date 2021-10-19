@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_button_ok">Rendben</string>
     <string name="zxing_msg_camera_framework_bug">Sajnáljuk, az Android kamera hibába ütközött. Lehet, hogy újra kell indítania a készüléket.</string>
     <string name="zxing_msg_default_format">Formátum</string>
     <string name="zxing_msg_default_meta">Metaadatok</string>
@@ -14,9 +13,6 @@
     <string name="zxing_preferences_auto_focus_title">Használja az automatikus fókuszt</string>
     <string name="zxing_preferences_decode_1D_industrial_title">1D Ipari</string>
     <string name="zxing_preferences_decode_1D_product_title">1D Termék</string>
-    <string name="zxing_preferences_decode_Aztec_title">Azték</string>
-    <string name="zxing_preferences_decode_Data_Matrix_title">Adatmátrix</string>
-    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">QR kódok</string>
     <string name="zxing_preferences_device_bug_workarounds_title">Eszközhiba-megoldások</string>
     <string name="zxing_preferences_disable_barcode_scene_mode_title">Nincs vonalkódos jelenet mód</string>
@@ -66,13 +62,12 @@
     <string name="pref_title_enable_barcode_size_check">Engedélyezze a vonalkód méretének ellenőrzését</string>
     <string name="pref_summary_enable_barcode_size_check">Arra kéri a felhasználót, hogy közelítse a kamerát, ha az észlelt vonalkód túl kicsi</string>
     <string name="pref_title_minimum_barcode_width">Minimális vonalkód-szélesség</string>
+    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">A kereső szélességéhez viszonyítva 20% és 80% között mozog (csak akkor alkalmazható, ha a vonalkód méretének ellenőrzése engedélyezve van)</string>
+    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
     <string name="pref_title_rear_camera_preview_size">A hátsó kamera előnézeti mérete</string>
     <string name="cd_settings_button">Beállítások</string>
     <string name="cd_close_button">Vissza</string>
     <string name="cd_flash_button">A kamera vakujának be- és kikapcsolása</string>
     <string name="pref_category_camera">Kamera</string>
-    <string name="pref_title_scan_delay_time">Packet scan delay time (seconds)</string>
-    <string name="pref_summary_scan_delay_time">Sets delay time between two consequent scans when scanning goods for documents</string>
-
 </resources>

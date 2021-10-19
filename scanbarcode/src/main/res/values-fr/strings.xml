@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_button_ok">OK</string>
     <string name="zxing_msg_camera_framework_bug">Désolé, la caméra Android a rencontré un problème. Vous devriez peut-être redémarrer votre appareil.</string>
     <string name="zxing_msg_default_format">Format</string>
     <string name="zxing_msg_default_meta">Métadonnées</string>
@@ -14,9 +13,6 @@
     <string name="zxing_preferences_auto_focus_title">Utiliser l\'autofocus</string>
     <string name="zxing_preferences_decode_1D_industrial_title">Industriel 1D</string>
     <string name="zxing_preferences_decode_1D_product_title">Produit 1D</string>
-    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
-    <string name="zxing_preferences_decode_Data_Matrix_title">Matrice de données</string>
-    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">QR Codes</string>
     <string name="zxing_preferences_device_bug_workarounds_title">Solutions de contournement des bogues de l\'appareil</string>
     <string name="zxing_preferences_disable_barcode_scene_mode_title">Pas de mode scène</string>
@@ -66,13 +62,12 @@
     <string name="pref_title_enable_barcode_size_check">Activer la vérification de la taille du code-barres</string>
     <string name="pref_summary_enable_barcode_size_check">Invitera l\'utilisateur à rapprocher la caméra si le code-barres détecté est trop petit</string>
     <string name="pref_title_minimum_barcode_width">Largeur minimale du code-barres</string>
+    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">Par rapport à la largeur du viseur, varie de 20% à 80% (applicable uniquement lorsque la vérification de la taille du code-barres est activée)</string>
+    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
     <string name="pref_title_rear_camera_preview_size">Taille de l\'aperçu de la caméra arrière</string>
     <string name="cd_settings_button">Réglages</string>
     <string name="cd_close_button">Retour</string>
     <string name="cd_flash_button">Activer le flash de l\'appareil photo</string>
     <string name="pref_category_camera">Caméra</string>
-    <string name="pref_title_scan_delay_time">Packet scan delay time (seconds)</string>
-    <string name="pref_summary_scan_delay_time">Sets delay time between two consequent scans when scanning goods for documents</string>
-
 </resources>

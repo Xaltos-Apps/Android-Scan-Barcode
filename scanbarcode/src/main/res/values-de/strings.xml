@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_button_ok">Ok</string>
     <string name="zxing_msg_camera_framework_bug">Leider ist mit der Android-Kamera ein Problem aufgetreten. Eventuell sollte das Gerät neu gestartet werden.</string>
     <string name="zxing_msg_default_format">Format</string>
     <string name="zxing_msg_default_meta">Metadaten</string>
@@ -14,9 +13,6 @@
     <string name="zxing_preferences_auto_focus_title">Autofokus verwenden</string>
     <string name="zxing_preferences_decode_1D_industrial_title">1D Industriell</string>
     <string name="zxing_preferences_decode_1D_product_title">1D Produkt</string>
-    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
-    <string name="zxing_preferences_decode_Data_Matrix_title">Datenmatrix</string>
-    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">QR Code</string>
     <string name="zxing_preferences_device_bug_workarounds_title">Geräte Fehlerbehebungen</string>
     <string name="zxing_preferences_disable_barcode_scene_mode_title">Kein Barcode Szenenmodus</string>
@@ -66,13 +62,12 @@
     <string name="pref_title_enable_barcode_size_check">Barcodegröße Überprüfung aktivieren</string>
     <string name="pref_summary_enable_barcode_size_check">Fordert Benutzer auf die Kamera näher zu setzen, wenn der erkannte Barcode zu klein ist</string>
     <string name="pref_title_minimum_barcode_width">Minimale Barcodebreite</string>
+    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">Bezogen auf die Breite der Sucherbreite liegt der Bereich zwischen 20% und 80% (anwendbar, wenn die Barcodegrößen Überprüfung aktiviert ist)</string>
+    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
     <string name="pref_title_rear_camera_preview_size">Hauptkamera Vorschaugröße</string>
     <string name="cd_settings_button">Optionen</string>
     <string name="cd_close_button">Zurück</string>
     <string name="cd_flash_button">Kamera Blitz umschalten</string>
     <string name="pref_category_camera">Kamera</string>
-    <string name="pref_title_scan_delay_time">Packet scan delay time (seconds)</string>
-    <string name="pref_summary_scan_delay_time">Sets delay time between two consequent scans when scanning goods for documents</string>
-
 </resources>

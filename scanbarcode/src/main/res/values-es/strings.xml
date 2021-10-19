@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_button_ok">OK</string>
     <string name="zxing_msg_camera_framework_bug">Lo sentimos, la cámara de Android encontró un problema. Es posible que deba reiniciar el dispositivo.</string>
     <string name="zxing_msg_default_format">Formato</string>
     <string name="zxing_msg_default_meta">Metadatos</string>
@@ -14,9 +13,6 @@
     <string name="zxing_preferences_auto_focus_title">Utilice enfoque automático</string>
     <string name="zxing_preferences_decode_1D_industrial_title">1D Industrial</string>
     <string name="zxing_preferences_decode_1D_product_title">Producto 1D</string>
-    <string name="zxing_preferences_decode_Aztec_title">Aztec</string>
-    <string name="zxing_preferences_decode_Data_Matrix_title">Data Matrix</string>
-    <string name="zxing_preferences_decode_PDF417_title">PDF417 (β)</string>
     <string name="zxing_preferences_decode_QR_title">Códigos QR</string>
     <string name="zxing_preferences_device_bug_workarounds_title">Soluciones alternativas para errores del dispositivo</string>
     <string name="zxing_preferences_disable_barcode_scene_mode_title">Sin modo de lectura de código de barras</string>
@@ -66,13 +62,12 @@
     <string name="pref_title_enable_barcode_size_check">Habilitar la verificación del tamaño del código de barras</string>
     <string name="pref_summary_enable_barcode_size_check">Solicitará al usuario que acerque la cámara si el código de barras detectado es demasiado pequeño</string>
     <string name="pref_title_minimum_barcode_width">Ancho mínimo del código de barras</string>
+    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">En relación con el ancho del visor, oscila entre el 20% y el 80% (solo se aplica cuando la verificación del tamaño del código de barras está habilitada)</string>
+    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
     <string name="pref_title_rear_camera_preview_size">Tamaño de vista previa de la cámara trasera</string>
     <string name="cd_settings_button">Configuración</string>
     <string name="cd_close_button">Atrás</string>
     <string name="cd_flash_button">Alternar flash de la cámara</string>
     <string name="pref_category_camera">Cámara</string>
-    <string name="pref_title_scan_delay_time">Packet scan delay time (seconds)</string>
-    <string name="pref_summary_scan_delay_time">Sets delay time between two consequent scans when scanning goods for documents</string>
-
 </resources>
