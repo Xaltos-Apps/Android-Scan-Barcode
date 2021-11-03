@@ -23,6 +23,17 @@
             android:entryValues="@array/preferences_scan_types_int"
             android:key="preferences_packet_scan_type_int"
             android:title="@string/preferences_packet_scan_type" />
+        <SeekBarPreference
+            android:defaultValue="0"
+            android:key="@string/pref_key_scan_delay_time"
+            android:max="5"
+            android:icon="@null"
+            app:iconSpaceReserved="false"
+            android:persistent="true"
+            android:summary="@string/pref_summary_scan_delay_time"
+            android:title="@string/pref_title_scan_delay_time"
+            app:min="0"
+            app:showSeekBarValue="true" />
     </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
     <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
         android:title="@string/zxing_preferences_actions_title"
@@ -51,17 +62,6 @@
             android:key="preferences_front_light_vision_mode"
             android:summary="@string/zxing_preferences_front_light_summary"
             android:title="@string/zxing_preferences_front_light_title" />
-        <SeekBarPreference
-            android:defaultValue="0"
-            android:key="@string/pref_key_scan_delay_time"
-            android:max="10"
-            android:icon="@null"
-            app:iconSpaceReserved="false"
-            android:persistent="true"
-            android:summary="@string/pref_summary_scan_delay_time"
-            android:title="@string/pref_title_scan_delay_time"
-            app:min="0"
-            app:showSeekBarValue="true" />
     </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
     <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
         android:title="@string/pref_category_camera"
