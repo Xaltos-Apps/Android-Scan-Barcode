@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_msg_camera_framework_bug">Nažalost, Android kamera je naišla na problem. Možda ćete morati ponovno pokrenuti uređaj.</string>
+    <string name="zxing_msg_default_format">Format</string>
+    <string name="zxing_msg_default_meta">Metapodaci</string>
+    <string name="zxing_msg_default_status">Postavite crtični kod unutar pravokutnika tražila da biste ga skenirali.</string>
+    <string name="zxing_msg_default_time">Vrijeme</string>
+    <string name="zxing_msg_default_type">Tip</string>
+    <string name="zxing_msg_error">Greška</string>
+    <string name="zxing_msg_invalid_value">Nevažeća vrijednost</string>
+    <string name="zxing_preferences_actions_title">Kada se pronađe barkod\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Koristite auto fokus</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D industrijska</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D proizvod</string>
+    <string name="zxing_preferences_decode_QR_title">QR kodovi</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Zaobilazna rješenja za greške na uređaju</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Nema načina čitanja barkoda</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Koristite samo standardni način fokusa</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Nema kontinuiranog fokusa</string>
+    <string name="zxing_preferences_disable_exposure_title">Bez ekspozicije</string>
+    <string name="zxing_preferences_disable_metering_title">Nema mjerenja</string>
+    <string name="zxing_preferences_front_light_summary">Poboljšava skeniranje pri slabom osvjetljenju na nekim telefonima, ali može uzrokovati odsjaj. Ne radi na svim telefonima.</string>
+    <string name="zxing_preferences_front_light_title">Koristite prednje svjetlo</string>
+    <string name="zxing_preferences_front_light_auto">Automatski</string>
+    <string name="zxing_preferences_front_light_off">Isključeno</string>
+    <string name="zxing_preferences_front_light_on">Uključeno</string>
+    <string name="zxing_preferences_general_title">Opće postavke</string>
+    <string name="zxing_preferences_invert_scan_title">Invertno skeniranje</string>
+    <string name="zxing_preferences_invert_scan_summary">Skenirajte bijele barkodove na crnoj pozadini. Nije dostupno na nekim uređajima.</string>
+    <string name="zxing_preferences_orientation_title">Nema automatske rotacije</string>
+    <string name="zxing_preferences_play_beep_title">Bip</string>
+    <string name="zxing_preferences_scanning_title">Prilikom skeniranja crtičnih kodova, dekodirajte\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Vibrirati</string>
+    <string name="caption_setting_scan">Barkod skener</string>
+    <string name="preferences_packet_mode_title">Skupno skeniranje</string>
+    <string name="preferences_packet_scan_type_increment">Automatsko povećanje količine za 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Ručno postavite količinu</string>
+    <string name="preferences_packet_scan_type">Nakon svakog skeniranja</string>
+    <string name="preferences_scan_type">Skenirajte s</string>
+    <string name="preferences_scan_type_title">Vrsta barkod skenera </string>
+    <string name="preferences_scan_camera">Kamera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Kamera (Mobile Vision)</string>
+    <string name="preferences_scan_external">Vanjski skener</string>
+    <string name="preferences_scan_last_symbol_title">Sufiks (završni simbol)</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"Ovo je eksperimentalna značajka. \n\n
+        Pomozite nam da otklonimo greške i poboljšamo ga.\n\n
+        Molimo, javite nam radi li vam ili ne. Koristite izbornik \"Pitanje ili prijedlog\" za slanje povratnih informacija."</string>
+    <string name="caption_external_scan">Koristite vanjski skener</string>
+    <string name="preferences_scan_last_symbol_space">Space</string>
+    <string name="preferences_external_scan_params">Parametri skeniranja</string>
+    <string name="vision_msg_default_status">Postavite barkod unutar pravokutnika tražila</string>
+    <string name="preferences_scan_vertical_camera">Kamera (ZXing v.2 - Novo!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Otkrivanje barkoda</string>
+    <string name="pref_title_barcode_reticle_width">Širina tražila za barkod</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">U odnosu na širinu pogleda kamere, kreće se od 50% do 95%</string>
+    <string name="pref_title_barcode_reticle_height">Visina tražila za barkod</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">U odnosu na visinu pogleda kamere, kreće se od 20% do 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Omogućite provjeru veličine barkoda</string>
+    <string name="pref_summary_enable_barcode_size_check">Podsjetit će korisnika da približi kameru ako je otkriveni barkod premali</string>
+    <string name="pref_title_minimum_barcode_width">Minimalna širina barkoda</string>
+    <string name="pref_title_scan_delay_time">Kašnjenje skeniranja (sekunde)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">U odnosu na širinu tražila, kreće se od 20% do 80% (primjenjivo samo kada je omogućena provjera veličine barkoda)</string>
+    <string name="pref_summary_scan_delay_time">Vrijeme kašnjenja između 2 uzastopna skeniranja pri skeniranju u dokumente u skupnom načinu rada</string>
+    <string name="pref_title_rear_camera_preview_size">Veličina pregleda stražnje kamere</string>
+    <string name="cd_settings_button">Postavke</string>
+    <string name="cd_close_button">Nazad</string>
+    <string name="cd_flash_button">Uključite bljeskalicu kamere</string>
+    <string name="pref_category_camera">Fotoaparat</string>
+</resources>
