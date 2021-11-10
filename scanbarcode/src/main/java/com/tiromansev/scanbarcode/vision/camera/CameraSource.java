@@ -165,9 +165,11 @@ public class CameraSource {
     Parameters parameters = camera.getParameters();
     if (parameters != null) {
       List<String> modes = parameters.getSupportedFlashModes();
-      if (modes.contains(flashMode)) {
-        parameters.setFlashMode(flashMode);
-        camera.setParameters(parameters);
+      if (modes != null) {
+        if (modes.contains(flashMode)) {
+          parameters.setFlashMode(flashMode);
+          camera.setParameters(parameters);
+        }
       }
     }
   }
