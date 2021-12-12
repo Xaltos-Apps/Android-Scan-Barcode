@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 30
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 31
+        targetSdkVersion 30
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -26,11 +26,11 @@ android {
 
 dependencies {
     implementation 'com.github.wrdlbrnft:better-barcodes:0.3.0.46'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'com.google.firebase:firebase-ml-vision:24.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
     testImplementation 'junit:junit:4.13.2'
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'com.google.android.gms:play-services-vision:20.1.3'
