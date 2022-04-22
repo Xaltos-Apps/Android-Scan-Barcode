@@ -17,6 +17,7 @@
         android:layout_marginRight="8dp"
         android:gravity="center_horizontal"
         android:text="@string/caption_external_scan"
+        android:textColor="?attr/external_text_color"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
