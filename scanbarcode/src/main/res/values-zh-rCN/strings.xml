@@ -62,9 +62,9 @@
     <string name="pref_title_enable_barcode_size_check">启用条形码大小检查</string>
     <string name="pref_summary_enable_barcode_size_check">如果检测到的条形码太小，将提示用户将相机移近</string>
     <string name="pref_title_minimum_barcode_width">最小条码宽度</string>
-    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
+    <string name="pref_title_scan_delay_time">扫描延迟 (秒)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">相对于取景器宽度，建议范围为20％至80％（仅在启用条形码尺寸检查时适用）</string>
-    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
+    <string name="pref_summary_scan_delay_time">在批处理模式下扫描文档时，两个后续扫描之间的延迟时间</string>
     <string name="pref_title_rear_camera_preview_size">后置摄像头预览尺寸</string>
     <string name="cd_settings_button">设置</string>
     <string name="cd_close_button">返回</string>

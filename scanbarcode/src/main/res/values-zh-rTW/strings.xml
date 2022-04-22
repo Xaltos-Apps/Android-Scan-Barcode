@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_msg_camera_framework_bug">抱歉，Android相機遇到問題。您可能需要重新啟動設備。</string>
+    <string name="zxing_msg_camera_framework_bug">抱歉，Android相機出現問題。 你可能需要重新啓動相關設備。</string>
     <string name="zxing_msg_default_format">格式</string>
-    <string name="zxing_msg_default_meta">元數據</string>
-    <string name="zxing_msg_default_status">將條形碼放在取景器矩形內進行掃描。</string>
+    <string name="zxing_msg_default_meta">後設資料</string>
+    <string name="zxing_msg_default_status">將條碼對正於手機螢幕上的方形掃描格內進行掃描。</string>
     <string name="zxing_msg_default_time">時間</string>
     <string name="zxing_msg_default_type">類型</string>
     <string name="zxing_msg_error">錯誤</string>
     <string name="zxing_msg_invalid_value">無效值</string>
-    <string name="zxing_preferences_actions_title">當找到條形碼時\u2026</string>
+    <string name="zxing_preferences_actions_title">當找到條碼時\u2026</string>
     <string name="zxing_preferences_auto_focus_title">使用自動對焦</string>
-    <string name="zxing_preferences_decode_1D_industrial_title">1D Industrial</string>
-    <string name="zxing_preferences_decode_1D_product_title">1D Product</string>
-    <string name="zxing_preferences_decode_QR_title">QR Codes</string>
-    <string name="zxing_preferences_device_bug_workarounds_title">設備錯誤解決方法</string>
-    <string name="zxing_preferences_disable_barcode_scene_mode_title">無條形碼場景模式</string>
-    <string name="zxing_preferences_disable_continuous_focus_summary">僅使用標準對焦模式</string>
-    <string name="zxing_preferences_disable_continuous_focus_title">關閉自動對焦</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D 一維工業用條碼</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D 一維產品用條碼</string>
+    <string name="zxing_preferences_decode_QR_title">QR Codes 二維條碼</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">設備故障解決方法</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">無條碼場景模式</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">只使用標準對焦模式</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">關閉自動對焦模式</string>
     <string name="zxing_preferences_disable_exposure_title">關閉曝光</string>
     <string name="zxing_preferences_disable_metering_title">關閉測光</string>
     <string name="zxing_preferences_front_light_summary">改善某些手機在弱光下的掃描效果，但可能會造成眩光。不適用於所有手機。</string>
     <string name="zxing_preferences_front_light_title">打開閃光燈</string>
     <string name="zxing_preferences_front_light_auto">自動</string>
-    <string name="zxing_preferences_front_light_off">關</string>
-    <string name="zxing_preferences_front_light_on">開</string>
-    <string name="zxing_preferences_general_title">常規設置</string>
+    <string name="zxing_preferences_front_light_off">關閉</string>
+    <string name="zxing_preferences_front_light_on">開啟</string>
+    <string name="zxing_preferences_general_title">一般設定</string>
     <string name="zxing_preferences_invert_scan_title">反轉掃描</string>
-    <string name="zxing_preferences_invert_scan_summary">掃描在黑色背景上的白色條形碼。在某些設備上不可用。</string>
-    <string name="zxing_preferences_orientation_title">不自動旋轉</string>
-    <string name="zxing_preferences_play_beep_title">嘟</string>
-    <string name="zxing_preferences_scanning_title">掃描條形碼時，解碼\u2026</string>
-    <string name="zxing_preferences_vibrate_title">顫動</string>
-    <string name="caption_setting_scan">掃碼機</string>
-    <string name="preferences_packet_mode_title">批處理模式掃描</string>
-    <string name="preferences_packet_scan_type_increment">自動增加1（+1）</string>
-    <string name="preferences_packet_scan_type_set_quantity">手動設置數量</string>
-    <string name="preferences_packet_scan_type">每次掃描後</string>
-    <string name="preferences_scan_type">掃描</string>
+    <string name="zxing_preferences_invert_scan_summary">掃描在黑色背景上的白色條碼，在某些設備上用不著。</string>
+    <string name="zxing_preferences_orientation_title">無自動旋轉</string>
+    <string name="zxing_preferences_play_beep_title">嘟聲</string>
+    <string name="zxing_preferences_scanning_title">掃描條碼時，於解碼\u2026</string>
+    <string name="zxing_preferences_vibrate_title">震動</string>
+    <string name="caption_setting_scan">條碼掃描器</string>
+    <string name="preferences_packet_mode_title">批次處理掃描模式</string>
+    <string name="preferences_packet_scan_type_increment">自動增加1個數量 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">手動設定數量</string>
+    <string name="preferences_packet_scan_type">每次掃描之後</string>
+    <string name="preferences_scan_type">用掃描器來掃描</string>
     <string name="preferences_scan_type_title">條碼掃描器類型 </string>
-    <string name="preferences_scan_camera">Camera (ZXing)</string>
-    <string name="preferences_scan_camera_vision">Camera (Mobile Vision)</string>
-    <string name="preferences_scan_external">外部掃描儀</string>
-    <string name="preferences_scan_last_symbol_title">Suffix (end symbol)</string>
-    <string name="preferences_scan_last_symbol_enter">輸入</string>
+    <string name="preferences_scan_camera">相機 (ZXing)</string>
+    <string name="preferences_scan_camera_vision">相機 (手機視覺)</string>
+    <string name="preferences_scan_external">外置掃描器</string>
+    <string name="preferences_scan_last_symbol_title">後綴 (結束符號)</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
     <string name="preferences_scan_last_symbol_tab">標籤</string>
-    <string name="caption_external_scan_description">"這是一項實驗功能。 \n\n
-        幫助我們調試和改進它。\n\n
-        請讓我們知道它是否對您有用。使用“問題或建議”菜單項發送反饋。"</string>
-    <string name="caption_external_scan">使用外部掃描儀</string>
-    <string name="preferences_scan_last_symbol_space">空間</string>
+    <string name="caption_external_scan_description">"這是試驗性質的功能。 \n\n
+        協助我們去除錯與改進。\n\n
+        請通知我們對你們是否正常運作，可使用\"問題或建議\"的選項來發送有關的反饋。"</string>
+    <string name="caption_external_scan">使用外置掃描器</string>
+    <string name="preferences_scan_last_symbol_space">空格</string>
     <string name="preferences_external_scan_params">掃描參數</string>
-    <string name="vision_msg_default_status">將條形碼放在取景器矩形內進行掃描。</string>
-    <string name="preferences_scan_vertical_camera">Camera (ZXing v.2 - New!)</string>
+    <string name="vision_msg_default_status">將條碼對正於手機螢幕上的方形掃描格內。</string>
+    <string name="preferences_scan_vertical_camera">相機 (ZXing v.2 - 最新!)</string>
     <!-- Strings for barcode detection settings. -->
-    <string name="pref_category_barcode_detection">條碼檢測</string>
-    <string name="pref_title_barcode_reticle_width">條形碼取景器寬度</string>
-    <string name="pref_summary_barcode_reticle_width" formatted="false">相對於攝像機視圖寬度，範圍為50％至95％</string>
-    <string name="pref_title_barcode_reticle_height">條形碼取景器高度</string>
-    <string name="pref_summary_barcode_reticle_height" formatted="false">相對於攝像機的視角高度，範圍為20％至80％</string>
-    <string name="pref_title_enable_barcode_size_check">啟用條形碼大小檢查</string>
-    <string name="pref_summary_enable_barcode_size_check">如果檢測到的條形碼太小，將提示用戶將相機移近</string>
-    <string name="pref_title_minimum_barcode_width">最小條形碼寬度</string>
-    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
-    <string name="pref_summary_minimum_barcode_width" formatted="false">相對於取景器寬度，範圍為20％至80％（僅在啟用條形碼尺寸檢查時適用）</string>
-    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
-    <string name="pref_title_rear_camera_preview_size">後置攝像頭預覽尺寸</string>
-    <string name="cd_settings_button">設定值</string>
-    <string name="cd_close_button">背部</string>
+    <string name="pref_category_barcode_detection">偵查條碼</string>
+    <string name="pref_title_barcode_reticle_width">方形掃描格的寬度。</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">有關於相機視角的寬度，範圍為50％至95％</string>
+    <string name="pref_title_barcode_reticle_height">方形掃描格的高度。</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">有關於相機視角的高度，範圍由20％至80％</string>
+    <string name="pref_title_enable_barcode_size_check">啓用條碼尺寸檢查</string>
+    <string name="pref_summary_enable_barcode_size_check">如果系統檢測出的條碼太小，則會提示用戶將相機移近條碼。</string>
+    <string name="pref_title_minimum_barcode_width">最小條碼的寬度</string>
+    <string name="pref_title_scan_delay_time">延遲掃描 (秒)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">有關於手機螢幕上的方形掃描格視角的寬度，範圍由20％至80％ (僅在啓用條形碼尺寸檢查時才適用)</string>
+    <string name="pref_summary_scan_delay_time">在分批處理模式下掃描文件時，連續兩次掃描之間的延遲時間</string>
+    <string name="pref_title_rear_camera_preview_size">後置相機鏡頭的預覽尺寸</string>
+    <string name="cd_settings_button">設定</string>
+    <string name="cd_close_button">返回</string>
     <string name="cd_flash_button">切換相機閃光燈</string>
     <string name="pref_category_camera">相機</string>
 </resources>

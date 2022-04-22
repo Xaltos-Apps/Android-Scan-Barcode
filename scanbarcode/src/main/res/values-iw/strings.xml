@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_msg_camera_framework_bug">מצטערים, מצלמת באנדרואיד נתקלה בבעיה.
+ייתכן שתצטרך להפעיל מחדש את המכשיר.</string>
+    <string name="zxing_msg_default_format">ברירת מחדל</string>
+    <string name="zxing_msg_default_meta">מטא נתונים</string>
+    <string name="zxing_msg_default_status">לסריקת ברקוד הצב אותו בתוך המלבן.</string>
+    <string name="zxing_msg_default_time">זמן</string>
+    <string name="zxing_msg_default_type">סוג</string>
+    <string name="zxing_msg_error">שגיאה</string>
+    <string name="zxing_msg_invalid_value">נתון שגוי</string>
+    <string name="zxing_preferences_actions_title">כאשר ברקוד זוהה</string>
+    <string name="zxing_preferences_auto_focus_title">השתמש במיקוד אוטומטי</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">תעשייתי 1D</string>
+    <string name="zxing_preferences_decode_1D_product_title">מוצר 1D</string>
+    <string name="zxing_preferences_decode_QR_title">קודי QR</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">דרכים לפתרון בעיות במכשיר</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">ביטול מצב ברקוד</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">שימוש במצב מיקוד סטנדרטי</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">אין להשתמש במיקוד רציף</string>
+    <string name="zxing_preferences_disable_exposure_title">ללא חשיפה</string>
+    <string name="zxing_preferences_disable_metering_title">ללא מדידה</string>
+    <string name="zxing_preferences_front_light_summary">משפר סריקה בתאורה חלשה בכמה פלאפונים, אך עלול לסנוור. לא עובד בכל הטלפונים.</string>
+    <string name="zxing_preferences_front_light_title">השתמש באור הקדמי</string>
+    <string name="zxing_preferences_front_light_auto">אוטומטי</string>
+    <string name="zxing_preferences_front_light_off">כבוי</string>
+    <string name="zxing_preferences_front_light_on">פעיל</string>
+    <string name="zxing_preferences_general_title">הגדרות כלליות</string>
+    <string name="zxing_preferences_invert_scan_title">סריקה הפוכה</string>
+    <string name="zxing_preferences_invert_scan_summary">סריקת ברקוד לבן על רקע שחור.
+לא זמין בחלק מהמכשירים.</string>
+    <string name="zxing_preferences_orientation_title">אין סיבוב אוטומטי</string>
+    <string name="zxing_preferences_play_beep_title">צפצף</string>
+    <string name="zxing_preferences_scanning_title">בעת סריקת ברקודים, פענח\u2026</string>
+    <string name="zxing_preferences_vibrate_title">רטט</string>
+    <string name="caption_setting_scan">סורק ברקוד</string>
+    <string name="preferences_packet_mode_title">סריקה במצב איסוף</string>
+    <string name="preferences_packet_scan_type_increment">הגדלה אוטומטית של כמות ב-1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">הגדר כמות באופן ידני</string>
+    <string name="preferences_packet_scan_type">לאחר כל סריקה</string>
+    <string name="preferences_scan_type">סרוק עם</string>
+    <string name="preferences_scan_type_title">סוג סורק ברקוד </string>
+    <string name="preferences_scan_camera">מצלמה (ZXing)</string>
+    <string name="preferences_scan_camera_vision">מצלמה (Mobile Vision)</string>
+    <string name="preferences_scan_external">סורק חיצוני</string>
+    <string name="preferences_scan_last_symbol_title">Suffix (end symbol)</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"זוהי תכונה ניסיונית. \n\n
+        עזרו לנו לנפות באגים ולשפר אותה.\n\n
+        בבקשה, ספרו לנו אם זה עובד בשבילך או לא. דרך 'שאלה או הצעה' בתפריט כדי לשלוח משוב."</string>
+    <string name="caption_external_scan">השתמש בסורק חיצוני</string>
+    <string name="preferences_scan_last_symbol_space">Space</string>
+    <string name="preferences_external_scan_params">סריקת פרמטרים</string>
+    <string name="vision_msg_default_status">לסריקת ברקוד הצב אותו בתוך המלבן</string>
+    <string name="preferences_scan_vertical_camera">מצלמה (ZXing v.2 - חדש!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">זיהוי ברקוד</string>
+    <string name="pref_title_barcode_reticle_width">רוחב עינית ברקוד</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">יחס רוחב תצוגת המצלמה, נע בין 50% ל-95%</string>
+    <string name="pref_title_barcode_reticle_height">אורך עינית ברקוד</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">יחס אורך תצוגת המצלמה, נע בין 20% ל-80%</string>
+    <string name="pref_title_enable_barcode_size_check">אפשר בדיקת גודל ברקוד</string>
+    <string name="pref_summary_enable_barcode_size_check">ינחה את המשתמש לקרב את המצלמה אם הברקוד שזוהה קטן מדי</string>
+    <string name="pref_title_minimum_barcode_width">רוחב ברקוד מינימלי</string>
+    <string name="pref_title_scan_delay_time">עיכוב סריקה (שניות)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">יחס רוחב העינית, נע בין 20% ל-80% (מתאים רק כאשר בדיקת גודל ברקוד מופעלת)</string>
+    <string name="pref_summary_scan_delay_time">זמן השהיה בין 2 סריקות עוקבות בעת סריקה למסמכים במצב איסוף</string>
+    <string name="pref_title_rear_camera_preview_size">גודל תצוגה מקדימה של המצלמה האחורית</string>
+    <string name="cd_settings_button">הגדרות</string>
+    <string name="cd_close_button">חזור</string>
+    <string name="cd_flash_button">החלף את מצב הפלאש של המצלמה</string>
+    <string name="pref_category_camera">מצלמה</string>
+</resources>

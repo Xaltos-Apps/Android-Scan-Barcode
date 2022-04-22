@@ -62,9 +62,9 @@
     <string name="pref_title_enable_barcode_size_check">Barcodegröße Überprüfung aktivieren</string>
     <string name="pref_summary_enable_barcode_size_check">Fordert Benutzer auf die Kamera näher zu setzen, wenn der erkannte Barcode zu klein ist</string>
     <string name="pref_title_minimum_barcode_width">Minimale Barcodebreite</string>
-    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
+    <string name="pref_title_scan_delay_time">Scanverzögerung (Sek.)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">Bezogen auf die Breite der Sucherbreite liegt der Bereich zwischen 20% und 80% (anwendbar, wenn die Barcodegrößen Überprüfung aktiviert ist)</string>
-    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
+    <string name="pref_summary_scan_delay_time">Verzögerungszeit zwischen 2 aufeinanderfolgenden Scans beim Scannen in Dokumente im Stapelmodus</string>
     <string name="pref_title_rear_camera_preview_size">Hauptkamera Vorschaugröße</string>
     <string name="cd_settings_button">Optionen</string>
     <string name="cd_close_button">Zurück</string>
