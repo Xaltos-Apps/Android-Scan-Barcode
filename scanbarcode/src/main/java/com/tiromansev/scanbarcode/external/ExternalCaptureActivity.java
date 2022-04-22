@@ -6,6 +6,7 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -19,7 +20,10 @@ import com.tiromansev.scanbarcode.zxing.BeepManager;
 
 public class ExternalCaptureActivity extends AppCompatActivity {
 
+    public static final String BARCODE = "BARCODE";
+
     public EditText edtBarcode;
+    public Button btnClose;
     public static final String ENTER_SYMBOL = "0";
     public static final String TAB_SYMBOL = "1";
     public static final String SPACE_SYMBOL = "2";
@@ -32,6 +36,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_external_capture);
         edtBarcode = findViewById(R.id.edtBarcode);
+        btnClose = findViewById(R.id.btnClose);
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
 
         edtBarcode.setOnKeyListener((v, keyCode, event) -> {
@@ -62,6 +67,15 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             Intent intent = getPrefsIntent();
             startActivityForResult(intent, PREFS_REQUEST);
         });
+
+        btnClose.setOnClickListener(v -> close(edtBarcode.getText().toString()));
+    }
+
+    public void close(String barcode) {
+        Intent intent = new Intent();
+        intent.putExtra(BARCODE, barcode);
+        setResult(RESULT_OK, intent);
+        finish();
     }
 
     public Intent getPrefsIntent() {

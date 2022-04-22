@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.tiromansev.scanbarcode.vision.VisionCaptureActivity"
+        <activity android:name="com.tiromansev.scanbarcode.external.ExternalCaptureActivity"
             android:screenOrientation="portrait"
             android:clearTaskOnLaunch="true"
             android:stateNotNeeded="true"
