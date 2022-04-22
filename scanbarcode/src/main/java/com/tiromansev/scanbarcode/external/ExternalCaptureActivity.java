@@ -68,14 +68,11 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             startActivityForResult(intent, PREFS_REQUEST);
         });
 
-        btnClose.setOnClickListener(v -> close(edtBarcode.getText().toString()));
+        btnClose.setOnClickListener(v -> closeView(edtBarcode.getText().toString()));
     }
 
-    public void close(String barcode) {
-        Intent intent = new Intent();
-        intent.putExtra(BARCODE, barcode);
-        setResult(RESULT_OK, intent);
-        finish();
+    public void closeView(String barcode) {
+
     }
 
     public Intent getPrefsIntent() {

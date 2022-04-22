@@ -30,4 +30,5 @@
     <dimen name="bottom_prompt_chip_corner_radius">8dp</dimen>
 
     <dimen name="setting_text_size">16sp</dimen>
+    <dimen name="button_width">40dp</dimen>
 </resources>
