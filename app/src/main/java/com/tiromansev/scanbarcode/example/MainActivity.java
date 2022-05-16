@@ -6,7 +6,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.tiromansev.scanbarcode.external.ExternalCaptureActivity;
+import com.tiromansev.scanbarcode.vision.VisionCaptureActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Button scanButton = findViewById(R.id.btn_scan);
         scanButton.setOnClickListener(v -> {
             // launch barcode activity.
-            Intent intent = new Intent(MainActivity.this, ExternalCaptureActivity.class);
+            Intent intent = new Intent(MainActivity.this, VisionCaptureActivity.class);
             startActivityForResult(intent, RC_BARCODE_CAPTURE);
         });
     }
