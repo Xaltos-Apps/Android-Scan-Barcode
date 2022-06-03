@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_msg_camera_framework_bug">\"Maaf, kamera Android menghadapi masalah. Anda mungkin perlu menghidupkan semula peranti\".</string>
+    <string name="zxing_msg_default_format">Format</string>
+    <string name="zxing_msg_default_meta">Metadata</string>
+    <string name="zxing_msg_default_status">Pastikan kod bar berada didalam ruang kotak pengesan untuk mengimbasnya.</string>
+    <string name="zxing_msg_default_time">Masa</string>
+    <string name="zxing_msg_default_type">Taip</string>
+    <string name="zxing_msg_error">Ralat</string>
+    <string name="zxing_msg_invalid_value">Nilai tidak sah</string>
+    <string name="zxing_preferences_actions_title">Apabila kod bar ditemui\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Gunakan auto fokus</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">Perindustrian 1D</string>
+    <string name="zxing_preferences_decode_1D_product_title">Produk 1D</string>
+    <string name="zxing_preferences_decode_QR_title">Kod QR</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Penyelesaian Bug Peranti</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Tiada mod bacaan kod bar</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Gunakan mod fokus standard sahaja</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Tiada fokus berterusan</string>
+    <string name="zxing_preferences_disable_exposure_title">Tiada pendedahan</string>
+    <string name="zxing_preferences_disable_metering_title">Tanpa penjarakkan</string>
+    <string name="zxing_preferences_front_light_summary">Meningkatkan kadas imbas dalam cahaya rendah pada sesetengah jenis telefon, mungkin mengakibatkan silau. Tidak semestinya berfungsi pada semua jenis telefon.</string>
+    <string name="zxing_preferences_front_light_title">Gunakan lampu depan</string>
+    <string name="zxing_preferences_front_light_auto">Automatik</string>
+    <string name="zxing_preferences_front_light_off">Tutup</string>
+    <string name="zxing_preferences_front_light_on">Hidup</string>
+    <string name="zxing_preferences_general_title">Tetapan umum</string>
+    <string name="zxing_preferences_invert_scan_title">Imbasan terbalik</string>
+    <string name="zxing_preferences_invert_scan_summary">Imbas kod bar putih pada latar belakang hitam. Tidak terdapat pada sesetengah peranti.</string>
+    <string name="zxing_preferences_orientation_title">Tiada putaran automatik</string>
+    <string name="zxing_preferences_play_beep_title">Bip</string>
+    <string name="zxing_preferences_scanning_title">Apabila mengimbas kod bar, nyahkod\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Bergetar</string>
+    <string name="caption_setting_scan">Pengimbas kod bar</string>
+    <string name="preferences_packet_mode_title">Imbasan mod berkumpulan</string>
+    <string name="preferences_packet_scan_type_increment">Kuantiti kenaikan automatik sebanyak 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Tetapkan kuantiti secara manual</string>
+    <string name="preferences_packet_scan_type">Setiap selepas imbasan</string>
+    <string name="preferences_scan_type">Imbas dengan</string>
+    <string name="preferences_scan_type_title">Jenis pengimbas kod bar </string>
+    <string name="preferences_scan_camera">Kamera (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Kamera (Mobile Vision)</string>
+    <string name="preferences_scan_external">Pengimbas Luaran</string>
+    <string name="preferences_scan_last_symbol_title">Akhiran (simbol akhir)</string>
+    <string name="preferences_scan_last_symbol_enter">Masukkan</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"Ini adalah ciri eksperimen. \n\n
+        Bantu kami untuk men-debug dan memperbaiki mutunya.\n\n
+        Tolong beritahu kami jika ia berfungsi untuk anda atau tidak. Sila pilih 'Soalan atau cadangan' di item menu untuk menghantar sebarang maklum balas."</string>
+    <string name="caption_external_scan">Gunakan Pengimbas Luaran</string>
+    <string name="preferences_scan_last_symbol_space">Ruang</string>
+    <string name="preferences_external_scan_params">Parameter imbasan</string>
+    <string name="vision_msg_default_status">Pastikan label kod bar dalam ruangan kotak pengesan untuk mengimbasnya</string>
+    <string name="preferences_scan_vertical_camera">Kamera (ZXing v.2 - Baharu!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Pengesanan kod bar</string>
+    <string name="pref_title_barcode_reticle_width">Lebar tingkap penilik pandangan kod bar</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Berbanding dengan lebar paparan kamera, antara 50% hingga 95%</string>
+    <string name="pref_title_barcode_reticle_height">Ketinggian tingkap penilik pandangan kod bar</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Berbanding ketinggian paparan kamera, berkisar antara 20% hingga 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Aktifkan pemeriksaan saiz kod bar</string>
+    <string name="pref_summary_enable_barcode_size_check">Mohon pengguna menggerakkan kamera lebih dekat jika kod bar yang dikesan terlalu kecil</string>
+    <string name="pref_title_minimum_barcode_width">Lebar minimum kod bar</string>
+    <string name="pref_title_scan_delay_time">Kelewatan imbasan (saat)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Berbanding dengan lebar tingkap penilik pandangan, lingkungan di antara 20% hingga 80% (hanya dipakai apabila semakan ukuran kod bar diaktifkan)</string>
+    <string name="pref_summary_scan_delay_time">Lewat masa di antara 2 imbasan berturutan apabila mengimbasnya kepada dokumen dalam mod berkumpulan</string>
+    <string name="pref_title_rear_camera_preview_size">Saiz pratonton kamera belakang</string>
+    <string name="cd_settings_button">Tetapan</string>
+    <string name="cd_close_button">Kembali</string>
+    <string name="cd_flash_button">Togol flash kamera</string>
+    <string name="pref_category_camera">Kamera</string>
+</resources>
