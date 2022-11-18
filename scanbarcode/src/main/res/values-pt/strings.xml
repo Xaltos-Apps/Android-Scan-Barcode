@@ -62,9 +62,9 @@
     <string name="pref_title_enable_barcode_size_check">Ativar verificação do tamanho do código de barras</string>
     <string name="pref_summary_enable_barcode_size_check">Solicitará ao utilizador que mova a câmara para mais perto se o código de barras detetado for muito pequeno</string>
     <string name="pref_title_minimum_barcode_width">Largura mínima do código de barras</string>
-    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
+    <string name="pref_title_scan_delay_time">Atraso do scan (segundos)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">Em relação à largura do visor, varia de 20% a 80% (aplicável apenas quando a verificação do tamanho do código de barras está habilitada)</string>
-    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
+    <string name="pref_summary_scan_delay_time">Tempo de atraso entre 2 digitalizações consecutivas ao digitalizar para documentos em modo de lote</string>
     <string name="pref_title_rear_camera_preview_size">Tamanho de visualização da câmara traseira</string>
     <string name="cd_settings_button">Definições</string>
     <string name="cd_close_button">Para trás</string>

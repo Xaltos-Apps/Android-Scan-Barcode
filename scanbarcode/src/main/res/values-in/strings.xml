@@ -62,9 +62,9 @@
     <string name="pref_title_enable_barcode_size_check">Aktifkan pemeriksaan ukuran kode barcode</string>
     <string name="pref_summary_enable_barcode_size_check">Akan meminta pengguna untuk mendekatkan kamera jika kode barcode yang terdeteksi terlalu kecil</string>
     <string name="pref_title_minimum_barcode_width">Lebar minimum kode barcode</string>
-    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
+    <string name="pref_title_scan_delay_time">Penundaan pemindaian (detik)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">Relatif dengan lebar kotak untuk memfoto kode barcode, berkisar dari 20% - 80% (hanya berfungsi jika pemeriksaan ukuran kode barcode diaktifkan)</string>
-    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
+    <string name="pref_summary_scan_delay_time">Waktu tunda antara 2 pemindaian berurutan saat memindai ke dokumen dalam mode batch</string>
     <string name="pref_title_rear_camera_preview_size">Ukuran pratinjau kamera belakang</string>
     <string name="cd_settings_button">Pengaturan</string>
     <string name="cd_close_button">Kembali</string>
