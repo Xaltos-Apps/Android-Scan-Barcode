@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_msg_camera_framework_bug">Rất tiếc, máy ảnh Android đã gặp sự cố. Bạn có thể cần phải khởi động lại thiết bị.</string>
+    <string name="zxing_msg_camera_framework_bug">Rất tiếc, máy ảnh Android đã gặp sự cố. Bạn cần phải khởi động lại thiết bị.</string>
     <string name="zxing_msg_default_format">Định dạng</string>
     <string name="zxing_msg_default_meta">Siêu dữ liệu</string>
-    <string name="zxing_msg_default_status">Đặt mã vạch bên trong hình chữ nhật của kính ngắm để quét.</string>
+    <string name="zxing_msg_default_status">Đưa mã vạch bên trong hình chữ nhật của kính ngắm để quét.</string>
     <string name="zxing_msg_default_time">Thời gian</string>
     <string name="zxing_msg_default_type">Thể loại</string>
     <string name="zxing_msg_error">Lỗi</string>
@@ -15,7 +15,7 @@
     <string name="zxing_preferences_decode_1D_product_title">Sản phẩm 1D</string>
     <string name="zxing_preferences_decode_QR_title">Mã QR</string>
     <string name="zxing_preferences_device_bug_workarounds_title">Cách giải quyết lỗi thiết bị</string>
-    <string name="zxing_preferences_disable_barcode_scene_mode_title">Chế độ không cảnh mã vạch</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Tắt chế độ quét mã vạch theo khung cảnh định sẵn</string>
     <string name="zxing_preferences_disable_continuous_focus_summary">Chỉ sử dụng chế độ lấy nét tiêu chuẩn</string>
     <string name="zxing_preferences_disable_continuous_focus_title">Không lấy nét liên tục</string>
     <string name="zxing_preferences_disable_exposure_title">Không phơi sáng</string>
@@ -24,18 +24,18 @@
     <string name="zxing_preferences_front_light_title">Sử dụng đèn phía trước</string>
     <string name="zxing_preferences_front_light_auto">Tự động</string>
     <string name="zxing_preferences_front_light_off">Tắt</string>
-    <string name="zxing_preferences_front_light_on">Bật</string>
+    <string name="zxing_preferences_front_light_on">Mở</string>
     <string name="zxing_preferences_general_title">Cài đặt chung</string>
     <string name="zxing_preferences_invert_scan_title">Đảo ngược cách quét</string>
     <string name="zxing_preferences_invert_scan_summary">Quét mã vạch màu trắng trên nền đen. Không khả dụng trên một số thiết bị.</string>
-    <string name="zxing_preferences_orientation_title">Không tự động xoay vòng</string>
-    <string name="zxing_preferences_play_beep_title">Tiếng kêu bíp</string>
+    <string name="zxing_preferences_orientation_title">Không tự động xoay màn hình</string>
+    <string name="zxing_preferences_play_beep_title">Kêu bíp</string>
     <string name="zxing_preferences_scanning_title">Khi quét mã vạch, hãy giải mã\u2026</string>
     <string name="zxing_preferences_vibrate_title">Rung</string>
     <string name="caption_setting_scan">Máy quét mã vạch</string>
     <string name="preferences_packet_mode_title">Chế độ quét hàng loạt</string>
     <string name="preferences_packet_scan_type_increment">Tự động tăng số lượng thêm 1 (+1)</string>
-    <string name="preferences_packet_scan_type_set_quantity">Đặt số lượng theo cách thủ công</string>
+    <string name="preferences_packet_scan_type_set_quantity">Đặt số lượng thủ công</string>
     <string name="preferences_packet_scan_type">Sau mỗi lần quét</string>
     <string name="preferences_scan_type">Quét bằng</string>
     <string name="preferences_scan_type_title">Loại máy quét mã vạch </string>
@@ -51,7 +51,7 @@
     <string name="caption_external_scan">Sử dụng máy quét bên ngoài</string>
     <string name="preferences_scan_last_symbol_space">Dấu cách</string>
     <string name="preferences_external_scan_params">Thông số quét</string>
-    <string name="vision_msg_default_status">Đặt mã vạch bên trong hình chữ nhật của kính ngắm</string>
+    <string name="vision_msg_default_status">Đưa mã vạch bên trong hình chữ nhật của kính ngắm</string>
     <string name="preferences_scan_vertical_camera">Máy ảnh (ZXing v.2 - Mới!)</string>
     <!-- Strings for barcode detection settings. -->
     <string name="pref_category_barcode_detection">Nhận biết mã vạch</string>
@@ -59,12 +59,12 @@
     <string name="pref_summary_barcode_reticle_width" formatted="false">Tương ứng với chiều rộng tầm nhìn máy ảnh nằm trong khoảng từ 50% đến 95%</string>
     <string name="pref_title_barcode_reticle_height">Chiều cao kính ngắm mã vạch</string>
     <string name="pref_summary_barcode_reticle_height" formatted="false">Tương ứng với chiều cao tầm nhìn máy ảnh, nằm trong khoảng từ 20% đến 80%</string>
-    <string name="pref_title_enable_barcode_size_check">Bật kiểm tra kích thước mã vạch</string>
-    <string name="pref_summary_enable_barcode_size_check">Sẽ nhắc người dùng di chuyển máy ảnh lại gần nếu phát hiện mã vạch quá nhỏ</string>
+    <string name="pref_title_enable_barcode_size_check">Mở kiểm tra kích thước mã vạch</string>
+    <string name="pref_summary_enable_barcode_size_check">Sẽ nhắc người dùng đưa máy ảnh lại gần nếu phát hiện mã vạch quá nhỏ</string>
     <string name="pref_title_minimum_barcode_width">Chiều rộng mã vạch tối thiểu</string>
     <string name="pref_title_scan_delay_time">Trì hoãn quét (giây)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">Tương ứng với chiều rộng kính ngắm, nằm trong khoảng từ 20% đến 80% (chỉ áp dụng được khi bật tính năng kiểm tra kích thước mã vạch)</string>
-    <string name="pref_summary_scan_delay_time">Trì hoãn thời gian giữa 2 lần quét liền nhau khi quét tài liệu ở chế độ hàng loạt</string>
+    <string name="pref_summary_scan_delay_time">Trì hoãn thời gian giữa 2 lần quét liền nhau khi quét ở chế độ hàng loạt</string>
     <string name="pref_title_rear_camera_preview_size">Kích thước hình xem trước của camera sau</string>
     <string name="cd_settings_button">Cài đặt</string>
     <string name="cd_close_button">Quay lại</string>
