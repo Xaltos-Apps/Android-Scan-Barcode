@@ -19,21 +19,21 @@
     <string name="zxing_preferences_disable_continuous_focus_summary">Utilisez uniquement le mode de mise au point standard</string>
     <string name="zxing_preferences_disable_continuous_focus_title">Pas de mise au point continue</string>
     <string name="zxing_preferences_disable_exposure_title">Aucune exposition</string>
-    <string name="zxing_preferences_disable_metering_title">Pas de comptage</string>
+    <string name="zxing_preferences_disable_metering_title">Pas de mesure automatique de la distance par rapport à l\'objet afin d\'ajuster l\'autofocus</string>
     <string name="zxing_preferences_front_light_summary">Améliore le scan en basse lumière sur certains téléphones, mais peut provoquer des reflets. Ne fonctionne pas sur tous les téléphones.</string>
     <string name="zxing_preferences_front_light_title">Utiliser la lumière avant</string>
     <string name="zxing_preferences_front_light_auto">Automatique</string>
     <string name="zxing_preferences_front_light_off">Désactivé</string>
     <string name="zxing_preferences_front_light_on">Activé</string>
     <string name="zxing_preferences_general_title">Paramètres généraux</string>
-    <string name="zxing_preferences_invert_scan_title">Inverser scan</string>
+    <string name="zxing_preferences_invert_scan_title">Scanner en négatif</string>
     <string name="zxing_preferences_invert_scan_summary">Recherchez des codes-barres blancs sur fond noir. Non disponible sur certains appareils.</string>
     <string name="zxing_preferences_orientation_title">Pas de rotation automatique</string>
-    <string name="zxing_preferences_play_beep_title">Bip</string>
-    <string name="zxing_preferences_scanning_title">Lors de la recherche de code-barres, décodez\u2026</string>
+    <string name="zxing_preferences_play_beep_title">Bipper</string>
+    <string name="zxing_preferences_scanning_title">Lors de la recherche de code-barres, décoder\u2026</string>
     <string name="zxing_preferences_vibrate_title">Vibrer</string>
     <string name="caption_setting_scan">Type de lecteur de code-barres</string>
-    <string name="preferences_packet_mode_title">Balayage en mode batch</string>
+    <string name="preferences_packet_mode_title">Balayage en mode groupé</string>
     <string name="preferences_packet_scan_type_increment">Auto-incrementer la quantité de 1 (soit +1)</string>
     <string name="preferences_packet_scan_type_set_quantity">Définir la quantité manuellement</string>
     <string name="preferences_packet_scan_type">Après chaque scan</string>
@@ -46,8 +46,8 @@
     <string name="preferences_scan_last_symbol_enter">Valider</string>
     <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Ceci est une fonctionnalité expérimentale. \n\n
-        Aidez-nous à le déboguer et à l'améliorer.\n\n
-        S'il vous plaît, faites-nous savoir si cela fonctionne pour vous ou non. Utiliser l'élément de menu «Question ou suggestion» pour envoyer des commentaires."</string>
+        Aidez-nous à la déboguer et à l'améliorer.\n\n
+        S'il vous plaît, faites-nous savoir si cela fonctionne pour vous ou non. Utilisez l'élément de menu «Question ou suggestion» pour envoyer des commentaires."</string>
     <string name="caption_external_scan">Utiliser un scanner externe</string>
     <string name="preferences_scan_last_symbol_space">Espace</string>
     <string name="preferences_external_scan_params">Paramètres de scan</string>
@@ -62,9 +62,9 @@
     <string name="pref_title_enable_barcode_size_check">Activer la vérification de la taille du code-barres</string>
     <string name="pref_summary_enable_barcode_size_check">Invitera l\'utilisateur à rapprocher la caméra si le code-barres détecté est trop petit</string>
     <string name="pref_title_minimum_barcode_width">Largeur minimale du code-barres</string>
-    <string name="pref_title_scan_delay_time">Scan delay (seconds)</string>
+    <string name="pref_title_scan_delay_time">Durée d\'intervalle entre chaque scan (en secondes)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">Par rapport à la largeur du viseur, varie de 20% à 80% (applicable uniquement lorsque la vérification de la taille du code-barres est activée)</string>
-    <string name="pref_summary_scan_delay_time">Delay time between 2 consequent scans when scanning to documents in batch mode</string>
+    <string name="pref_summary_scan_delay_time">Délai entre 2 scans consécutifs lors de la numérisation des documents en mode groupé</string>
     <string name="pref_title_rear_camera_preview_size">Taille de l\'aperçu de la caméra arrière</string>
     <string name="cd_settings_button">Réglages</string>
     <string name="cd_close_button">Retour</string>
