@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_msg_camera_framework_bug">Ne pare rău, camera Android a întâmpinat o problemă. Poate fi necesar să reporniți dispozitivul.</string>
+    <string name="zxing_msg_default_format">Format</string>
+    <string name="zxing_msg_default_meta">Metadata</string>
+    <string name="zxing_msg_default_status">Pentru a-l scana, plasați un cod de bare în interiorul dreptunghiului.</string>
+    <string name="zxing_msg_default_time">Timp</string>
+    <string name="zxing_msg_default_type">Tip</string>
+    <string name="zxing_msg_error">Eroare</string>
+    <string name="zxing_msg_invalid_value">Valoare invalida</string>
+    <string name="zxing_preferences_actions_title">Actiune la un cod de bare descoperit</string>
+    <string name="zxing_preferences_auto_focus_title">Activați focalizarea automată</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Industrial</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D Produs</string>
+    <string name="zxing_preferences_decode_QR_title">Coduri QR</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Soluții de depanare erori</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Lipsă scenă cod de bare</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Utilizați numai modul de focalizare standard</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Focalizare discontinuă</string>
+    <string name="zxing_preferences_disable_exposure_title">Fără expunere</string>
+    <string name="zxing_preferences_disable_metering_title">Fără contorizare</string>
+    <string name="zxing_preferences_front_light_summary">Îmbunătățește scanarea în condiții iluminare slabă pe unele telefoane, dar poate provoca strălucire. Nu funcționează pe toate telefoanele.</string>
+    <string name="zxing_preferences_front_light_title">Folosiți lumina frontală</string>
+    <string name="zxing_preferences_front_light_auto">Automat</string>
+    <string name="zxing_preferences_front_light_off">Oprit</string>
+    <string name="zxing_preferences_front_light_on">Pornit</string>
+    <string name="zxing_preferences_general_title">Setări generale</string>
+    <string name="zxing_preferences_invert_scan_title">Scanare inversată</string>
+    <string name="zxing_preferences_invert_scan_summary">Scanați coduri de bare albe pe un fundal negru. Indisponibil pe unele dispozitive.</string>
+    <string name="zxing_preferences_orientation_title">Fără rotire automată</string>
+    <string name="zxing_preferences_play_beep_title">Bip</string>
+    <string name="zxing_preferences_scanning_title">Când scanați coduri de bare, decodați\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Vibrație</string>
+    <string name="caption_setting_scan">Scanner coduri de bare</string>
+    <string name="preferences_packet_mode_title">Scanare în modul Lot</string>
+    <string name="preferences_packet_scan_type_increment">Incrementare automată a cantității cu 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Setați cantitatea manual</string>
+    <string name="preferences_packet_scan_type">După fiecare scanare</string>
+    <string name="preferences_scan_type">Scanează cu</string>
+    <string name="preferences_scan_type_title">Tip scaner de cod de bare </string>
+    <string name="preferences_scan_camera">Cameră foto (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Cameră (Mobile Vision)</string>
+    <string name="preferences_scan_external">Scaner extern</string>
+    <string name="preferences_scan_last_symbol_title">Sufix (simbol final)</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"Aceasta este o caracteristică experimentală. \n\n
+        Ajutați-ne să depanăm și să îmbunătățim.\n\n
+        Vă rugăm să ne spuneți dacă funcționează pentru dvs. sau nu. Accesează in meniu „Întrebare sau sugestie” pentru a trimite solicitări."</string>
+    <string name="caption_external_scan">Utilizați un scaner extern</string>
+    <string name="preferences_scan_last_symbol_space">Spaţiu</string>
+    <string name="preferences_external_scan_params">Parametrii scanării</string>
+    <string name="vision_msg_default_status">Pentru a scana, plasați un cod de bare în interiorul dreptunghiului</string>
+    <string name="preferences_scan_vertical_camera">Cameră (ZXing v.2 - Nou!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Detectare cod de bare</string>
+    <string name="pref_title_barcode_reticle_width">Lățime vizor cod de bare</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Variază de la 50% la 95%, in raport cu lățimea de vizualizare a camerei</string>
+    <string name="pref_title_barcode_reticle_height">Lățime vizor cod de bare</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Variază de la 20% la 80%, in raport cu lățimea de vizualizare a camerei</string>
+    <string name="pref_title_enable_barcode_size_check">Activați verificarea dimensiunii codului de bare</string>
+    <string name="pref_summary_enable_barcode_size_check">Solicită utilizatorului să apropie camera, când codul de bare detectat este prea mic</string>
+    <string name="pref_title_minimum_barcode_width">Lățimea minimă a codului de bare</string>
+    <string name="pref_title_scan_delay_time">Întârziere scanare (secunde)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Variază de la 20% la 80%, in raport cu lățimea vizorului, (disponibil doar când este activată verificarea dimensiunii codului de bare)</string>
+    <string name="pref_summary_scan_delay_time">Timp de întârziere între 2 scanări consecutive atunci când scanați documente în modul lot</string>
+    <string name="pref_title_rear_camera_preview_size">Dimensiunea previzualizării camerei din spate</string>
+    <string name="cd_settings_button">Setări</string>
+    <string name="cd_close_button">Înapoi</string>
+    <string name="cd_flash_button">Comutați blițul camerei foto</string>
+    <string name="pref_category_camera">Camera foto</string>
+</resources>
