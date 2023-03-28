@@ -10,7 +10,7 @@
     <string name="zxing_msg_error">Kesalahan</string>
     <string name="zxing_msg_invalid_value">Nilai tidak valid</string>
     <string name="zxing_preferences_actions_title">Ketika kode barcode ditemukan\u2026</string>
-    <string name="zxing_preferences_auto_focus_title">Gunakan fokus otomatis</string>
+    <string name="zxing_preferences_auto_focus_title">Gunakan focus otomatis</string>
     <string name="zxing_preferences_decode_1D_industrial_title">Industri 1D</string>
     <string name="zxing_preferences_decode_1D_product_title">Produk 1D</string>
     <string name="zxing_preferences_decode_QR_title">Kode QR</string>
@@ -33,7 +33,7 @@
     <string name="zxing_preferences_scanning_title">Ketika memindai kode barcode, decode\u2026</string>
     <string name="zxing_preferences_vibrate_title">Bergetar</string>
     <string name="caption_setting_scan">Pemindai kode barcode</string>
-    <string name="preferences_packet_mode_title">Mode Pemindaian Berkelompok</string>
+    <string name="preferences_packet_mode_title">Mode pemindaian berkelompok</string>
     <string name="preferences_packet_scan_type_increment">Penambahan kuantitas otomatis sebesar 1 (+1)</string>
     <string name="preferences_packet_scan_type_set_quantity">Atur kuantitas secara manual</string>
     <string name="preferences_packet_scan_type">Setelah setiap pemindaian</string>
@@ -49,7 +49,7 @@
         Bantu kami untuk men-debug dan meningkatkannya.\n\n
         Beri tahu kami apakah ini cocok untuk Anda atau tidak. Silahkan gunakan menu 'Pertanyaan atau saran' untuk mengirim umpan balik."</string>
     <string name="caption_external_scan">Gunakan Pemindai Eksternal</string>
-    <string name="preferences_scan_last_symbol_space">Spasi</string>
+    <string name="preferences_scan_last_symbol_space">Space</string>
     <string name="preferences_external_scan_params">Parameter pemindaian</string>
     <string name="vision_msg_default_status">Tempatkan kode barcode di dalam kotak putih</string>
     <string name="preferences_scan_vertical_camera">Kamera (ZXing v.2 - Baru!)</string>
