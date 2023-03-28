@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_msg_camera_framework_bug">عذرًا ، واجهت الكاميرا مشكلة. قد تحتاج إلى إعادة تشغيل الجهاز.</string>
+    <string name="zxing_msg_default_format">التنسيق</string>
+    <string name="zxing_msg_default_meta">البيانات الوصفية</string>
+    <string name="zxing_msg_default_status">ضع الباركود داخل المستطيل لمسحه ضوئيًا.</string>
+    <string name="zxing_msg_default_time">الوقت</string>
+    <string name="zxing_msg_default_type">النوع</string>
+    <string name="zxing_msg_error">خطأ</string>
+    <string name="zxing_msg_invalid_value">قيمة خاطئة</string>
+    <string name="zxing_preferences_actions_title">عند التقاط الباركود\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">استخدم التركيز التلقائي</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D صناعي</string>
+    <string name="zxing_preferences_decode_1D_product_title">منتج 1D</string>
+    <string name="zxing_preferences_decode_QR_title">رموز QR</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">حلول لأخطاء الجهاز</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">الغاء وضع مشهد الباركود</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">استخدم فقط وضع التركيز العادي</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">الغاء التركيز المستمر</string>
+    <string name="zxing_preferences_disable_exposure_title">الغاء التعرض للضوء</string>
+    <string name="zxing_preferences_disable_metering_title">الغاء القياس</string>
+    <string name="zxing_preferences_front_light_summary">تحسين المسح في الإضاءة الخافتة في بعض الهواتف ، ولكنه قد يتسبب في حدوث وهج. لا يعمل على جميع الهواتف.</string>
+    <string name="zxing_preferences_front_light_title">استخدم الضوء الأمامي</string>
+    <string name="zxing_preferences_front_light_auto">تلقائي</string>
+    <string name="zxing_preferences_front_light_off">ايقاف</string>
+    <string name="zxing_preferences_front_light_on">يعمل</string>
+    <string name="zxing_preferences_general_title">الاعدادات العامة</string>
+    <string name="zxing_preferences_invert_scan_title">عكس المسح</string>
+    <string name="zxing_preferences_invert_scan_summary">مسح ضوئي للباركود ذو الخطوط البيضاء على خلفية سوداء. غير متوفر في بعض الأجهزة.</string>
+    <string name="zxing_preferences_orientation_title">لا يوجد دوران تلقائي</string>
+    <string name="zxing_preferences_play_beep_title">زمارة</string>
+    <string name="zxing_preferences_scanning_title">عند مسح الباركود، قم بفك التشفير\u2026</string>
+    <string name="zxing_preferences_vibrate_title">الذبذبة</string>
+    <string name="caption_setting_scan">ماسح الباركود</string>
+    <string name="preferences_packet_mode_title">مسح الباركود (متعدد)</string>
+    <string name="preferences_packet_scan_type_increment">زيادة الكمية تلقائيا بمقدار 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">عين الكمية يدويًا</string>
+    <string name="preferences_packet_scan_type">بعد كل مسح</string>
+    <string name="preferences_scan_type">مسح باستخدام</string>
+    <string name="preferences_scan_type_title">نوع ماسح الباركود </string>
+    <string name="preferences_scan_camera">الكاميرا (ZXing)</string>
+    <string name="preferences_scan_camera_vision">الكاميرا (موبايل)</string>
+    <string name="preferences_scan_external">ماسح خارجي</string>
+    <string name="preferences_scan_last_symbol_title">لاحقة الكلمة (رمز النهاية)</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"هذه ميزة تجريبية. \n\n
+        ساعدنا في تصحيح الأخطاء وتحسينها.\n\n
+        من فضلك ، أخبرنا إذا كان يعمل معك أم لا. استخدام عنصر القائمة \"سؤال أو اقتراح\" لإرسال التعليقات."</string>
+    <string name="caption_external_scan">استخدم ماسح خارجي</string>
+    <string name="preferences_scan_last_symbol_space">مسافة</string>
+    <string name="preferences_external_scan_params">خصائص الفحص</string>
+    <string name="vision_msg_default_status">ضع الباركود داخل المستطيل</string>
+    <string name="preferences_scan_vertical_camera">الكاميرا (ZXing v.2 - جديد!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">ايجاد الباكرود</string>
+    <string name="pref_title_barcode_reticle_width">العرض الخاص بنافذة الباركود</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">عرض المستطيل الخاص بالمسح بالنسبة للكاميرا يتراوح من 50% ل 95%</string>
+    <string name="pref_title_barcode_reticle_height">الطول الخاص بنافذة الباركود</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">طول المستطيل الخاص بالمسح بالنسبة للكاميرا يتراوح من 20% ل 80%</string>
+    <string name="pref_title_enable_barcode_size_check">تفعيل التحقق من حجم الباركود</string>
+    <string name="pref_summary_enable_barcode_size_check">سيطلب من المستخدم تقريب الكاميرا إذا كان الباركود المكتشف صغيرًا جدًا</string>
+    <string name="pref_title_minimum_barcode_width">الحد الأدنى لعرض الباركود</string>
+    <string name="pref_title_scan_delay_time">تأخير المسح (بالثواني)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">بالنسبة إلى عرض المستطيل ، يتراوح من 20٪ إلى 80٪ (قابل للتطبيق فقط عند تمكين التحقق من حجم الباركود)</string>
+    <string name="pref_summary_scan_delay_time">تأخير الوقت بين عمليتي مسح متتاليتين عند المسح الضوئي للمستندات في وضع المسح المتعدد</string>
+    <string name="pref_title_rear_camera_preview_size">حجم معاينة الكاميرا الخلفية</string>
+    <string name="cd_settings_button">الإعدادات</string>
+    <string name="cd_close_button">خلف</string>
+    <string name="cd_flash_button">تبديل وضع الفلاش</string>
+    <string name="pref_category_camera">كاميرا</string>
+</resources>
