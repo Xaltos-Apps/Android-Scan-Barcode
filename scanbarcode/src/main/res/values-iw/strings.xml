@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_msg_camera_framework_bug">מצטערים, מצלמת באנדרואיד נתקלה בבעיה.
+    <string name="zxing_msg_camera_framework_bug">מצטערים, מצלמת האנדרואיד נתקלה בבעיה.
 ייתכן שתצטרך להפעיל מחדש את המכשיר.</string>
     <string name="zxing_msg_default_format">ברירת מחדל</string>
     <string name="zxing_msg_default_meta">מטא נתונים</string>
@@ -15,13 +15,13 @@
     <string name="zxing_preferences_decode_1D_industrial_title">תעשייתי 1D</string>
     <string name="zxing_preferences_decode_1D_product_title">מוצר 1D</string>
     <string name="zxing_preferences_decode_QR_title">קודי QR</string>
-    <string name="zxing_preferences_device_bug_workarounds_title">דרכים לפתרון בעיות במכשיר</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">אפשרויות נוספות לעקיפת שגיאות במכשיר</string>
     <string name="zxing_preferences_disable_barcode_scene_mode_title">ביטול מצב ברקוד</string>
     <string name="zxing_preferences_disable_continuous_focus_summary">שימוש במצב מיקוד סטנדרטי</string>
     <string name="zxing_preferences_disable_continuous_focus_title">אין להשתמש במיקוד רציף</string>
     <string name="zxing_preferences_disable_exposure_title">ללא חשיפה</string>
     <string name="zxing_preferences_disable_metering_title">ללא מדידה</string>
-    <string name="zxing_preferences_front_light_summary">משפר סריקה בתאורה חלשה בכמה פלאפונים, אך עלול לסנוור. לא עובד בכל הטלפונים.</string>
+    <string name="zxing_preferences_front_light_summary">משפר סריקה בתאורה חלשה בכמה מכשירים, אך עלול לסנוור. לא עובד בכל המכשירים.</string>
     <string name="zxing_preferences_front_light_title">השתמש באור הקדמי</string>
     <string name="zxing_preferences_front_light_auto">אוטומטי</string>
     <string name="zxing_preferences_front_light_off">כבוי</string>
@@ -44,14 +44,14 @@
     <string name="preferences_scan_camera">מצלמה (ZXing)</string>
     <string name="preferences_scan_camera_vision">מצלמה (Mobile Vision)</string>
     <string name="preferences_scan_external">סורק חיצוני</string>
-    <string name="preferences_scan_last_symbol_title">Suffix (end symbol)</string>
-    <string name="preferences_scan_last_symbol_enter">Enter</string>
-    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="preferences_scan_last_symbol_title">סיומת (סמל סוף)</string>
+    <string name="preferences_scan_last_symbol_enter">מעבר שורה (ENTER)</string>
+    <string name="preferences_scan_last_symbol_tab">רווח גדול (TAB)</string>
     <string name="caption_external_scan_description">"זוהי תכונה ניסיונית. \n\n
         עזרו לנו לנפות באגים ולשפר אותה.\n\n
-        בבקשה, ספרו לנו אם זה עובד בשבילך או לא. דרך 'שאלה או הצעה' בתפריט כדי לשלוח משוב."</string>
+        בבקשה, ספר לנו אם זה עובד בשבילך או לא. דרך 'שאלה או הצעה' בתפריט כדי לשלוח משוב."</string>
     <string name="caption_external_scan">השתמש בסורק חיצוני</string>
-    <string name="preferences_scan_last_symbol_space">Space</string>
+    <string name="preferences_scan_last_symbol_space">רווח (Space)</string>
     <string name="preferences_external_scan_params">סריקת פרמטרים</string>
     <string name="vision_msg_default_status">לסריקת ברקוד הצב אותו בתוך המלבן</string>
     <string name="preferences_scan_vertical_camera">מצלמה (ZXing v.2 - חדש!)</string>
