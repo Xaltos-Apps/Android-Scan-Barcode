@@ -38,6 +38,7 @@
         <item>"1"</item>
         <item>"2"</item>
         <item>"3"</item>
+        <item>"4"</item>
     </string-array>
     <string-array name="preferences_scan_last_symbols">
         <item>@string/preferences_scan_last_symbol_enter</item>
