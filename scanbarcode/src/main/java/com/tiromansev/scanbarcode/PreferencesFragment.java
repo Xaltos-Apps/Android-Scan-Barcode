@@ -32,6 +32,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
     public static final String EXTERNAL_USB_SCANNER = "1";
     public static final String CAMERA_VISION_SCANNER = "2";
     public static final String CAMERA_ZXING_VERTICAL_SCANNER = "3";
+    public static final String CAMERA_MLKIT_SCANNER = "4";
 
     public static final String KEY_DECODE_1D_PRODUCT = "preferences_decode_1D_product";
     public static final String KEY_DECODE_1D_INDUSTRIAL = "preferences_decode_1D_industrial";
@@ -56,6 +57,20 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
     public static final String KEY_DISABLE_BARCODE_SCENE_MODE = "preferences_disable_barcode_scene_mode";
     public static final String KEY_SCAN_TYPE_CATEGORY = "preferences_scan_type_category";
     public static final String EXTRAS_HIDE_TYPE = "EXTRAS_HIDE_TYPE";
+
+    public static final String KEY_MLKIT_DECODE_CODE_128 = "preferences_mlkit_decode_code_128";
+    public static final String KEY_MLKIT_DECODE_CODABAR = "preferences_mlkit_decode_codabar";
+    public static final String KEY_MLKIT_DECODE_CODE_39 = "preferences_mlkit_decode_code_39";
+    public static final String KEY_MLKIT_DECODE_CODE_93 = "preferences_mlkit_decode_code_93";
+    public static final String KEY_MLKIT_DECODE_DATA_MATRIX = "preferences_mlkit_decode_data_matrix";
+    public static final String KEY_MLKIT_DECODE_EAN_13 = "preferences_mlkit_decode_ean_13";
+    public static final String KEY_MLKIT_DECODE_EAN_8 = "preferences_mlkit_decode_ean_8";
+    public static final String KEY_MLKIT_DECODE_ITF = "preferences_mlkit_decode_itf";
+    public static final String KEY_MLKIT_DECODE_UPC_A = "preferences_mlkit_decode_upc_a";
+    public static final String KEY_MLKIT_DECODE_UPC_E = "preferences_mlkit_decode_upc_e";
+    public static final String KEY_MLKIT_DECODE_AZTEC = "preferences_mlkit_decode_aztec";
+    public static final String KEY_MLKIT_DECODE_QR_CODES = "preferences_mlkit_decode_qr_codes";
+    public static final String KEY_MLKIT_DECODE_PDF_417 = "preferences_mlkit_decode_pdf_417";
 
     private PreferenceScreen preferences;
 
@@ -151,6 +166,9 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
                 break;
             case CAMERA_ZXING_VERTICAL_SCANNER:
                 addPreferencesFromResource(R.xml.barcode_zxing_vertical_preferences);
+                break;
+            case CAMERA_MLKIT_SCANNER:
+                addPreferencesFromResource(R.xml.barcode_mlkit_preferences);
                 break;
         }
         initSummaries();

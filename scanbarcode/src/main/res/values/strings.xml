@@ -90,4 +90,16 @@
     <string name="pref_key_rear_camera_picture_size" translatable="false">rcpts</string>
 
     <string name="caption_ok">OK</string>
+
+    <string name="mlkit_preferences_code_128_product_title" translatable="false">Code 128</string>
+    <string name="mlkit_preferences_codabar_product_title" translatable="false">Codabar</string>
+    <string name="mlkit_preferences_code_39_product_title" translatable="false">Code 39</string>
+    <string name="mlkit_preferences_code_93_product_title" translatable="false">Code 93</string>
+    <string name="mlkit_preferences_ean_13_product_title" translatable="false">EAN-13</string>
+    <string name="mlkit_preferences_ean_8_product_title" translatable="false">EAN-8</string>
+    <string name="mlkit_preferences_itf_product_title" translatable="false">ITF</string>
+    <string name="mlkit_preferences_upc_a_product_title" translatable="false">UPC-A</string>
+    <string name="mlkit_preferences_upc_e_product_title" translatable="false">UPC-E</string>
+
+    <string name="preferences_scan_mlkit">Camera (MLKit)</string>
 </resources>

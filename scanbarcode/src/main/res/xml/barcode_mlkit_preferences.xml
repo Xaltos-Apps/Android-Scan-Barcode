@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/preferences_scan_type"
+        android:key="preferences_scan_type_category"
+        app:iconSpaceReserved="false">
+        <com.tiromansev.scanbarcode.views.MultilineListPreference
+            android:defaultValue="2"
+            app:iconSpaceReserved="false"
+            android:entries="@array/preferences_scan_source_types"
+            android:entryValues="@array/preferences_scan_source_types_int"
+            android:key="preferences_scan_type_int"
+            android:title="@string/preferences_scan_type_title" />
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/preferences_packet_mode_title"
+        app:iconSpaceReserved="false">
+        <com.tiromansev.scanbarcode.views.MultilineListPreference
+            android:defaultValue="0"
+            app:iconSpaceReserved="false"
+            android:entries="@array/preferences_scan_types"
+            android:entryValues="@array/preferences_scan_types_int"
+            android:key="preferences_packet_scan_type_int"
+            android:title="@string/preferences_packet_scan_type" />
+        <SeekBarPreference
+            android:defaultValue="0"
+            android:key="@string/pref_key_scan_delay_time"
+            android:max="5"
+            android:icon="@null"
+            app:iconSpaceReserved="false"
+            android:persistent="true"
+            android:summary="@string/pref_summary_scan_delay_time"
+            android:title="@string/pref_title_scan_delay_time"
+            app:min="0"
+            app:showSeekBarValue="true" />
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/zxing_preferences_actions_title"
+        app:iconSpaceReserved="false">
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            android:key="preferences_play_beep"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:title="@string/zxing_preferences_play_beep_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="false"
+            android:key="preferences_vibrate"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:title="@string/zxing_preferences_vibrate_title" />
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+    <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
+        android:title="@string/zxing_preferences_scanning_title"
+        app:iconSpaceReserved="false">
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_code_128"
+            android:title="@string/mlkit_preferences_code_128_product_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_codabar"
+            android:title="@string/mlkit_preferences_codabar_product_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_code_39"
+            android:title="@string/mlkit_preferences_code_39_product_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_code_93"
+            android:title="@string/mlkit_preferences_code_93_product_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_data_matrix"
+            android:title="@string/zxing_preferences_decode_Data_Matrix_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_ean_13"
+            android:title="@string/mlkit_preferences_ean_13_product_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_ean_8"
+            android:title="@string/mlkit_preferences_ean_8_product_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_itf"
+            android:title="@string/mlkit_preferences_itf_product_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_upc_a"
+            android:title="@string/mlkit_preferences_upc_a_product_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_upc_e"
+            android:title="@string/mlkit_preferences_upc_e_product_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_aztec"
+            android:title="@string/zxing_preferences_decode_Aztec_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_qr_codes"
+            android:title="@string/zxing_preferences_decode_QR_title" />
+        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
+            android:defaultValue="true"
+            app:iconSpaceReserved="false"
+            android:layout="@layout/switch_preference"
+            android:key="preferences_mlkit_decode_pdf_417"
+            android:title="@string/zxing_preferences_decode_PDF417_title" />
+    </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
+</PreferenceScreen>
