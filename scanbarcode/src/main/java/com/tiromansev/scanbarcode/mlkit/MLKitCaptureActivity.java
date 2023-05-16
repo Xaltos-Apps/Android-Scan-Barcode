@@ -103,16 +103,7 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     }
 
     public void restartScan() {
-        scanner = GmsBarcodeScanning.getClient(this, options.build());
-        scanner.startScan()
-                .addOnSuccessListener(
-                        barcode -> {
-                            handleBarcode(barcode.getRawValue());
-                        })
-                .addOnCanceledListener(
-                        this::finish)
-                .addOnFailureListener(
-                        this::handleError);
+
     }
 
     private void handleBarcode(String rawResult) {
@@ -174,5 +165,15 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     public void startCapture() {
         Log.d("scan_delay", "refresh after pause");
         started = true;
+        scanner = GmsBarcodeScanning.getClient(this, options.build());
+        scanner.startScan()
+                .addOnSuccessListener(
+                        barcode -> {
+                            handleBarcode(barcode.getRawValue());
+                        })
+                .addOnCanceledListener(
+                        this::finish)
+                .addOnFailureListener(
+                        this::handleError);
     }
 }
