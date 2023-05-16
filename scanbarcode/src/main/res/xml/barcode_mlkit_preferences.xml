@@ -12,12 +12,6 @@
             android:entryValues="@array/preferences_scan_source_types_int"
             android:key="preferences_scan_type_int"
             android:title="@string/preferences_scan_type_title" />
-        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
-            android:defaultValue="false"
-            app:iconSpaceReserved="false"
-            android:layout="@layout/switch_preference"
-            android:key="preferences_mlkit_light_on"
-            android:title="@string/zxing_preferences_front_light_title" />
     </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
     <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
         android:title="@string/preferences_packet_mode_title"

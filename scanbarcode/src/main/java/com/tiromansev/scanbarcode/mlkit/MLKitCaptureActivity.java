@@ -16,14 +16,12 @@ import com.google.mlkit.vision.codescanner.GmsBarcodeScanning;
 import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.zxing.BeepManager;
-import com.tiromansev.scanbarcode.zxing.camera.CameraManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MLKitCaptureActivity extends AppCompatActivity {
 
-    public CameraManager cameraManager;
     private GmsBarcodeScanner scanner;
     public BeepManager beepManager;
     private MLKitActivityHandler handler;
@@ -34,7 +32,6 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         handler = new MLKitActivityHandler(this);
-        cameraManager = new CameraManager(getApplication());
         initSettings();
         restartScan();
         beepManager = new BeepManager(this);
