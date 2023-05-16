@@ -1,5 +1,6 @@
 package com.tiromansev.scanbarcode.mlkit;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -12,6 +13,7 @@ import com.google.mlkit.vision.barcode.common.Barcode;
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanner;
 import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions;
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanning;
+import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.zxing.BeepManager;
 
@@ -118,6 +120,10 @@ public class MLKitCaptureActivity extends AppCompatActivity {
             started = false;
             handleDecodeInternally(rawResult);
         }
+    }
+
+    public Intent getPrefsIntent() {
+        return new Intent(MLKitCaptureActivity.this, PreferenceActivity.class);
     }
 
     public void handleDecodeInternally(String rawResult) {
