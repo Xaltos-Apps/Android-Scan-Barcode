@@ -71,6 +71,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
     public static final String KEY_MLKIT_DECODE_AZTEC = "preferences_mlkit_decode_aztec";
     public static final String KEY_MLKIT_DECODE_QR_CODES = "preferences_mlkit_decode_qr_codes";
     public static final String KEY_MLKIT_DECODE_PDF_417 = "preferences_mlkit_decode_pdf_417";
+    public static final String KEY_MLKIT_LIGHT_ON = "preferences_mlkit_light_on";
 
     private PreferenceScreen preferences;
 
