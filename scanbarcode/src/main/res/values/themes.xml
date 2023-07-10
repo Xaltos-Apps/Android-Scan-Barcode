@@ -5,5 +5,7 @@
     <item name="android:windowContentOverlay">@null</item>
     <item name="android:windowActionBarOverlay">true</item>
     <item name="android:windowActionModeOverlay">true</item>
+    <item name="external_text_color">@color/color_external_caption</item>
+    <item name="tint_images">@color/white</item>
   </style>
 </resources>

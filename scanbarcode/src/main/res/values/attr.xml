@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="external_text_color" format="color"/>
+    <attr name="tint_images" format="color"/>
 </resources>

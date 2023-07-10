@@ -24,6 +24,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
     public EditText edtBarcode;
     public Button btnClose;
+    public ImageButton btnKeyboard;
     public static final String ENTER_SYMBOL = "0";
     public static final String TAB_SYMBOL = "1";
     public static final String SPACE_SYMBOL = "2";
@@ -37,7 +38,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_external_capture);
         edtBarcode = findViewById(R.id.edtBarcode);
         btnClose = findViewById(R.id.btnClose);
+        btnKeyboard = findViewById(R.id.btnKeyboard);
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
+
+        btnKeyboard.setOnClickListener(v -> keyboardClicked());
 
         edtBarcode.setOnKeyListener((v, keyCode, event) -> {
             if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -69,6 +73,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         });
 
         btnClose.setOnClickListener(v -> closeView(edtBarcode.getText().toString()));
+    }
+
+    protected void keyboardClicked() {
+
     }
 
     public void closeView(String barcode) {
