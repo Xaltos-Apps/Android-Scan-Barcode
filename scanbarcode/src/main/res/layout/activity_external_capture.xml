@@ -85,7 +85,7 @@
 
     <ImageButton
         android:id="@+id/btnKeyboard"
-        android:background="@color/white"
+        android:background="@color/transparent"
         android:layout_width="wrap_content"
         android:src="@drawable/ic_keyboard"
         app:layout_constraintEnd_toEndOf="parent"
