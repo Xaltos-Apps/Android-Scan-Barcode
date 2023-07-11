@@ -132,7 +132,8 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     }
 
     public void restartScan() {
-
+        barcode = "";
+        tvBarcode.setText(null);
     }
 
     public void playBeepSoundAndVibrate() {
