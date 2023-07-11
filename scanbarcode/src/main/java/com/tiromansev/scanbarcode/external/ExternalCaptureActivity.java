@@ -94,10 +94,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             if (enterHandled || tabHandled || spaceHandled) {
                 handleBarcode(barcode);
                 barcode = "";
-                edtBarcode.setText(null);
+                tvBarcode.setText(null);
             } else {
                 barcode += (char) ch;
-                edtBarcode.setText(barcode);
+                tvBarcode.setText(barcode);
             }
         }
 
