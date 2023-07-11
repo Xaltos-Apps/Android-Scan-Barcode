@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
@@ -23,46 +23,46 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     public static final String BARCODE = "BARCODE";
 
     public EditText edtBarcode;
+    public TextView tvBarcode;
     public Button btnClose;
-    public ImageButton btnKeyboard;
     public static final String ENTER_SYMBOL = "0";
     public static final String TAB_SYMBOL = "1";
     public static final String SPACE_SYMBOL = "2";
     private String lastSymbol = ENTER_SYMBOL;
     public BeepManager beepManager;
     private static final int PREFS_REQUEST = 99;
+    private String barcode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_external_capture);
         edtBarcode = findViewById(R.id.edtBarcode);
+        tvBarcode = findViewById(R.id.tvBarcode);
         btnClose = findViewById(R.id.btnClose);
-        btnKeyboard = findViewById(R.id.btnKeyboard);
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
+        tvBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
 
-        btnKeyboard.setOnClickListener(v -> keyboardClicked());
-
-        edtBarcode.setOnKeyListener((v, keyCode, event) -> {
-            if (keyCode == KeyEvent.KEYCODE_BACK) {
-                finish();
-                return true;
-            }
-            String barcode = edtBarcode.getText().toString();
-//            if (TextUtils.isEmpty(barcode)) {
-//                restartScan();
+//        edtBarcode.setOnKeyListener((v, keyCode, event) -> {
+//            if (keyCode == KeyEvent.KEYCODE_BACK) {
+//                finish();
 //                return true;
 //            }
-            boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
-            boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
-            boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
-            if (enterHandled || tabHandled || spaceHandled) {
-                handleBarcode(barcode);
-                edtBarcode.setText(null);
-                return true;
-            }
-            return false;
-        });
+//            String barcode = edtBarcode.getText().toString();
+////            if (TextUtils.isEmpty(barcode)) {
+////                restartScan();
+////                return true;
+////            }
+//            boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
+//            boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
+//            boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
+//            if (enterHandled || tabHandled || spaceHandled) {
+//                handleBarcode(barcode);
+//                edtBarcode.setText(null);
+//                return true;
+//            }
+//            return false;
+//        });
 
         setProperties();
         beepManager = new BeepManager(this);
@@ -75,8 +75,33 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         btnClose.setOnClickListener(v -> closeView(edtBarcode.getText().toString()));
     }
 
-    protected void keyboardClicked() {
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        int keyAction = event.getAction();
+        int keyCode = event.getKeyCode();
+        int ch = event.getUnicodeChar();
 
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            finish();
+            return true;
+        }
+
+        if (keyAction == KeyEvent.ACTION_DOWN) {
+            boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
+            boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
+            boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
+
+            if (enterHandled || tabHandled || spaceHandled) {
+                handleBarcode(barcode);
+                barcode = "";
+                edtBarcode.setText(null);
+            } else {
+                barcode += (char) ch;
+                edtBarcode.setText(barcode);
+            }
+        }
+
+        return super.dispatchKeyEvent(event);
     }
 
     public void closeView(String barcode) {
@@ -128,12 +153,6 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         beepManager.updatePrefs();
-        setFocus();
-    }
-
-    public void setFocus() {
-        edtBarcode.requestFocus();
-        edtBarcode.selectAll();
     }
 
     @Override
