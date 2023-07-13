@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".external.ExternalCaptureActivity">
 
+    <!--для перехвата фокуса-->
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:layout_alignParentTop="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" />
+
     <TextView
         android:id="@+id/tvCaption"
         android:layout_width="match_parent"
@@ -63,6 +72,7 @@
                 android:layout_height="wrap_content" />
 
             <EditText
+                android:visibility="gone"
                 android:id="@+id/edtBarcode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,6 +81,7 @@
 
         <Button
             android:id="@+id/btnClose"
+            android:visibility="gone"
             android:background="@color/transparent"
             android:text="@string/caption_ok"
             android:layout_alignParentEnd="true"
