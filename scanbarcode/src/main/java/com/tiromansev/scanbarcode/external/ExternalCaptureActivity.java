@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.EditText;
@@ -92,9 +93,12 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
 
             if (enterHandled || tabHandled || spaceHandled) {
+                if (TextUtils.isEmpty(barcode)) {
+                    restartScan();
+                    return super.dispatchKeyEvent(event);
+                }
                 handleBarcode(barcode);
-                barcode = "";
-                tvBarcode.setText(null);
+                resetBarcode();
             } else {
                 barcode += (char) ch;
                 tvBarcode.setText(barcode);
@@ -102,6 +106,11 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         }
 
         return super.dispatchKeyEvent(event);
+    }
+
+    private void resetBarcode() {
+        barcode = "";
+        tvBarcode.setText(null);
     }
 
     public void closeView(String barcode) {
@@ -132,8 +141,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     }
 
     public void restartScan() {
-        barcode = "";
-        tvBarcode.setText(null);
+        resetBarcode();
     }
 
     public void playBeepSoundAndVibrate() {
