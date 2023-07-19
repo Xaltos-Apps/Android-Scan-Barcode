@@ -30,7 +30,9 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     public static final String ENTER_SYMBOL = "0";
     public static final String TAB_SYMBOL = "1";
     public static final String SPACE_SYMBOL = "2";
-    private String lastSymbol = ENTER_SYMBOL;
+    boolean isEnterSetting = true;
+    boolean isTabSetting = false;
+    boolean isSpaceSetting = false;
     public BeepManager beepManager;
     private static final int PREFS_REQUEST = 99;
     private String barcode = "";
@@ -69,21 +71,24 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         }
 
         if (keyAction == KeyEvent.ACTION_DOWN) {
-            boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
-            boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
-            boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
+            if (TextUtils.isEmpty(barcode)) {
+                restartScan();
+                return true;
+            }
+
+            barcode += (char) ch;
+            tvBarcode.setText(barcode);
+            Log.d("external_scan", "barcode = " + barcode);
+
+            boolean enterHandled = keyCode == KeyEvent.KEYCODE_ENTER;
+            boolean tabHandled = keyCode == KeyEvent.KEYCODE_TAB;
+            boolean spaceHandled = keyCode == KeyEvent.KEYCODE_SPACE;
 
             if (enterHandled || tabHandled || spaceHandled) {
-                if (TextUtils.isEmpty(barcode)) {
-                    restartScan();
-                    return true;
+                if ((isEnterSetting && enterHandled) || (isTabSetting && tabHandled) || (isSpaceSetting && spaceHandled)) {
+                    handleBarcode(barcode);
                 }
-                handleBarcode(barcode);
                 resetBarcode();
-            } else {
-                barcode += (char) ch;
-                tvBarcode.setText(barcode);
-                Log.d("external_scan", "barcode = " + barcode);
             }
 
             return true;
@@ -117,7 +122,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
     public void setProperties() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        lastSymbol = prefs.getString(PreferencesFragment.KEY_SCAN_LAST_SYMBOL, ENTER_SYMBOL);
+        String lastSymbol = prefs.getString(PreferencesFragment.KEY_SCAN_LAST_SYMBOL, ENTER_SYMBOL);
+        isEnterSetting = lastSymbol.equals(ENTER_SYMBOL);
+        isTabSetting = lastSymbol.equals(TAB_SYMBOL);
+        isSpaceSetting = lastSymbol.equals(SPACE_SYMBOL);
     }
 
     public void handleBarcode(String rawResult) {
