@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,31 +45,11 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
         tvBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
 
-//        edtBarcode.setOnKeyListener((v, keyCode, event) -> {
-//            if (keyCode == KeyEvent.KEYCODE_BACK) {
-//                finish();
-//                return true;
-//            }
-//            String barcode = edtBarcode.getText().toString();
-////            if (TextUtils.isEmpty(barcode)) {
-////                restartScan();
-////                return true;
-////            }
-//            boolean enterHandled = (lastSymbol.equals(ENTER_SYMBOL) && keyCode == KeyEvent.KEYCODE_ENTER);
-//            boolean tabHandled = (lastSymbol.equals(TAB_SYMBOL) && keyCode == KeyEvent.KEYCODE_TAB);
-//            boolean spaceHandled = (lastSymbol.equals(SPACE_SYMBOL) && keyCode == KeyEvent.KEYCODE_SPACE);
-//            if (enterHandled || tabHandled || spaceHandled) {
-//                handleBarcode(barcode);
-//                edtBarcode.setText(null);
-//                return true;
-//            }
-//            return false;
-//        });
-
         setProperties();
         beepManager = new BeepManager(this);
         ImageButton btnSettings = findViewById(R.id.btnScanSettings);
         btnSettings.setOnClickListener(v -> {
+            Log.d("external_scan", "settings clicked");
             Intent intent = getPrefsIntent();
             startActivityForResult(intent, PREFS_REQUEST);
         });
@@ -95,7 +76,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             if (enterHandled || tabHandled || spaceHandled) {
                 if (TextUtils.isEmpty(barcode)) {
                     restartScan();
-                    return super.dispatchKeyEvent(event);
+                    return true;
                 }
                 handleBarcode(barcode);
                 resetBarcode();
@@ -103,6 +84,8 @@ public class ExternalCaptureActivity extends AppCompatActivity {
                 barcode += (char) ch;
                 tvBarcode.setText(barcode);
             }
+
+            return true;
         }
 
         return super.dispatchKeyEvent(event);
