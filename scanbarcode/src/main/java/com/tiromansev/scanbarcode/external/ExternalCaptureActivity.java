@@ -109,10 +109,8 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            if (requestCode == PREFS_REQUEST) {
-                setProperties();
-            }
+        if (requestCode == PREFS_REQUEST) {
+            setProperties();
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
