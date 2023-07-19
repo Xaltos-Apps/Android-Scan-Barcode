@@ -33,7 +33,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     private String lastSymbol = ENTER_SYMBOL;
     public BeepManager beepManager;
     private static final int PREFS_REQUEST = 99;
-    private String barcode;
+    private String barcode = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +83,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             } else {
                 barcode += (char) ch;
                 tvBarcode.setText(barcode);
+                Log.d("external_scan", "barcode = " + barcode);
             }
 
             return true;
@@ -93,7 +94,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
     private void resetBarcode() {
         barcode = "";
-        tvBarcode.setText(null);
+        tvBarcode.setText("");
     }
 
     public void closeView(String barcode) {
