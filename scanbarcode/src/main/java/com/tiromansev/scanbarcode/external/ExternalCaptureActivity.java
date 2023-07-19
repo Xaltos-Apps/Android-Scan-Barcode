@@ -71,14 +71,13 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         }
 
         if (keyAction == KeyEvent.ACTION_DOWN) {
-            if (TextUtils.isEmpty(barcode)) {
-                restartScan();
-                return true;
-            }
+//            if (TextUtils.isEmpty(barcode)) {
+//                restartScan();
+//                return true;
+//            }
 
             barcode += (char) ch;
             tvBarcode.setText(barcode);
-            Log.d("external_scan", "barcode = " + barcode);
 
             boolean enterHandled = keyCode == KeyEvent.KEYCODE_ENTER;
             boolean tabHandled = keyCode == KeyEvent.KEYCODE_TAB;
@@ -87,8 +86,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             if (enterHandled || tabHandled || spaceHandled) {
                 if ((isEnterSetting && enterHandled) || (isTabSetting && tabHandled) || (isSpaceSetting && spaceHandled)) {
                     handleBarcode(barcode);
+                    Log.d("external_scan", "handle barcode");
                 }
                 resetBarcode();
+                Log.d("external_scan", "barcode = " + barcode);
             }
 
             return true;
