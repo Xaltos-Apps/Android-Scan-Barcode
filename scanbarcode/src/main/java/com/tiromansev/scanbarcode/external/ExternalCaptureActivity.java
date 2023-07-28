@@ -24,6 +24,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
     public static final String BARCODE = "BARCODE";
 
+    public ImageButton btnKeyboard;
     public EditText edtBarcode;
     public TextView tvBarcode;
     public Button btnClose;
@@ -44,9 +45,11 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         edtBarcode = findViewById(R.id.edtBarcode);
         tvBarcode = findViewById(R.id.tvBarcode);
         btnClose = findViewById(R.id.btnClose);
+        btnKeyboard = findViewById(R.id.btnKeyboard);
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
         tvBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
 
+        btnKeyboard.setOnClickListener(v -> keyboardClicked());
         setProperties();
         beepManager = new BeepManager(this);
         ImageButton btnSettings = findViewById(R.id.btnScanSettings);
@@ -57,6 +60,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         });
 
         btnClose.setOnClickListener(v -> closeView(edtBarcode.getText().toString()));
+    }
+
+    protected void keyboardClicked() {
+
     }
 
     @Override

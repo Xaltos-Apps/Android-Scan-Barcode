@@ -106,4 +106,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_scan_settings" />
 
+    <ImageButton
+        android:id="@+id/btnKeyboard"
+        android:background="@color/transparent"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_keyboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_height="wrap_content"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
