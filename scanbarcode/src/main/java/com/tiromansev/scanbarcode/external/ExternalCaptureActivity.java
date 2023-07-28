@@ -78,15 +78,17 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             if (enterHandled || tabHandled || spaceHandled) {
                 if ((isEnterSetting && enterHandled) || (isTabSetting && tabHandled) || (isSpaceSetting && spaceHandled)) {
                     handleBarcode(barcode);
-                    Log.d("external_scan", "handle barcode");
+                    Log.d("external_scan", "handle barcode " + barcode);
+                    resetBarcode();
+                    return true;
                 }
-                resetBarcode();
-                Log.d("external_scan", "barcode = " + barcode);
-                return true;
             }
 
-            barcode += (char) ch;
-            tvBarcode.setText(barcode);
+            if (ch > 0) {
+                barcode += (char) ch;
+                tvBarcode.setText(barcode);
+            }
+            Log.d("external_scan", "barcode = " + barcode + " char = " + ch);
 
             return true;
         }
