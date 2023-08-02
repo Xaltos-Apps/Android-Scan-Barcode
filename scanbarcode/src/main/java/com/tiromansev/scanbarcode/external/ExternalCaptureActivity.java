@@ -107,7 +107,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
             if (enterHandled || tabHandled || spaceHandled) {
                 if (log) {
-                    log(getTime() + ": [field handle] " + "barcode handled = " + barcode);
+                    log(getTime() + ": [field handle] " + "barcode handled = " + barcode + "\n");
                 }
                 handleBarcode(barcode);
                 edtBarcode.setText(null);
@@ -165,7 +165,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             if (enterHandled || tabHandled || spaceHandled) {
                 if ((isEnterSetting && enterHandled) || (isTabSetting && tabHandled) || (isSpaceSetting && spaceHandled)) {
                     if (log) {
-                        log(getTime() + ": [activity handle] " + "barcode handled = " + barcode);
+                        log(getTime() + ": [activity handle] " + "barcode handled = " + barcode + "\n");
                     }
                     handleBarcode(barcode);
                     resetBarcode();
