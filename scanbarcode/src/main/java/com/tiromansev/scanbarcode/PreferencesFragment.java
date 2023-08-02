@@ -50,6 +50,8 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
     public static final String KEY_SCAN_TYPE_INT = "preferences_scan_type_int";
     public static final String KEY_SCAN_LAST_SYMBOL = "preferences_scan_last_symbol";
     public static final String KEY_DISABLE_AUTO_ORIENTATION = "preferences_orientation";
+    public static final String KEY_USE_INPUT_FIELD_IN_EXTERNAL_MODE = "preferences_use_input_field_in_external_mode";
+    public static final String KEY_LOG_IN_EXTERNAL_MODE = "preferences_log_in_external_mode";
 
     public static final String KEY_DISABLE_CONTINUOUS_FOCUS = "preferences_disable_continuous_focus";
     public static final String KEY_DISABLE_EXPOSURE = "preferences_disable_exposure";
