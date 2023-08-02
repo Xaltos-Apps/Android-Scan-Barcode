@@ -86,16 +86,17 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             int keyAction = event.getAction();
             int ch = event.getUnicodeChar();
             boolean log = useLog();
+            String lastSymbol = getLastSymbol();
 
             if (log) {
                 log(getTime() + ": [field handle]" +
                         " keyAction = " + keyAction +
                         " keyCode = " + keyCode +
-                        " ch = " + ch);
+                        " ch = " + ch +
+                        " last symbol = " + lastSymbol);
             }
 
             String barcode = edtBarcode.getText().toString();
-            String lastSymbol = getLastSymbol();
 
             if (log) {
                 log(getTime() + ": [field handle] " + "barcode = " + barcode);
@@ -144,6 +145,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         int keyCode = event.getKeyCode();
         int ch = event.getUnicodeChar();
         boolean log = useLog();
+        String lastSymbol = getLastSymbol();
 
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             finish();
@@ -154,7 +156,8 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             log(getTime() + ": [activity handle]" +
                     " keyAction = " + keyAction +
                     " keyCode = " + keyCode +
-                    " ch = " + ch);
+                    " ch = " + ch +
+                    " last symbol = " + lastSymbol);
         }
 
         if (keyAction == KeyEvent.ACTION_DOWN) {
