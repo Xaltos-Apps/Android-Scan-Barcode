@@ -243,12 +243,12 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         edit.apply();
     }
 
-    private Boolean useInputField() {
+    protected Boolean useInputField() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         return prefs.getBoolean(PreferencesFragment.KEY_USE_INPUT_FIELD_IN_EXTERNAL_MODE, false);
     }
 
-    private Boolean useLog() {
+    protected Boolean useLog() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         return prefs.getBoolean(PreferencesFragment.KEY_LOG_IN_EXTERNAL_MODE, false);
     }
