@@ -104,4 +104,5 @@
     <string name="preferences_scan_mlkit">Camera (MLKit)</string>
     <string name="preferences_use_external_input_field">Use input field</string>
     <string name="preferences_use_external_log">Diagnostic mode</string>
+    <string name="caption_scan_log" translatable="false">Scan log</string>
 </resources>
