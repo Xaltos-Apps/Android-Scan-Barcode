@@ -23,12 +23,6 @@
             android:entryValues="@array/preferences_scan_last_symbols_int"
             android:key="preferences_scan_last_symbol"
             android:title="@string/preferences_scan_last_symbol_title" />
-        <com.tiromansev.scanbarcode.views.MultilineCheckboxPreference
-            android:defaultValue="false"
-            app:iconSpaceReserved="false"
-            android:key="preferences_log_in_external_mode"
-            android:layout="@layout/switch_preference"
-            android:title="@string/preferences_use_external_log" />
     </com.tiromansev.scanbarcode.views.ThemedPreferenceCategory>
     <com.tiromansev.scanbarcode.views.ThemedPreferenceCategory
         android:title="@string/preferences_packet_mode_title"

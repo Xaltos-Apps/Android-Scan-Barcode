@@ -37,6 +37,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     public TextView tvBarcode;
     public Button btnClose;
     public SwitchCompat swUseInputField;
+    public SwitchCompat swDiagnosticMode;
     public static final String ENTER_SYMBOL = "0";
     public static final String TAB_SYMBOL = "1";
     public static final String SPACE_SYMBOL = "2";
@@ -58,6 +59,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         btnSettings = findViewById(R.id.btnScanSettings);
         btnSendLog = findViewById(R.id.btnSendLog);
         swUseInputField = findViewById(R.id.swUseInputField);
+        swDiagnosticMode = findViewById(R.id.swDiagnosticMode);
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
         tvBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
 
@@ -126,6 +128,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             setLayout();
             restartScan();
         });
+        swDiagnosticMode.setOnCheckedChangeListener((compoundButton, checked) -> {
+            setUseLog(checked);
+            btnSendLog.setVisibility(useLog() ? View.VISIBLE : View.GONE);
+        });
     }
 
     protected void sendLog() {
@@ -141,6 +147,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         if (useInputField()) {
             return super.dispatchKeyEvent(event);
         }
+
         int keyAction = event.getAction();
         int keyCode = event.getKeyCode();
         int ch = event.getUnicodeChar();
@@ -237,6 +244,13 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     private String getLastSymbol() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         return prefs.getString(PreferencesFragment.KEY_SCAN_LAST_SYMBOL, ENTER_SYMBOL);
+    }
+
+    private void setUseLog(boolean use) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putBoolean(PreferencesFragment.KEY_LOG_IN_EXTERNAL_MODE, use);
+        edit.apply();
     }
 
     private void setUseInputField(boolean use) {
