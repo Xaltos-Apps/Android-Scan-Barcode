@@ -210,6 +210,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         btnClose.setVisibility(useInput ? View.VISIBLE : View.GONE);
         tvBarcode.setVisibility(useInput ? View.GONE : View.VISIBLE);
         btnSendLog.setVisibility(useLog() ? View.VISIBLE : View.GONE);
+        swDiagnosticMode.setChecked(useLog());
 
         if (useInput) {
             setFocus();
