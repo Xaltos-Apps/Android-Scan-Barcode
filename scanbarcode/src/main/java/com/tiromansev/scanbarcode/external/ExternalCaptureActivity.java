@@ -47,6 +47,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     public BeepManager beepManager;
     private static final int PREFS_REQUEST = 99;
     private String barcode = "";
+    private boolean handling = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +81,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
                 finish();
                 return true;
             }
-
-            if (!useInputField()) {
+            if (isHandling() || !useInputField()) {
                 return false;
             }
 
@@ -134,6 +134,14 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         });
     }
 
+    public boolean isHandling() {
+        return handling;
+    }
+
+    public void setHandling(boolean handling) {
+        this.handling = handling;
+    }
+
     protected void sendLog() {
 
     }
@@ -144,20 +152,20 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        if (useInputField()) {
-            return super.dispatchKeyEvent(event);
-        }
-
-        int keyAction = event.getAction();
         int keyCode = event.getKeyCode();
-        int ch = event.getUnicodeChar();
-        boolean log = useLog();
-        String lastSymbol = getLastSymbol();
 
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             finish();
             return true;
         }
+        if (isHandling() || useInputField()) {
+            return super.dispatchKeyEvent(event);
+        }
+
+        int keyAction = event.getAction();
+        int ch = event.getUnicodeChar();
+        boolean log = useLog();
+        String lastSymbol = getLastSymbol();
 
         if (log) {
             log(getTime() + ": [activity handle]" +
@@ -279,11 +287,12 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     }
 
     public void handleBarcode(String rawResult) {
-
+        setHandling(true);
     }
 
     public void restartScan() {
         resetBarcode();
+        setHandling(false);
     }
 
     public void playBeepSoundAndVibrate() {
