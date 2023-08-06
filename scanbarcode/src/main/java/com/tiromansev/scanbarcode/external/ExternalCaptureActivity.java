@@ -167,6 +167,10 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         boolean log = useLog();
         String lastSymbol = getLastSymbol();
 
+        Log.d("external_scan", "keyAction = " + keyAction +
+                " keyCode = " + keyCode +
+                " ch = " + ch +
+                " last symbol = " + lastSymbol);
         if (log) {
             log(getTime() + ": [activity handle]" +
                     " keyAction = " + keyAction +
@@ -182,6 +186,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
             if (enterHandled || tabHandled || spaceHandled) {
                 if ((isEnterSetting && enterHandled) || (isTabSetting && tabHandled) || (isSpaceSetting && spaceHandled)) {
+                    Log.d("external_scan", "barcode handled = " + barcode + "\n");
                     if (log) {
                         log(getTime() + ": [activity handle] " + "barcode handled = " + barcode + "\n");
                     }
@@ -195,6 +200,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
                 barcode += (char) ch;
                 tvBarcode.setText(barcode);
             }
+            Log.d("external_scan", "barcode = " + barcode);
             if (log) {
                 log(getTime() + ": [activity handle] " + "barcode = " + barcode);
             }
@@ -287,10 +293,12 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     }
 
     public void handleBarcode(String rawResult) {
+        Log.d("external_scan", "start handling " + rawResult);
         setHandling(true);
     }
 
     public void restartScan() {
+        Log.d("external_scan", "restart scan");
         resetBarcode();
         setHandling(false);
     }
