@@ -47,7 +47,6 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     public BeepManager beepManager;
     private static final int PREFS_REQUEST = 99;
     private String barcode = "";
-    private boolean handling = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +80,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
                 finish();
                 return true;
             }
-            if (isHandling() || !useInputField()) {
+            if (!useInputField()) {
                 return false;
             }
 
@@ -134,14 +133,6 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         });
     }
 
-    public boolean isHandling() {
-        return handling;
-    }
-
-    public void setHandling(boolean handling) {
-        this.handling = handling;
-    }
-
     protected void sendLog() {
 
     }
@@ -158,7 +149,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             finish();
             return true;
         }
-        if (isHandling() || useInputField()) {
+        if (useInputField()) {
             return super.dispatchKeyEvent(event);
         }
 
@@ -294,13 +285,11 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
     public void handleBarcode(String rawResult) {
         Log.d("external_scan", "start handling " + rawResult);
-        setHandling(true);
     }
 
     public void restartScan() {
         Log.d("external_scan", "restart scan");
         resetBarcode();
-        setHandling(false);
     }
 
     public void playBeepSoundAndVibrate() {
