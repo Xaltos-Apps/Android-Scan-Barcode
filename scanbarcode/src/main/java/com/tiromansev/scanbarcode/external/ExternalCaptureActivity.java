@@ -182,9 +182,9 @@ public class ExternalCaptureActivity extends AppCompatActivity {
                         log(getTime() + ": [activity handle] " + "barcode handled = " + barcode + "\n");
                     }
                     handleBarcode(barcode);
-                    resetBarcode();
                     return true;
                 }
+                resetBarcode();
             }
 
             if (ch > 0) {
