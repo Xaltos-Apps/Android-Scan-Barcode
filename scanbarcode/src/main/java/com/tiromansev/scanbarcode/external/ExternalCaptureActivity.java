@@ -29,8 +29,6 @@ import java.util.Date;
 
 public class ExternalCaptureActivity extends AppCompatActivity {
 
-    public static final String BARCODE = "BARCODE";
-
     public ImageButton btnKeyboard;
     public ImageButton btnSendLog;
     public ImageButton btnSettings;
@@ -39,6 +37,8 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     public Button btnClose;
     public TouchableRadioButton rbMode1;
     public TouchableRadioButton rbMode2;
+    public TextView tvMode1;
+    public TextView tvMode2;
     public SwitchCompat swDiagnosticMode;
     public static final String ENTER_SYMBOL = "0";
     public static final String TAB_SYMBOL = "1";
@@ -60,6 +60,8 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         btnSendLog = findViewById(R.id.btnSendLog);
         rbMode1 = findViewById(R.id.rbMode1);
         rbMode2 = findViewById(R.id.rbMode2);
+        tvMode1 = findViewById(R.id.tvMode1);
+        tvMode2 = findViewById(R.id.tvMode2);
         swDiagnosticMode = findViewById(R.id.swDiagnosticMode);
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
         tvBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
