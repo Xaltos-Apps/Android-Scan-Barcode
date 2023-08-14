@@ -29,6 +29,8 @@ import java.util.Date;
 
 public class ExternalCaptureActivity extends AppCompatActivity {
 
+    public static final String BARCODE = "BARCODE";
+
     public ImageButton btnKeyboard;
     public ImageButton btnSendLog;
     public ImageButton btnSettings;
