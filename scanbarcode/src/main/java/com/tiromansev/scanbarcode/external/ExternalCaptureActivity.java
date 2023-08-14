@@ -19,6 +19,7 @@ import androidx.preference.PreferenceManager;
 import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.TouchableRadioButton;
 import com.tiromansev.scanbarcode.zxing.BeepManager;
 
 import java.text.DateFormat;
@@ -36,7 +37,8 @@ public class ExternalCaptureActivity extends AppCompatActivity {
     public EditText edtBarcode;
     public TextView tvBarcode;
     public Button btnClose;
-    public SwitchCompat swUseInputField;
+    public TouchableRadioButton rbMode1;
+    public TouchableRadioButton rbMode2;
     public SwitchCompat swDiagnosticMode;
     public static final String ENTER_SYMBOL = "0";
     public static final String TAB_SYMBOL = "1";
@@ -56,7 +58,8 @@ public class ExternalCaptureActivity extends AppCompatActivity {
         btnKeyboard = findViewById(R.id.btnKeyboard);
         btnSettings = findViewById(R.id.btnScanSettings);
         btnSendLog = findViewById(R.id.btnSendLog);
-        swUseInputField = findViewById(R.id.swUseInputField);
+        rbMode1 = findViewById(R.id.rbMode1);
+        rbMode2 = findViewById(R.id.rbMode2);
         swDiagnosticMode = findViewById(R.id.swDiagnosticMode);
         edtBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
         tvBarcode.getBackground().mutate().setColorFilter(getResources().getColor(R.color.color_external_caption), PorterDuff.Mode.SRC_ATOP);
@@ -113,14 +116,25 @@ public class ExternalCaptureActivity extends AppCompatActivity {
             return false;
         });
 
-        swUseInputField.setOnCheckedChangeListener(null);
-        swUseInputField.setChecked(useInputField());
-        setLayout();
-        swUseInputField.setOnCheckedChangeListener((compoundButton, checked) -> {
-            setUseInputField(checked);
+        TouchableRadioButton.OnChangeListener mode1Listener = checked -> {
+            rbMode2.setChecked(false);
+            setUseInputField(true);
             setLayout();
             restartScan();
-        });
+        };
+        TouchableRadioButton.OnChangeListener mode2Listener = checked -> {
+            rbMode1.setChecked(false);
+            setUseInputField(false);
+            setLayout();
+            restartScan();
+        };
+
+        boolean useInput = useInputField();
+        rbMode2.setChecked(!useInput);
+        rbMode1.setChecked(useInput);
+        setLayout();
+        rbMode2.setChangeListener(mode2Listener);
+        rbMode1.setChangeListener(mode1Listener);
         swDiagnosticMode.setOnCheckedChangeListener((compoundButton, checked) -> {
             setUseLog(checked);
             btnSendLog.setVisibility(useLog() ? View.VISIBLE : View.GONE);
@@ -256,7 +270,7 @@ public class ExternalCaptureActivity extends AppCompatActivity {
 
     protected Boolean useInputField() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        return prefs.getBoolean(PreferencesFragment.KEY_USE_INPUT_FIELD_IN_EXTERNAL_MODE, false);
+        return prefs.getBoolean(PreferencesFragment.KEY_USE_INPUT_FIELD_IN_EXTERNAL_MODE, true);
     }
 
     protected Boolean useLog() {

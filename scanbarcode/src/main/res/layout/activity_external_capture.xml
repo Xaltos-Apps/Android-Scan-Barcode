@@ -118,7 +118,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/swDiagnosticMode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="16dp"
@@ -133,26 +133,52 @@
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@id/btnKeyboard"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/swUseInputField"
-                android:text="@string/preferences_use_external_input_field"
-                android:paddingTop="3dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/swDiagnosticMode"
-                android:text="@string/preferences_use_external_log"
-                android:paddingTop="3dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:layout_marginEnd="8dp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:text="@string/preferences_use_external_mode1"/>
+
+                <com.tiromansev.scanbarcode.TouchableRadioButton
+                    android:id="@+id/rbMode1"
+                    android:paddingTop="3dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:text="@string/preferences_use_external_mode2"/>
+
+                <com.tiromansev.scanbarcode.TouchableRadioButton
+                    android:id="@+id/rbMode2"
+                    android:paddingTop="3dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
         </LinearLayout>
 
         <ImageButton
@@ -166,5 +192,18 @@
             android:layout_alignParentEnd="true"
             android:src="@drawable/ic_keyboard" />
     </RelativeLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/swDiagnosticMode"
+        android:text="@string/preferences_use_external_log"
+        android:paddingTop="3dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

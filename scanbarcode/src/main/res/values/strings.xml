@@ -102,7 +102,8 @@
     <string name="mlkit_preferences_upc_e_product_title" translatable="false">UPC-E</string>
 
     <string name="preferences_scan_mlkit">Camera (MLKit)</string>
-    <string name="preferences_use_external_input_field">Use input field</string>
+    <string name="preferences_use_external_mode1">Mode 1</string>
+    <string name="preferences_use_external_mode2">Mode 2</string>
     <string name="preferences_use_external_log">Diagnostic mode</string>
     <string name="caption_scan_log" translatable="false">Scan log</string>
 </resources>
