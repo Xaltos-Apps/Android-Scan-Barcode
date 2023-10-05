@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_msg_camera_framework_bug">Λυπούμαστε, η κάμερα Android αντιμετώπισε πρόβλημα. Ίσως χρειαστεί να επανεκκινήσετε τη συσκευή.</string>
+    <string name="zxing_msg_default_format">Διαμόρφωση</string>
+    <string name="zxing_msg_default_meta">Μεταδεδομένα</string>
+    <string name="zxing_msg_default_status">Τοποθετήστε ένα barcode εντός του ορθογώνιου πλαισίου για να το σαρώσετε.</string>
+    <string name="zxing_msg_default_time">Χρόνος</string>
+    <string name="zxing_msg_default_type">Τύπος</string>
+    <string name="zxing_msg_error">Σφάλμα</string>
+    <string name="zxing_msg_invalid_value">Μη έγκυρη τιμή</string>
+    <string name="zxing_preferences_actions_title">Όταν ένα barcode εντοπιστεί\u2026</string>
+    <string name="zxing_preferences_auto_focus_title">Χρήση αυτόματης εστίασης</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D Βιομηχανικό</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D Προϊόν</string>
+    <string name="zxing_preferences_decode_QR_title">Κωδικοί QR</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">Μικροδιορθώσεις συσκευής</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">Χωρίς λειτουργία σκηνής barcode</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">Χρήση μόνο κανονικής λειτουργίας εστίασης</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">Μη συνεχής εστίαση</string>
+    <string name="zxing_preferences_disable_exposure_title">Καμία έκθεση</string>
+    <string name="zxing_preferences_disable_metering_title">Χωρίς μέτρηση απόστασης</string>
+    <string name="zxing_preferences_front_light_summary">Βελτιώνει τη σάρωση σε χαμηλό φωτισμό σε ορισμένα τηλέφωνα, αλλά μπορεί να προκαλέσει αντανάκλαση. Δεν λειτουργεί σε όλα τα τηλέφωνα.</string>
+    <string name="zxing_preferences_front_light_title">Χρησιμοποιήστε μπροστινό φως</string>
+    <string name="zxing_preferences_front_light_auto">Αυτόματο</string>
+    <string name="zxing_preferences_front_light_off">Κλειστό</string>
+    <string name="zxing_preferences_front_light_on">Ανοικτό</string>
+    <string name="zxing_preferences_general_title">Γενικές Ρυθμίσεις</string>
+    <string name="zxing_preferences_invert_scan_title">Αρνητική σάρωση</string>
+    <string name="zxing_preferences_invert_scan_summary">Σάρωση για λευκά barcodes σε μαύρο φόντο. Μη διαθέσιμο σε ορισμένες συσκευές.</string>
+    <string name="zxing_preferences_orientation_title">Χωρίς αυτόματη περιστροφή</string>
+    <string name="zxing_preferences_play_beep_title">Μπιπ</string>
+    <string name="zxing_preferences_scanning_title">Κατά τη σάρωση για barcodes, αποκωδικοποίησε\u2026</string>
+    <string name="zxing_preferences_vibrate_title">Δόνηση</string>
+    <string name="caption_setting_scan">Σαρωτής Barcode</string>
+    <string name="preferences_packet_mode_title">Λειτουργία μαζικής σάρωσης</string>
+    <string name="preferences_packet_scan_type_increment">Αυτόματη αύξηση ποσότητας κατά 1 (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">Ορίστε την ποσότητα χειροκίνητα</string>
+    <string name="preferences_packet_scan_type">Μετά από κάθε σάρωση</string>
+    <string name="preferences_scan_type">Σάρωση με</string>
+    <string name="preferences_scan_type_title">Τύπος σαρωτή barcode </string>
+    <string name="preferences_scan_camera">Κάμερα (ZXing)</string>
+    <string name="preferences_scan_camera_vision">Κάμερα (Mobile Vision)</string>
+    <string name="preferences_scan_external">Εξωτερικός σαρωτής</string>
+    <string name="preferences_scan_last_symbol_title">Επίθημα (σύμβολο τέλους)</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">"Αυτό είναι ένα πειραματικό χαρακτηριστικό. \n\n
+        Βοηθήστε μας να το διορθώσουμε και να το βελτιώσουμε.\n\n
+        Παρακαλούμε, ενημερώστε μας εάν λειτουργεί για εσάς ή όχι. Χρησιμοποιείστε το στοιχείο μενού \"Ερώτηση ή πρόταση\" για αποστολή σχολίων."</string>
+    <string name="caption_external_scan">Χρήση εξωτερικού σαρωτή</string>
+    <string name="preferences_scan_last_symbol_space">Space</string>
+    <string name="preferences_external_scan_params">Παράμετροι σάρωσης</string>
+    <string name="vision_msg_default_status">Τοποθετήστε ένα barcode μέσα στο ορθογώνιο πλαίσιο</string>
+    <string name="preferences_scan_vertical_camera">Κάμερα (ZXing v.2 - Νέο!)</string>
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Εντοπισμός barcode</string>
+    <string name="pref_title_barcode_reticle_width">Πλάτος πλαισίου barcode</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Σε σχέση με το πλάτος προβολής της κάμερας, κυμαίνεται από 50% έως 95%</string>
+    <string name="pref_title_barcode_reticle_height">Ύψος πλαισίου barcode</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Σε σχέση με το ύψος προβολής της κάμερας, κυμαίνεται από 20% έως 80%</string>
+    <string name="pref_title_enable_barcode_size_check">Ενεργοποίηση ελέγχου μεγέθους barcode</string>
+    <string name="pref_summary_enable_barcode_size_check">Θα ζητηθεί από το χρήστη να μετακινήσει την κάμερα πιο κοντά εάν ο γραμμωτός κώδικας που εντοπιστεί είναι πολύ μικρός</string>
+    <string name="pref_title_minimum_barcode_width">Ελάχιστο πλάτος barcode</string>
+    <string name="pref_title_scan_delay_time">Καθυστέρηση σάρωσης (δευτερόλεπτα)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Σε σχέση με το πλάτος του πλαισίου, κυμαίνεται από 20% έως 80% (ισχύει μόνο όταν είναι ενεργοποιημένος ο έλεγχος μεγέθους barcode)</string>
+    <string name="pref_summary_scan_delay_time">Χρόνος καθυστέρησης μεταξύ 2 διαδοχικών σαρώσεων κατά τη σάρωση σε έγγραφα σε λειτουργία δέσμης</string>
+    <string name="pref_title_rear_camera_preview_size">Μέγεθος προεπισκόπησης πίσω κάμερας</string>
+    <string name="cd_settings_button">Ρυθμίσεις</string>
+    <string name="cd_close_button">Πίσω</string>
+    <string name="cd_flash_button">Αν/κλ φλας κάμερας</string>
+    <string name="pref_category_camera">Κάμερα</string>
+</resources>
