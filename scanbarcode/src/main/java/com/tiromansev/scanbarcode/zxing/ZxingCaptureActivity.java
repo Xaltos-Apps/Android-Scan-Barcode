@@ -399,8 +399,10 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
     }
 
     private void resetStatusView() {
-        statusView.setText(R.string.zxing_msg_default_status);
-        statusView.setVisibility(View.VISIBLE);
+        if (statusView != null) {
+            statusView.setText(R.string.zxing_msg_default_status);
+            statusView.setVisibility(View.VISIBLE);
+        }
         viewfinderView.setVisibility(View.VISIBLE);
         lastResult = null;
     }
