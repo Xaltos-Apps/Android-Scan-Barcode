@@ -9,10 +9,9 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.common.api.OptionalModuleApi;
 import com.google.android.gms.common.moduleinstall.ModuleInstall;
 import com.google.android.gms.common.moduleinstall.ModuleInstallClient;
-import com.google.android.gms.tflite.java.TfLite;
+import com.google.android.gms.common.moduleinstall.ModuleInstallRequest;
 import com.google.mlkit.vision.barcode.common.Barcode;
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanner;
 import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions;
@@ -31,11 +30,13 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     private MLKitActivityHandler handler;
     private boolean started = true;
     private final GmsBarcodeScannerOptions.Builder options = new GmsBarcodeScannerOptions.Builder();
+    private ModuleInstallClient moduleInstallClient;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         handler = new MLKitActivityHandler(this);
+        moduleInstallClient = ModuleInstall.getClient(this);
         initSettings();
         restartScan();
         beepManager = new BeepManager(this);
@@ -126,6 +127,7 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     }
 
     public void handleError(Exception e) {
+        closeProgress();
         finish();
     }
 
@@ -164,16 +166,15 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     public void startCapture() {
         Log.d("scan_delay", "refresh after pause");
         started = true;
-        ModuleInstallClient moduleInstallClient = ModuleInstall.getClient(this);
-        OptionalModuleApi optionalModuleApi = TfLite.getClient(this);
+        scanner = GmsBarcodeScanning.getClient(this, options.build());
         moduleInstallClient
-                .areModulesAvailable(optionalModuleApi)
+                .areModulesAvailable(scanner)
                 .addOnSuccessListener(
                         response -> {
                             if (response.areModulesAvailable()) {
                                 scan();
                             } else {
-                                handleError(new RuntimeException("Scan barcode module not installed"));
+                                moduleInstall();
                             }
                         })
                 .addOnFailureListener(
@@ -181,7 +182,6 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     }
 
     private void scan() {
-        scanner = GmsBarcodeScanning.getClient(this, options.build());
         scanner.startScan()
                 .addOnSuccessListener(
                         barcode -> {
@@ -192,4 +192,33 @@ public class MLKitCaptureActivity extends AppCompatActivity {
                 .addOnFailureListener(
                         this::handleError);
     }
+
+    protected void showProgress() {
+
+    }
+
+    protected void closeProgress() {
+
+    }
+
+    private void moduleInstall(){
+        showProgress();
+        ModuleInstallRequest moduleInstallRequest =
+                ModuleInstallRequest.newBuilder()
+                        .addApi(scanner)
+                        .setListener(moduleInstallStatusUpdate -> {
+
+                        })
+                        .build();
+        moduleInstallClient.installModules(moduleInstallRequest)
+                .addOnSuccessListener(
+                        response -> {
+                            closeProgress();
+                            scan();
+                        })
+                .addOnFailureListener(
+                        this::handleError);
+
+    }
+
 }
