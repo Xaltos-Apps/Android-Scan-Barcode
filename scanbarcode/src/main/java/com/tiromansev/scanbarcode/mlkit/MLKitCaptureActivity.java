@@ -9,6 +9,10 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.common.api.OptionalModuleApi;
+import com.google.android.gms.common.moduleinstall.ModuleInstall;
+import com.google.android.gms.common.moduleinstall.ModuleInstallClient;
+import com.google.android.gms.tflite.java.TfLite;
 import com.google.mlkit.vision.barcode.common.Barcode;
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanner;
 import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions;
@@ -103,7 +107,7 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     }
 
     public void restartScan() {
-
+        startCapture();
     }
 
     private void handleBarcode(String rawResult) {
@@ -165,6 +169,23 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     public void startCapture() {
         Log.d("scan_delay", "refresh after pause");
         started = true;
+        ModuleInstallClient moduleInstallClient = ModuleInstall.getClient(this);
+        OptionalModuleApi optionalModuleApi = TfLite.getClient(this);
+        moduleInstallClient
+                .areModulesAvailable(optionalModuleApi)
+                .addOnSuccessListener(
+                        response -> {
+                            if (response.areModulesAvailable()) {
+                                scan();
+                            } else {
+                                handleError(new RuntimeException("Scan barcode module not installed"));
+                            }
+                        })
+                .addOnFailureListener(
+                        this::handleError);
+    }
+
+    private void scan() {
         scanner = GmsBarcodeScanning.getClient(this, options.build());
         scanner.startScan()
                 .addOnSuccessListener(
