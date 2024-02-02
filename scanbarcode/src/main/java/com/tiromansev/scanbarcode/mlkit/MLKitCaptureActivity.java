@@ -143,20 +143,15 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         beepManager.updatePrefs();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        beepManager.close();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        beepManager.close();
         scanner = null;
     }
 
