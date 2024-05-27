@@ -16,6 +16,16 @@
       android:layout_height="wrap_content">
 
     <ImageButton
+        android:id="@+id/btnSwitchCamera"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/round_button_padding"
+        android:layout_toEndOf="@+id/btnLight"
+        android:background="@color/transparent"
+        app:srcCompat="@drawable/baseline_cameraswitch_24" />
+
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_light_off"
