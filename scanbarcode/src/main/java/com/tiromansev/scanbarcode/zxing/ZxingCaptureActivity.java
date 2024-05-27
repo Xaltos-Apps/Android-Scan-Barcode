@@ -33,6 +33,7 @@ import com.google.zxing.ResultPoint;
 import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.SharedPreferenceUtil;
 import com.tiromansev.scanbarcode.zxing.camera.CameraManager;
 
 import java.io.IOException;
@@ -65,6 +66,7 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
     public InactivityTimer inactivityTimer;
     public BeepManager beepManager;
     public AmbientLightManager ambientLightManager;
+    private SharedPreferenceUtil sharedPreferenceUtil;
     private static final int PREFS_REQUEST = 99;
 
     ViewfinderView getViewfinderView() {
@@ -91,6 +93,7 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         inactivityTimer = new InactivityTimer(this);
         beepManager = new BeepManager(this);
         ambientLightManager = new AmbientLightManager(this);
+        sharedPreferenceUtil = new SharedPreferenceUtil(this);
 
 //        PreferenceManager.setDefaultValues(this, R.xml.barcode_zxing_preferences, false);
 //        setProperties();
@@ -100,6 +103,16 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
             Intent intent = getPrefsIntent();
             startActivityForResult(intent, PREFS_REQUEST);
         });
+
+        findViewById(R.id.btnSwitchCamera).setOnClickListener(v -> {
+            toggleBackCameraPref();
+            stop();
+            resume();
+        });
+    }
+
+    private void toggleBackCameraPref() {
+        sharedPreferenceUtil.switchCamera();
     }
 
     public Intent getPrefsIntent() {
@@ -131,17 +144,21 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
     @Override
     protected void onResume() {
         super.onResume();
+        resume();
+    }
 
+    private void resume() {
         // CameraManager must be initialized here, not in onCreate(). This is necessary because we don't
         // want to open the camera driver and measure the screen size if we're going to show the fragment_help on
         // first launch. That led to bugs where the scanning rectangle was the wrong size and partially
         // off screen.
         cameraManager = new CameraManager(getApplication());
+        cameraManager.setManualCameraId(getCameraId());
 
-        viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
+        viewfinderView = findViewById(R.id.viewfinder_view);
         viewfinderView.setCameraManager(cameraManager);
 
-        statusView = (TextView) findViewById(R.id.status_view);
+        statusView = findViewById(R.id.status_view);
 
         handler = null;
         lastResult = null;
@@ -156,7 +173,7 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
 
         resetStatusView();
 
-        SurfaceView surfaceView = (SurfaceView) findViewById(R.id.preview_view);
+        SurfaceView surfaceView = findViewById(R.id.preview_view);
         SurfaceHolder surfaceHolder = surfaceView.getHolder();
         if (hasSurface) {
             // The activity was paused but not stopped, so the surface still exists. Therefore
@@ -179,12 +196,10 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         characterSet = null;
 
         if (intent != null) {
-
             String action = intent.getAction();
             String dataString = intent.getDataString();
 
             if (Intents.Scan.ACTION.equals(action)) {
-
                 // Scan the formats the intent requested, and return the result to the calling activity.
                 source = IntentSource.NATIVE_APP_INTENT;
                 decodeFormats = DecodeFormatManager.parseDecodeFormats(intent);
@@ -217,11 +232,9 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
                 // Scan only products and send the result to mobile Product Search.
                 source = IntentSource.PRODUCT_SEARCH_LINK;
                 decodeFormats = DecodeFormatManager.PRODUCT_FORMATS;
-
             }
 
             characterSet = intent.getStringExtra(Intents.Scan.CHARACTER_SET);
-
         }
     }
 
@@ -248,6 +261,11 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
 
     @Override
     protected void onPause() {
+        stop();
+        super.onPause();
+    }
+
+    private void stop() {
         if (handler != null) {
             handler.quitSynchronously();
             handler = null;
@@ -257,11 +275,10 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         beepManager.close();
         cameraManager.closeDriver();
         if (!hasSurface) {
-            SurfaceView surfaceView = (SurfaceView) findViewById(R.id.preview_view);
+            SurfaceView surfaceView = findViewById(R.id.preview_view);
             SurfaceHolder surfaceHolder = surfaceView.getHolder();
             surfaceHolder.removeCallback(this);
         }
-        super.onPause();
     }
 
     @Override
@@ -354,7 +371,6 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
 
     // Put up our own UI for how to handle the decoded contents.
     public void handleDecodeInternally(String rawResult, Bitmap barcode) {
-
     }
 
     private void initCamera(SurfaceHolder surfaceHolder) {
@@ -409,5 +425,9 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
 
     public void drawViewfinder() {
         viewfinderView.drawViewfinder();
+    }
+
+    public int getCameraId() {
+        return sharedPreferenceUtil.getCameraId();
     }
 }

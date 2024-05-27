@@ -30,6 +30,26 @@
             android:stateNotNeeded="true"
             android:theme="@style/CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name="com.tiromansev.scanbarcode.vision.VisionCaptureActivity"
+            android:screenOrientation="portrait"
+            android:clearTaskOnLaunch="true"
+            android:stateNotNeeded="true"
+            android:theme="@style/CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name="com.tiromansev.scanbarcode.zxing.ZxingCaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:stateNotNeeded="true"
+            android:theme="@style/CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name="com.tiromansev.scanbarcode.zxing.ZxingVerticalCaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:stateNotNeeded="true"
+            android:theme="@style/CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
         <activity
             android:name="com.tiromansev.scanbarcode.PreferenceActivity"
             android:theme="@style/AppTheme"
