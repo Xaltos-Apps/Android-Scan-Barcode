@@ -51,6 +51,7 @@ import java.util.Map;
 public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
     private static final String TAG = ZxingCaptureActivity.class.getSimpleName();
+    private static final int PREFS_REQUEST = 99;
 
     public CameraManager cameraManager;
     public CaptureActivityHandler handler;
@@ -67,7 +68,6 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
     public BeepManager beepManager;
     public AmbientLightManager ambientLightManager;
     private SharedPreferenceUtil sharedPreferenceUtil;
-    private static final int PREFS_REQUEST = 99;
 
     ViewfinderView getViewfinderView() {
         return viewfinderView;
@@ -105,14 +105,10 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         });
 
         findViewById(R.id.btnSwitchCamera).setOnClickListener(v -> {
-            toggleBackCameraPref();
+            sharedPreferenceUtil.switchCamera();
             stop();
             resume();
         });
-    }
-
-    private void toggleBackCameraPref() {
-        sharedPreferenceUtil.switchCamera();
     }
 
     public Intent getPrefsIntent() {

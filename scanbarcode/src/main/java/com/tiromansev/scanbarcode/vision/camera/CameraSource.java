@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import com.google.android.gms.common.images.Size;
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata;
 import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.SharedPreferenceUtil;
 import com.tiromansev.scanbarcode.vision.PreferenceUtils;
 import com.tiromansev.scanbarcode.vision.Utils;
 
@@ -58,6 +59,7 @@ public class CameraSource {
 
   private final Object processorLock = new Object();
   private FrameProcessor frameProcessor;
+  private final SharedPreferenceUtil sharedPreferenceUtil;
 
   /**
    * Map to convert between a byte array, received from the camera, and its associated byte buffer.
@@ -76,6 +78,7 @@ public class CameraSource {
   public CameraSource(GraphicOverlay graphicOverlay) {
     this.context = graphicOverlay.getContext();
     this.graphicOverlay = graphicOverlay;
+    this.sharedPreferenceUtil = new SharedPreferenceUtil(this.context);
   }
 
   public boolean hasParameters() {
@@ -185,7 +188,7 @@ public class CameraSource {
    * @throws IOException if camera cannot be found or preview cannot be processed.
    */
   private Camera createCamera() throws IOException {
-    Camera camera = Camera.open();
+    Camera camera = Camera.open(sharedPreferenceUtil.getCameraId());
     if (camera == null) {
       throw new IOException("There is no back-facing camera.");
     }

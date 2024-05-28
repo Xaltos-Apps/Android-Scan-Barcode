@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.google.android.gms.common.internal.Objects;
 import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.R;
+import com.tiromansev.scanbarcode.SharedPreferenceUtil;
 import com.tiromansev.scanbarcode.vision.camera.CameraSource;
 import com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview;
 import com.tiromansev.scanbarcode.vision.camera.GraphicOverlay;
@@ -27,6 +28,7 @@ import java.io.IOException;
 public class VisionCaptureActivity extends AppCompatActivity implements OnClickListener {
 
     private static final String TAG = "LiveBarcodeActivity";
+    private static final int PREFS_REQUEST = 99;
 
     private CameraSource cameraSource;
     private CameraSourcePreview preview;
@@ -38,7 +40,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     private AnimatorSet promptChipAnimator;
     private WorkflowModel workflowModel;
     private WorkflowModel.WorkflowState currentWorkflowState;
-    private static final int PREFS_REQUEST = 99;
+    private SharedPreferenceUtil sharedPreferenceUtil;
     private VisionActivityHandler handler;
     private boolean started = true;
 
@@ -53,6 +55,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         graphicOverlay.setOnClickListener(this);
         cameraSource = new CameraSource(graphicOverlay);
         handler = new VisionActivityHandler(this);
+        sharedPreferenceUtil = new SharedPreferenceUtil(this);
 
         promptChip = findViewById(R.id.bottom_prompt_chip);
         promptChipAnimator =
@@ -65,13 +68,28 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         settingsButton = findViewById(R.id.settings_button);
         settingsButton.setOnClickListener(this);
 
+        findViewById(R.id.btnSwitchCamera).setOnClickListener(v -> {
+            sharedPreferenceUtil.switchCamera();
+            pause();
+            resume();
+        });
+
         setUpWorkflowModel();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        resume();
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        pause();
+    }
+
+    private void resume() {
         workflowModel.markCameraFrozen();
         settingsButton.setEnabled(true);
         currentWorkflowState = WorkflowModel.WorkflowState.NOT_STARTED;
@@ -80,9 +98,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         beepManager.updatePrefs();
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
+    private void pause() {
         currentWorkflowState = WorkflowModel.WorkflowState.NOT_STARTED;
         stopCameraPreview();
         beepManager.close();
