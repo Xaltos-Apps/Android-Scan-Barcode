@@ -163,12 +163,17 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
             try {
                 workflowModel.markCameraLive();
                 preview.start(cameraSource);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 Log.e(TAG, "Failed to start camera preview!", e);
+                showErrorMessage(e.getLocalizedMessage());
                 cameraSource.release();
                 cameraSource = null;
             }
         }
+    }
+
+    protected void showErrorMessage(String message) {
+
     }
 
     public void playBeepSoundAndVibrate() {

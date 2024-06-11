@@ -188,7 +188,13 @@ public class CameraSource {
    * @throws IOException if camera cannot be found or preview cannot be processed.
    */
   private Camera createCamera() throws IOException {
-    Camera camera = Camera.open(sharedPreferenceUtil.getCameraId());
+    Camera camera;
+    try {
+      camera = Camera.open(sharedPreferenceUtil.getCameraId());
+    } catch (Exception e) {
+      e.printStackTrace();
+      camera = Camera.open();
+    }
     if (camera == null) {
       throw new IOException("There is no back-facing camera.");
     }
