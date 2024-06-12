@@ -16,14 +16,11 @@ import androidx.lifecycle.ViewModelProviders;
 import com.google.android.gms.common.internal.Objects;
 import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.R;
-import com.tiromansev.scanbarcode.SharedPreferenceUtil;
 import com.tiromansev.scanbarcode.vision.camera.CameraSource;
 import com.tiromansev.scanbarcode.vision.camera.CameraSourcePreview;
 import com.tiromansev.scanbarcode.vision.camera.GraphicOverlay;
 import com.tiromansev.scanbarcode.vision.camera.WorkflowModel;
 import com.tiromansev.scanbarcode.zxing.BeepManager;
-
-import java.io.IOException;
 
 public class VisionCaptureActivity extends AppCompatActivity implements OnClickListener {
 
@@ -40,7 +37,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     private AnimatorSet promptChipAnimator;
     private WorkflowModel workflowModel;
     private WorkflowModel.WorkflowState currentWorkflowState;
-    private SharedPreferenceUtil sharedPreferenceUtil;
     private VisionActivityHandler handler;
     private boolean started = true;
 
@@ -55,7 +51,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         graphicOverlay.setOnClickListener(this);
         cameraSource = new CameraSource(graphicOverlay);
         handler = new VisionActivityHandler(this);
-        sharedPreferenceUtil = new SharedPreferenceUtil(this);
 
         promptChip = findViewById(R.id.bottom_prompt_chip);
         promptChipAnimator =
@@ -67,12 +62,6 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         flashButton.setOnClickListener(this);
         settingsButton = findViewById(R.id.settings_button);
         settingsButton.setOnClickListener(this);
-
-        findViewById(R.id.btnSwitchCamera).setOnClickListener(v -> {
-            sharedPreferenceUtil.switchCamera();
-            pause();
-            resume();
-        });
 
         setUpWorkflowModel();
     }
