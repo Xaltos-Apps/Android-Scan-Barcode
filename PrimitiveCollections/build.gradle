@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+//    compileOnly 'com.github.wrdlbrnft:proguard-annotations-api:0.3.0.11'
+//    annotationProcessor 'com.github.wrdlbrnft:proguard-annotations-processor:0.3.0.11'
+    implementation "androidx.annotation:annotation:1.8.2"
+}

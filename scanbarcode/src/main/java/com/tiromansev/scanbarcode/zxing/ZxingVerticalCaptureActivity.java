@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.wrdlbrnft.betterbarcodes.BarcodeFormat;
-import com.github.wrdlbrnft.betterbarcodes.views.reader.BarcodeReaderView;
+import com.github.wrdlbrnft.betterbarcodes.views.BarcodeReaderView;
 import com.tiromansev.scanbarcode.PreferenceActivity;
 import com.tiromansev.scanbarcode.PreferencesFragment;
 import com.tiromansev.scanbarcode.R;
@@ -67,7 +67,7 @@ public class ZxingVerticalCaptureActivity extends AppCompatActivity {
         return new Intent(ZxingVerticalCaptureActivity.this, PreferenceActivity.class);
     }
 
-    public static int[] combineArrays(int[] src, int[] dest){
+    public static int[] combineArrays(int[] src, int[] dest) {
         int length = src.length + dest.length;
         int[] result = new int[length];
         System.arraycopy(src, 0, result, 0, src.length);
@@ -127,13 +127,17 @@ public class ZxingVerticalCaptureActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         beepManager.updatePrefs();
-        barcodeReaderView.start();
+        //barcodeReaderView.start();
+        barcodeReaderView.startPreview();
+        barcodeReaderView.startScanning();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        barcodeReaderView.stop();
+        //barcodeReaderView.stop();
+        barcodeReaderView.stopPreview();
+        barcodeReaderView.stopScanning();
         beepManager.close();
     }
 
