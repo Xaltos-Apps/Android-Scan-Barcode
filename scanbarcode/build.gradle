@@ -1,10 +1,12 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
-    compileSdk 33
+    compileSdk 34
+    namespace "com.tiromansev.scanbarcode"
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -21,6 +23,9 @@ android {
     }
     lintOptions {
         abortOnError false
+    }
+    publishing {
+        singleVariant("release") {}
     }
 }
 
@@ -42,5 +47,18 @@ dependencies {
     implementation 'com.google.android.gms:play-services-base:18.3.0'
     implementation 'com.google.android.gms:play-services-tflite-java:16.2.0-beta02'
 
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId 'com.github.ilyapavlovskii'
+                artifactId 'scanbarcode'
+                version '3.0.0'
+            }
+        }
+    }
 }
 

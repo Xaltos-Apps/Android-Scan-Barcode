@@ -1,11 +1,12 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
-    compileSdk 33
-
+    compileSdk 34
+    namespace "com.github.wrdlbrnft.simpletasks"
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
     }
     buildTypes {
         release {
@@ -17,6 +18,9 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+    publishing {
+        singleVariant("release") {}
+    }
 }
 
 dependencies {
@@ -25,3 +29,17 @@ dependencies {
     implementation 'android.arch.lifecycle:livedata:1.1.1'
     implementation 'android.arch.lifecycle:common-java8:1.1.1'
 }
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId 'com.github.ilyapavlovskii'
+                artifactId 'SimpleTasks'
+                version '3.0.0'
+            }
+        }
+    }
+}
+

@@ -38,7 +38,7 @@ public class ThemedPreferenceCategory extends PreferenceCategory {
 
         TextView title = (TextView) holder.findViewById(android.R.id.title);
         if (title != null) {
-            this.getContext().getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);
+            this.getContext().getTheme().resolveAttribute(androidx.appcompat.R.attr.colorAccent, typedValue, true);
             title.setTextColor(this.getContext().getResources().getColor(typedValue.resourceId));
             title.setTypeface(Typeface.DEFAULT_BOLD);
             title.setAllCaps(true);

@@ -1,11 +1,12 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
-    compileSdk 33
-
+    compileSdk 34
+    namespace "com.github.wrdlbrnft.primitivecollections"
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
     }
     buildTypes {
         debug {
@@ -17,6 +18,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    publishing {
+        singleVariant("release") {}
+    }
 }
 
 dependencies {
@@ -24,4 +28,17 @@ dependencies {
 //    compileOnly 'com.github.wrdlbrnft:proguard-annotations-api:0.3.0.11'
 //    annotationProcessor 'com.github.wrdlbrnft:proguard-annotations-processor:0.3.0.11'
     implementation "androidx.annotation:annotation:1.8.2"
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId 'com.github.ilyapavlovskii'
+                artifactId 'PrimitiveCollections'
+                version '3.0.0'
+            }
+        }
+    }
 }
