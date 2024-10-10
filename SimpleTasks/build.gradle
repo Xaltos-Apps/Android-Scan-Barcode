@@ -15,8 +15,8 @@ android {
         }
     }
     compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
+        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
     }
     publishing {
         singleVariant("release") {}
@@ -37,7 +37,7 @@ project.afterEvaluate {
                 from components.release
                 groupId 'com.github.ilyapavlovskii'
                 artifactId 'SimpleTasks'
-                version '3.0.1'
+                version '3.0.2'
             }
         }
     }

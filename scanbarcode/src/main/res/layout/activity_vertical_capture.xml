@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.wrdlbrnft.betterbarcodes.views.reader.BarcodeReaderView
+    <com.github.wrdlbrnft.betterbarcodes.views.BarcodeReaderView
         android:id="@+id/barcode_reader"
         android:layout_width="match_parent"
         android:layout_height="0dp"

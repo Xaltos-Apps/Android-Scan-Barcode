@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
-def VERSION_NAME = "2.1.2"
+def VERSION_NAME = "3.0.2"
 
 ext {
     bintrayRepo = 'maven'
@@ -58,7 +58,7 @@ project.afterEvaluate {
                 from components.release
                 groupId 'com.github.ilyapavlovskii'
                 artifactId 'indicatorseekbar'
-                version '3.0.1'
+                version '3.0.2'
             }
         }
     }
