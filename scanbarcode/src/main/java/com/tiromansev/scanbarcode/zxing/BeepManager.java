@@ -25,7 +25,8 @@ public final class BeepManager implements MediaPlayer.OnErrorListener, Closeable
   private static final String TAG = BeepManager.class.getSimpleName();
 
   private static final float BEEP_VOLUME = 0.10f;
-  private static final long VIBRATE_DURATION = 200L;
+  private static final long VIBRATE_DURATION_SUCCESS = 200L;
+  private static final long VIBRATE_DURATION_FAILURE = 400L;
 
   private final Activity activity;
   private MediaPlayer mediaPlayer;
@@ -65,7 +66,7 @@ public final class BeepManager implements MediaPlayer.OnErrorListener, Closeable
     }
     if (vibrate) {
       Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
-      vibrator.vibrate(VIBRATE_DURATION);
+      vibrator.vibrate(VIBRATE_DURATION_SUCCESS);
     }
   }
 
@@ -76,7 +77,7 @@ public final class BeepManager implements MediaPlayer.OnErrorListener, Closeable
     }
     if (vibrate) {
       Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
-      vibrator.vibrate(VIBRATE_DURATION);
+      vibrator.vibrate(VIBRATE_DURATION_FAILURE);
     }
   }
 
