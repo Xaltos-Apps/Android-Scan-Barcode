@@ -1,73 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- zxing -->
-    <string name="zxing_msg_camera_framework_bug">申し訳ありませんが、Androidカメラで問題が発生しました。デバイスの再起動が必要になる場合があります。</string>
+    <string name="zxing_msg_camera_framework_bug">Androidカメラに問題が発生しました。端末を再起動してください。</string>
     <string name="zxing_msg_default_format">フォーマット</string>
-    <string name="zxing_msg_default_meta">メタデータ</string>
-    <string name="zxing_msg_default_status">ファインダーの長方形の内側にバーコードが入るようにしてスキャンします。</string>
+    <string name="zxing_msg_default_meta">メタ情報</string>
+    <string name="zxing_msg_default_status">バーコードを読取り範囲内に置いてスキャンします。</string>
     <string name="zxing_msg_default_time">時間</string>
-    <string name="zxing_msg_default_type">タイプ</string>
+    <string name="zxing_msg_default_type">種別</string>
     <string name="zxing_msg_error">エラー</string>
-    <string name="zxing_msg_invalid_value">値が無効です</string>
-    <string name="zxing_preferences_actions_title">バーコードが検出されたら\u2026</string>
-    <string name="zxing_preferences_auto_focus_title">オートフォーカスを使用</string>
-    <string name="zxing_preferences_decode_1D_industrial_title">一次元 工業用バーコード</string>
-    <string name="zxing_preferences_decode_1D_product_title">一次元 商品バーコード</string>
+    <string name="zxing_msg_invalid_value">無効な値</string>
+    <string name="zxing_preferences_actions_title">バーコードが見つかった場合</string>
+    <string name="zxing_preferences_auto_focus_title">オートフォーカスを使用する</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1次元工業用（バーコード）</string>
+    <string name="zxing_preferences_decode_1D_product_title">1次元製品（バーコード）</string>
     <string name="zxing_preferences_decode_QR_title">QRコード</string>
-    <string name="zxing_preferences_device_bug_workarounds_title">デバイスのバグ回避策</string>
-    <string name="zxing_preferences_disable_barcode_scene_mode_title">バーコード読み取りモードなし</string>
-    <string name="zxing_preferences_disable_continuous_focus_summary">標準のフォーカスモードのみを使用</string>
-    <string name="zxing_preferences_disable_continuous_focus_title">コンティニュアスフォーカスなし</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">バグの回避方法</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">バーコードを認識するための設定やモードが使用されていません</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">標準フォーカスモードのみを使用します</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">連続的にフォーカスを合わせ続ける機能が無効です</string>
     <string name="zxing_preferences_disable_exposure_title">露出なし</string>
-    <string name="zxing_preferences_disable_metering_title">測光なし</string>
-    <string name="zxing_preferences_front_light_summary">一部のスマホの暗い場所でのスキャンを改善しますが、ギラつきを引き起こす可能性があります。すべての電話で機能するわけではありません。</string>
-    <string name="zxing_preferences_front_light_title">フロントライトを使用</string>
+    <string name="zxing_preferences_disable_metering_title">露出計測なし</string>
+    <string name="zxing_preferences_front_light_summary">スマートフォンによっては、暗い場所でのスキャンが改善されますが、反射が発生する場合があります。すべてのスマートフォンで機能するわけではありません。</string>
+    <string name="zxing_preferences_front_light_title">フロントライトを使用する</string>
     <string name="zxing_preferences_front_light_auto">自動</string>
     <string name="zxing_preferences_front_light_off">オフ</string>
     <string name="zxing_preferences_front_light_on">オン</string>
-    <string name="zxing_preferences_general_title">一般設定</string>
-    <string name="zxing_preferences_invert_scan_title">反転スキャン</string>
-    <string name="zxing_preferences_invert_scan_summary">黒の背景に白のバーコードをスキャンします。一部のデバイスでは使用できません。</string>
-    <string name="zxing_preferences_orientation_title">自動回転なし</string>
-    <string name="zxing_preferences_play_beep_title">ビープ音を鳴らす</string>
-    <string name="zxing_preferences_scanning_title">デコード対象のバーコード</string>
+    <string name="zxing_preferences_general_title">基本設定</string>
+    <string name="zxing_preferences_invert_scan_title">スキャンを反転する</string>
+    <string name="zxing_preferences_invert_scan_summary">黒地に白のバーコードをスキャンします。一部のデバイスでは使用できません。</string>
+    <string name="zxing_preferences_orientation_title">自動回転しない</string>
+    <string name="zxing_preferences_play_beep_title">警告音</string>
+    <string name="zxing_preferences_scanning_title">バーコードをスキャンする時に、デコードする。\u2026</string>
     <string name="zxing_preferences_vibrate_title">バイブレーション</string>
     <string name="caption_setting_scan">バーコードスキャナー</string>
-    <string name="preferences_packet_mode_title">連続スキャン</string>
-    <string name="preferences_packet_scan_type_increment">数量を1ずつ自動インクリメント (+1)</string>
-    <string name="preferences_packet_scan_type_set_quantity">手動で数量を設定</string>
-    <string name="preferences_packet_scan_type">ひとつスキャンするごとに</string>
-    <string name="preferences_scan_type">スキャンに使用する機器</string>
-    <string name="preferences_scan_type_title">バーコードスキャナの種類 </string>
+    <string name="preferences_packet_mode_title">一括スキャン</string>
+    <string name="preferences_packet_scan_type_increment">数量を 1 ずつ自動的に増加させる (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">数量を手動で設定する</string>
+    <string name="preferences_packet_scan_type">スキャン終了</string>
+    <string name="preferences_scan_type">スキャン</string>
+    <string name="preferences_scan_type_title">バーコードスキャナー種別 </string>
     <string name="preferences_scan_camera">カメラ (ZXing)</string>
     <string name="preferences_scan_camera_vision">カメラ (Mobile Vision)</string>
-    <string name="preferences_scan_external">外部スキャナ</string>
-    <string name="preferences_scan_last_symbol_title">サフィックス (終了記号)</string>
+    <string name="preferences_scan_external">外部スキャナー</string>
+    <string name="preferences_scan_last_symbol_title">拡張子(末尾記号)</string>
     <string name="preferences_scan_last_symbol_enter">Enter</string>
-    <string name="preferences_scan_last_symbol_tab">Tab</string>
-    <string name="caption_external_scan_description">"これは実験的な機能です。 \n\n
-        アプリのデバッグと改善のためにご協力ください。\n\n
-        ご使用の端末で上手く動作するかしないかをお知らせください。 「質問または提案」のメニュー項目を使用してフィードバックを送信してください。"</string>
-    <string name="caption_external_scan">外部スキャナを使用</string>
+    <string name="preferences_scan_last_symbol_tab">タブ</string>
+    <string name="caption_external_scan_description">"これは実験的な機能です。\これは実験的な機能です。\n\n
+        デバッグと改善にご協力ください。\n\n
+        この機能が使えるかどうか教えてください。メニューの'質問または提案'を使ってフィードバックを送ってください。"</string>
+    <string name="caption_external_scan">外部スキャナーを使用する</string>
     <string name="preferences_scan_last_symbol_space">スペース</string>
-    <string name="preferences_external_scan_params">スキャンパラメータ</string>
-    <string name="vision_msg_default_status">ビューファインダーの長方形の内側にバーコードが入るようにしてください。</string>
-    <string name="preferences_scan_vertical_camera">カメラ (ZXing v.2 - New!)</string>
+    <string name="preferences_external_scan_params">スキャン設定</string>
+    <string name="vision_msg_default_status">読取り範囲内にバーコードを置いてください</string>
+    <string name="preferences_scan_vertical_camera">カメラ(ZXing v.2 - 新しいバージョン！)</string>
     <!-- Strings for barcode detection settings. -->
     <string name="pref_category_barcode_detection">バーコード検出</string>
-    <string name="pref_title_barcode_reticle_width">バーコードファインダー幅</string>
-    <string name="pref_summary_barcode_reticle_width" formatted="false">カメラビューの幅に対して、50％から95％の範囲</string>
-    <string name="pref_title_barcode_reticle_height">バーコードファインダーの高さ</string>
-    <string name="pref_summary_barcode_reticle_height" formatted="false">カメラビューの高さに対して、20％から80％の範囲</string>
+    <string name="pref_title_barcode_reticle_width">バーコードの読取り範囲の横幅</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">カメラの視野幅に対して、 50% から 95% の範囲で設定されます。</string>
+    <string name="pref_title_barcode_reticle_height">バーコードの読取り範囲の高さ</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">カメラの視野幅に対して、 20% から 80% の範囲で設定されます。</string>
     <string name="pref_title_enable_barcode_size_check">バーコードサイズチェックを有効にする</string>
     <string name="pref_summary_enable_barcode_size_check">検出されたバーコードが小さすぎる場合、ユーザーにカメラを近づけるように促します</string>
-    <string name="pref_title_minimum_barcode_width">最小バーコード幅</string>
-    <string name="pref_title_scan_delay_time">スキャンウェイト (秒)</string>
-    <string name="pref_summary_minimum_barcode_width" formatted="false">ビューファインダーの幅に対して、20％から80％の範囲(バーコードサイズチェックが有効になっている場合にのみ適用可能)</string>
-    <string name="pref_summary_scan_delay_time">連続スキャンモードでスキャンする場合のスキャン間のウェイト時間</string>
-    <string name="pref_title_rear_camera_preview_size">リアカメラのプレビューサイズ</string>
+    <string name="pref_title_minimum_barcode_width">バーコードの最小幅</string>
+    <string name="pref_title_scan_delay_time">スキャンの遅延時間 (秒)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">読取り範囲の横幅に対して、20%～80%の範囲(バーコードのサイズチェックが有効な場合のみ適用可能)</string>
+    <string name="pref_summary_scan_delay_time">一括処理モードでドキュメントにスキャンする際の 2 回連続スキャン間の遅延時間</string>
+    <string name="pref_title_rear_camera_preview_size">背面カメラのプレビューサイズ</string>
     <string name="cd_settings_button">設定</string>
     <string name="cd_close_button">戻る</string>
-    <string name="cd_flash_button">カメラのフラッシュをオン/オフ</string>
+    <string name="cd_flash_button">カメラのフラッシュを切り替える</string>
     <string name="pref_category_camera">カメラ</string>
+    <string name="caption_ok">OK</string>
+    <string name="preferences_scan_mlkit">カメラ (MLキット)</string>
+    <string name="preferences_use_external_mode1">モード 1</string>
+    <string name="preferences_use_external_mode2">モード 2</string>
+    <string name="preferences_use_external_log">診断モード</string>
 </resources>
