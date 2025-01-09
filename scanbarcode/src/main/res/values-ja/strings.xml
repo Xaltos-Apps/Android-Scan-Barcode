@@ -64,7 +64,7 @@
     <string name="pref_title_minimum_barcode_width">バーコードの最小幅</string>
     <string name="pref_title_scan_delay_time">スキャンの遅延時間 (秒)</string>
     <string name="pref_summary_minimum_barcode_width" formatted="false">読取り範囲の横幅に対して、20%～80%の範囲(バーコードのサイズチェックが有効な場合のみ適用可能)</string>
-    <string name="pref_summary_scan_delay_time">一括処理モードでドキュメントにスキャンする際の 2 回連続スキャン間の遅延時間</string>
+    <string name="pref_summary_scan_delay_time">一括処理モードで伝票にスキャンする際の 2 回連続スキャン間の遅延時間</string>
     <string name="pref_title_rear_camera_preview_size">背面カメラのプレビューサイズ</string>
     <string name="cd_settings_button">設定</string>
     <string name="cd_close_button">戻る</string>
