@@ -148,7 +148,7 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
         // want to open the camera driver and measure the screen size if we're going to show the fragment_help on
         // first launch. That led to bugs where the scanning rectangle was the wrong size and partially
         // off screen.
-        cameraManager = new CameraManager(getApplication());
+        cameraManager = new CameraManager(this);
         cameraManager.setManualCameraId(getCameraId());
 
         viewfinderView = findViewById(R.id.viewfinder_view);
