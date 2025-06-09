@@ -2,11 +2,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 android {
-    compileSdk 34
+    compileSdk 36
     namespace "com.github.wrdlbrnft.betterbarcodes"
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
     }
     buildTypes {
         release {
@@ -25,13 +25,12 @@ android {
 
 dependencies {
     compileOnly 'com.android.support:support-v4:28.0.0'
-    implementation "androidx.annotation:annotation:1.8.2"
+    implementation "androidx.annotation:annotation:1.9.1"
     compileOnly 'com.google.firebase:firebase-ml-vision:24.1.0'
 
     implementation 'com.google.zxing:core:3.5.3'
     implementation(project(":PrimitiveCollections"))
     implementation(project(":SimpleTasks"))
-    implementation "androidx.annotation:annotation:1.8.2"
 }
 
 project.afterEvaluate {
@@ -41,7 +40,7 @@ project.afterEvaluate {
                 from components.release
                 groupId 'com.github.ilyapavlovskii'
                 artifactId 'BetterBarcodes'
-                version '3.0.2'
+                version '3.0.3'
             }
         }
     }

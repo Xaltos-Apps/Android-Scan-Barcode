@@ -2,11 +2,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 android {
-    compileSdk 34
+    compileSdk 36
     namespace "com.github.wrdlbrnft.simpletasks"
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
     }
     buildTypes {
         release {
@@ -37,7 +37,7 @@ project.afterEvaluate {
                 from components.release
                 groupId 'com.github.ilyapavlovskii'
                 artifactId 'SimpleTasks'
-                version '3.0.2'
+                version '3.0.3'
             }
         }
     }

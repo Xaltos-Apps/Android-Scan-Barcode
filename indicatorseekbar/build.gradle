@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
-def VERSION_NAME = "3.0.2"
+def VERSION_NAME = "3.0.3"
 
 ext {
     bintrayRepo = 'maven'
@@ -28,13 +28,11 @@ ext {
 }
 
 android {
-    compileSdk 34
+    compileSdk 36
     namespace "com.warkiz.widget"
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 34
-        versionCode 3
-        versionName VERSION_NAME
+        targetSdkVersion 35
     }
     buildTypes {
         release {
