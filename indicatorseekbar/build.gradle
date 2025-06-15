@@ -54,9 +54,9 @@ project.afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId 'com.github.ilyapavlovskii'
+                groupId 'com.github.xaltosapps'
                 artifactId 'indicatorseekbar'
-                version '3.0.2'
+                version '3.0.5'
             }
         }
     }
