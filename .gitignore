@@ -40,3 +40,4 @@ captures/
 *.jks
 .idea
 .claude/settings.local.json
+.vscode/settings.json
