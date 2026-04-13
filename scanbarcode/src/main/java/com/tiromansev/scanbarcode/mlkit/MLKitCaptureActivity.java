@@ -182,6 +182,9 @@ public class MLKitCaptureActivity extends AppCompatActivity {
     }
 
     private void scan() {
+        if (scanner == null || isFinishing() || isDestroyed()) {
+            return;
+        }
         scanner.startScan()
                 .addOnSuccessListener(
                         barcode -> {
