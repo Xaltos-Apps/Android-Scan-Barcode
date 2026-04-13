@@ -46,6 +46,7 @@ public class CameraSource {
 
   private Camera camera;
   @FirebaseVisionImageMetadata.Rotation private int rotation;
+  private int cameraRotationAngle;
 
   private Size previewSize;
 
@@ -210,15 +211,17 @@ public class CameraSource {
 
     parameters.setPreviewFormat(IMAGE_FORMAT);
 
+    boolean focusModeSet = false;
     if (parameters
         .getSupportedFocusModes()
         .contains(Parameters.FOCUS_MODE_CONTINUOUS_VIDEO)) {
       parameters.setFocusMode(Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
+      focusModeSet = true;
     } else {
       Log.i(TAG, "Camera auto focus is not supported on this device.");
     }
 
-    camera.setParameters(parameters);
+    applyParametersWithFallback(camera, parameters, previewFpsRange, focusModeSet);
 
     camera.setPreviewCallbackWithBuffer(processingRunnable::setNextFrame);
 
@@ -239,6 +242,62 @@ public class CameraSource {
     camera.addCallbackBuffer(createPreviewBuffer(previewSize));
 
     return camera;
+  }
+
+  /**
+   * Some devices reject {@link Camera#setParameters(Parameters)} atomically even when every
+   * individual value came from the camera's own supported lists. We retry with progressively
+   * simpler parameter sets so the scanner can still start instead of crashing the layout pass.
+   */
+  private void applyParametersWithFallback(
+      Camera camera, Parameters parameters, int[] previewFpsRange, boolean focusModeSet)
+      throws IOException {
+    try {
+      camera.setParameters(parameters);
+      return;
+    } catch (RuntimeException e) {
+      Log.w(TAG, "setParameters failed with full set, retrying without picture size.", e);
+    }
+
+    Parameters retry = camera.getParameters();
+    retry.setPreviewSize(previewSize.getWidth(), previewSize.getHeight());
+    retry.setPreviewFormat(IMAGE_FORMAT);
+    retry.setPreviewFpsRange(
+        previewFpsRange[Parameters.PREVIEW_FPS_MIN_INDEX],
+        previewFpsRange[Parameters.PREVIEW_FPS_MAX_INDEX]);
+    retry.setRotation(cameraRotationAngle);
+    if (focusModeSet) {
+      retry.setFocusMode(Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
+    }
+    try {
+      camera.setParameters(retry);
+      return;
+    } catch (RuntimeException e) {
+      Log.w(TAG, "setParameters failed without picture size, retrying without fps range.", e);
+    }
+
+    retry = camera.getParameters();
+    retry.setPreviewSize(previewSize.getWidth(), previewSize.getHeight());
+    retry.setPreviewFormat(IMAGE_FORMAT);
+    retry.setRotation(cameraRotationAngle);
+    if (focusModeSet) {
+      retry.setFocusMode(Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
+    }
+    try {
+      camera.setParameters(retry);
+      return;
+    } catch (RuntimeException e) {
+      Log.w(TAG, "setParameters failed without fps range, retrying with minimal set.", e);
+    }
+
+    retry = camera.getParameters();
+    retry.setPreviewSize(previewSize.getWidth(), previewSize.getHeight());
+    retry.setPreviewFormat(IMAGE_FORMAT);
+    try {
+      camera.setParameters(retry);
+    } catch (RuntimeException e) {
+      throw new IOException("Camera rejected setParameters on this device.", e);
+    }
   }
 
   private void setPreviewAndPictureSize(Camera camera, Parameters parameters) throws IOException {
@@ -308,6 +367,7 @@ public class CameraSource {
     int angle = (cameraInfo.orientation - degrees + 360) % 360;
     // This corresponds to the rotation constants in FirebaseVisionImageMetadata.
     this.rotation = angle / 90;
+    this.cameraRotationAngle = angle;
     camera.setDisplayOrientation(angle);
     parameters.setRotation(angle);
   }
