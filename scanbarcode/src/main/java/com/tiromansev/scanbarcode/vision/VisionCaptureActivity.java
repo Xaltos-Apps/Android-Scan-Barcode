@@ -79,6 +79,16 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     }
 
     private void resume() {
+        if (isFinishing() || isDestroyed()) {
+            return;
+        }
+        if (cameraSource == null && graphicOverlay != null) {
+            cameraSource = new CameraSource(graphicOverlay);
+        }
+        if (cameraSource == null || workflowModel == null) {
+            finish();
+            return;
+        }
         workflowModel.markCameraFrozen();
         settingsButton.setEnabled(true);
         currentWorkflowState = WorkflowModel.WorkflowState.NOT_STARTED;
