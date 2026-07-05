@@ -133,12 +133,18 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
 
     public void setTorch(boolean on) {
         new Thread(() -> {
+            // bounded wait (~10s) so the thread doesn't spin forever if the camera never opens
+            int attempts = 0;
             while (cameraSource == null || !cameraSource.hasParameters()) {
+                if (++attempts > 100 || isFinishing() || isDestroyed()) {
+                    Log.d("set_torch", "gave up waiting for camera");
+                    return;
+                }
                 try {
                     Thread.sleep(100);
-                    // Do some stuff
-                } catch (Exception e) {
-                    e.getLocalizedMessage();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
                 }
                 Log.d("set_torch", "wait camera...");
             }

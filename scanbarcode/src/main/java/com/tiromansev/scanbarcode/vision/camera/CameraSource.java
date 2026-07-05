@@ -80,7 +80,17 @@ public class CameraSource {
   }
 
   public boolean hasParameters() {
-    return camera != null && camera.getParameters() != null;
+    Camera camera = this.camera;
+    if (camera == null) {
+      return false;
+    }
+    try {
+      return camera.getParameters() != null;
+    } catch (RuntimeException e) {
+      // Camera was released or the camera service died between the null check and this call
+      Log.e(TAG, "Failed to get camera parameters", e);
+      return false;
+    }
   }
 
   /**
@@ -163,15 +173,24 @@ public class CameraSource {
   }
 
   public void updateFlashMode(String flashMode) {
-    Parameters parameters = camera.getParameters();
-    if (parameters != null) {
-      List<String> modes = parameters.getSupportedFlashModes();
-      if (modes != null) {
-        if (modes.contains(flashMode)) {
-          parameters.setFlashMode(flashMode);
-          camera.setParameters(parameters);
+    Camera camera = this.camera;
+    if (camera == null) {
+      return;
+    }
+    try {
+      Parameters parameters = camera.getParameters();
+      if (parameters != null) {
+        List<String> modes = parameters.getSupportedFlashModes();
+        if (modes != null) {
+          if (modes.contains(flashMode)) {
+            parameters.setFlashMode(flashMode);
+            camera.setParameters(parameters);
+          }
         }
       }
+    } catch (RuntimeException e) {
+      // Camera was released or the camera service died — skip the flash change
+      Log.e(TAG, "Failed to update flash mode", e);
     }
   }
 
