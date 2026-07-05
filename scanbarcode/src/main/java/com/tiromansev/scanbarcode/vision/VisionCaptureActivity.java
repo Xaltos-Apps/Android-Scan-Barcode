@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
@@ -47,6 +48,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         setContentView(R.layout.activity_vision_capture);
         beepManager = new BeepManager(this);
         preview = findViewById(R.id.camera_preview);
+        preview.setStartFailureListener(this::handleCameraStartFailure);
         graphicOverlay = findViewById(R.id.camera_preview_graphic_overlay);
         graphicOverlay.setOnClickListener(this);
         cameraSource = new CameraSource(graphicOverlay);
@@ -163,16 +165,26 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
                 workflowModel.markCameraLive();
                 preview.start(cameraSource);
             } catch (Exception e) {
-                Log.e(TAG, "Failed to start camera preview!", e);
-                showErrorMessage(e.getLocalizedMessage());
-                cameraSource.release();
-                cameraSource = null;
+                handleCameraStartFailure(e);
             }
         }
     }
 
-    protected void showErrorMessage(String message) {
+    private void handleCameraStartFailure(Exception e) {
+        Log.e(TAG, "Failed to start camera preview!", e);
+        workflowModel.markCameraFrozen();
+        showErrorMessage(e.getLocalizedMessage());
+        if (cameraSource != null) {
+            cameraSource.release();
+            cameraSource = null;
+        }
+    }
 
+    protected void showErrorMessage(String message) {
+        String text = message == null || message.isEmpty()
+                ? getString(R.string.zxing_msg_camera_framework_bug)
+                : message;
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
 
     public void playBeepSoundAndVibrate() {

@@ -189,9 +189,13 @@ public class CameraSource {
     Camera camera;
     try {
       camera = Camera.open();
-    } catch (Exception e) {
-      e.printStackTrace();
-      camera = Camera.open();
+    } catch (RuntimeException e) {
+      Log.e(TAG, "Failed to open camera, retrying.", e);
+      try {
+        camera = Camera.open();
+      } catch (RuntimeException retryError) {
+        throw new IOException("Failed to connect to camera service.", retryError);
+      }
     }
     if (camera == null) {
       throw new IOException("There is no back-facing camera.");
