@@ -411,16 +411,23 @@ public class ZxingCaptureActivity extends AppCompatActivity implements SurfaceHo
     }
 
     private void resetStatusView() {
+        // Views are bound in onResume(); activity results are delivered before onResume on a
+        // recreated activity, so all views may still be null here. onResume calls this method
+        // again after binding, restoring the UI.
         if (statusView != null) {
             statusView.setText(R.string.zxing_msg_default_status);
             statusView.setVisibility(View.VISIBLE);
         }
-        viewfinderView.setVisibility(View.VISIBLE);
+        if (viewfinderView != null) {
+            viewfinderView.setVisibility(View.VISIBLE);
+        }
         lastResult = null;
     }
 
     public void drawViewfinder() {
-        viewfinderView.drawViewfinder();
+        if (viewfinderView != null) {
+            viewfinderView.drawViewfinder();
+        }
     }
 
     public int getCameraId() {

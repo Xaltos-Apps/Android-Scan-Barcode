@@ -39,3 +39,5 @@ captures/
 # Keystore files
 *.jks
 .idea
+.claude/settings.local.json
+.vscode/settings.json

@@ -21,12 +21,18 @@ import java.io.IOException;
 public class CameraSourcePreview extends FrameLayout {
   private static final String TAG = "CameraSourcePreview";
 
+  /** Notified when the camera fails to start from an internal callback (surface creation, layout). */
+  public interface StartFailureListener {
+    void onCameraStartFailure(Exception e);
+  }
+
   private final SurfaceView surfaceView;
   private GraphicOverlay graphicOverlay;
   private boolean startRequested = false;
   private boolean surfaceAvailable = false;
   private CameraSource cameraSource;
   private Size cameraPreviewSize;
+  private StartFailureListener startFailureListener;
 
   public CameraSourcePreview(@NonNull Context context, @Nullable AttributeSet attrs) {
     super(context, attrs);
@@ -53,6 +59,22 @@ public class CameraSourcePreview extends FrameLayout {
       cameraSource.stop();
       cameraSource = null;
       startRequested = false;
+    }
+  }
+
+  public void setStartFailureListener(StartFailureListener listener) {
+    this.startFailureListener = listener;
+  }
+
+  private void startIfReadySafely() {
+    try {
+      startIfReady();
+    } catch (Exception e) {
+      Log.e(TAG, "Could not start camera source.", e);
+      startRequested = false;
+      if (startFailureListener != null) {
+        startFailureListener.onCameraStartFailure(e);
+      }
     }
   }
 
@@ -111,22 +133,14 @@ public class CameraSourcePreview extends FrameLayout {
       }
     }
 
-    try {
-      startIfReady();
-    } catch (IOException e) {
-      Log.e(TAG, "Could not start camera source.", e);
-    }
+    startIfReadySafely();
   }
 
   private class SurfaceCallback implements SurfaceHolder.Callback {
     @Override
     public void surfaceCreated(SurfaceHolder surface) {
       surfaceAvailable = true;
-      try {
-        startIfReady();
-      } catch (IOException e) {
-        Log.e(TAG, "Could not start camera source.", e);
-      }
+      startIfReadySafely();
     }
 
     @Override

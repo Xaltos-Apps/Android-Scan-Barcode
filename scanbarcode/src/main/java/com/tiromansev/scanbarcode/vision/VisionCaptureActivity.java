@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
@@ -47,6 +48,7 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
         setContentView(R.layout.activity_vision_capture);
         beepManager = new BeepManager(this);
         preview = findViewById(R.id.camera_preview);
+        preview.setStartFailureListener(this::handleCameraStartFailure);
         graphicOverlay = findViewById(R.id.camera_preview_graphic_overlay);
         graphicOverlay.setOnClickListener(this);
         cameraSource = new CameraSource(graphicOverlay);
@@ -79,6 +81,16 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
     }
 
     private void resume() {
+        if (isFinishing() || isDestroyed()) {
+            return;
+        }
+        if (cameraSource == null && graphicOverlay != null) {
+            cameraSource = new CameraSource(graphicOverlay);
+        }
+        if (cameraSource == null || workflowModel == null) {
+            finish();
+            return;
+        }
         workflowModel.markCameraFrozen();
         settingsButton.setEnabled(true);
         currentWorkflowState = WorkflowModel.WorkflowState.NOT_STARTED;
@@ -121,12 +133,18 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
 
     public void setTorch(boolean on) {
         new Thread(() -> {
+            // bounded wait (~10s) so the thread doesn't spin forever if the camera never opens
+            int attempts = 0;
             while (cameraSource == null || !cameraSource.hasParameters()) {
+                if (++attempts > 100 || isFinishing() || isDestroyed()) {
+                    Log.d("set_torch", "gave up waiting for camera");
+                    return;
+                }
                 try {
                     Thread.sleep(100);
-                    // Do some stuff
-                } catch (Exception e) {
-                    e.getLocalizedMessage();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
                 }
                 Log.d("set_torch", "wait camera...");
             }
@@ -153,16 +171,26 @@ public class VisionCaptureActivity extends AppCompatActivity implements OnClickL
                 workflowModel.markCameraLive();
                 preview.start(cameraSource);
             } catch (Exception e) {
-                Log.e(TAG, "Failed to start camera preview!", e);
-                showErrorMessage(e.getLocalizedMessage());
-                cameraSource.release();
-                cameraSource = null;
+                handleCameraStartFailure(e);
             }
         }
     }
 
-    protected void showErrorMessage(String message) {
+    private void handleCameraStartFailure(Exception e) {
+        Log.e(TAG, "Failed to start camera preview!", e);
+        workflowModel.markCameraFrozen();
+        showErrorMessage(e.getLocalizedMessage());
+        if (cameraSource != null) {
+            cameraSource.release();
+            cameraSource = null;
+        }
+    }
 
+    protected void showErrorMessage(String message) {
+        String text = message == null || message.isEmpty()
+                ? getString(R.string.zxing_msg_camera_framework_bug)
+                : message;
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
 
     public void playBeepSoundAndVibrate() {

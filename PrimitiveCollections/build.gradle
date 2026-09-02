@@ -35,7 +35,7 @@ project.afterEvaluate {
                 from components.release
                 groupId 'com.github.xaltosapps'
                 artifactId 'PrimitiveCollections'
-                version '3.0.5'
+                version '3.0.6'
             }
         }
     }
