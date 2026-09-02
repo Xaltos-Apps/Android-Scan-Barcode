@@ -6,8 +6,11 @@ import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
 import android.hardware.Camera.Parameters;
 import android.util.Log;
+import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
+import com.google.android.gms.common.images.Size;
+import com.tiromansev.scanbarcode.R;
 import com.tiromansev.scanbarcode.vision.PreferenceUtils;
 import com.tiromansev.scanbarcode.vision.Utils;
 import java.io.IOException;
@@ -41,7 +44,7 @@ public class CameraSource {
   private static final float REQUESTED_CAMERA_FPS = 30.0f;
 
   private Camera camera;
-  @FirebaseVisionImageMetadata.Rotation private int rotation;
+  private int rotation;
   private int cameraRotationAngle;
 
   private Size previewSize;
