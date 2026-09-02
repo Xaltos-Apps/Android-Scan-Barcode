@@ -31,15 +31,8 @@ android {
     }
     packagingOptions {
         jniLibs {
-            useLegacyPackaging false
+            useLegacyPackaging true
         }
-    }
-}
-
-configurations.all {
-    resolutionStrategy {
-        force 'com.google.android.gms:play-services-tflite-java:16.4.0'
-        force 'com.google.android.gms:play-services-tflite-impl:16.3.0'
     }
 }
 

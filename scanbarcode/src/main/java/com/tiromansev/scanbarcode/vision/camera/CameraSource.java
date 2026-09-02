@@ -9,17 +9,17 @@ import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
+
 import com.google.android.gms.common.images.Size;
 import com.tiromansev.scanbarcode.R;
 import com.tiromansev.scanbarcode.vision.PreferenceUtils;
 import com.tiromansev.scanbarcode.vision.Utils;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
-
-
 
 /**
  * Manages the camera and allows UI updates on top of it (e.g. overlaying extra Graphics). This
