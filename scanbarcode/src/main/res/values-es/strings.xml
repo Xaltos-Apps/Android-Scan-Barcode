@@ -43,13 +43,13 @@
     <string name="preferences_scan_camera_vision">Cámara (Mobile Vision)</string>
     <string name="preferences_scan_external">Escáner externo</string>
     <string name="preferences_scan_last_symbol_title">Sufijo (símbolo final)</string>
-    <string name="preferences_scan_last_symbol_enter">Entrar</string>
-    <string name="preferences_scan_last_symbol_tab">Tecla Tabuladora</string>
+    <string name="preferences_scan_last_symbol_enter">Intro</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Esta es una característica experimental. \n\n
         Ayúdanos a depurarla y mejorarla.\n\n
         Por favor, haznos saber si funciona para ti o no. Utiliza el elemento del menú \"Pregunta o sugerencia\" para enviar comentarios."</string>
     <string name="caption_external_scan">Utiliza escáner externo</string>
-    <string name="preferences_scan_last_symbol_space">Barra Espaciadora</string>
+    <string name="preferences_scan_last_symbol_space">Espacio</string>
     <string name="preferences_external_scan_params">Parámetros de escaneo</string>
     <string name="vision_msg_default_status">Coloque un código de barras dentro del rectángulo del visor</string>
     <string name="preferences_scan_vertical_camera">Cámara (ZXing v.2 - ¡Nuevo!)</string>

@@ -43,7 +43,7 @@
     <string name="preferences_scan_camera_vision">Caméra (Mobile Vision)</string>
     <string name="preferences_scan_external">Scanner externe</string>
     <string name="preferences_scan_last_symbol_title">Suffixe (symbole de fin)</string>
-    <string name="preferences_scan_last_symbol_enter">Valider</string>
+    <string name="preferences_scan_last_symbol_enter">Entrée</string>
     <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Ceci est une fonctionnalité expérimentale. \n\n
         Aidez-nous à la déboguer et à l'améliorer.\n\n

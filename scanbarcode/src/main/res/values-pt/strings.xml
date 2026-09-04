@@ -44,7 +44,7 @@
     <string name="preferences_scan_external">Scanner externo</string>
     <string name="preferences_scan_last_symbol_title">Suffix (end symbol)</string>
     <string name="preferences_scan_last_symbol_enter">Enter</string>
-    <string name="preferences_scan_last_symbol_tab">Separador</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Este é um recurso experimental. \n\n
         Ajude-nos a corrigir e melhorar.\n\n
         Por favor, diga-nos se funciona ou não. Usando o item de menu 'Questões ou Sugestões' para enviar feedback."</string>

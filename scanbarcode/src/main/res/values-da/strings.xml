@@ -43,8 +43,8 @@
     <string name="preferences_scan_camera_vision">Kamera (mobil)</string>
     <string name="preferences_scan_external">Ekstern scanner</string>
     <string name="preferences_scan_last_symbol_title">Suffiks (slut symbol)</string>
-    <string name="preferences_scan_last_symbol_enter">Start</string>
-    <string name="preferences_scan_last_symbol_tab">Tabulator</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Denne funktion er et forsøg. \n\n
         Hjælp os med afprøvning og forbedring.\n\n
         Fortæl os om det virker og om det er brugbart. Brug menupunktet 'Spørgsmål eller forslag' til at sende feedback."</string>

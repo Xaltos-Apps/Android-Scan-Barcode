@@ -43,7 +43,7 @@
     <string name="preferences_scan_camera_vision">Kamera (Mobile Vision)</string>
     <string name="preferences_scan_external">Pengimbas Luaran</string>
     <string name="preferences_scan_last_symbol_title">Akhiran (simbol akhir)</string>
-    <string name="preferences_scan_last_symbol_enter">Masukkan</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
     <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Ini adalah ciri eksperimen. \n\n
         Bantu kami untuk men-debug dan memperbaiki mutunya.\n\n

@@ -44,7 +44,7 @@
     <string name="preferences_scan_external">Software di scansione esterno</string>
     <string name="preferences_scan_last_symbol_title">Suffisso (simbolo finale)</string>
     <string name="preferences_scan_last_symbol_enter">Invio</string>
-    <string name="preferences_scan_last_symbol_tab">Tabulazione</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Questa è una funzione sperimentale. \n\n
         Aiutaci a effettuare un debug o a migliorarla.\n\n
         Ti preghiamo di farci sapere se a te funziona oppure no. Utilizza il menù \"Domande o suggerimenti\" per inviarci un feedback."</string>

@@ -43,7 +43,7 @@
     <string name="preferences_scan_camera_vision">Aparat (Mobile Vision)</string>
     <string name="preferences_scan_external">Zewnętrzny skaner</string>
     <string name="preferences_scan_last_symbol_title">Sufiks (symbol końcowy)</string>
-    <string name="preferences_scan_last_symbol_enter">Wprowadź</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
     <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"To jest funkcja eksperymentalna. \n\n
         Pomóż nam usuwać błędy i ulepszyć ją.\n\n

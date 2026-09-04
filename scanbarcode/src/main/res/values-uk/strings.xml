@@ -43,8 +43,8 @@
     <string name="preferences_scan_camera_vision">Камера (Mobile Vision)</string>
     <string name="preferences_scan_external">Зовнішній сканер</string>
     <string name="preferences_scan_last_symbol_title">Суфікс (символ закінчення)</string>
-    <string name="preferences_scan_last_symbol_enter">Ввести</string>
-    <string name="preferences_scan_last_symbol_tab">Вкладка</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Це експериментальна функція. \n\n
         Допоможіть нам налагодити та вдосконалити її.\n\n
         Будь ласка, повідомте нас за допомогою пункту меню \"Запитання чи пропозиції\" працює це у вас чи ні."</string>

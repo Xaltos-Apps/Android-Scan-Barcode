@@ -43,7 +43,7 @@
     <string name="preferences_scan_camera_vision">Kamera (Mobile Vision)</string>
     <string name="preferences_scan_external">Harici tarayıcı</string>
     <string name="preferences_scan_last_symbol_title">Barkod bitiş simgesi</string>
-    <string name="preferences_scan_last_symbol_enter">Giriş</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
     <string name="preferences_scan_last_symbol_tab">Sekme</string>
     <string name="caption_external_scan_description">"Bu deneysel bir özelliktir. \n\n
         Hata ayıklamamıza ve iyileştirmemize yardımcı olun.\n\n

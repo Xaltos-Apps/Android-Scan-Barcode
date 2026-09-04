@@ -43,8 +43,8 @@
     <string name="preferences_scan_camera_vision">Камера (Mobile Vision)</string>
     <string name="preferences_scan_external">Внешний сканер</string>
     <string name="preferences_scan_last_symbol_title">Завершающий символ штрих-кода</string>
-    <string name="preferences_scan_last_symbol_enter">Перевод строки</string>
-    <string name="preferences_scan_last_symbol_tab">Табуляция</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"Эта функция находится на стадии тестирования, возможны ошибки!\n\n
     Пожалуйста, сообщите нам, работает эта фунция или нет с вашим сканером.\n\n
     Используйте пункт меню \"Обратная связь\" для отправки сообщения"</string>

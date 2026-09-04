@@ -44,7 +44,7 @@
     <string name="preferences_scan_external">外置掃描器</string>
     <string name="preferences_scan_last_symbol_title">後綴 (結束符號)</string>
     <string name="preferences_scan_last_symbol_enter">Enter</string>
-    <string name="preferences_scan_last_symbol_tab">標籤</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"這是試驗性質的功能。 \n\n
         協助我們去除錯與改進。\n\n
         請通知我們對你們是否正常運作，可使用\"問題或建議\"的選項來發送有關的反饋。"</string>

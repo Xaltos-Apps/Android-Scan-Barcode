@@ -46,7 +46,7 @@
     <string name="preferences_scan_external">סורק חיצוני</string>
     <string name="preferences_scan_last_symbol_title">סיומת (סמל סוף)</string>
     <string name="preferences_scan_last_symbol_enter">מעבר שורה (ENTER)</string>
-    <string name="preferences_scan_last_symbol_tab">רווח גדול (TAB)</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"זוהי תכונה ניסיונית. \n\n
         עזרו לנו לנפות באגים ולשפר אותה.\n\n
         בבקשה, ספר לנו אם זה עובד בשבילך או לא. דרך 'שאלה או הצעה' בתפריט כדי לשלוח משוב."</string>

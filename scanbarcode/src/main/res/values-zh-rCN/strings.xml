@@ -43,13 +43,13 @@
     <string name="preferences_scan_camera_vision">Camera (Mobile Vision)</string>
     <string name="preferences_scan_external">使用外部扫描器</string>
     <string name="preferences_scan_last_symbol_title">Suffix (end symbol)</string>
-    <string name="preferences_scan_last_symbol_enter">进入</string>
-    <string name="preferences_scan_last_symbol_tab">标签</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
     <string name="caption_external_scan_description">"这是一项实验功能。 \n\n
         请帮助我们调试和改进它。\n\n
         请让我们知道它是否对您有用。您可以使用“问题或建议”菜单项发送反馈。"</string>
     <string name="caption_external_scan">使用外部扫描仪</string>
-    <string name="preferences_scan_last_symbol_space">空间</string>
+    <string name="preferences_scan_last_symbol_space">空格</string>
     <string name="preferences_external_scan_params">扫描参数</string>
     <string name="vision_msg_default_status">请将取景器矩形对准条形码</string>
     <string name="preferences_scan_vertical_camera">Camera (ZXing v.2 - New!)</string>
