@@ -3,15 +3,15 @@ package com.tiromansev.scanbarcode.vision;
 import android.graphics.Canvas;
 import android.graphics.Path;
 
-import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcode;
+import com.google.mlkit.vision.barcode.common.Barcode;
 import com.tiromansev.scanbarcode.vision.camera.GraphicOverlay;
 
 /** Guides user to move camera closer to confirm the detected barcode. */
 class BarcodeConfirmingGraphic extends BarcodeGraphicBase {
 
-  private final FirebaseVisionBarcode barcode;
+  private final Barcode barcode;
 
-  BarcodeConfirmingGraphic(GraphicOverlay overlay, FirebaseVisionBarcode barcode) {
+  BarcodeConfirmingGraphic(GraphicOverlay overlay, Barcode barcode) {
     super(overlay);
     this.barcode = barcode;
   }

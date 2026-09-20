@@ -6,8 +6,7 @@ import android.util.Log;
 import androidx.annotation.GuardedBy;
 
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.ml.vision.common.FirebaseVisionImage;
-import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata;
+import com.google.mlkit.vision.common.InputImage;
 
 import java.nio.ByteBuffer;
 
@@ -46,14 +45,13 @@ public abstract class FrameProcessorBase<T> implements FrameProcessor {
     latestFrame = null;
     latestFrameMetaData = null;
     if (processingFrame != null && processingFrameMetaData != null) {
-      FirebaseVisionImageMetadata metadata =
-          new FirebaseVisionImageMetadata.Builder()
-              .setFormat(FirebaseVisionImageMetadata.IMAGE_FORMAT_NV21)
-              .setWidth(processingFrameMetaData.width)
-              .setHeight(processingFrameMetaData.height)
-              .setRotation(processingFrameMetaData.rotation)
-              .build();
-      FirebaseVisionImage image = FirebaseVisionImage.fromByteBuffer(processingFrame, metadata);
+      InputImage image = InputImage.fromByteBuffer(
+          processingFrame,
+          processingFrameMetaData.width,
+          processingFrameMetaData.height,
+          processingFrameMetaData.rotation * 90,
+          InputImage.IMAGE_FORMAT_NV21
+      );
       long startMs = SystemClock.elapsedRealtime();
       detectInImage(image)
           .addOnSuccessListener(
@@ -66,11 +64,11 @@ public abstract class FrameProcessorBase<T> implements FrameProcessor {
     }
   }
 
-  protected abstract Task<T> detectInImage(FirebaseVisionImage image);
+  protected abstract Task<T> detectInImage(InputImage image);
 
   /** Be called when the detection succeeds. */
   protected abstract void onSuccess(
-          FirebaseVisionImage image, T results, GraphicOverlay graphicOverlay);
+          InputImage image, T results, GraphicOverlay graphicOverlay);
 
   protected abstract void onFailure(Exception e);
 }

@@ -7,25 +7,23 @@ import android.util.Log;
 import androidx.annotation.MainThread;
 
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.ml.vision.FirebaseVision;
-import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcode;
-import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcodeDetector;
-import com.google.firebase.ml.vision.common.FirebaseVisionImage;
+import com.google.mlkit.vision.barcode.BarcodeScanner;
+import com.google.mlkit.vision.barcode.BarcodeScanning;
+import com.google.mlkit.vision.barcode.common.Barcode;
+import com.google.mlkit.vision.common.InputImage;
 import com.tiromansev.scanbarcode.vision.camera.CameraReticleAnimator;
 import com.tiromansev.scanbarcode.vision.camera.FrameProcessorBase;
 import com.tiromansev.scanbarcode.vision.camera.GraphicOverlay;
 import com.tiromansev.scanbarcode.vision.camera.WorkflowModel;
 
-import java.io.IOException;
 import java.util.List;
 
 /** A processor to run the barcode detector. */
-public class BarcodeProcessor extends FrameProcessorBase<List<FirebaseVisionBarcode>> {
+public class BarcodeProcessor extends FrameProcessorBase<List<Barcode>> {
 
   private static final String TAG = "BarcodeProcessor";
 
-  private final FirebaseVisionBarcodeDetector detector =
-      FirebaseVision.getInstance().getVisionBarcodeDetector();
+  private final BarcodeScanner detector = BarcodeScanning.getClient();
   private final WorkflowModel workflowModel;
   private final CameraReticleAnimator cameraReticleAnimator;
 
@@ -35,15 +33,15 @@ public class BarcodeProcessor extends FrameProcessorBase<List<FirebaseVisionBarc
   }
 
   @Override
-  protected Task<List<FirebaseVisionBarcode>> detectInImage(FirebaseVisionImage image) {
-    return detector.detectInImage(image);
+  protected Task<List<Barcode>> detectInImage(InputImage image) {
+    return detector.process(image);
   }
 
   @MainThread
   @Override
   protected void onSuccess(
-      FirebaseVisionImage image,
-      List<FirebaseVisionBarcode> results,
+      InputImage image,
+      List<Barcode> results,
       GraphicOverlay graphicOverlay) {
     if (!workflowModel.isCameraLive()) {
       return;
@@ -52,8 +50,8 @@ public class BarcodeProcessor extends FrameProcessorBase<List<FirebaseVisionBarc
     Log.d(TAG, "Barcode result size: " + results.size());
 
     // Picks the barcode, if exists, that covers the center of graphic overlay.
-    FirebaseVisionBarcode barcodeInCenter = null;
-    for (FirebaseVisionBarcode barcode : results) {
+    Barcode barcodeInCenter = null;
+    for (Barcode barcode : results) {
       RectF box = graphicOverlay.translateRect(barcode.getBoundingBox());
       if (box.contains(graphicOverlay.getWidth() / 2f, graphicOverlay.getHeight() / 2f)) {
         barcodeInCenter = barcode;
@@ -94,7 +92,7 @@ public class BarcodeProcessor extends FrameProcessorBase<List<FirebaseVisionBarc
   }
 
   private ValueAnimator createLoadingAnimator(
-      GraphicOverlay graphicOverlay, FirebaseVisionBarcode barcode) {
+      GraphicOverlay graphicOverlay, Barcode barcode) {
     float endProgress = 1.1f;
     ValueAnimator loadingAnimator = ValueAnimator.ofFloat(0f, endProgress);
     loadingAnimator.setDuration(2000);
@@ -118,10 +116,6 @@ public class BarcodeProcessor extends FrameProcessorBase<List<FirebaseVisionBarc
 
   @Override
   public void stop() {
-    try {
-      detector.close();
-    } catch (IOException e) {
-      Log.e(TAG, "Failed to close barcode detector!", e);
-    }
+    detector.close();
   }
 }
