@@ -142,7 +142,14 @@ public class CameraSource {
       } catch (Exception e) {
         Log.e(TAG, "Failed to clear camera preview: " + e);
       }
-      camera.release();
+      try {
+        camera.release();
+      } catch (RuntimeException e) {
+        // Some OEM firmwares (e.g. Vivo/Funtouch Android 14) send a protected
+        // "android.intent.action.camera.close" broadcast from inside Camera.release() and
+        // throw SecurityException at the caller. Nothing to do on the app side but survive it.
+        Log.e(TAG, "Failed to release camera: " + e);
+      }
       camera = null;
     }
 

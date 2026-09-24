@@ -114,7 +114,13 @@ public final class CameraManager {
    */
   public synchronized void closeDriver() {
     if (camera != null) {
-      camera.getCamera().release();
+      try {
+        camera.getCamera().release();
+      } catch (RuntimeException e) {
+        // OEM firmware may throw SecurityException from Camera.release() (protected
+        // "android.intent.action.camera.close" broadcast); the driver is gone either way.
+        Log.w(TAG, "Failed to release camera: " + e);
+      }
       camera = null;
       // Make sure to clear these each time we close the camera, so that any scanning rect
       // requested by intent is forgotten.

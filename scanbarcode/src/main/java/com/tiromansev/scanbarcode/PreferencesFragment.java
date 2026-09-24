@@ -272,7 +272,11 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
             }
         } finally {
             if (camera != null) {
-                camera.release();
+                try {
+                    camera.release();
+                } catch (RuntimeException ignored) {
+                    // OEM firmware may throw SecurityException from Camera.release()
+                }
             }
         }
     }
