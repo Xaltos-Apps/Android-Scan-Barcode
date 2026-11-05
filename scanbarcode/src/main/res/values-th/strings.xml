@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- zxing -->
+    <string name="zxing_msg_camera_framework_bug">ขออภัย กล้องเกิดปัญหา อาจต้องรีสตาร์ทเครื่อง</string>
+    <string name="zxing_msg_default_format">รูปแบบ</string>
+    <string name="zxing_msg_default_meta">ข้อมูลเมตา</string>
+    <string name="zxing_msg_default_status">วางบาร์โค้ดไว้ในกรอบช่องมองภาพเพื่อสแกน</string>
+    <string name="zxing_msg_default_time">เวลา</string>
+    <string name="zxing_msg_default_type">ประเภท</string>
+    <string name="zxing_msg_error">ข้อผิดพลาด</string>
+    <string name="zxing_msg_invalid_value">ค่าไม่ถูกต้อง</string>
+
+    <string name="zxing_preferences_actions_title">เมื่อพบบาร์โค้ด…</string>
+    <string name="zxing_preferences_auto_focus_title">ใช้โฟกัสอัตโนมัติ</string>
+    <string name="zxing_preferences_decode_1D_industrial_title">1D อุตสาหกรรม</string>
+    <string name="zxing_preferences_decode_1D_product_title">1D สินค้า</string>
+    <string name="zxing_preferences_decode_QR_title">QR โค้ด</string>
+    <string name="zxing_preferences_device_bug_workarounds_title">การแก้ปัญหาสำหรับบางอุปกรณ์</string>
+    <string name="zxing_preferences_disable_barcode_scene_mode_title">ไม่ใช้โหมดฉากบาร์โค้ด</string>
+    <string name="zxing_preferences_disable_continuous_focus_summary">ใช้เฉพาะโหมดโฟกัสมาตรฐาน</string>
+    <string name="zxing_preferences_disable_continuous_focus_title">ไม่ใช้โฟกัสต่อเนื่อง</string>
+    <string name="zxing_preferences_disable_exposure_title">ไม่ใช้การชดเชยแสง</string>
+    <string name="zxing_preferences_disable_metering_title">ไม่ใช้การวัดแสง</string>
+    <string name="zxing_preferences_front_light_summary">ช่วยให้สแกนในที่แสงน้อยได้ดีขึ้น แต่อาจทำให้เกิดแสงสะท้อน บางเครื่องอาจใช้ไม่ได้</string>
+    <string name="zxing_preferences_front_light_title">ใช้ไฟฉาย</string>
+    <string name="zxing_preferences_front_light_auto">อัตโนมัติ</string>
+    <string name="zxing_preferences_front_light_off">ปิด</string>
+    <string name="zxing_preferences_front_light_on">เปิด</string>
+    <string name="zxing_preferences_general_title">การตั้งค่าทั่วไป</string>
+    <string name="zxing_preferences_invert_scan_title">สแกนแบบกลับสี</string>
+    <string name="zxing_preferences_invert_scan_summary">สแกนบาร์โค้ดสีขาวบนพื้นสีดำ บางเครื่องอาจใช้ไม่ได้</string>
+    <string name="zxing_preferences_orientation_title">ไม่หมุนอัตโนมัติ</string>
+    <string name="zxing_preferences_play_beep_title">เสียงบี๊บ</string>
+    <string name="zxing_preferences_scanning_title">อ่านบาร์โค้ดรูปแบบ\u2026</string>
+    <string name="zxing_preferences_vibrate_title">สั่น</string>
+
+    <string name="caption_setting_scan">สแกนเนอร์บาร์โค้ด</string>
+    <string name="preferences_packet_mode_title">โหมดสแกนต่อเนื่อง</string>
+    <string name="preferences_packet_scan_type_increment">เพิ่มจำนวนทีละ 1 อัตโนมัติ (+1)</string>
+    <string name="preferences_packet_scan_type_set_quantity">กำหนดจำนวนเอง</string>
+    <string name="preferences_packet_scan_type">หลังสแกนแต่ละครั้ง</string>
+
+    <string name="preferences_scan_type">สแกนโดยใช้</string>
+    <string name="preferences_scan_type_title">ประเภทสแกนเนอร์บาร์โค้ด</string>
+    <string name="preferences_scan_camera">กล้อง (ZXing)</string>
+    <string name="preferences_scan_camera_vision">กล้อง (Mobile Vision)</string>
+    <string name="preferences_scan_external">สแกนเนอร์ภายนอก</string>
+    <string name="preferences_scan_last_symbol_title">อักขระต่อท้าย</string>
+    <string name="preferences_scan_last_symbol_enter">Enter</string>
+    <string name="preferences_scan_last_symbol_tab">Tab</string>
+    <string name="caption_external_scan_description">นี่เป็นฟีเจอร์ทดลอง\n\nช่วยเราปรับปรุงฟีเจอร์นี้ให้ดีขึ้น\n\nโปรดบอกเราว่าใช้งานได้หรือไม่ ผ่านเมนู \"คำถามหรือข้อเสนอแนะ\"</string>
+
+    <string name="caption_external_scan">ใช้สแกนเนอร์ภายนอก</string>
+    <string name="preferences_scan_last_symbol_space">เว้นวรรค</string>
+    <string name="preferences_external_scan_params">ตั้งค่าการสแกน</string>
+
+    <string name="vision_msg_default_status">วางบาร์โค้ดไว้ในกรอบช่องมองภาพ</string>
+    <string name="preferences_scan_vertical_camera">กล้อง (ZXing v.2 - ใหม่)</string>
+
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">การตรวจจับบาร์โค้ด</string>
+    <string name="pref_title_barcode_reticle_width">ความกว้างของช่องมองภาพ</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">เทียบกับความกว้างของภาพจากกล้อง ตั้งได้ตั้งแต่ 50% ถึง 95%</string>
+    <string name="pref_title_barcode_reticle_height">ความสูงของช่องมองภาพ</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">เทียบกับความสูงของภาพจากกล้อง ตั้งได้ตั้งแต่ 20% ถึง 80%</string>
+    <string name="pref_title_enable_barcode_size_check">ตรวจสอบขนาดบาร์โค้ด</string>
+    <string name="pref_summary_enable_barcode_size_check">จะแจ้งให้ขยับกล้องเข้าใกล้ขึ้นหากบาร์โค้ดที่ตรวจพบเล็กเกินไป</string>
+    <string name="pref_title_minimum_barcode_width">ความกว้างขั้นต่ำของบาร์โค้ด</string>
+    <string name="pref_title_scan_delay_time">เวลารอระหว่างการสแกน (วินาที)</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">เทียบกับความกว้างของช่องมองภาพ ตั้งได้ตั้งแต่ 20% ถึง 80% (ใช้เฉพาะเมื่อเปิดการตรวจสอบขนาดบาร์โค้ด)</string>
+    <string name="pref_summary_scan_delay_time">เวลารอระหว่างการสแกน 2 ครั้งติดกันในโหมดสแกนต่อเนื่อง</string>
+    <string name="pref_title_rear_camera_preview_size">ขนาดภาพตัวอย่างของกล้องหลัง</string>
+    <string name="cd_settings_button">การตั้งค่า</string>
+    <string name="cd_close_button">ย้อนกลับ</string>
+    <string name="cd_flash_button">เปิด/ปิดไฟฉาย</string>
+    <string name="pref_category_camera">กล้อง</string>
+
+    <string name="caption_ok">ตกลง</string>
+
+    <string name="preferences_scan_mlkit">กล้อง (MLKit)</string>
+    <string name="preferences_use_external_mode1">โหมด 1</string>
+    <string name="preferences_use_external_mode2">โหมด 2</string>
+    <string name="preferences_use_external_log">โหมดวินิจฉัย</string>
+</resources>
